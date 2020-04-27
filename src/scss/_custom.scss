@@ -1,0 +1,25 @@
+// $grid-breakpoints: (
+//         xs: 0,
+//         sm: 576px,
+//         md: 768px,
+//         lg: 992px,
+//         xl: 1200px,
+//         xxl: 1920px
+// );
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1240px
+);
+
+$color-primary: #3c3b55;
+$color-hover: #92c83e;
+$color-clicked: #88ab51;
+$color-ref: #262262;
+$color-current: #69678e;
+$color-disabled: #b7b6c3;
+$color-main-button: #ffffff;
+
+$body-bg-color: #f7f6fb;
