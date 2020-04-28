@@ -3,27 +3,52 @@
 
 // Отступы
 
-.block-purple
+.block-mt-purple
+{
+    margin-top: 96px;
+}
+.block-mt-dark-blue 
+{
+    margin-top: 75px;
+}
+.block-mt-blue 
+{
+    margin-top: 64px;
+}
+.block-mt-green 
+{
+    margin-top: 43px;
+}
+.block-mt-yellow 
+{
+    margin-top: 32px;
+}
+.block-mt-orange 
+{
+    margin-top: 22px;
+}
+
+.block-mb-purple
 {
     margin-bottom: 96px;
 }
-.block-dark-blue 
+.block-mb-dark-blue 
 {
     margin-bottom: 75px;
 }
-.block-blue 
+.block-mb-blue 
 {
     margin-bottom: 64px;
 }
-.block-green 
+.block-mb-green 
 {
     margin-bottom: 43px;
 }
-.block-yellow 
+.block-mb-yellow 
 {
     margin-bottom: 32px;
 }
-.block-orange 
+.block-mb-orange 
 {
     margin-bottom: 22px;
 }
@@ -142,7 +167,7 @@ a:hover
 
 /* Кнопки */
 
-button 
+.main-button 
 {
     padding: 15px 30px;
     font-family: Montserrat Bold;
@@ -150,21 +175,23 @@ button
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
+    border: 0;
     line-height: normal;
     letter-spacing: normal;
-    color: $color-main-button;
+    color: #fff;
     box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
     background-color: $color-ref;
     transition: .3s;
+    text-transform: uppercase;
 }
 
-button:hover 
+.main-button:hover 
 {
     background-color: $color-hover;
     box-shadow: 0 15px 25px 0 rgba(15, 20, 91, 0.1);
 }
 
-button:active 
+.main-button:active 
 {
     background-color: $color-clicked;
     box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
@@ -175,6 +202,46 @@ button:active
 //     pointer-events: none;
 //     background-color: $color-disabled;
 // }
+
+
+.button-text 
+{
+    display: flex;
+    align-items: center;
+    transition: .3s;
+    font-family: Montserrat Bold;
+    font-size: 15px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $color-ref;
+    justify-content: center;
+    border: 0;
+    .img-svg
+    {
+        margin-right: 10px;
+    }
+}
+
+.button-text:hover 
+{
+    color: $color-hover;
+    .img-svg path 
+    {
+        fill: $color-hover;
+    }
+}
+
+.button-text:active 
+{
+    color: $color-clicked;
+    .img-svg path 
+    {
+        fill: $color-clicked;
+    }
+}
 
 // Поле ввода 
 
@@ -203,6 +270,22 @@ input[type="text"]:focus, input[type="text"]:focus::placeholder
 {
     color: $color-ref;
 }
+input[type="text"]:focus
+{
+    border-left: 2px solid currentColor !important;
+    border-right: 2px solid currentColor !important;
+}
+
+.wrapper 
+{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    &-content 
+    {
+        flex: 1 1 auto;
+    }
+}
 
 // Шапка 
 
@@ -218,9 +301,25 @@ input[type="text"]:focus, input[type="text"]:focus::placeholder
             align-items: center;
             a 
             {
-                img 
+                font-family: Montserrat Bold;
+                font-size: 15px;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $color-ref;
+                .img-svg
                 {
                     margin-left: 10px;
+                }
+            }
+            a:hover 
+            {
+                color: $color-hover;
+                .img-svg path 
+                {
+                    fill: $color-hover;
                 }
             }
             .choice-lang 
@@ -263,10 +362,15 @@ input[type="text"]:focus, input[type="text"]:focus::placeholder
                 margin-right: 20px;
 
             }
+            .choice-mode:hover 
+            {
+                background-color: $color-ref;
+                color: #fff;
+            }
             .choice-mode_active 
             {
                 background-color: $color-ref;
-                color: $color-main-button;
+                color: #fff;
             }
             
         }
@@ -287,9 +391,17 @@ input[type="text"]:focus, input[type="text"]:focus::placeholder
                 line-height: normal;
                 letter-spacing: normal;
                 color: $color-ref;
-                img 
+                .img-svg 
                 {
                     margin-left: 10px;
+                }
+            }
+            .help:hover 
+            {
+                color: $color-hover;
+                .img-svg path 
+                {
+                    fill: $color-hover;
                 }
             }
         }
@@ -325,23 +437,368 @@ input[type="text"]:focus, input[type="text"]:focus::placeholder
             display: flex;
             align-items: center;
             justify-content: space-between;
-            a 
+        }
+    }
+}
+
+// Быстрый поиск 
+
+.quick-job-search 
+{
+    h1 
+    {
+        text-align: center;
+    }
+    &-content 
+    {
+        border-radius: 3px;
+        box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+        background-color: #ffffff;
+        padding: 64px 105px 43px 105px;
+        form 
+        {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            input[type="text"]
             {
-                border: 0;
-                font-family: Montserrat Bold;
-                font-size: 15px;
-                font-weight: bold;
+                width: 28%;
+            }
+            input[type="text"]:nth-child(1)
+            {
+                border-right: 0;
+            }
+            input[type="text"]:nth-child(3)
+            {
+                border-left: 0;
+                border-right: 0;
+            }
+            input[type="submit"]
+            {
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+        }
+        .detailed-search 
+        {
+            margin-top: 43px;
+        }
+        .hash-tags 
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 73px;
+            &__link 
+            {
+                display: flex;
+                margin-right: 15px;
+                margin-bottom: 15px;
+                align-items: center;
+                font-family: Montserrat Regular;
+                font-size: 13px;
+                font-weight: normal;
                 font-stretch: normal;
                 font-style: normal;
                 line-height: normal;
                 letter-spacing: normal;
                 color: $color-ref;
-                img 
+                border: 0;
+                span 
                 {
-                    margin-right: 10px;
+                    color: $color-disabled;
+                    margin-left: 3px;
                 }
             }
         }
+    }
+    &__buttons 
+    {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 22px;
+        padding-bottom: 22px;
+        border-top: 1px solid rgba(38, 34, 98, 0.1);
+        background-color: #fff;
+    }
+}
+
+// Свежие вакансии 
+
+.vacancy-card 
+{
+    width: 295px;
+    height: 488px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 20px 0 rgba(15,20,91,.1);
+    position: relative;
+    &__desc 
+    {
+        padding: 31px 33px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .vacancy-card__name
+        {
+            font-family: Montserrat Bold;
+            font-size: 18px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+            max-height: 66px;
+            height: 66px;
+            margin-bottom: 32px;
+            overflow: hidden;
+        }
+        .vacancy-card__company 
+        {
+            font-family: Montserrat Regular;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+            max-height: 57px;
+            height: 57px;
+            margin-bottom: 32px;
+            overflow: hidden;
+        }
+        .vacancy-card__salary
+        {
+            font-weight: bold;
+            font-family: Montserrat Bold;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+            margin-bottom: 20px;
+            overflow: hidden;
+            max-height: 19px;
+            height: 19px;
+        }
+        .vacancy-card__city
+        {
+            font-family: Montserrat Regular;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+            margin-bottom: 20px;
+            overflow: hidden;
+            max-height: 19px;
+            height: 19px;
+        }   
+        .vacancy-card__parameters
+        {
+            font-family: Montserrat Regular;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+            margin-bottom: 32px;
+            overflow: hidden;
+            max-height: 40px;
+            height: 40px;
+        }
+        .vacancy-card__date
+        {
+            font-family: Montserrat Light;
+            font-size: 16px;
+            font-weight: 300;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-disabled;
+            // margin-bottom: 32px;
+            overflow: hidden;
+            max-height: 18px;
+            height: 18px;
+        }
+
+    }
+    &__buttons 
+    {
+        display: flex;
+        align-items: center;
+        .vacancy-card__more 
+        {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $body-bg-color;
+            border: 0;
+        }
+        .vacancy-card__respond 
+        {
+            margin-left: 50px;
+        }
+        // .vacancy-card__respond:hover 
+        // {
+        //     .img-svg path
+        //     {
+        //         fill: $color-hover;
+        //     }
+        // }
+    }
+    &__label 
+    {
+        position: absolute;
+        right: -22px;
+        top: -22px;
+        display: block;
+        font-family: Montserrat Bold;
+        font-size: 14px;
+        font-weight: 700;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #fff;
+        width: 87px;
+        height: 87px;
+        background-repeat: no-repeat;
+    }
+}
+
+.vacancy-card.vacancy-card_popular 
+{
+    background-color: $color-hover;
+    p 
+    {
+        color: #ffffff;
+    }
+    .vacancy-card__more 
+    {
+        background-color: #82b435;
+        .img-svg path
+        {
+            fill: #fff;
+        }
+    }
+    .vacancy-card__respond
+    {
+        color: #fff !important;
+        .img-svg path 
+        {
+            fill: #fff;
+        }
+    }
+}
+
+.new-vacancies 
+{
+    h1 
+    {
+        text-align: center;
+    }
+    &-content 
+    {
+        .col-3
+        {
+            margin-bottom: 22px;
+        }
+    }
+}
+
+
+
+.footer 
+{
+    background-color: #fff;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    &-pages 
+    {
+        &__link
+        {
+            font-family: Montserrat Regular;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 2.14;
+            letter-spacing: normal;
+            color: $color-ref;
+            display: block;
+            border: 0;
+        }
+    }
+    &-contacts 
+    {
+        &__block 
+        {
+            margin-bottom: 22px;
+            display: flex;
+            img 
+            {
+                margin-right: 10px;
+            }
+            a 
+            {
+                display: block;
+                border: 0;
+                font-family: Montserrat Regular;
+                font-size: 15px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 2;
+                letter-spacing: normal;
+                color: $color-primary;
+            }
+        }
+        .feedback 
+        {
+            font-size: 12px;
+        }
+    }
+    &-left 
+    {
+        a 
+        {
+            display: block;
+            border: 0;
+        }
+    }
+    &-right
+    {
+        &__title
+        {
+            font-family: Raleway Bold;
+            font-size: 18px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-ref;
+            margin-bottom: 22px;
+            display: block;
+            border: 0;
+        } 
     }
 }
 

@@ -6,67 +6,333 @@
     <title>Главная</title>
 </head>
 <body>
-    <header class="header">
-        <div class="header-top">
-            <div class="container">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-3 header-top-left">
-                        <a href="#" class="choice-lang">
-                            RU 
-                            <img src="./img/arrow_down.svg" alt="">
-                        </a>
-                        <a href="#" class="choice-city">
-                            Нижний Новгород 
-                            <img src="./img/arrow_down.svg" alt="">
-                        </a>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header-top">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-3 header-top-left">
+                            <a href="#" class="choice-lang">
+                                RU 
+                                <img class="img-svg" src="./img/arrow_down.svg" alt="">
+                            </a>
+                            <a href="#" class="choice-city">
+                                Нижний Новгород 
+                                <img class="img-svg" src="./img/arrow_down.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-5 header-top-middle">
+                            <a href="#" class="choice-mode choice-mode_active">Ищу работу</a>
+                            <a href="#" class="choice-mode">Ищу работника</a>
+                        </div>
+                        <div class="col-auto header-top-right">
+                            <a href="#" class="help">
+                                Помощь
+                                <img class="img-svg" src="./img/arrow_down.svg" alt="">
+                            </a>
+                        </div>
                     </div>
-                    <div class="col-5 header-top-middle">
-                        <a href="#" class="choice-mode choice-mode_active">Ищу работу</a>
-                        <a href="#" class="choice-mode">Ищу работника</a>
+                </div>
+            </div>
+            <div class="header-bottom">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-5 header-bottom-left">
+                            <a href="#">
+                                <img src="./img/logo.svg" alt="">
+                            </a>
+                            <p>Быстрый поиск узкоквалифицированной работы</p>
+                        </div>
+                        <div class="col-5 header-bottom-right">
+                            <a href="#" class="button-text search-work">
+                                <img class="img-svg" src="./img/icon_search.svg" alt="">
+                                Найти работу
+                            </a>
+                            <a href="#" class="button-text release-resume">
+                                <img class="img-svg" src="./img/icon_resume.svg" alt="">
+                                Разместить резюме
+                            </a>
+                            <a href="#" class="button-text enter-account">
+                                <img class="img-svg" src="./img/icon_enter.svg" alt="">
+                                Войти
+                            </a>
+                        </div>
                     </div>
-                    <div class="col-auto header-top-right">
-                        <a href="#" class="help">
-                            Помощь
-                            <img src="./img/arrow_down.svg" alt="">
+                </div>
+            </div>
+        </header>
+        <div class="wrapper-content block-mt-dark-blue block-mb-purple">
+            <div class="quick-job-search block-mb-purple">     
+                <h1>Воспользуйтесь быстрым поиском</h1> 
+                <div class="container">
+                    <div class="quick-job-search-content block-mt-dark-blue"> 
+                        <form action="" id="quick-search-form">
+                            <input type="text" name="position" placeholder="ДОЛЖНОСТЬ">
+                            <input type="text" name="city" placeholder="ГОРОД">
+                            <input type="text" name="salary" placeholder="ЗАРПЛАТА">
+                            <input type="submit" class="main-button" value="Найти">
+                        </form>
+                        <a href="#" class="button-text detailed-search">
+                            <img class="img-svg" src="./img/icon_search.svg" alt="">
+                            Расширенный поиск
+                        </a>
+                        <div class="hash-tags">
+                            <a href="#" class="hash-tags__link"># работа рядом <span>(5)</span></a>
+                            <a href="#" class="hash-tags__link"># работа прямо сейчас <span>(3)</span></a>
+                            <a href="#" class="hash-tags__link"># работа завтра <span>(18)</span></a>
+                            <a href="#" class="hash-tags__link"># работа через месяц <span>(11)</span></a>
+                            <a href="#" class="hash-tags__link"># сезонная работа <span>(8)</span></a>
+                            <a href="#" class="hash-tags__link"># постоянная работа <span>(8)</span></a>
+                        </div>
+                    </div>
+                    <div class="quick-job-search__buttons"> 
+                        <a href="#" class="button-text release-resume">
+                            <img class="img-svg" src="./img/icon_resume.svg" alt="">
+                            Разместить резюме
+                        </a>
+                        <a href="#" class="button-text vacancies-map">
+                            <img class="img-svg" src="./img/icon_map.svg" alt="">
+                            Вакансии на карте
                         </a>
                     </div>
                 </div>
             </div>
+            <div class="new-vacancies">
+                <h1>Свежие вакансии</h1>
+                <div class="new-vacancies-content block-mt-dark-blue">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="vacancy-card vacancy-card_popular">
+                                    <div class="vacancy-card__desc">
+                                        <p class="vacancy-card__name">Помощник мастера</p>
+                                        <p class="vacancy-card__company">ОКБМ им. Африкантова</p>
+                                        <p class="vacancy-card__salary">30 000 руб/мес</p>
+                                        <p class="vacancy-card__city">Нижний Новгород</p>
+                                        <p class="vacancy-card__parameters">Полный день, Гибкий график, Смена, Удалённая...</p>
+                                        <p class="vacancy-card__date">12.12.2019 г.</p>
+                                    </div>
+                                    <div class="vacancy-card__buttons">
+                                        <a href="#" class="vacancy-card__more">
+                                            <img class="img-svg" src="./img/icon_detail_vacancy.svg" alt="">
+                                        </a>
+                                        <a href="#" class="button-text vacancy-card__respond">
+                                            <img class="img-svg" src="./img/icon_mail.svg" alt="">
+                                            Откликнуться
+                                        </a>
+                                    </div>
+                                    <div class="vacancy-card__label" style="background-image: url(./img/icon_label_top.svg);"></div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="vacancy-card vacancy-card_popular">
+                                    <div class="vacancy-card__desc">
+                                        <p class="vacancy-card__name">Помощник мастера</p>
+                                        <p class="vacancy-card__company">ОКБМ им. Африкантова</p>
+                                        <p class="vacancy-card__salary">30 000 руб/мес</p>
+                                        <p class="vacancy-card__city">Нижний Новгород</p>
+                                        <p class="vacancy-card__parameters">Полный день, Гибкий график, Смена, Удалённая...</p>
+                                        <p class="vacancy-card__date">12.12.2019 г.</p>
+                                    </div>
+                                    <div class="vacancy-card__buttons">
+                                        <a href="#" class="vacancy-card__more">
+                                            <img class="img-svg" src="./img/icon_detail_vacancy.svg" alt="">
+                                        </a>
+                                        <a href="#" class="button-text vacancy-card__respond">
+                                            <img class="img-svg" class="img-svg" src="./img/icon_mail.svg" alt="">
+                                            Откликнуться
+                                        </a>
+                                    </div>
+                                    <div class="vacancy-card__label" style="background-image: url(./img/icon_label_top.svg);"></div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="vacancy-card vacancy-card_popular">
+                                    <div class="vacancy-card__desc">
+                                        <p class="vacancy-card__name">Помощник мастера</p>
+                                        <p class="vacancy-card__company">ОКБМ им. Африкантова</p>
+                                        <p class="vacancy-card__salary">30 000 руб/мес</p>
+                                        <p class="vacancy-card__city">Нижний Новгород</p>
+                                        <p class="vacancy-card__parameters">Полный день, Гибкий график, Смена, Удалённая...</p>
+                                        <p class="vacancy-card__date">12.12.2019 г.</p>
+                                    </div>
+                                    <div class="vacancy-card__buttons">
+                                        <a href="#" class="vacancy-card__more">
+                                            <img class="img-svg" src="./img/icon_detail_vacancy.svg" alt="">
+                                        </a>
+                                        <a href="#" class="button-text vacancy-card__respond">
+                                            <img class="img-svg" src="./img/icon_mail.svg" alt="">
+                                            Откликнуться
+                                        </a>
+                                    </div>
+                                    <div class="vacancy-card__label" style="background-image: url(./img/icon_label_top.svg);"></div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="vacancy-card">
+                                    <div class="vacancy-card__desc">
+                                        <p class="vacancy-card__name">Помощник мастера</p>
+                                        <p class="vacancy-card__company">ОКБМ им. Африкантова</p>
+                                        <p class="vacancy-card__salary">30 000 руб/мес</p>
+                                        <p class="vacancy-card__city">Нижний Новгород</p>
+                                        <p class="vacancy-card__parameters">Полный день, Гибкий график, Смена, Удалённая...</p>
+                                        <p class="vacancy-card__date">12.12.2019 г.</p>
+                                    </div>
+                                    <div class="vacancy-card__buttons">
+                                        <a href="#" class="vacancy-card__more">
+                                            <img class="img-svg" src="./img/icon_detail_vacancy.svg" alt="">
+                                        </a>
+                                        <a href="#" class="button-text vacancy-card__respond">
+                                            <img class="img-svg" src="./img/icon_mail.svg" alt="">
+                                            Откликнуться
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="vacancy-card">
+                                    <div class="vacancy-card__desc">
+                                        <p class="vacancy-card__name">Помощник мастера</p>
+                                        <p class="vacancy-card__company">ОКБМ им. Африкантова</p>
+                                        <p class="vacancy-card__salary">30 000 руб/мес</p>
+                                        <p class="vacancy-card__city">Нижний Новгород</p>
+                                        <p class="vacancy-card__parameters">Полный день, Гибкий график, Смена, Удалённая...</p>
+                                        <p class="vacancy-card__date">12.12.2019 г.</p>
+                                    </div>
+                                    <div class="vacancy-card__buttons">
+                                        <a href="#" class="vacancy-card__more">
+                                            <img class="img-svg" src="./img/icon_detail_vacancy.svg" alt="">
+                                        </a>
+                                        <a href="#" class="button-text vacancy-card__respond">
+                                            <img class="img-svg" src="./img/icon_mail.svg" alt="">
+                                            Откликнуться
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="vacancy-card">
+                                    <div class="vacancy-card__desc">
+                                        <p class="vacancy-card__name">Помощник мастера</p>
+                                        <p class="vacancy-card__company">ОКБМ им. Африкантова</p>
+                                        <p class="vacancy-card__salary">30 000 руб/мес</p>
+                                        <p class="vacancy-card__city">Нижний Новгород</p>
+                                        <p class="vacancy-card__parameters">Полный день, Гибкий график, Смена, Удалённая...</p>
+                                        <p class="vacancy-card__date">12.12.2019 г.</p>
+                                    </div>
+                                    <div class="vacancy-card__buttons">
+                                        <a href="#" class="vacancy-card__more">
+                                            <img class="img-svg" src="./img/icon_detail_vacancy.svg" alt="">
+                                        </a>
+                                        <a href="#" class="button-text vacancy-card__respond">
+                                            <img class="img-svg" src="./img/icon_mail.svg" alt="">
+                                            Откликнуться
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="vacancy-card">
+                                    <div class="vacancy-card__desc">
+                                        <p class="vacancy-card__name">Помощник мастера</p>
+                                        <p class="vacancy-card__company">ОКБМ им. Африкантова</p>
+                                        <p class="vacancy-card__salary">30 000 руб/мес</p>
+                                        <p class="vacancy-card__city">Нижний Новгород</p>
+                                        <p class="vacancy-card__parameters">Полный день, Гибкий график, Смена, Удалённая...</p>
+                                        <p class="vacancy-card__date">12.12.2019 г.</p>
+                                    </div>
+                                    <div class="vacancy-card__buttons">
+                                        <a href="#" class="vacancy-card__more">
+                                            <img class="img-svg" src="./img/icon_detail_vacancy.svg" alt="">
+                                        </a>
+                                        <a href="#" class="button-text vacancy-card__respond">
+                                            <img class="img-svg" src="./img/icon_mail.svg" alt="">
+                                            Откликнуться
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="vacancy-card">
+                                    <div class="vacancy-card__desc">
+                                        <p class="vacancy-card__name">Помощник мастера</p>
+                                        <p class="vacancy-card__company">ОКБМ им. Африкантова</p>
+                                        <p class="vacancy-card__salary">30 000 руб/мес</p>
+                                        <p class="vacancy-card__city">Нижний Новгород</p>
+                                        <p class="vacancy-card__parameters">Полный день, Гибкий график, Смена, Удалённая...</p>
+                                        <p class="vacancy-card__date">12.12.2019 г.</p>
+                                    </div>
+                                    <div class="vacancy-card__buttons">
+                                        <a href="#" class="vacancy-card__more">
+                                            <img class="img-svg" src="./img/icon_detail_vacancy.svg" alt="">
+                                        </a>
+                                        <a href="#" class="button-text vacancy-card__respond">
+                                            <img class="img-svg" src="./img/icon_mail.svg" alt="">
+                                            Откликнуться
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="header-bottom">
+        <footer class="footer">
             <div class="container">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-5 header-bottom-left">
+                <div class="row justify-content-between">
+                    <div class="col-2 footer-left">
                         <a href="#">
                             <img src="./img/logo.svg" alt="">
                         </a>
-                        <p>Быстрый поиск узкоквалифицированной работы</p>
                     </div>
-                    <div class="col-5 header-bottom-right">
-                        <a href="#" class="search-work">
-                            <img src="./img/icon_search.svg" alt="">
-                            Найти работу
-                        </a>
-                        <a href="#" class="release-resume">
-                            <img src="./img/icon_resume.svg" alt="">
-                            Разместить резюме
-                        </a>
-                        <a href="#" class="enter-account">
-                            <img src="./img/icon_enter.svg" alt="">
-                            Войти
-                        </a>
+                    <div class="col-9 footer-right">
+                        <div class="row">
+                            <div class="col-3 footer-pages">
+                                <a href="#" class="footer-right__title">О сервисе</a>
+                                <a href="#" class="footer-pages__link">Полезные статьи</a>
+                                <a href="#" class="footer-pages__link">Часто задаваемые вопросы</a>
+                                <a href="#" class="footer-pages__link">Как пользоваться сервисом</a>
+                            </div>
+                            <div class="col-3 footer-pages">
+                                <a href="#" class="footer-right__title">Соискателям</a>
+                                <a href="#" class="footer-pages__link">Разместить резюме</a>
+                                <a href="#" class="footer-pages__link">Поиск работы</a>
+                                <a href="#" class="footer-pages__link">Работа рядом</a>
+                            </div>
+                            <div class="col-3 footer-pages">
+                                <a href="#" class="footer-right__title">Работодателям</a>
+                                <a href="#" class="footer-pages__link">Разместить вакансию</a>
+                                <a href="#" class="footer-pages__link">Доступ к базе резюме</a>
+                                <a href="#" class="footer-pages__link">Реклама на сайте</a>
+                                <a href="#" class="footer-pages__link">Метка TOP-компании</a>
+                            </div>
+                            <div class="col-3 footer-contacts">
+                                <a href="#" class="footer-right__title">Контакты</a>
+                                <div class="footer-contacts__block">
+                                    <div class="footer-contacts__block__image">
+                                        <img src="./img/icon_phone.svg" alt="">
+                                    </div>
+                                    <div class="footer-contacts__block__content">
+                                        <a href="tel:79876543210">+7 987 654 32 10</a>
+                                        <a href="tel:71234567890">+7 123 456 78 90</a>
+                                    </div>
+                                </div>
+                                <div class="footer-contacts__block">
+                                    <div class="footer-contacts__block__image">
+                                        <img src="./img/icon_mail.svg" alt="">
+                                    </div>
+                                    <div class="footer-contacts__block__content">
+                                        <a href="mailto:info@vaxta-online.ru">info@vaxta-online.ru</a>
+                                    </div>
+                                </div>
+                                <button type="button" class="main-button feedback">Обратная связь</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
-
-
-
-    
-
-    <footer class="footer">
-
-    </footer>
+        </footer>
+    </div>
 </body>
 </html>
