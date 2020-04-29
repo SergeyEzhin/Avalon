@@ -527,9 +527,30 @@ input[type="text"]:focus
 
 // Свежие вакансии 
 
+.label-top
+{
+    position: absolute;
+    right: -22px;
+    top: -22px;
+    display: block;
+    font-family: Montserrat Bold;
+    font-size: 14px;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fff;
+    width: 87px;
+    height: 87px;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: .3s;
+}
+
 .vacancy-card 
 {
-    width: 295px;
+    max-width: 295px;
     height: 488px;
     border-radius: 3px;
     background-color: #ffffff;
@@ -655,35 +676,18 @@ input[type="text"]:focus
         {
             margin-left: 50px;
         }
-        // .vacancy-card__respond:hover 
-        // {
-        //     .img-svg path
-        //     {
-        //         fill: $color-hover;
-        //     }
-        // }
-    }
-    &__label 
-    {
-        position: absolute;
-        right: -22px;
-        top: -22px;
-        display: block;
-        font-family: Montserrat Bold;
-        font-size: 14px;
-        font-weight: 700;
-        font-stretch: normal;
-        font-style: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        color: #fff;
-        width: 87px;
-        height: 87px;
-        background-repeat: no-repeat;
     }
 }
 
-.vacancy-card.vacancy-card_popular 
+.popular 
+{
+    .label-top 
+    {
+        opacity: 1;
+    }
+}
+
+.vacancy-card.popular 
 {
     background-color: $color-hover;
     p 
@@ -716,14 +720,334 @@ input[type="text"]:focus
     }
     &-content 
     {
+        .row 
+        {
+            margin-right: -10px;
+            margin-left: -10px;
+        }
         .col-3
         {
             margin-bottom: 22px;
+            padding-left: 10px;
+            padding-right: 10px;
         }
     }
 }
 
+.ref-detail 
+{
+    font-family: Montserrat Bold;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $color-ref;
+}
 
+
+// Лучшие компании
+
+.arrow-slider 
+{
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+    border: solid 1px #dddce8;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.navigation-top-companies 
+{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 33%;
+    z-index: 3;
+}
+
+button 
+{
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.top-companies 
+{
+    h1 
+    {
+        text-align: center;
+    }
+    .container 
+    {
+        position: relative;
+    }
+    &-slider 
+    {
+        button 
+        {
+            position: absolute;
+        }
+        .owl-prev 
+        {
+            left: 0;
+        }
+        .owl-next 
+        {
+            right: 30px;
+        }
+        &-wrapper 
+        {
+
+        }
+        &-block 
+        {
+            display: flex;
+            padding: 32px;
+            background-color: #fff;
+            border-radius: 3px;
+            // width: 400px;
+            position: relative;
+            &__left 
+            {
+                width: 31%;
+            }
+            &__right 
+            {
+                margin-left: 26px;
+                width: 65%;
+            }
+            &__image 
+            {
+                img 
+                {
+                    max-width: 100%;
+                    height: auto;
+                    width: auto !important;
+                }
+            }
+            &__name 
+            {
+                font-family: Montserrat Bold;
+                font-size: 18px;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $color-primary;
+                max-height: 44px;
+                height: 44px;
+                overflow: hidden;
+                margin-bottom: 22px;
+            }
+            &__count 
+            {
+                font-family: Montserrat Light;
+                font-size: 16px;
+                font-weight: 300;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $color-disabled;
+                max-height: 20px;
+                height: 20px;
+                overflow: hidden;
+                margin-bottom: 30px;
+            }
+            &__desc 
+            {
+                font-family: Montserrat Regular;
+                font-size: 16px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $color-primary;
+                max-height: 77px;
+                height: 77px;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+// Звезды 
+
+.rating__wrapper
+{
+    display: flex;
+    position: relative;
+    margin-top: 22px;
+}
+.rating .i-star, .rating .i-star--filled
+{
+    // color: $color-hover;
+    // width: 15px;
+    // height: 15px;
+    // display: block;
+    // line-height: 0;
+}
+
+.rating__filled-stars 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    display: flex;
+}
+
+.rating__filled-stars span 
+{
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 15px;
+    height: 15px;
+    max-width: 15px;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.i-star
+{
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   width: 15px;
+   height: 15px;
+   max-width: 15px;
+   min-width: 15px;
+   display: inline-block;
+   margin-right: 6px;
+}
+
+
+// Баннеры с рекламой 
+
+.images
+{
+    .row 
+    {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .col-3 
+    {
+        // margin-bottom: 22px;
+        padding-left: 10px;
+        padding-right: 10px; 
+        // height: 184px;
+    }
+    &__block
+    {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 184px;
+        // width: 295px;
+        // display: block !important;
+    }
+}
+
+// Как пользоваться сервисом
+
+.navigation-steps-slider
+{
+  display: flex;
+  align-items: center;
+}
+
+.arrow-steps 
+{
+    font-family: Raleway Bold;
+    font-size: 24px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $color-primary;
+    display: flex;
+    &__right 
+    {
+        span
+        {
+            margin-left: 7px;
+            margin-right: 12px;
+        }
+    }
+    &__left 
+    {
+        span 
+        {
+            margin-left: 7px;
+        }
+        img 
+        {
+            margin-right: 12px;
+        }
+    }
+}
+
+.usage-steps 
+{
+    h1 
+    {
+        text-align: center;
+    }
+    &-slider 
+    {
+        &-wrapper 
+        {
+
+        }
+        &-block 
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &__image 
+            {
+
+            }
+            &__name 
+            {
+                font-family: Raleway Bold;
+                font-size: 24px;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $color-primary;
+                margin-top: 64px;
+            }
+            &__desc 
+            {
+                font-family: Montserrat Regular;
+                font-size: 16px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $color-primary;
+                margin-top: 43px;
+            }
+        }
+    }
+}
 
 .footer 
 {
