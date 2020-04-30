@@ -203,6 +203,10 @@ a:hover
 //     background-color: $color-disabled;
 // }
 
+button 
+{
+    outline: none !important;
+}
 
 .button-text 
 {
@@ -241,6 +245,43 @@ a:hover
     {
         fill: $color-clicked;
     }
+}
+
+.other-button 
+{
+    background-color: #fff;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat Bold;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $color-ref;
+    box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+    transition: .3s;
+}
+
+.other-button:hover 
+{
+    color: $color-hover;
+}
+
+.other-button:active 
+{
+    color: $color-clicked;
+}
+
+.wrapper-button 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 // Поле ввода 
@@ -284,6 +325,55 @@ input[type="text"]:focus
     &-content 
     {
         flex: 1 1 auto;
+    }
+}
+
+// Пагинация 
+
+.wrapper-pagination
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .pagination 
+    {
+        display: flex;
+        align-items: center;
+        &__block 
+        {
+            background-color: #fff;
+            color: $color-ref;
+            font-family: Montserrat Bold;
+            font-size: 14px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            transition: .3s;
+            margin-right: 10px;
+            border: 0;
+        }
+        &__block:hover 
+        {
+            color: #fff;
+            background-color: $color-hover;
+        }
+        &__block:active 
+        {
+            color: #fff;
+            background-color: $color-clicked;
+        }
+        &__block_current
+        {
+            background-color: $color-ref;
+            color: #ffffff;
+        }
     }
 }
 
@@ -935,7 +1025,7 @@ button
 
 // Баннеры с рекламой 
 
-.images
+.main-images
 {
     .row 
     {
@@ -954,7 +1044,11 @@ button
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+        display: block;
         height: 184px;
+        border-radius: 3px;
+        box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+        border: 0;
         // width: 295px;
         // display: block !important;
     }
@@ -966,6 +1060,28 @@ button
 {
   display: flex;
   align-items: center;
+  position: absolute;
+  top: 409px;
+  width: 100%;
+  justify-content: space-between;
+  z-index: 3;
+  height: 31px;
+  button 
+  {
+    position: absolute;
+  }
+  button.disabled 
+  {
+      display: none;
+  }
+  .owl-prev 
+  {
+    left: 0;
+  }
+  .owl-next 
+  {
+    right: 0;
+  }
 }
 
 .arrow-steps 
@@ -1008,9 +1124,10 @@ button
     }
     &-slider 
     {
+        position: relative;
         &-wrapper 
         {
-
+            // position: relative;
         }
         &-block 
         {
@@ -1019,7 +1136,13 @@ button
             align-items: center;
             &__image 
             {
-
+                height: 347px;
+                img 
+                {
+                    max-width: 100%;
+                    height: auto;
+                    width: auto !important;
+                }
             }
             &__name 
             {
@@ -1032,6 +1155,8 @@ button
                 letter-spacing: normal;
                 color: $color-primary;
                 margin-top: 64px;
+                text-align: center;
+                width: 400px;
             }
             &__desc 
             {
@@ -1044,10 +1169,295 @@ button
                 letter-spacing: normal;
                 color: $color-primary;
                 margin-top: 43px;
+                text-align: center;
+                width: 400px;
             }
         }
     }
 }
+
+// Аккордеон 
+
+.accordion-content
+{
+    &-block 
+    {
+        margin-bottom: 33px;
+        border-top: solid 2px #dddce8;
+        padding-top: 33px;
+        cursor: pointer;
+        .accordion-block-title
+        {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            p 
+            {
+                font-family: Montserrat Bold;
+                font-size: 20px;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $color-primary;
+                width: 85%;
+            }
+            .arrow-accordion
+            {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 26px;
+                height: 26px;
+                border-radius: 10px;
+                box-shadow: 0 5px 5px 0 rgba(15, 20, 91, 0.15);
+                border: solid 1px #dddce8;
+                background-color: #ffffff;
+                transition: .3s;
+                img 
+                {
+                    transition: .3s;
+                    transform: rotateX(180deg);
+                }
+            }
+        }
+        .accordion-block-desc 
+        {
+            font-family: Montserrat Regular;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+            margin-top: 33px;
+        }
+    }
+    &-block:nth-child(1)
+    {
+        border: 0;
+    }
+    &-block_hide 
+    {
+        .accordion-block-desc 
+        {
+            display: none;
+        }
+        .accordion-block-title
+        {
+            .arrow-accordion
+            {
+                img 
+                {
+                    transform: rotateX(0deg);
+                }
+            }
+        }
+    }
+}
+
+// Часто задаваемые вопросы на главной 
+
+.faq-main 
+{
+    h1 
+    {
+        text-align: center;
+    }
+    &-content 
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__right 
+        {
+            width: 25%;
+            .faq-main-content__image
+            {
+                width: 100%;
+                img 
+                {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        &__left 
+        {
+            width: 68%;
+        }
+    }
+}
+
+// Полезные статьи
+
+.article-image 
+{
+    border-radius: 3px;
+    box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+    display: block;
+    border: 0;
+    height: 549px;
+    max-height: 549px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.article-block
+{
+    border-radius: 3px;
+    box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+    display: block;
+    border: 0;
+    height: 549px;
+    max-height: 549px;
+    &__image 
+    {
+        height: 197px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &__content 
+    {
+        padding: 32px 35px;
+        background-color: #ffffff;
+        min-height: 352px;
+        position: relative;
+        .article-block__name 
+        {
+            font-family: Raleway Bold;
+            font-size: 18px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+            height: 86px;
+            max-height: 86px;
+            overflow: hidden;
+            margin-bottom: 22px;
+        }
+        .article-block__text 
+        {
+            font-family: Montserrat Regular;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+            height: 136px;
+            max-height: 136px;
+            overflow: hidden;
+            margin-bottom: 22px;
+        }
+        .article-block__date 
+        {
+            font-family: Montserrat Regular;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.57;
+            letter-spacing: normal;
+            color: $color-disabled;
+            height: 22px;
+            max-height: 22px;
+            overflow: hidden;
+            position: absolute;
+            bottom: 32px;
+        }
+    }
+}
+
+.useful-articles 
+{
+    h1 
+    {
+        text-align: center;
+    }
+    &-content 
+    {
+        .row 
+        {
+            margin-left: -10px;
+            margin-right: -10px;
+            .col-3 
+            {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    }
+}
+
+// Страница Статьи
+
+.all-articles
+{
+    .row 
+    {
+        margin-left: -10px;
+        margin-right: -10px;
+        .col-3 
+        {
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 22px;
+        }
+    }
+}
+
+// Страница Часто задаваемые вопросы
+
+.wrapper-ask-question
+{
+    form 
+    {
+        input[type="text"]
+        {
+            width: 300px;
+        }
+        textarea
+        {
+            width: 610px;
+            height: 127px;
+        }
+    }
+}
+
+textarea
+{
+    resize: none;
+    outline: none;
+    border: solid 2px #dddce8;
+    background-color: #ffffff;
+    font-family: Montserrat Bold;
+    font-size: 13px;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #b7b6c3;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+textarea:focus
+{
+    color: $color-ref;
+    border-color: $color-ref;
+}
+
+
+
 
 .footer 
 {

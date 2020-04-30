@@ -1,8 +1,8 @@
 console.log('hi');
 import '../scss/style.scss';
-// import { tns } from "../../node_modules/tiny-slider/src/tiny-slider";
-// import tns from 'tiny-slider';
 import 'owl.carousel';
+
+// Вывод svg
 
 var imgSvg = document.querySelectorAll('.img-svg');
 
@@ -45,56 +45,8 @@ for(var i = 0; i < imgSvg.length; i++)
       request.send();
 }
 
-// $('img.img-svg').each(function(){
-//   var $img = $(this);
-//   var imgClass = $img.attr('class');
-//   var imgURL = $img.attr('src');
-//   $.get(imgURL, function(data) {
-//     var $svg = $(data).find('svg');
-//     if(typeof imgClass !== 'undefined') {
-//       $svg = $svg.attr('class', imgClass+' replaced-svg');
-//     }
-//     $svg = $svg.removeAttr('xmlns:a');
-//     if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
-//       $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
-//     }
-//     $img.replaceWith($svg);
-//   }, 'xml');
-// });
+// Слайдеры на главной
 
-// console.log(tns);
-
-// var topCompanies = tns({
-//   container: '.top-companies-slider-wrapper',
-//   slideBy: 1,
-//   items: 3,
-//   auto: false,
-//   speed: 500,
-//   autoplayTimeout: 500, 
-//   nav: false,
-//   // controlsContainer: '.partners-slider-controls',
-//   mouseDrag: true,
-//   // responsive: {
-//   //     0: 
-//   //     {
-//   //         items: 1
-//   //     },
-//   //     400:
-//   //     {
-//   //         items: 2
-//   //     },
-//   //     620: 
-//   //     {
-//   //         items: 3
-//   //     },
-//   //     1031:
-//   //     {
-//   //         items: 5
-//   //     }
-//   // }
-// });
-
-// console.log($('.container'));
 
 $('.top-companies-slider-wrapper').owlCarousel({
   loop:true, //Зацикливаем слайдер
@@ -112,7 +64,7 @@ $('.top-companies-slider-wrapper').owlCarousel({
 });
 
 $('.usage-steps-slider-wrapper').owlCarousel({
-  loop:true, //Зацикливаем слайдер
+  loop:false, //Зацикливаем слайдер
   items:1,
   margin:0, //Отступ от элемента справа в 50px
   nav:true, //Отключение навигации
@@ -124,29 +76,35 @@ $('.usage-steps-slider-wrapper').owlCarousel({
   touchDrag: false,
   navContainer: '.navigation-steps-slider',
   navText : ["<div class='arrow-steps arrow-steps__left'><img src='./img/arrow_right_step.svg' style='transform:rotateZ(180deg)'>Шаг <span></span></div>","<div class='arrow-steps arrow-steps__right'>Шаг <span></span><img src='./img/arrow_right_step.svg'></div>"],
-  onInitialized: function(e) {
-    // $('.arrow-steps__right span')..text('/ '+ this.items().length / 4);
-    $('.arrow-steps__right span').text('2');
-    let currentGroupSlider = $('.count-slider-nav span').eq(0).text();
-    let lengthGroupSlider  = this.items().length / 4;
-    // console.log(lengthGroupSlider);
-    console.log(currentGroupSlider);
+  onInitialized: function(e) 
+  {
+    let nextSlider = 2;
+    let prevSlider = 0;
 
-    $('.dairy-complexes-slider-nav .owl-next').click(function()
+    $('.arrow-steps__right span').text(nextSlider);
+    let lengthSlider  = this.items().length;
+
+    console.log(nextSlider);
+
+    $('.navigation-steps-slider .owl-next').click(function()
     {
-      if(currentGroupSlider < lengthGroupSlider)
+      if(nextSlider <= lengthSlider)
       {
-        currentGroupSlider++;
-        $('.count-slider-nav span').eq(0).text(currentGroupSlider);
+        nextSlider++;
+        prevSlider++;
+        $('.arrow-steps__right span').text(nextSlider);
+        $('.arrow-steps__left span').text(prevSlider);
       }
     });
 
-    $('.dairy-complexes-slider-nav .owl-prev').click(function()
+    $('.navigation-steps-slider .owl-prev').click(function()
     {
-      if(currentGroupSlider > 1)
+      if(nextSlider > 2)
       {
-        currentGroupSlider--;
-        $('.count-slider-nav span').eq(0).text(currentGroupSlider);
+        nextSlider--;
+        prevSlider--;
+        $('.arrow-steps__right span').text(nextSlider);
+        $('.arrow-steps__left span').text(prevSlider);
       }
     });
 
@@ -154,45 +112,37 @@ $('.usage-steps-slider-wrapper').owlCarousel({
 
 });
 
-// $('.dairy-complexes-slider').owlCarousel({
-//   loop:false, //Зацикливаем слайдер
-//   margin:30, //Отступ от элемента справа в 50px
-//   nav:true, //Отключение навигации
-//   smartSpeed:300, //Время движения слайда
-//   autoplayTimeout:300, //Время смены слайда
-//   dots: false,
-//   items: 4,
-//   slideBy: 4,
-//   navContainer: '.dairy-complexes-slider-nav',
-//   navText : ["<img src='img/img_arrow_left.svg'>", "<img src='img/img_arrow_right.svg'>"],
-//   onInitialized: function(e) {
-//     $('.count-slider-nav span').eq(1).text('/ '+ this.items().length / 4);
-//     let currentGroupSlider = $('.count-slider-nav span').eq(0).text();
-//     let lengthGroupSlider  = this.items().length / 4;
-//     // console.log(lengthGroupSlider);
-//     console.log(currentGroupSlider);
+// Аккордеон
 
-//     $('.dairy-complexes-slider-nav .owl-next').click(function()
-//     {
-//       if(currentGroupSlider < lengthGroupSlider)
-//       {
-//         currentGroupSlider++;
-//         $('.count-slider-nav span').eq(0).text(currentGroupSlider);
-//       }
-//     });
+try
+{
+    let accordionContentBlock = document.querySelectorAll('.accordion-content-block');
+    accordionContentBlock.forEach((elem) => 
+    {
+      elem.addEventListener('click', function(e)
+      {
+        e.preventDefault();
+        elem.classList.toggle('accordion-content-block_hide');
+      })
+    });
+}
+catch (e) {
+    console.log(e);
+}
 
-//     $('.dairy-complexes-slider-nav .owl-prev').click(function()
-//     {
-//       if(currentGroupSlider > 1)
-//       {
-//         currentGroupSlider--;
-//         $('.count-slider-nav span').eq(0).text(currentGroupSlider);
-//       }
-//     });
+// Проверка изображения в карточке статьи
 
-//   }
+let articleBlocks = document.querySelectorAll('.article-block');
 
-// });
+articleBlocks.forEach(article => {
+  if(!article.querySelector('.article-block__image'))
+  {
+    article.querySelector('.article-block__content').style.height = '100%';
+  }
+});
+
+
+
 
 
 
