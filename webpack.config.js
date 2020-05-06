@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const isDev = process.env.NODE_ENV = 'development';
-const pages = ['index', 'articles', 'faq'];
+const pages = ['index', 'articles', 'faq', 'vacancies', 'current-article', 'main', 'service-rules'];
 
 const webpackConfig = {
     context: path.resolve(__dirname, 'src'),

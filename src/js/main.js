@@ -1,5 +1,6 @@
 console.log('hi');
 import '../scss/style.scss';
+import Choices from  '../../node_modules/choices.js/src/scripts/choices';
 import 'owl.carousel';
 
 // Вывод svg
@@ -140,6 +141,24 @@ articleBlocks.forEach(article => {
     article.querySelector('.article-block__content').style.height = '100%';
   }
 });
+
+
+// Кастомизированный селект
+
+var elemsSelect = document.querySelectorAll('select');
+
+if(elemsSelect.length > 0)
+{
+  elemsSelect.forEach(function(elem)
+  {
+    new Choices(elem, {
+      choices: [],
+      placeholder: false,
+      searchEnabled: false,
+      itemSelectText: ''
+    });
+  });
+}
 
 
 

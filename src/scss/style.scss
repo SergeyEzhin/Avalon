@@ -284,7 +284,68 @@ button
     align-items: center;
 }
 
-// Поле ввода 
+.wrapper-transition-arrow 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transition-button 
+{
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #fff;
+    font-family: Montserrat Bold;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $color-ref;
+    text-transform: uppercase;
+    transition: .3s;
+    box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+    border: 0;
+    &__back
+    {
+        .img-svg 
+        {
+            margin-right: 10px;
+            transition: .3s;
+        }
+    }
+    &__next
+    {
+        .img-svg 
+        {
+            margin-left: 10px;
+            transition: .3s;
+        }
+    }
+}
+
+.transition-button:hover 
+{
+    color: $color-hover;
+    .img-svg path 
+    {
+        fill: $color-hover;
+    }
+}
+
+.transition-button:active 
+{
+    color: $color-clicked;
+    .img-svg path 
+    {
+        fill: $color-clicked;
+    }
+}
+
+// Поля формы
 
 input[type="text"]
 {
@@ -327,6 +388,310 @@ input[type="text"]:focus
         flex: 1 1 auto;
     }
 }
+
+// Стили для select
+
+select 
+{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 53px;
+    font-family: Montserrat Bold;
+    font-size: 13px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $color-primary;
+    border: solid 2px #dddce8;
+    background-color: #ffffff;
+    appearance: none;
+    outline: none;
+    padding-left: 20px;
+}
+
+.choices__inner
+{
+    border: solid 2px #dddce8 !important;
+    background-color: #ffffff;
+    min-height: 53px;
+    max-height: 53px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: .3s;
+}
+.choices__list--single .choices__item
+{
+    font-family: Montserrat Bold;
+    font-size: 13px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $color-primary;
+}
+.choices__list--dropdown 
+{
+    border: 0 !important;
+    background-color: #ffffff;
+    top: 101%;
+    box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+    height: 108px;
+    overflow: auto;
+}
+.choices__list--dropdown .choices__item--selectable
+{
+    font-family: Montserrat Bold;
+    font-size: 13px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $color-primary;
+    min-height: 36px;
+    max-height: 36px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted
+{
+    background-color: $body-bg-color;
+}
+
+.choices[data-type*=select-one]:after
+{
+    // border: 5px solid $color-primary;
+    border-top-color: $color-primary;
+}
+.choices__list--dropdown .choices__item--selectable
+{
+    padding-right: 0 !important;
+}
+
+.choices.is-open .choices__inner
+{
+    border-color: $color-primary !important;
+}
+
+// Стили для полосы прокрутки 
+
+::-webkit-scrollbar 
+{  
+    width: 5px;
+    height: 71px;
+    border-radius: 3px;
+    background-color: #b7b6c3;
+}
+::-webkit-scrollbar-button 
+{  
+    // width: 5px;
+    // height: 71px;
+    // border-radius: 3px;
+    // background-color: #b7b6c3;
+}
+::-webkit-scrollbar-track { background-color: #b7b6c3; }
+::-webkit-scrollbar-track-piece { background-color: #ffffff;}
+::-webkit-scrollbar-thumb { height: 50px; background-color: #b7b6c3; border-radius: 3px;}
+::-webkit-scrollbar-corner { background-color: #b7b6c3;}
+::-webkit-resizer {background-color: #b7b6c3;}
+
+// Стили для списка
+
+ul 
+{
+    list-style-type: none;
+    list-style-image: none;
+    padding-left: 4px;
+    li 
+    {
+        font-family: Montserrat Regular;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 2.75;
+        letter-spacing: normal;
+        color: #3c3b55;
+        position: relative;
+        padding-left: 25px;
+        a 
+        {
+            border: 0;
+        }
+    }
+    li:before 
+    {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background-color: $color-primary;
+        border-radius: 50%;
+        left: 0;
+        top: calc(50% - 4px);
+    }
+}
+
+
+
+// Стили для radio
+
+.block-radio 
+{
+    margin-top: 22px;
+    label 
+    {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-family: Montserrat Regular;
+        font-size: 15px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $color-primary;
+        .radio 
+        {
+            display: block;
+            margin-right: 10px;
+            width: 22px;
+            height: 22px;
+            border: solid 2px #dddce8;
+            background-color: #ffffff;
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            transition: .3s;
+        }
+        .radio::before
+        {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background-color: $color-ref;
+            position: absolute;
+            border-radius: 50%;
+            top: 3px;
+            left: 3px;
+            opacity: 0;
+            transition: .3s;
+        }
+        input[type="radio"]:checked ~ .radio
+        {
+            border-color: #dddce8;
+        }
+        input[type="radio"]:checked ~ .radio:before 
+        {
+            opacity: 1;
+        }
+    }
+}
+.block-radio:hover 
+{
+    .radio 
+    {
+        border-color: $color-primary;
+    }
+}
+
+// Стили для checkbox
+
+.block-checkbox 
+{
+    margin-top: 22px;
+    label 
+    {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        font-family: Montserrat Regular;
+        font-size: 15px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $color-primary;
+        .check
+        {
+            display: block;
+            margin-right: 10px;
+            width: 22px;
+            height: 22px;
+            border: solid 2px #dddce8;
+            background-color: #ffffff;
+            position: relative;
+            cursor: pointer;
+            transition: .3s;
+        }
+        .check::before
+        {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background-color: $color-ref;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            opacity: 0;
+            transition: .3s;
+        }
+        input[type="checkbox"]:checked ~ .check
+        {
+            border-color: #dddce8;
+        }
+        input[type="checkbox"]:checked ~ .check:before 
+        {
+            opacity: 1;
+        }
+    }
+}
+
+.block-checkbox:hover 
+{
+    .check 
+    {
+        border-color: $color-primary;
+    }
+}
+
+// Стили для textarea 
+
+textarea
+{
+    resize: none;
+    outline: none;
+    border: solid 2px #dddce8;
+    background-color: #ffffff;
+    font-family: Montserrat Bold;
+    font-size: 13px;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #b7b6c3;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+textarea:focus
+{
+    color: $color-ref;
+    border-color: $color-ref;
+}
+
 
 // Пагинация 
 
@@ -641,6 +1006,7 @@ input[type="text"]:focus
 .vacancy-card 
 {
     max-width: 295px;
+    // min-width: 295px;
     height: 488px;
     border-radius: 3px;
     background-color: #ffffff;
@@ -1215,7 +1581,7 @@ button
                 border: solid 1px #dddce8;
                 background-color: #ffffff;
                 transition: .3s;
-                img 
+                .img-svg 
                 {
                     transition: .3s;
                     transform: rotateX(180deg);
@@ -1239,6 +1605,18 @@ button
     {
         border: 0;
     }
+    &-block:hover 
+    {
+        .arrow-accordion
+        {
+            background-color: $color-hover;
+            border-color: $color-hover;
+            .img-svg path
+            {
+                fill: #fff;
+            }
+        }
+    }
     &-block_hide 
     {
         .accordion-block-desc 
@@ -1249,7 +1627,7 @@ button
         {
             .arrow-accordion
             {
-                img 
+                .img-svg
                 {
                     transform: rotateX(0deg);
                 }
@@ -1432,31 +1810,181 @@ button
     }
 }
 
-textarea
+
+// Список вакансий
+
+.sidebar-filter
 {
-    resize: none;
-    outline: none;
-    border: solid 2px #dddce8;
-    background-color: #ffffff;
-    font-family: Montserrat Bold;
-    font-size: 13px;
-    font-weight: 700;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #b7b6c3;
-    padding-top: 20px;
-    padding-left: 20px;
+    form 
+    {
+
+    }
 }
 
-textarea:focus
+.block-select-filter 
 {
-    color: $color-ref;
-    border-color: $color-ref;
+    &__name 
+    {
+        font-family: Montserrat Regular;
+        font-size: 15px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $color-primary;
+        margin-bottom: 10px;
+    }
+}
+.block-choice-filter
+{
+    &__name 
+    {
+        font-family: Montserrat Bold;
+        font-size: 15px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $color-primary;
+    }
 }
 
+.block-filter-row 
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__block
+    {
+        width: 49%;
+        input, select 
+        {
+            width: 100%;
+        }
+    }
+}
 
+.list-image 
+{
+    border-radius: 3px;
+    box-shadow: 0 10px 20px 0 rgba(15,20,91,.1);
+    display: block;
+    border: 0;
+    height: 488px;
+    max-height: 488px;
+    max-width: 295px;
+}
+
+.search-list
+{
+    margin-top: 32px;
+    &-row
+    {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .col-4
+    {
+        margin-bottom: 22px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+.list-container 
+{
+    &-row
+    {
+        margin-left: -25px;
+        margin-right: -25px;
+        .col-3 
+        {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+        .col-9 
+        {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+    }
+}
+
+.additional-search 
+{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    form 
+    {
+        position: relative;
+        input[type="text"]
+        {
+            position: relative;
+            min-width: 265px;
+            max-width: 265px;
+            height: 41px;
+        }
+        input[type="submit"]
+        {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            outline: none;
+            border: 0;
+            background: transparent;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            right: 10px;
+            top: 10px;
+        }
+    }
+}
+
+// Статья детальная 
+
+.article-detail  
+{
+    &__image 
+    {
+        width: 100%;
+        height: auto;
+        img 
+        {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    &__date
+    {
+        font-family: Montserrat Regular;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.57;
+        letter-spacing: normal;
+        color: $color-disabled;
+        margin-bottom: 32px;
+    }
+    &__preview 
+    {
+        font-family: Montserrat Bold;
+        font-size: 19px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.47;
+        letter-spacing: normal;
+        color: $color-primary;
+    }
+}
 
 
 .footer 
