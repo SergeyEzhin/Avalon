@@ -1,4 +1,3 @@
-console.log('hi');
 import '../scss/style.scss';
 import Choices from  '../../node_modules/choices.js/src/scripts/choices';
 import 'owl.carousel';
@@ -158,6 +157,54 @@ if(elemsSelect.length > 0)
       itemSelectText: ''
     });
   });
+}
+
+// Определение прокрутки шапки и задание фиксированной шапки
+
+let headerHeight = document.querySelector('.header').clientHeight;
+let headerScroll = document.querySelector('.header-scroll');
+
+function fixedAdaptiveHeader(block, height)
+{
+  var scroll = window.pageYOffset || document.documentElement.scrollTop;
+  var heightBlock = block.clientHeight;
+  var wrapperContent = document.querySelector('.wrapper-content');
+    
+  if (scroll >= height) 
+  {
+    block.classList.add('header_fixed');
+    // wrapperContent.style.paddingTop = heightBlock + 'px';
+  } 
+  else 
+  {
+    block.classList.remove('header_fixed');
+    // wrapperContent.style.paddingTop = '0px';
+  }
+}
+
+window.addEventListener('scroll', function()
+{
+  fixedAdaptiveHeader(headerScroll, headerHeight);
+});
+
+fixedAdaptiveHeader(headerScroll, headerHeight);
+
+
+// Для input[type="file"]
+
+var inputFile = document.querySelectorAll('input[type="file"]');
+
+if(inputFile.length > 0)
+{
+    inputFile.forEach(function(input) 
+    {
+        input.addEventListener('change', function(e)
+        {
+            var value = input.value;
+            value = value.replace( 'C:\\fakepath\\', '');
+            input.parentElement.querySelector('.file-value').innerHTML = value;
+        });
+    });
 }
 
 

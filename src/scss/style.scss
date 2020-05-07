@@ -347,7 +347,7 @@ button
 
 // Поля формы
 
-input[type="text"]
+input[type="text"], input[type="password"]
 {
     background-color: #fff;
     height: 53px;
@@ -363,16 +363,16 @@ input[type="text"]
     border: solid 2px currentColor;
 }
 
-input[type="text"]::placeholder 
+input[type="text"]::placeholder, input[type="password"]::placeholder
 {
     color: $color-disabled;
 }
 
-input[type="text"]:focus, input[type="text"]:focus::placeholder 
+input[type="text"]:focus, input[type="text"]:focus::placeholder, input[type="password"]:focus, input[type="password"]:focus::placeholder 
 {
     color: $color-ref;
 }
-input[type="text"]:focus
+input[type="text"]:focus, input[type="password"]:focus
 {
     border-left: 2px solid currentColor !important;
     border-right: 2px solid currentColor !important;
@@ -444,6 +444,20 @@ select
     height: 108px;
     overflow: auto;
 }
+.choices__list--dropdown::-webkit-scrollbar
+{
+    width: 5px;
+    height: 71px;
+    border-radius: 3px;
+    background-color: #b7b6c3;
+}
+
+.choices__list--dropdown::-webkit-scrollbar-track { background-color: #b7b6c3;}
+.choices__list--dropdown::-webkit-scrollbar-track-piece { background-color: #ffffff;}
+.choices__list--dropdown::-webkit-scrollbar-thumb { height: 50px; background-color: #b7b6c3; border-radius: 3px;}
+.choices__list--dropdown::-webkit-scrollbar-corner { background-color: #b7b6c3;}
+.choices__list--dropdown::-webkit-resizer {background-color: #b7b6c3;}
+
 .choices__list--dropdown .choices__item--selectable
 {
     font-family: Montserrat Bold;
@@ -482,15 +496,45 @@ select
     border-color: $color-primary !important;
 }
 
+// Стили для блока с файлом
+
+.block-file 
+{
+    border: dashed 2px #dddce8;
+    padding: 15px;
+    label 
+    {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0 !important;
+        .button-attach-file 
+        {
+            cursor: pointer;
+        }
+        .file-value 
+        {
+            margin-left: 20px;
+            font-family: Montserrat Regular;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+        }
+    }
+}
+
 // Стили для полосы прокрутки 
 
-::-webkit-scrollbar 
-{  
-    width: 5px;
-    height: 71px;
-    border-radius: 3px;
-    background-color: #b7b6c3;
-}
+// ::-webkit-scrollbar 
+// {  
+//     width: 5px;
+//     height: 71px;
+//     border-radius: 3px;
+//     background-color: #b7b6c3;
+// }
 ::-webkit-scrollbar-button 
 {  
     // width: 5px;
@@ -498,11 +542,11 @@ select
     // border-radius: 3px;
     // background-color: #b7b6c3;
 }
-::-webkit-scrollbar-track { background-color: #b7b6c3; }
-::-webkit-scrollbar-track-piece { background-color: #ffffff;}
-::-webkit-scrollbar-thumb { height: 50px; background-color: #b7b6c3; border-radius: 3px;}
-::-webkit-scrollbar-corner { background-color: #b7b6c3;}
-::-webkit-resizer {background-color: #b7b6c3;}
+// ::-webkit-scrollbar-track { background-color: #b7b6c3; }
+// ::-webkit-scrollbar-track-piece { background-color: #ffffff;}
+// ::-webkit-scrollbar-thumb { height: 50px; background-color: #b7b6c3; border-radius: 3px;}
+// ::-webkit-scrollbar-corner { background-color: #b7b6c3;}
+// ::-webkit-resizer {background-color: #b7b6c3;}
 
 // Стили для списка
 
@@ -885,6 +929,7 @@ textarea:focus
                 line-height: normal;
                 letter-spacing: normal;
                 margin-left: 37px;
+                width: 190px;
             }
         }
         &-right 
@@ -892,8 +937,151 @@ textarea:focus
             display: flex;
             align-items: center;
             justify-content: space-between;
+            // margin-right: -15px;
+            margin-left: -30px;
+            .button-text 
+            {
+                margin-left: 30px;
+                // margin-right: 15px;
+            }
         }
     }
+    .favorites 
+    {
+
+    }
+    .feedback 
+    {   
+        position: relative;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    .feedback:after 
+    {
+        content: attr(data-count);
+        width: 32px;
+        height: 22px;
+        margin-left: 10px;
+        border-radius: 8px;
+        background-color: $color-hover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        top: 0;
+        font-family: Montserrat Bold;
+        font-size: 12px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #ffffff;
+    }
+    .button-text.hidden
+    {
+        display: none;
+    }
+    &-profile 
+    {
+        display: flex;
+        align-items: center;
+        .profile 
+        {
+
+        }
+        .logout 
+        {
+            margin-left: 10px;
+            .img-svg
+            {
+                margin: 0;
+            }
+        }
+    }
+    &-profile_hidden
+    {
+        display: none;
+    }
+    &-scroll 
+    {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: $color-primary;
+        z-index: -1;
+        opacity: 0;
+        transition: .2s;
+        transform: translateY(-60px);
+        a 
+        {
+            border: 0 !important;
+        }
+        .choice-mode 
+        {
+            color: #fff;
+            font-family: Montserrat Regular;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: normal;
+            transition: .3s;
+            .img-svg
+            {
+                margin-right: 0;
+                margin-left: 10px;
+            }
+        }
+        .choice-mode:hover 
+        {
+            color: $color-hover;
+        }
+        &-right 
+        {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            .button-text 
+            {
+                margin-left: 60px;
+                color: #fff;
+                .img-svg 
+                {
+                    margin: 0;
+                }
+            }
+            .button-text:hover
+            {
+                color: $color-hover;
+            }
+            .profile 
+            {
+                .img-svg 
+                {
+                    margin-right: 10px;
+                }
+            }
+            .logout 
+            {
+                margin-left: 10px;
+            }
+            .feedback 
+            {
+                margin-right: 0;
+            }
+        }
+    }
+    &_fixed 
+    {
+        transform: translateY(0);
+        z-index: 5;
+        opacity: 1;
+    }
+    
 }
 
 // Быстрый поиск 
@@ -1985,6 +2173,141 @@ button
         color: $color-primary;
     }
 }
+
+
+// Вход в личный кабинет
+
+.little-title
+{
+    font-family: Montserrat Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $color-primary;
+    overflow: hidden;
+    /* Выравнивание заголовка по центру, 
+    ** можно использовать left, right */
+    text-align: center;
+}
+.little-title span 
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+.little-title:before, .little-title:after 
+{
+    content: "";
+    /* Указываем что наши линии будут строчно-блочные и 
+    ** выравнивание по высоте - по центру */
+    display: inline-block;
+    vertical-align: middle;
+    /* Задаем ширину 100% и выбираем высоту линии, 
+    ** в нашем примере она равна 4 пикселям */
+    width: 100%;
+    height: 2px;
+    /* Добавляем цвет для линии */
+    background-color: rgba(38,34,98,.1);
+    /* Добавляем пседоэлемантам возможность изменить 
+    ** позицию линии, для создания отступов от текста */
+    position: relative;
+}
+.little-title:before {
+    /* Смещаем левую линию на 100% влево, чтобы линия 
+    ** встала рядом с текстом слева */
+    margin-left: -100%;
+    /* Указываем в пикселях отступ линии от текста заголовка */
+    left: -7px;
+}
+.little-title:after {
+    /* Смещаем правую линию на 100% вправо, чтобы 
+    ** линия встала рядом с текстом справа */
+    margin-right: -100%;
+    /* Указываем в пикселях отступ линии от текста заголовка */
+    right: -7px;
+}
+
+.social-networks
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &-row 
+    {
+        display: flex;
+        align-items: center;
+    }
+    .social-networks__ref
+    {
+        width: 36px;
+        height: 36px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0;
+        box-shadow: 0px 10px 20px rgba(15, 20, 91, 0.1);
+        margin-left: 18px;
+        margin-right: 18px;
+        transition: .3s;
+        .img-svg 
+        {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    .social-networks__ref:hover 
+    {
+        background-color: $color-hover;
+        .img-svg path 
+        {
+            fill: #fff;
+        }
+    }
+}
+
+.registration-offer
+{
+    text-align: center;
+}
+
+.container-compressed
+{
+    width: 610px;
+    margin: 0 auto;
+    form
+    {
+        input[type="text"], input[type="submit"], input[type="password"]
+        {
+            display: block;
+            width: 100%;
+        }
+        label 
+        {
+            margin-bottom: 10px;
+            font-family: Montserrat Regular;
+            font-size: 15px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+        }
+        .block-remember 
+        {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
+
+
 
 
 .footer 

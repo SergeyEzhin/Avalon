@@ -1,10 +1,7 @@
-<svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0)">
-<path d="M5 15.4H9.3L19.2 4.7L15.1 0L5 9.9V15.4ZM7 10.7L15 2.7L16.6 4.7L8.5 13.4H7V10.7ZM20 10.4C20 14.2 20 16.7 20 20.4C13.4 20.4 16.8 20.4 0 20.4C0 11.7 0 9.1 0 0.4C3.8 0.4 6.2 0.4 10 0.4V2.4H2V18.4H18V10.4H20Z" fill="#262262"/>
-<defs>
-<clipPath id="clip0">
-<rect width="20" height="20.4" fill="white"/>
-</clipPath>
-</defs>
-</g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 20 20.4" style="enable-background:new 0 0 20 20.4;" xml:space="preserve" width="20" height="20">
+<path id="edit_x5F_cover" d="M5,15.4h4.3l9.9-10.7L15.1,0L5,9.9V15.4z M7,10.7l8-8l1.6,2l-8.1,8.7H7V10.7z M20,10.4
+	c0,3.8,0,6.3,0,10c-6.6,0-3.2,0-20,0c0-8.7,0-11.3,0-20c3.8,0,6.2,0,10,0v2H2v16h16v-8H20z" fill="#262262" />
 </svg>

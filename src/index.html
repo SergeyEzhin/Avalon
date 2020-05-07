@@ -11,7 +11,7 @@
             <div class="header-top">
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
-                        <div class="col-3 header-top-left">
+                        <div class="col-auto header-top-left">
                             <a href="#" class="choice-lang">
                                 RU 
                                 <img class="img-svg" src="./img/arrow_down.svg" alt="">
@@ -21,11 +21,19 @@
                                 <img class="img-svg" src="./img/arrow_down.svg" alt="">
                             </a>
                         </div>
-                        <div class="col-5 header-top-middle">
+                        <div class="col-auto header-top-middle">
                             <a href="#" class="choice-mode choice-mode_active">Ищу работу</a>
                             <a href="#" class="choice-mode">Ищу работника</a>
                         </div>
-                        <div class="col-auto header-top-right">
+                        <div class="col-auto header-top-right justify-content-between">
+                            <a href="#" class="button-text favorites hidden">
+                                <img class="img-svg" src="./img/icon_favorites.svg" alt="">
+                                Избранное
+                            </a>
+                            <a href="#" class="button-text feedback hidden" data-count="+16">
+                                <img class="img-svg" src="./img/icon_feedback.svg" alt="">
+                                Отклики
+                            </a>
                             <a href="#" class="help">
                                 Помощь
                                 <img class="img-svg" src="./img/arrow_down.svg" alt="">
@@ -37,25 +45,77 @@
             <div class="header-bottom">
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
-                        <div class="col-5 header-bottom-left">
+                        <div class="col-auto header-bottom-left">
                             <a href="#">
                                 <img src="./img/logo.svg" alt="">
                             </a>
                             <p>Быстрый поиск узкоквалифицированной работы</p>
                         </div>
-                        <div class="col-5 header-bottom-right">
+                        <div class="col-auto header-bottom-right">
                             <a href="#" class="button-text search-work">
                                 <img class="img-svg" src="./img/icon_search.svg" alt="">
                                 Найти работу
                             </a>
                             <a href="#" class="button-text release-resume">
-                                <img class="img-svg" src="./img/new_resume_icon.svg" alt="">
+                                <img class="img-svg" src="./img/icon_resume.svg" alt="">
                                 Разместить резюме
                             </a>
-                            <a href="#" class="button-text enter-account">
+                            <a href="#" class="button-text login">
                                 <img class="img-svg" src="./img/icon_enter.svg" alt="">
                                 Войти
                             </a>
+                            <div class="header-profile header-profile_hidden">
+                                <a href="#" class="button-text profile">
+                                    <img class="img-svg" src="./img/icon_profile.svg" alt="">
+                                    Чапаев
+                                </a>
+                                <a href="#" class="button-text logout">
+                                    <img class="img-svg" src="./img/icon_logout.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-scroll">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto">
+                            <a href="#">
+                                <img src="./img/logo_fixed.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="#" class="button-text choice-mode">
+                                Ищу работника
+                                <img class="img-svg" src="./img/arrow_down_scroll.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-6 header-scroll-right">
+                            <a href="#" class="button-text favorites hidden">
+                                <img class="img-svg" src="./img/icon_favorites_scroll.svg" alt="">
+                            </a>
+                            <a href="#" class="button-text feedback hidden" data-count="+16">
+                                <img class="img-svg" src="./img/icon_feedback_scroll.svg" alt="">
+                            </a>
+                            <a href="#" class="button-text search-work">
+                                <img class="img-svg" src="./img/icon_search_scroll.svg" alt="">
+                            </a>
+                            <a href="#" class="button-text release-resume">
+                                <img class="img-svg" src="./img/icon_resume_scroll.svg" alt="">
+                            </a>
+                            <a href="#" class="button-text login">
+                                <img class="img-svg" src="./img/icon_enter_scroll.svg" alt="">
+                            </a>
+                            <div class="header-profile header-profile_hidden">
+                                <a href="#" class="button-text profile">
+                                    <img class="img-svg" src="./img/icon_profile_scroll.svg" alt="">
+                                    Чапаев
+                                </a>
+                                <a href="#" class="button-text logout">
+                                    <img class="img-svg" src="./img/icon_logout_scroll.svg" alt="">
+                                </a>
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -87,7 +147,7 @@
                     </div>
                     <div class="quick-job-search__buttons"> 
                         <a href="#" class="button-text release-resume">
-                            <img class="img-svg" src="./img/new_resume_icon.svg" alt="">
+                            <img class="img-svg" src="./img/icon_resume.svg" alt="">
                             Разместить резюме
                         </a>
                         <a href="#" class="button-text vacancies-map">
