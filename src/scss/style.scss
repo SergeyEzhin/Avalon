@@ -496,6 +496,11 @@ select
     border-color: $color-primary !important;
 }
 
+.choices[data-type*=select-one]:after
+{
+    right: 20px;
+}
+
 // Стили для блока с файлом
 
 .block-file 
@@ -785,6 +790,128 @@ textarea:focus
         }
     }
 }
+
+// Стили дял календаря
+
+.qs-datepicker-container 
+{
+    width: 265px;
+    box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+    background-color: #ffffff;
+    border: 0;
+    border-radius: 0;
+}
+
+.qs-datepicker .qs-controls
+{
+    background: #fff; 
+    padding-top: 10px;
+}
+
+.qs-datepicker .qs-squares
+{
+    padding: 6px;
+    padding-top: 10px;
+}
+
+.qs-datepicker .qs-month-year 
+{
+    font-family: Montserrat Bold;
+    font-size: 13px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $color-primary;
+    border: 0 !important;
+}
+
+.qs-datepicker .qs-square.qs-day 
+{
+    font-family: Montserrat Bold;
+    font-size: 11px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $color-primary;
+    text-transform: uppercase;
+    width: 26px;
+}
+
+.qs-datepicker .qs-square
+{
+    width: 26px;
+    height: 25px;
+    border-radius: 3px;
+    border: solid 1px transparent;
+    background-color: #ffffff;
+    font-family: Montserrat Bold;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $color-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4px;
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: .3s;
+
+}
+
+.qs-datepicker .qs-current 
+{
+    border-color: currentColor;
+}
+
+.qs-datepicker .qs-current span 
+{
+    text-decoration: none !important;
+}
+
+.qs-datepicker .qs-current:hover
+{
+    color: $color-primary !important;
+    border-color: currentColor;
+    background: #fff !important;
+}
+
+.qs-datepicker .qs-active 
+{
+    background: $color-clicked !important;
+    color: #fff !important;
+}
+
+.qs-datepicker .qs-square:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active):hover
+{
+    background: $color-hover;
+    color: #fff;
+}
+
+.qs-datepicker .qs-arrow:hover
+{
+    background: transparent !important;
+}
+
+// .qs-datepicker .qs-arrow.qs-left:after, .qs-datepicker .qs-arrow.qs-right:after
+// {
+//   display: none;
+// }
+
+// .qs-datepicker .qs-arrow.qs-right
+// {
+//     opacity: 0;
+//     z-index: -1;
+//     pointer-events: none;
+// }
+
 
 // Шапка 
 
@@ -1423,6 +1550,80 @@ button
     outline: none;
 }
 
+// Карточка компании
+
+.company-card
+{
+    display: flex;
+    padding: 32px;
+    background-color: #fff;
+    border-radius: 3px;
+    // width: 400px;
+    position: relative;
+    &__left 
+    {
+        width: 31%;
+    }
+    &__right 
+    {
+        margin-left: 26px;
+        width: 65%;
+    }
+    &__image 
+    {
+        img 
+        {
+            max-width: 100%;
+            height: auto;
+            width: auto !important;
+        }
+    }
+    &__name 
+    {
+        font-family: Montserrat Bold;
+        font-size: 18px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $color-primary;
+        max-height: 44px;
+        height: 44px;
+        overflow: hidden;
+        margin-bottom: 22px;
+    }
+    &__count 
+    {
+        font-family: Montserrat Light;
+        font-size: 16px;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $color-disabled;
+        max-height: 20px;
+        height: 20px;
+        overflow: hidden;
+        margin-bottom: 30px;
+    }
+    &__desc 
+    {
+        font-family: Montserrat Regular;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $color-primary;
+        max-height: 77px;
+        height: 77px;
+        overflow: hidden;
+    }
+}
+
 .top-companies 
 {
     h1 
@@ -1450,77 +1651,6 @@ button
         &-wrapper 
         {
 
-        }
-        &-block 
-        {
-            display: flex;
-            padding: 32px;
-            background-color: #fff;
-            border-radius: 3px;
-            // width: 400px;
-            position: relative;
-            &__left 
-            {
-                width: 31%;
-            }
-            &__right 
-            {
-                margin-left: 26px;
-                width: 65%;
-            }
-            &__image 
-            {
-                img 
-                {
-                    max-width: 100%;
-                    height: auto;
-                    width: auto !important;
-                }
-            }
-            &__name 
-            {
-                font-family: Montserrat Bold;
-                font-size: 18px;
-                font-weight: bold;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: normal;
-                letter-spacing: normal;
-                color: $color-primary;
-                max-height: 44px;
-                height: 44px;
-                overflow: hidden;
-                margin-bottom: 22px;
-            }
-            &__count 
-            {
-                font-family: Montserrat Light;
-                font-size: 16px;
-                font-weight: 300;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: normal;
-                letter-spacing: normal;
-                color: $color-disabled;
-                max-height: 20px;
-                height: 20px;
-                overflow: hidden;
-                margin-bottom: 30px;
-            }
-            &__desc 
-            {
-                font-family: Montserrat Regular;
-                font-size: 16px;
-                font-weight: normal;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: normal;
-                letter-spacing: normal;
-                color: $color-primary;
-                max-height: 77px;
-                height: 77px;
-                overflow: hidden;
-            }
         }
     }
 }
@@ -2054,7 +2184,7 @@ button
     }
 }
 
-.list-image 
+.image-vacancies
 {
     border-radius: 3px;
     box-shadow: 0 10px 20px 0 rgba(15,20,91,.1);
@@ -2063,23 +2193,68 @@ button
     height: 488px;
     max-height: 488px;
     max-width: 295px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .search-list
 {
     margin-top: 32px;
-    &-row
+    &-row-vacancies
     {
         margin-left: -10px;
         margin-right: -10px;
+        .col-4
+        {
+            margin-bottom: 22px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
     }
-    .col-4
+    &-row-companies
     {
-        margin-bottom: 22px;
-        padding-left: 10px;
-        padding-right: 10px;
+        margin-left: -9px;
+        margin-right: -9px;
+        .col-6 
+        {
+            margin-bottom: 22px;
+            padding-left: 9px;
+            padding-right: 9px;
+        }
+        .company-card 
+        {
+            height: 300px;
+            box-shadow: 0 10px 20px 0 rgba(15,20,91,.1);
+            border-radius: 3px;
+            .title-rating 
+            {
+                margin-top: 22px;
+                margin-bottom: 22px;
+                font-family: Montserrat Bold;
+                font-size: 14px;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $color-primary;
+            }
+            .company-card__name
+            {
+                height: 66px;
+                max-height: 66px;
+            }
+            .company-card__desc
+            {
+                height: 96px;
+                max-height: 96px;
+            }
+        }
     }
 }
+
+
 
 .list-container 
 {
@@ -2308,6 +2483,243 @@ button
 }
 
 
+// Страница Регистрация
+
+.advantages-registration 
+{
+    h2 
+    {
+        margin-bottom: 40px;
+    }
+    &-row 
+    {
+        margin-left: -37.5px;
+        margin-right: -37.5px;
+        .block-advantages-registration
+        {
+            padding-left: 37.5px;
+            padding-right: 37.5px;
+            &__image 
+            {
+                text-align: center;
+                height: 120px;
+                img 
+                {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+            &__name 
+            {
+                font-family: Montserrat Bold;
+                font-size: 15px;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $color-primary;
+                margin-top: 32px;
+                text-align: center;
+            }
+            &__desc 
+            {
+                font-family: Montserrat Regular;
+                font-size: 14px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 22px;
+                letter-spacing: normal;
+                color: $color-primary;
+                margin-top: 32px;
+                text-align: center;
+            }
+
+        }
+    }
+}
+
+#submit-registration 
+{
+    display: flex;
+    width: auto;
+    margin: 0 auto;
+}
+
+// Выбор пола 
+
+.block-gender 
+{
+    display: flex;
+    align-items: center;
+    padding-bottom: 45px;
+    border-bottom: 2px solid #DDDCE8;
+    .block-radio 
+    {
+        margin-top: 0;
+        margin-left: 50px;
+    }
+    label 
+    {
+        margin-bottom: 0 !important;
+    }
+    p 
+    {
+        font-family:Montserrat Regular;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $color-primary;
+    }
+}
+
+// Tooltip 
+
+.block-tooltip 
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    .img-svg 
+    {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+.block-tooltip:before 
+{
+    content: "";
+    position: absolute;
+    border: 8px solid rgba(0,0,0,0);
+    border-right: 12px solid #fff;
+    display: block;
+    width: 0;
+    height: 0;
+    right: -18px;
+    top: 0;
+    transition: .3s;
+    opacity: 0;
+    z-index: -1;
+}
+
+.block-tooltip:after 
+{
+    content: attr(data-info);
+    position: absolute;
+    display: block;
+    width: 230px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    font-family: Montserrat Regular;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 22px;
+    letter-spacing: normal;
+    color: $color-primary;
+    text-transform: initial;
+    right: -248px;
+    top: -18px;
+    transition: .3s;
+    opacity: 0;
+    z-index: -1;
+}
+
+.block-tooltip:hover 
+{
+    .img-svg path
+    {
+        fill: $color-ref;
+    }
+}
+
+.block-tooltip:hover:before, .block-tooltip:hover:after 
+{
+    opacity: 1;
+    z-index: 3;
+} 
+
+// Табы 
+
+.tabs 
+{
+    &-items 
+    {
+        display: flex;
+        justify-content: space-between;
+        .tabs-item 
+        {
+            font-family: Raleway Bold;
+            font-size: 16px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-disabled;
+            padding-bottom: 15px;
+            padding-left: 20px;
+            padding-right: 20px;
+            transition: .3s;
+            text-transform: uppercase;
+            border-bottom: 4px solid currentColor;
+            display: flex;
+            .block-tooltip 
+            {
+                margin-left: 10px;
+            }
+        }
+        .tabs-item_active 
+        {
+            color: $color-ref !important;
+        }
+        .tabs-item:hover 
+        {
+            color: $color-hover;
+        }
+    }
+    &-content 
+    {
+        &-block 
+        {
+            display: none;
+        }
+        &-block_active 
+        {
+            display: block;
+        }
+    }
+}
+
+// Страница Список компаний
+
+.image-companies 
+{
+    display: block;
+    // width: 453px;
+    max-width: 453px;
+    height: 300px;
+    max-height: 300px;
+    border-radius: 3px;
+    box-shadow: 0 10px 20px 0 rgba(15,20,91,.1);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 0;
+}
 
 
 .footer 

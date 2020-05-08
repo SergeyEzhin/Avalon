@@ -1,6 +1,7 @@
 import '../scss/style.scss';
 import Choices from  '../../node_modules/choices.js/src/scripts/choices';
 import 'owl.carousel';
+import datepicker from 'js-datepicker';
 
 // Вывод svg
 
@@ -207,6 +208,78 @@ if(inputFile.length > 0)
     });
 }
 
+
+// Табы 
+
+var tabs = document.querySelectorAll('.tabs');
+
+if(tabs.length > 0)
+{
+  tabs.forEach(function(elem, index)
+  {
+    var tabsItem = elem.querySelectorAll('.tabs-item');
+    var tabsContent = elem.querySelector('.tabs-content');
+    var tabsItems = elem.querySelector('.tabs-items')
+
+    tabsItem.forEach(function(elem, index)
+    {
+      elem.addEventListener('click', function(e)
+      {
+        e.preventDefault();
+        if(!elem.classList.contains('tabs-item_active'))
+        {
+          // var prevDataTab = tabsItems.querySelector('.tabs-item_active').dataset.tab;
+          tabsItems.querySelector('.tabs-item_active').classList.remove('tabs-item_active');
+          elem.classList.add('tabs-item_active');
+          var dataTab = elem.dataset.tab;
+          if(tabsContent.querySelectorAll('.tabs-content-block_active').length > 0)
+          {
+            let oldTabsContent = tabsContent.querySelectorAll('.tabs-content-block_active');
+            oldTabsContent.forEach(tab => {
+              tab.classList.remove('tabs-content-block_active');
+            });
+            // tabsContent.querySelector('.tabs-content-block_active').classList.remove('tabs-content-block_active');
+          }
+          if(tabsContent.querySelectorAll('div[data-tab="' + dataTab + '"]').length > 0)
+          {
+            let newTabsContent = tabsContent.querySelectorAll('div[data-tab="' + dataTab + '"]');
+            newTabsContent.forEach(tab => {
+              tab.classList.add('tabs-content-block_active');
+            });
+            // tabsContent.querySelector('div[data-tab="' + dataTab + '"]').classList.add('tabs-content-block_active');
+          }
+        }
+      });
+    });
+  });
+}
+
+
+// Datapicker 
+
+
+let inputBirthday = document.querySelector('#birthday');
+
+const picker = datepicker(inputBirthday, {
+  formatter: (input, date, instance) => 
+  {
+    const value = date.toLocaleDateString();
+    input.value = value; // => '1/1/2099'
+  },
+  startDay: 0,
+  customDays: ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
+  customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+  showAllDates: true, 
+  overlayButton: 'Выбрать', 
+  overlayPlaceholder: 'Укажите год'
+
+});
+
+// if(document.querySelector('.qs-datepicker'))
+// {
+//   document.querySelector('.qs-left').appendChild('<img src="../img/arrow_left_datapicker.svg">');
+//   document.querySelector('.qs-right').appendChild('<img src="../img/arrow_right_datapicker.svg">');
+// }
 
 
 

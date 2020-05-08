@@ -45,6 +45,7 @@
     "fetch-polyfill": "^0.8.2",
     "gsap": "^3.1.1",
     "jquery": "^3.4.1",
+    "js-datepicker": "^5.11.0",
     "normalize.css": "^8.0.1",
     "owl.carousel": "^2.3.4",
     "tiny-slider": "^2.9.2",

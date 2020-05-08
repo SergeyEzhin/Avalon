@@ -125,32 +125,126 @@
             <div class="container">
                 <h1>Регистрация</h1>
                 <div class="content-page block-mt-dark-blue">
+                    <div class="advantages-registration">
+                        <h2>Преимущества регистрации в личном кабинете</h2>
+                        <p>Регистрация в интернет-магазине отличается от регистрации, скажем, в почтовом сервисе. Вы запрашиваете намного больше информации. Если в большинстве случаев для регистрации на сайте посетителю достаточно ввести адрес электронной почты и подтвердить свои намерения, кликнув по ссылке в письме, то при регистрации в интернет-магазине запрашивается гораздо больше данных. Причем большая часть этих данных рассматривается покупателем как информация личного характера. А терпением подавляющая масса интернет-пользователей не отличается — факт общеизвестен. Так что если преимущества регистрации не очевидны еще до ее начала, весь процесс вызовет раздражение закономерные вопросы со стороны покупателя. Будет ли указанный ящик завален спамом? Стоит ли регистрация денег?</p>
+                        <div class="block-mt-blue">
+                            <div class="row advantages-registration-row">
+                                <div class="col-3">
+                                    <div class="block-advantages-registration">
+                                        <div class="block-advantages-registration__image">
+                                            <img src="./img/img_adv1.png" alt="">
+                                        </div>
+                                        <p class="block-advantages-registration__name">Заголовок преимущества</p>
+                                        <p class="block-advantages-registration__desc">Регистрация в интернет-магазине отличается от регистрации, скажем, в почтовом сервисе.</p>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="block-advantages-registration">
+                                        <div class="block-advantages-registration__image">
+                                            <img src="./img/img_adv2.png" alt="">
+                                        </div>
+                                        <p class="block-advantages-registration__name">Заголовок преимущества</p>
+                                        <p class="block-advantages-registration__desc">Вы запрашиваете намного больше информации.</p>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="block-advantages-registration">
+                                        <div class="block-advantages-registration__image">
+                                            <img src="./img/img_adv3.png" alt="">
+                                        </div>
+                                        <p class="block-advantages-registration__name">Заголовок преимущества</p>
+                                        <p class="block-advantages-registration__desc">Если в большинстве случаев для регистрации на сайте посетителю достаточно ввести адрес электронной почты.</p>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="block-advantages-registration">
+                                        <div class="block-advantages-registration__image">
+                                            <img src="./img/img_adv4.png" alt="">
+                                        </div>
+                                        <p class="block-advantages-registration__name">Заголовок преимущества</p>
+                                        <p class="block-advantages-registration__desc">Причем большая часть этих данных рассматривается покупателем как информация личного характера.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="container-compressed">
-                        <form action="" name="form-password-recovery" id="form-password-recovery" enctype="multipart/form-data">
-                            <div class="block-mb-green">
-                                <label for="phone">Телефон</label>
-                                <input type="text" placeholder="+7" name="phone" id="phone">
-                            </div>
-                            <div class="block-mb-green">
-                                <div class="little-title">
-                                    <span>или</span>
+                        <div class="block-mt-blue">
+                            <div class="tabs">
+                                <div class="tabs-items">
+                                    <a href="#" class="tabs-item tabs-item_active" data-tab="tab-simple-registration">
+                                        Простая регистрация
+                                    </a>
+                                    <a href="#" class="tabs-item" data-tab="tab-extended-registration">
+                                        Расширенная регистрация
+                                        <span class="block-tooltip" data-info="Всплывающий тултип с кратким пояснительным текстом, появляющийся при наведении курсора на иконку">
+                                            <img class="img-svg" src="./img/icon_info.svg" alt="">
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="tabs-content block-mt-blue">
+                                    <form action="" name="form-registration" id="form-registration" enctype="multipart/form-data">
+                                        <div class="block-mb-yellow">
+                                            <label for="name">Имя</label>
+                                            <input type="text" placeholder="ИМЯ" name="name" id="name">
+                                        </div>
+                                        <div class="block-mb-yellow">
+                                            <label for="sername">Фамилия</label>
+                                            <input type="text" placeholder="ФАМИЛИЯ" name="sername" id="sername">
+                                        </div>
+                                        <div class="block-mb-yellow">
+                                            <label for="patronymic">Отчество</label>
+                                            <input type="text" placeholder="ОТЧЕСТВО" name="patronymic" id="patronymic">
+                                        </div>
+                                        <div class="tabs-content-block" data-tab="tab-extended-registration">
+                                            <div class="block-mb-yellow">
+                                                <label for="birthday">Дата рождения</label>
+                                                <input type="text" name="birthday" id="birthday" placeholder="ВЫБЕРИТЕ ДАТУ">
+                                            </div>
+                                            <div class="block-gender block-mb-green">
+                                                <p>Пол:</p>
+                                                <div class="block-radio">
+                                                    <label for="male">
+                                                        <input type="radio" id="male" name="gender" hidden checked>
+                                                        <div class="radio"></div>
+                                                        Мужской
+                                                    </label>
+                                                </div>
+                                                <div class="block-radio">
+                                                    <label for="female">
+                                                        <input type="radio" id="female" name="gender" hidden>
+                                                        <div class="radio"></div>
+                                                        Женский
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="block-mb-yellow">
+                                            <label for="phone">Телефон</label>
+                                            <input type="text" name="phone" id="phone" placeholder="+7">
+                                        </div>
+                                        <div class="tabs-content-block" data-tab="tab-extended-registration">
+                                            <div class="block-mb-yellow">
+                                                <label for="email">E-mail</label>
+                                                <input type="text" name="email" id="email" placeholder="E-MAIL">
+                                            </div>
+                                            <div class="block-mb-yellow">
+                                                <label for="address">Адрес</label>
+                                                <input type="text" name="address" id="address" placeholder="РЕГИОН / РАЙОН, ГОРОД / Н.П., УЛИЦА">
+                                            </div>
+                                        </div>
+                                        <div class="block-mb-green">
+                                            <label for="password">Пароль</label>
+                                            <input type="password" name="password" id="password" placeholder="ПАРОЛЬ">
+                                        </div>
+                                        <p class="block-mb-green" style="font-size: 14px;">* - поля, обязательные для заполнения</p>
+                                        <p class="block-mb-green" style="font-size: 14px;">Нажимая кнопку «Зарегистрироваться», Вы даёте своё согласие на обработку персональных данных</p>
+                                        <input type="submit" name="submit-registration" class="main-button" id="submit-registration" value="Зарегистрироваться">
+                                    </form>
                                 </div>
                             </div>
-                            <div class="block-mb-green">
-                                <label for="email">E-mail</label>
-                                <input type="text" name="email" id="email" placeholder="E-MAIL">
-                            </div>
-                            <div class="block-mb-green">
-                                <div class="block-file">
-                                    <label for="file">
-                                        <input type="file" name="file" id="file" hidden>
-                                        <div class="other-button button-attach-file">Прикрепить файл</div>
-                                        <span class="file-value">Файл не выбран</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <input type="submit" name="submit-password-recovery" class="main-button" id="submit-password-recovery" value="Отправить">
-                        </form>
+                        </div>
                     </div> 
                 </div>
             </div>
