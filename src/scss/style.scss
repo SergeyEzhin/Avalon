@@ -2198,10 +2198,10 @@ button
     background-size: cover;
 }
 
-.search-list
+.main-search
 {
     margin-top: 32px;
-    &-row-vacancies
+    .search-list-row-vacancies
     {
         margin-left: -10px;
         margin-right: -10px;
@@ -2212,7 +2212,7 @@ button
             padding-right: 10px;
         }
     }
-    &-row-companies
+    .search-list-row-companies
     {
         margin-left: -9px;
         margin-right: -9px;
@@ -2719,6 +2719,214 @@ button
     background-repeat: no-repeat;
     background-size: cover;
     border: 0;
+}
+
+// Карта 
+
+.map-api 
+{
+    height: 925px;
+    width: 100%;
+    box-shadow: 0 10px 20px 0 rgba(15,20,91,.1);
+}
+
+// Стили для балуна
+
+ymaps[class$='balloon__content'] 
+{
+    padding: 20px 0;
+}
+
+ymaps[class$='balloon__content'] ymaps:first-child
+{
+    width: 100% !important;
+    height: auto !important;
+}
+
+ymaps[class$='custom-scroll'] 
+{
+    border-radius: 6px !important;
+    box-shadow: 0 10px 20px 0 rgba(15,20,91,.1) !important;
+    width: 268px !important;
+    max-width: 268px !important;
+    // min-height: 159px !important;
+    height: auto !important;
+}
+ymaps[class$='balloon__tail'] 
+{
+    left: 120px !important;
+}
+
+ymaps[class$='pie-chart'] 
+{
+    line-height: normal !important;
+    height: 36px !important;
+    width: 36px !important;
+    display: flex !important;
+    justify-content: !important;
+    align-items: !important;
+}
+
+ymaps[class$='patched-for-print']
+{
+    background-image: none !important;
+    list-style-image: none !important;
+    height: 36px !important;
+    box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1) !important;
+    background: $color-hover !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+} 
+
+ymaps[class$='pie-chart-content']
+{
+    position: relative !important;
+    height: auto !important;
+    width: 100% !important;
+    font-family: Montserrat Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.88;
+    letter-spacing: normal;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.balloon-header-vacancy
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #DDDCE8;
+    padding-left: 20px;
+    padding-right: 20px;
+    &__left 
+    {
+        p:nth-child(1)
+        {
+            font-family: Montserrat Bold;
+            font-size: 14px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+        }
+        p:nth-child(2)
+        {
+            font-family: Montserrat Regular;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+            margin-top: 5px;
+        }
+    }
+    &__right 
+    {
+        a 
+        {
+            transition: .3s;
+            .img-svg 
+            {
+                margin-right: 0;
+            }
+        }
+        a:hover 
+        {
+            .img-svg path
+            {
+                fill: $color-hover;
+            }
+        }
+    }
+}
+
+.balloon-content-vacancy
+{
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    &-block 
+    {
+        display: flex;
+        align-items: center;
+        &__image 
+        {
+            img 
+            {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        &__name 
+        {
+            font-family: Montserrat Regular;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+            width: 160px;
+            margin-left: 10px;
+        }
+    }
+}
+
+.balloon-header-companies
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__left 
+    {
+        .balloon-content-companies-block
+        {
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            // border-right: 1px solid #DDDCE8;
+            &__image 
+            {
+                img 
+                {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+            &__name 
+            {
+                margin-left: 10px;
+                font-family: Montserrat Regular;
+                font-size: 14px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $color-primary;
+                width: 160px;
+            }
+        }
+    }
+    &__right 
+    {
+
+    }
 }
 
 

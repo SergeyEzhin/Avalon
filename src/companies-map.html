@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Все страницы</title>
+    <title>Компании</title>
 </head>
 <body>
     <div class="wrapper">
@@ -123,48 +123,138 @@
         </header>
         <div class="wrapper-content block-mt-dark-blue block-mb-purple">
             <div class="container">
-                <h1>Все страницы</h1>
+                <h1>Компании</h1>
                 <div class="content-page block-mt-dark-blue">
-                    <h2>Для соискателей</h2>
-                    <br>
-                    <ul>
-                        <li>
-                            <a href="index.html">Главная</a>
-                        </li>
-                        <li>
-                            <a href="vacancies-list.html">Список вакансий</a>
-                        </li>
-                        <li>
-                            <a href="faq.html">Часто задаваемые вопросы</a>
-                        </li>
-                        <li>
-                            <a href="articles.html">Статьи</a>
-                        </li>
-                        <li>
-                            <a href="current-article.html">Статья детальная</a>
-                        </li>
-                        <li>
-                            <a href="service-rules.html">Как пользоваться сервисом</a>
-                        </li>
-                        <li>
-                            <a href="access-account.html">Вход в личный кабинет</a>
-                        </li>
-                        <li>
-                            <a href="password-recovery.html">Восстановление пароля</a>
-                        </li>
-                        <li>
-                            <a href="registration.html">Регистрация</a>
-                        </li>
-                        <li>
-                            <a href="companies-list.html">Список компаний</a>
-                        </li>
-                        <li>
-                            <a href="vacancies-map.html">Вакансии на карте</a>
-                        </li>
-                        <li>
-                            <a href="companies-map.html">Компании на карте</a>
-                        </li>
-                    </ul>
+                    <div class="list-container">
+                        <div class="row list-container-row">
+                            <div class="col-3">
+                                <div class="sidebar-filter">
+                                    <form action="" id="form-filter">
+                                        <div class="block-select-filter block-mb-yellow">
+                                            <p class="block-select-filter__name">Город</p>
+                                            <select name="city">
+                                                <option value="0">Выберите город</option>
+                                                <option value="city1">Москва</option>
+                                                <option value="city2">Нижний Новгород</option>
+                                                <option value="city3">Казань</option>
+                                            </select>
+                                        </div>
+                                        <div class="block-choice-filter block-mb-yellow">
+                                            <p class="block-choice-filter__name">Тип работодателя</p>
+                                            <div class="block-checkbox">
+                                                <label for="direct-employers">
+                                                    <input type="checkbox" id="direct-employers" name="direct-employers" hidden checked>
+                                                    <div class="check"></div>
+                                                    Прямые работодатели
+                                                </label>
+                                            </div>
+                                            <div class="block-checkbox">
+                                                <label for="recruitment-agencies">
+                                                    <input type="checkbox" id="recruitment-agencies" name="recruitment-agencies" hidden checked>
+                                                    <div class="check"></div>
+                                                    Кадровые агенства
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="block-choice-filter block-mb-yellow">
+                                            <p class="block-choice-filter__name">Сфера деятельности</p>
+                                            <div class="block-checkbox">
+                                                <label for="building">
+                                                    <input type="checkbox" id="building" name="building" hidden>
+                                                    <div class="check"></div>
+                                                    Строительство
+                                                </label>
+                                            </div>
+                                            <div class="block-checkbox">
+                                                <label for="repairs">
+                                                    <input type="checkbox" id="repairs" name="repairs" hidden>
+                                                    <div class="check"></div>
+                                                    Ремонт
+                                                </label>
+                                            </div>
+                                            <div class="block-checkbox">
+                                                <label for="security">
+                                                    <input type="checkbox" id="security" name="security" hidden checked>
+                                                    <div class="check"></div>
+                                                    Охрана, безопасность
+                                                </label>
+                                            </div>
+                                            <div class="block-checkbox">
+                                                <label for="working-staff">
+                                                    <input type="checkbox" id="working-staff" name="working-staff" hidden checked>
+                                                    <div class="check"></div>
+                                                    Рабочий персонал
+                                                </label>
+                                            </div>
+                                            <div class="block-checkbox">
+                                                <label for="administrative-staff">
+                                                    <input type="checkbox" id="administrative-staff" name="administrative-staff" hidden checked>
+                                                    <div class="check"></div>
+                                                    Административный персонал
+                                                </label>
+                                            </div>
+                                            <div class="block-checkbox">
+                                                <label for="service">
+                                                    <input type="checkbox" id="service" name="service" hidden checked>
+                                                    <div class="check"></div>
+                                                    Инсталляция и сервис
+                                                </label>
+                                            </div>
+                                            <div class="block-checkbox">
+                                                <label for="production">
+                                                    <input type="checkbox" id="production" name="production" hidden checked>
+                                                    <div class="check"></div>
+                                                    Производство
+                                                </label>
+                                            </div>
+                                            <div class="block-checkbox">
+                                                <label for="agriculture">
+                                                    <input type="checkbox" id="agriculture" name="agriculture" hidden checked>
+                                                    <div class="check"></div>
+                                                    Сельское хозяйство
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="block-choice-filter block-mb-yellow">
+                                            <p class="block-choice-filter__name">Наличие открытых вакансий</p>
+                                            <div class="block-checkbox">
+                                                <label for="open-vacancies-yes">
+                                                    <input type="checkbox" id="open-vacancies-yes" name="open-vacancies-yes" hidden>
+                                                    <div class="check"></div>
+                                                    Да
+                                                </label>
+                                            </div>
+                                            <div class="block-checkbox">
+                                                <label for="open-vacancies-no">
+                                                    <input type="checkbox" id="open-vacancies-no" name="open-vacancies-no" hidden>
+                                                    <div class="check"></div>
+                                                    Нет
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="block-mt-green">
+                                            <input type="submit" name="submit-filter" class="main-button" value="Применить фильтр">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-9">
+                                <div class="additional-search">
+                                    <a href="#" class="button-text">
+                                        <img class="img-svg" src="./img/icon_list.svg" alt="">
+                                        Показать списком
+                                    </a>
+                                    <form action="" id="quick-search">
+                                        <input type="text" name="q" placeholder="Поиск по компаниям">
+                                        <input type="submit" name="submit-quick-search" value="" style="background-image: url(./img/bg-submit-quick-search.svg);">
+                                    </form>
+                                </div>
+                                <div class="main-search">
+                                    <div class="map-api" id="companies-map"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
