@@ -1691,6 +1691,7 @@ button
     max-width: 15px;
     display: inline-block;
     margin-right: 6px;
+    background-image: url(../img/icon_star_full.svg);
 }
 
 .i-star
@@ -1704,7 +1705,9 @@ button
    min-width: 15px;
    display: inline-block;
    margin-right: 6px;
+   background-image: url(../img/icon_star_empty.svg);
 }
+
 
 
 // Баннеры с рекламой 
@@ -2929,6 +2932,425 @@ ymaps[class$='pie-chart-content']
     }
 }
 
+
+// Вакансия детальная и Компания детальная
+
+// Поставить оценку 
+
+.block-to-rate 
+{
+    width: 210px;
+    height: 154px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 28px;
+    padding-right: 28px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+    p 
+    {
+        font-family: Montserrat Bold;
+        font-size: 15px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $color-primary;
+        margin-bottom: 32px;
+    }
+}
+
+.rating__group
+{
+    position: relative;
+    display: flex;
+    background-repeat: repeat-x;
+    background-image: url(../img/icon_big_star_empty.svg);
+    height: 30px;
+    background-size: 30px 30px;
+    width: 8.9em;
+    label 
+    {
+        margin-bottom: 0;
+    }
+    .rating__input
+    {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        // display: none;
+    }
+    .rating__star
+    {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        outline: 0;
+        cursor: pointer;
+        // margin-right: 4.5px;
+        // margin-left: 4.5px;
+        background-size: 30px 30px;
+        background-repeat: repeat-x;
+        // background-image: url(../img/icon_big_star_empty.svg);
+        transition: .3s;
+    }
+    .rating__star:nth-of-type(1) 
+    {
+        z-index: 5;
+        width: 1.78rem;
+    }
+    .rating__star:nth-of-type(2) 
+    {
+        z-index: 4;
+        width: 3.56rem;
+    }
+    .rating__star:nth-of-type(3) 
+    {
+        z-index: 3;
+        width: 5.34rem;
+    }
+    .rating__star:nth-of-type(4) 
+    {
+        z-index: 2;
+        width: 7.12rem;
+    }
+    .rating__star:nth-of-type(5) 
+    {
+        z-index: 1;
+        width: 8.9rem;
+    }
+    .rating__input:checked+.rating__star, .rating__star:hover
+    {
+        background-image: url(../img/icon_big_star_full.svg);
+    }
+
+}
+
+.brief-information
+{
+    display: flex;
+    justify-content: space-between;
+    &-block 
+    {
+        display: flex;
+        &__image 
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 190px;
+            height: 190px;
+            background-color: #ffffff;
+            box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+        }
+        &__info 
+        {
+            margin-left: 50px;
+        }
+        &__title 
+        {
+            font-family: Raleway Bold;
+            font-size: 30px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+            margin-bottom: 32px;
+        }
+        &__rating 
+        {
+            display: flex;
+            margin-bottom: 32px;
+            .rating__wrapper
+            {
+                margin-top: 0;
+            }
+            p 
+            {
+                margin-right: 20px;
+                font-family: Montserrat Bold;
+                font-size: 16px;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $color-primary;
+            }
+        }
+        &__contacts 
+        {
+            p, a 
+            {
+                font-family: Montserrat Regular;
+                font-size: 15px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $color-primary;
+                display: block;
+                border: 0;
+                margin-bottom: 22px;
+                img 
+                {
+                    margin-right: 20px;
+                    width: 20px;
+                }
+            }
+        }
+    }
+}
+
+.detailed-description
+{
+    h2 
+    {
+        margin-bottom: 43px;
+    }
+    &-block 
+    {
+        display: flex;
+        margin-bottom: 32px;
+        &__name 
+        {
+            width: 16%;
+            p
+            {
+                font-family: Montserrat Bold;
+                font-size: 16px;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 30px;
+                letter-spacing: normal;
+                color: $color-primary;
+            }
+        }
+        &__text 
+        {
+            width: 84%;
+            p 
+            {
+                font-family: Montserrat Regular;
+                font-size: 16px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 30px;
+                letter-spacing: normal;
+                color: $color-primary;
+            }
+        }
+    }
+}
+
+.wrapper-map 
+{
+    box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+}
+
+.wrapper-form-share 
+{
+    form 
+    {
+        .block-choice-filter 
+        {
+            display: flex;
+            align-items: center;
+            label 
+            {
+                margin-bottom: 0;
+                font-family: Montserrat Regular;
+                font-size: 16px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $color-primary;
+            }
+            .block-radio 
+            {
+                margin-top: 0;
+                margin-right: 40px;
+            }
+            &__name 
+            {
+                font-family: Raleway Bold;
+                font-size: 18px;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $color-ref;
+                margin-right: 50px;
+            }
+        }
+        input[type="text"]
+        {
+            width: 400px;
+            margin-right: 5px;
+        }
+    }
+}
+
+input[type="submit"]
+{
+    height: 53px;
+}
+
+.similar-vacancies
+{
+    position: relative;
+    h2 
+    {
+        margin-bottom: 43px;
+    }
+    &-slider 
+    {
+        position: relative;
+    }
+    .navigation-similar-vacancies 
+    {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        bottom: calc(50% + 15px);
+        z-index: 1;
+        button 
+        {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+        }
+        .owl-prev 
+        {
+            left: 10px;
+        }
+        .owl-next 
+        {
+            right: 10px;
+        }
+    }
+}
+
+.vacancies-company
+{
+    h2 
+    {
+        margin-bottom: 43px;
+    }
+    .row 
+    {
+        margin-left: -10px;
+        margin-right: -10px;
+        .col-3 
+        {
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 22px;
+        }
+    }
+}
+
+// 404-страница
+
+.title-404 
+{
+    text-align: center;
+    img 
+    {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.text-404 
+{
+    text-align: center;
+    p 
+    {
+        font-family: Montserrat Regular;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.88;
+        letter-spacing: normal;
+        color: $color-primary;
+    }
+    p:nth-child(2)
+    {
+        margin-top: 26px;
+    }
+}
+
+// Страница Профиль
+
+.profile-container 
+{
+    &-row 
+    {
+        margin-left: -25px;
+        margin-right: -25px;
+        .col-3 
+        {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+        .col-9 
+        {
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+    }
+    .sidebar-profile 
+    {
+        border-radius: 3px;
+        background-color: #ffffff;
+        padding: 43px 26px;
+        box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+        a 
+        {
+            display: block;
+            margin-bottom: 32px;
+            .img-svg 
+            {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        a:last-child 
+        {
+            margin-bottom: 0;
+        }
+    }
+    .sidebar-image 
+    {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 452px;
+        box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+    }
+}
 
 .footer 
 {

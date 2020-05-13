@@ -113,6 +113,23 @@ $('.usage-steps-slider-wrapper').owlCarousel({
 
 });
 
+// Слайдер Похожие вакансии
+
+$('.similar-vacancies-slider-wrapper').owlCarousel({
+  loop:true, //Зацикливаем слайдер
+  items:4,
+  margin:20, //Отступ от элемента справа в 50px
+  nav:true, //Отключение навигации
+  dots: false,
+  autoplay: false, //Автозапуск слайдера
+  smartSpeed:300, //Время движения слайда
+  autoplayTimeout:300, //Время смены слайда
+  mouseDrag: false,
+  touchDrag: false,
+  navContainer: '.navigation-similar-vacancies',
+  navText: ["<div class='arrow-slider'><img src='./img/arrow_slider_left.svg'></div>", "<div class='arrow-slider'><img src='./img/arrow_slider_right.svg'></div>"],
+});
+
 // Аккордеон
 
 try
@@ -501,6 +518,26 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         })
     });
+  }
+});
+
+// Форма Поделиться 
+
+let radioShareVk = document.querySelector('#share-vk');
+let radioShareEmail = document.querySelector('#share-email');
+let dataEmailShare = document.querySelector('.data-email-share');
+
+radioShareVk.addEventListener('change', () => {
+  if(radioShareVk.checked)
+  {
+    dataEmailShare.style.display = 'none';
+  }
+});
+
+radioShareEmail.addEventListener('change', () => {
+  if(radioShareEmail.checked)
+  {
+    dataEmailShare.style.display = 'inline-block';
   }
 });
 

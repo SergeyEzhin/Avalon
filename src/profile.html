@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Все страницы</title>
+    <title>Профиль</title>
 </head>
 <body>
     <div class="wrapper">
@@ -26,11 +26,11 @@
                             <a href="#" class="choice-mode">Ищу работника</a>
                         </div>
                         <div class="col-auto header-top-right justify-content-between">
-                            <a href="#" class="button-text favorites hidden">
+                            <a href="#" class="button-text favorites">
                                 <img class="img-svg" src="./img/icon_favorites.svg" alt="">
                                 Избранное
                             </a>
-                            <a href="#" class="button-text feedback hidden" data-count="+16">
+                            <a href="#" class="button-text feedback" data-count="+16">
                                 <img class="img-svg" src="./img/icon_feedback.svg" alt="">
                                 Отклики
                             </a>
@@ -60,14 +60,14 @@
                                 <img class="img-svg" src="./img/icon_resume.svg" alt="">
                                 Разместить резюме
                             </a>
-                            <a href="#" class="button-text login">
+                            <a href="#" class="button-text login hidden">
                                 <img class="img-svg" src="./img/icon_enter.svg" alt="">
                                 Войти
                             </a>
-                            <div class="header-profile header-profile_hidden">
+                            <div class="header-profile">
                                 <a href="#" class="button-text profile">
                                     <img class="img-svg" src="./img/icon_profile.svg" alt="">
-                                    Чапаев
+                                    Иванов Иван
                                 </a>
                                 <a href="#" class="button-text logout">
                                     <img class="img-svg" src="./img/icon_logout.svg" alt="">
@@ -92,10 +92,10 @@
                             </a>
                         </div>
                         <div class="col-6 header-scroll-right">
-                            <a href="#" class="button-text favorites hidden">
+                            <a href="#" class="button-text favorites">
                                 <img class="img-svg" src="./img/icon_favorites_scroll.svg" alt="">
                             </a>
-                            <a href="#" class="button-text feedback hidden" data-count="+16">
+                            <a href="#" class="button-text feedback" data-count="+16">
                                 <img class="img-svg" src="./img/icon_feedback_scroll.svg" alt="">
                             </a>
                             <a href="#" class="button-text search-work">
@@ -104,13 +104,13 @@
                             <a href="#" class="button-text release-resume">
                                 <img class="img-svg" src="./img/icon_resume_scroll.svg" alt="">
                             </a>
-                            <a href="#" class="button-text login">
+                            <a href="#" class="button-text login hidden">
                                 <img class="img-svg" src="./img/icon_enter_scroll.svg" alt="">
                             </a>
-                            <div class="header-profile header-profile_hidden">
+                            <div class="header-profile">
                                 <a href="#" class="button-text profile">
                                     <img class="img-svg" src="./img/icon_profile_scroll.svg" alt="">
-                                    Чапаев
+                                    Иванов Иван
                                 </a>
                                 <a href="#" class="button-text logout">
                                     <img class="img-svg" src="./img/icon_logout_scroll.svg" alt="">
@@ -123,60 +123,46 @@
         </header>
         <div class="wrapper-content block-mt-dark-blue block-mb-purple">
             <div class="container">
-                <h1>Все страницы</h1>
+                <h1>Профиль</h1>
                 <div class="content-page block-mt-dark-blue">
-                    <h2>Для соискателей</h2>
-                    <br>
-                    <ul>
-                        <li>
-                            <a href="index.html">Главная</a>
-                        </li>
-                        <li>
-                            <a href="vacancies-list.html">Список вакансий</a>
-                        </li>
-                        <li>
-                            <a href="faq.html">Часто задаваемые вопросы</a>
-                        </li>
-                        <li>
-                            <a href="articles.html">Статьи</a>
-                        </li>
-                        <li>
-                            <a href="current-article.html">Статья детальная</a>
-                        </li>
-                        <li>
-                            <a href="service-rules.html">Как пользоваться сервисом</a>
-                        </li>
-                        <li>
-                            <a href="access-account.html">Вход в личный кабинет</a>
-                        </li>
-                        <li>
-                            <a href="password-recovery.html">Восстановление пароля</a>
-                        </li>
-                        <li>
-                            <a href="registration.html">Регистрация</a>
-                        </li>
-                        <li>
-                            <a href="companies-list.html">Список компаний</a>
-                        </li>
-                        <li>
-                            <a href="vacancies-map.html">Вакансии на карте</a>
-                        </li>
-                        <li>
-                            <a href="companies-map.html">Компании на карте</a>
-                        </li>
-                        <li>
-                            <a href="current-vacancy.html">Вакансия детальная</a>
-                        </li>
-                        <li>
-                            <a href="current-company.html">Компания детальная</a>
-                        </li>
-                        <li>
-                            <a href="404.html">404</a>
-                        </li>
-                        <!-- <li>
-                            <a href="profile.html">Профиль</a>
-                        </li> -->
-                    </ul>
+                    <div class="profile-container">
+                        <div class="row profile-container-row">
+                            <div class="col-3">
+                                <div class="sidebar-profile">
+                                    <a href="#" class="button-text">
+                                        <img class="img-svg" src="./img/icon_profile.svg" alt="">
+                                        Профиль
+                                    </a>
+                                    <a href="#" class="button-text">
+                                        <img class="img-svg" src="./img/icon_my_resumes.svg" alt="">
+                                        Мои резюме
+                                    </a>
+                                    <a href="#" class="button-text release-resume">
+                                        <img class="img-svg" src="./img/icon_resume.svg" alt="">
+                                        Разместить резюме
+                                    </a>
+                                    <a href="#" class="button-text feedback" data-count="+16">
+                                        <img class="img-svg" src="./img/icon_feedback.svg" alt="">
+                                        Отклики
+                                    </a>
+                                    <a href="#" class="button-text favorites">
+                                        <img class="img-svg" src="./img/icon_favorites.svg" alt="">
+                                        Избранное
+                                    </a>
+                                    <a href="#" class="button-text favorites">
+                                        <img class="img-svg" src="./img/icon_subscribe.svg" alt="">
+                                        Подписка
+                                    </a>
+                                </div>
+                                <div class="sidebar-image block-mt-blue" style="background-image: url(./img/img_banner5.png);"></div>
+                            </div>
+                            <div class="col-9">
+                                <div class="profile-data">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
