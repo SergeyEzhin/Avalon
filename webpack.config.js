@@ -6,7 +6,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const isDev = process.env.NODE_ENV = 'development';
 const pages = ['index', 'articles', 'faq', 'vacancies-list', 'current-article', 'main', 'service-rules', 'access-account', 'password-recovery', 'registration', 'companies-list',
-'vacancies-map', 'companies-map', 'current-vacancy', 'current-company', '404', 'profile'];
+'vacancies-map', 'companies-map', 'current-vacancy', 'current-company', '404', 'profile', 'profile-editing', 'my-resumes', 'favorites-vacancies-list',
+'favorites-vacancies-map'];
 
 const webpackConfig = {
     context: path.resolve(__dirname, 'src'),

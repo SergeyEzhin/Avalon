@@ -1,3 +1,5 @@
+import 'whatwg-fetch';
+import 'nodelist-foreach-polyfill';
 import '../scss/style.scss';
 import Choices from  '../../node_modules/choices.js/src/scripts/choices';
 import 'owl.carousel';
@@ -527,19 +529,51 @@ let radioShareVk = document.querySelector('#share-vk');
 let radioShareEmail = document.querySelector('#share-email');
 let dataEmailShare = document.querySelector('.data-email-share');
 
-radioShareVk.addEventListener('change', () => {
-  if(radioShareVk.checked)
-  {
-    dataEmailShare.style.display = 'none';
-  }
-});
+if(radioShareVk && radioShareEmail)
+{
+  radioShareVk.addEventListener('change', () => {
+    if(radioShareVk.checked)
+    {
+      dataEmailShare.style.display = 'none';
+    }
+  });
 
-radioShareEmail.addEventListener('change', () => {
-  if(radioShareEmail.checked)
+  radioShareEmail.addEventListener('change', () => {
+    if(radioShareEmail.checked)
+    {
+      dataEmailShare.style.display = 'inline-block';
+    }
+  });
+}
+
+
+// Скрыть и показать пароль
+
+let togglePassword = document.querySelectorAll('.toggle-password');
+
+if(togglePassword.length > 0)
+{
+  togglePassword.forEach(elem => 
   {
-    dataEmailShare.style.display = 'inline-block';
-  }
-});
+    elem.addEventListener('click', (e) => 
+    {
+      e.preventDefault();
+      let inputPassword = elem.parentElement.querySelector('input[name="password"]');
+      inputPassword.type === 'password' ? inputPassword.type = 'text' : inputPassword.type = 'password';
+    });
+  });
+}
+
+// Проверка откликов в резюме 
+
+let resumesFeedback = document.querySelectorAll('.resumes-content-row-block.resumes-feedback-column p');
+
+if(resumesFeedback.length > 0)
+{
+  resumesFeedback.forEach(elem => {
+    elem.innerHTML === '0' ? elem.style.color = '#b7b6c3' : elem.style.borderBottom = '1px dashed currentColor';
+  });
+}
 
 
 
