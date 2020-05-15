@@ -3585,9 +3585,10 @@ input[type="submit"]
 
 // Страница Избранное - Список 
 
-.favorites-vacancies-map
+.favorites-vacancies-ref
 {
     width: max-content;
+    margin-bottom: 32px;
 }
 
 .favorites-list 
@@ -3602,6 +3603,159 @@ input[type="submit"]
             padding-left: 10px;
             padding-right: 10px;
         }
+    }
+}
+
+// Страница Отклики
+
+.response 
+{
+    background-color: #fff;
+    border-top: 4px solid #dddce8;
+    box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+    &-header 
+    {
+        padding: 20px 30px 20px 20px;
+        &-row 
+        {
+            display: flex;
+            justify-content: space-between;
+            &-block 
+            {
+                display: flex;
+                p 
+                {
+                    font-family: Raleway Bold;
+                    font-size: 14px;
+                    font-weight: bold;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: normal;
+                    letter-spacing: normal;
+                    color: $color-primary;
+                }
+                img 
+                {
+                    margin-left: 8px;
+                }
+            }
+            &-other-blocks 
+            {
+                display: flex;
+                justify-content: space-between;
+                padding-left: 140px;
+                width: 76%;
+            }
+        }
+    }
+    &-content 
+    {
+        &-row 
+        {
+            display: flex;
+            justify-content: space-between;
+            &-left 
+            {
+                width: 24%;
+                padding-left: 20px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                border-top: 1px solid #dddce8;
+            }
+            &-right 
+            {
+                width: 76%;
+                &-wrapper 
+                {
+                    padding-left: 150px;
+                    border-top: 1px solid #dddce8;
+                    .response-content-row 
+                    {
+                        padding-right: 30px;
+                        padding-top: 20px;
+                        padding-bottom: 20px;
+                        border-top: 1px solid #dddce8;
+                    }
+                    .response-content-row:nth-child(1)
+                    {
+                        border: 0;
+                    }
+                }
+            }
+            &-block 
+            {
+                display: flex;
+            }
+        }
+    }
+    &-name-column 
+    {
+        justify-content: flex-start;
+        width: 24%;
+    }
+    &-company-column
+    {
+        justify-content: flex-start;
+        width: 40%;
+    }
+    &-date-column 
+    {
+        justify-content: center;
+        width: 25%;
+    }
+    &-feedback-column 
+    {
+        justify-content: center;
+        width: 20%;
+    }
+    &-ref 
+    {
+        border: 0;
+        display: block;
+        transition: .3s;
+    }
+    &-ref:hover 
+    {
+        .img-svg path
+        {
+            fill: $color-hover;
+        }
+    }
+    &_new 
+    {
+        background-color: rgba(146, 200, 62, 0.1);
+        position: relative;
+    }
+    &_new:before 
+    {
+        content: attr(data-label);
+        position: absolute;
+        font-family: Montserrat Bold;
+        font-size: 14px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $color-hover;
+        left: 40px;
+        top: 26px;
+    }
+}
+
+// Отклик детальная
+
+#answer-employer 
+{
+    label 
+    {
+        display: block;
+        margin-bottom: 10px;
+    }
+    textarea 
+    {
+        width: 610px;
+        height: 198px;
     }
 }
 
