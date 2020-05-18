@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вход в личный кабинет</title>
+    <title>Отклик на вакансию «Столяр-обивщик»</title>
 </head>
 <body>
     <div class="wrapper">
@@ -26,11 +26,11 @@
                             <a href="#" class="choice-mode">Ищу работника</a>
                         </div>
                         <div class="col-auto header-top-right justify-content-between">
-                            <a href="#" class="button-text favorites hidden">
+                            <a href="#" class="button-text favorites">
                                 <img class="img-svg" src="./img/icon_favorites.svg" alt="">
                                 Избранное
                             </a>
-                            <a href="#" class="button-text feedback hidden" data-count="+16">
+                            <a href="#" class="button-text feedback" data-count="+16">
                                 <img class="img-svg" src="./img/icon_feedback.svg" alt="">
                                 Отклики
                             </a>
@@ -60,14 +60,14 @@
                                 <img class="img-svg" src="./img/icon_resume.svg" alt="">
                                 Разместить резюме
                             </a>
-                            <a href="#" class="button-text login">
+                            <a href="#" class="button-text login hidden">
                                 <img class="img-svg" src="./img/icon_enter.svg" alt="">
                                 Войти
                             </a>
-                            <div class="header-profile header-profile_hidden">
+                            <div class="header-profile">
                                 <a href="#" class="button-text profile">
                                     <img class="img-svg" src="./img/icon_profile.svg" alt="">
-                                    Чапаев
+                                    Иванов Иван
                                 </a>
                                 <a href="#" class="button-text logout">
                                     <img class="img-svg" src="./img/icon_logout.svg" alt="">
@@ -92,10 +92,10 @@
                             </a>
                         </div>
                         <div class="col-6 header-scroll-right">
-                            <a href="#" class="button-text favorites hidden">
+                            <a href="#" class="button-text favorites">
                                 <img class="img-svg" src="./img/icon_favorites_scroll.svg" alt="">
                             </a>
-                            <a href="#" class="button-text feedback hidden" data-count="+16">
+                            <a href="#" class="button-text feedback" data-count="+16">
                                 <img class="img-svg" src="./img/icon_feedback_scroll.svg" alt="">
                             </a>
                             <a href="#" class="button-text search-work">
@@ -104,13 +104,13 @@
                             <a href="#" class="button-text release-resume">
                                 <img class="img-svg" src="./img/icon_resume_scroll.svg" alt="">
                             </a>
-                            <a href="#" class="button-text login">
+                            <a href="#" class="button-text login hidden">
                                 <img class="img-svg" src="./img/icon_enter_scroll.svg" alt="">
                             </a>
-                            <div class="header-profile header-profile_hidden">
+                            <div class="header-profile">
                                 <a href="#" class="button-text profile">
                                     <img class="img-svg" src="./img/icon_profile_scroll.svg" alt="">
-                                    Чапаев
+                                    Иванов Иван
                                 </a>
                                 <a href="#" class="button-text logout">
                                     <img class="img-svg" src="./img/icon_logout_scroll.svg" alt="">
@@ -123,62 +123,78 @@
         </header>
         <div class="wrapper-content block-mt-dark-blue block-mb-purple">
             <div class="container">
-                <h1>Вход в личный кабинет</h1>
+                <h1>Отклик на вакансию «Столяр-обивщик»</h1>
                 <div class="content-page block-mt-dark-blue">
-                    <div class="container-compressed container-compressed_center">
-                        <form action="" name="form-enter-account" id="form-enter-account">
-                            <div class="block-mb-orange">
-                                <label for="phone">Телефон</label>
-                                <input type="text" placeholder="+7" name="phone" id="phone">
+                    <div class="profile-container">
+                        <div class="row profile-container-row">
+                            <div class="col-3">
+                                <div class="sidebar-profile">
+                                    <a href="#" class="button-text">
+                                        <img class="img-svg" src="./img/icon_profile.svg" alt="">
+                                        Профиль
+                                    </a>
+                                    <a href="#" class="button-text">
+                                        <img class="img-svg" src="./img/icon_my_resumes.svg" alt="">
+                                        Мои резюме
+                                    </a>
+                                    <a href="#" class="button-text release-resume">
+                                        <img class="img-svg" src="./img/icon_resume.svg" alt="">
+                                        Разместить резюме
+                                    </a>
+                                    <a href="#" class="button-text feedback" data-count="+16">
+                                        <img class="img-svg" src="./img/icon_feedback.svg" alt="">
+                                        Отклики
+                                    </a>
+                                    <a href="#" class="button-text favorites">
+                                        <img class="img-svg" src="./img/icon_favorites.svg" alt="">
+                                        Избранное
+                                    </a>
+                                    <a href="#" class="button-text favorites">
+                                        <img class="img-svg" src="./img/icon_subscribe.svg" alt="">
+                                        Подписка
+                                    </a>
+                                </div>
+                                <div class="sidebar-image block-mt-blue" style="background-image: url(./img/img_banner5.png);"></div>
                             </div>
-                            <div class="block-mb-orange">
-                                <label for="password">Пароль</label>
-                                <input type="password" name="password" id="password" placeholder="ПАРОЛЬ">
-                            </div>
-                            <div class="block-mb-green">
-                                <div class="block-remember">
-                                    <div class="block-checkbox">
-                                        <label for="remember-me">
-                                            <input type="checkbox" id="remember-me" name="remember-me" hidden>
-                                            <div class="check"></div>
-                                            Запомнить меня
-                                        </label>
+                            <div class="col-9">
+                                <div class="brief-information block-mb-green">
+                                    <div class="brief-information-block">
+                                        <div class="brief-information-block__image">
+                                            <img src="./img/logo_employer.svg" alt="">
+                                        </div>
+                                        <div class="brief-information-block__info">
+                                            <p class="brief-information-block__title">Компания «Мария»</p>
+                                            <p class="brief-information-block__vacancy">Вакансия <a href="#">Столяр-обивщик</a></p>
+                                        </div>
                                     </div>
-                                    <a href="#">Забыли пароль?</a>
                                 </div>
-                            </div>
-                            <div class="block-mb-green">
-                                <input type="submit" name="enter-account" class="main-button" id="enter-account" value="Войти">
-                            </div>
-                        </form>
-                        <div class="block-mb-green">
-                            <div class="little-title">
-                                <span>или</span>
-                            </div>
-                        </div>
-                        <div class="block-mb-blue">
-                            <div class="social-networks">
-                                <p>Войти через социальные сети:</p>
-                                <div class="social-networks-row block-mt-orange">
-                                    <a href="#" class="social-networks__ref">
-                                        <img class="img-svg" src="./img/icon_vk.svg" alt="">
-                                    </a>
-                                    <a href="#" class="social-networks__ref">
-                                        <img class="img-svg" src="./img/icon_cl.svg" alt="">
-                                    </a>
-                                    <a href="#" class="social-networks__ref">
-                                        <img class="img-svg" src="./img/icon_fb.svg" alt="">
-                                    </a>
-                                    <a href="#" class="social-networks__ref">
-                                        <img class="img-svg" src="./img/icon_gm.svg" alt="">
-                                    </a>
+                                <div class="block-mt-purple">
+                                    <div class="container-compressed">
+                                        <h2>Напишите работодателю</h2>
+                                        <div class="block-mt-green">
+                                            <form action="" name="form-message-employer" id="form-message-employer">
+                                                <label for="message">Сообщение</label>
+                                                <textarea name="message" id="message"></textarea>
+                                                <div class="block-mt-green">
+                                                    <div class="block-select-filter">
+                                                        <label for="select-resume">Прикрепить резюме</label>
+                                                        <select name="select-resume" id="select-resume">
+                                                            <option value="0">ВЫБЕРИТЕ РЕЗЮМЕ</option>
+                                                            <option value="1">Резюме 1</option>
+                                                            <option value="2">Резюме 2</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="block-mt-green">
+                                                    <input type="submit" class="main-button" name="submit-answer" value="Отправить">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="registration-offer">
-                            <p>У вас ещё нет аккаунта? <a href="#">Зарегистрируйтесь</a></p>
-                        </div>
-                    </div>   
+                    </div>
                 </div>
             </div>
         </div>

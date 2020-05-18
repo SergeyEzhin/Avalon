@@ -172,7 +172,7 @@ if(elemsSelect.length > 0)
   {
     new Choices(elem, {
       choices: [],
-      placeholder: false,
+      placeholder: true,
       searchEnabled: false,
       itemSelectText: ''
     });
@@ -676,6 +676,70 @@ if(resumesFeedback.length > 0)
     elem.innerHTML === '0' ? elem.style.color = '#b7b6c3' : elem.style.borderBottom = '1px dashed currentColor';
   });
 }
+
+
+// Блок Перезвонить мне 
+
+let callMe = document.querySelector('#call-me');
+let callMyself = document.querySelector('#call-myself');
+let timeCall = document.querySelector('.block-radio .choices');
+
+if(callMe && callMyself)
+{
+  timeCall.classList.add('disabled');
+  [callMe, callMyself].forEach(elem => {
+    elem.addEventListener('change', () => {
+      if(elem.checked)
+      {
+        timeCall.classList.toggle('disabled');
+      }
+    });
+  });
+}
+
+
+// Добавление другой должности 
+
+let addOtherPosition = document.querySelector('.add-other-position');
+let otherPositionBlock = document.querySelector('.other-position__block');
+let indexPosition = 1;
+
+if(addOtherPosition)
+{
+  addOtherPosition.addEventListener('click', (e) => {
+    e.preventDefault();
+    let newPosition = document.createElement('input');
+    indexPosition++;
+    newPosition.type = "text";
+    newPosition.id = 'other-position' + indexPosition;
+    newPosition.name = 'other-position' + indexPosition;
+    newPosition.placeholder = 'ДРУГАЯ ДОЛЖНОСТЬ';
+    newPosition.style.marginTop = '7px';
+    otherPositionBlock.appendChild(newPosition);
+  });
+}
+
+// Выбор способа рассылки
+
+let mailingMethodOption = document.querySelector('.mailing-method-option');
+let buttonMailingPhone = document.querySelector('#mailing-phone');
+let buttonMailingEmail = document.querySelector('#mailing-email');
+
+
+if(buttonMailingPhone && buttonMailingEmail)
+{
+  [buttonMailingEmail, buttonMailingPhone].forEach(button => {
+    button.addEventListener('change', () => {
+      let option = button.id;
+      if(mailingMethodOption.querySelector('.mailing-method-option_selected').dataset.option !== option)
+      {
+        mailingMethodOption.querySelector('.mailing-method-option_selected').classList.remove('mailing-method-option_selected');
+        mailingMethodOption.querySelector('div[data-option="' + option + '"]').classList.add('mailing-method-option_selected');
+      }
+    });
+  });
+}
+
 
 
 

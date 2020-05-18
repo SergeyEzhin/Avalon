@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вход в личный кабинет</title>
+    <title>Отклик на вакансию «Столяр-обивщик»</title>
 </head>
 <body>
     <div class="wrapper">
@@ -67,7 +67,7 @@
                             <div class="header-profile header-profile_hidden">
                                 <a href="#" class="button-text profile">
                                     <img class="img-svg" src="./img/icon_profile.svg" alt="">
-                                    Чапаев
+                                    Иванов Иван
                                 </a>
                                 <a href="#" class="button-text logout">
                                     <img class="img-svg" src="./img/icon_logout.svg" alt="">
@@ -110,7 +110,7 @@
                             <div class="header-profile header-profile_hidden">
                                 <a href="#" class="button-text profile">
                                     <img class="img-svg" src="./img/icon_profile_scroll.svg" alt="">
-                                    Чапаев
+                                    Иванов Иван
                                 </a>
                                 <a href="#" class="button-text logout">
                                     <img class="img-svg" src="./img/icon_logout_scroll.svg" alt="">
@@ -123,62 +123,65 @@
         </header>
         <div class="wrapper-content block-mt-dark-blue block-mb-purple">
             <div class="container">
-                <h1>Вход в личный кабинет</h1>
+                <h1>Отклик на вакансию «Столяр-обивщик»</h1>
                 <div class="content-page block-mt-dark-blue">
-                    <div class="container-compressed container-compressed_center">
-                        <form action="" name="form-enter-account" id="form-enter-account">
-                            <div class="block-mb-orange">
-                                <label for="phone">Телефон</label>
-                                <input type="text" placeholder="+7" name="phone" id="phone">
+                    <div class="brief-information block-mb-green">
+                        <div class="brief-information-block">
+                            <div class="brief-information-block__image">
+                                <img src="./img/logo_employer.svg" alt="">
                             </div>
-                            <div class="block-mb-orange">
-                                <label for="password">Пароль</label>
-                                <input type="password" name="password" id="password" placeholder="ПАРОЛЬ">
+                            <div class="brief-information-block__info">
+                                <p class="brief-information-block__title">Компания «Мария»</p>
+                                <p class="brief-information-block__vacancy">Вакансия <a href="#">Столяр-обивщик</a></p>
                             </div>
-                            <div class="block-mb-green">
-                                <div class="block-remember">
-                                    <div class="block-checkbox">
-                                        <label for="remember-me">
-                                            <input type="checkbox" id="remember-me" name="remember-me" hidden>
-                                            <div class="check"></div>
-                                            Запомнить меня
+                        </div>
+                    </div>
+                    <div class="block-mt-purple">
+                        <div class="container-compressed">
+                            <h2>Напишите сообщение работодателю</h2>
+                            <form action="" name="form-message-employer-not-reg" id="form-message-employer-not-reg">
+                                <div class="block-mt-green">
+                                    <label for="message">Ваше имя</label>
+                                    <input type="text" name="name" id="name" placeholder="Ваше имя">
+                                </div>
+                                <div class="block-mt-green block-callback">
+                                    <div class="block-radio">
+                                        <label for="call-myself">
+                                            <input type="radio" id="call-myself" name="callback" hidden="" checked="">
+                                            <div class="radio"></div>
+                                            Позвоню сам
                                         </label>
                                     </div>
-                                    <a href="#">Забыли пароль?</a>
+                                    <div class="block-radio">
+                                        <label for="call-me">
+                                            <input type="radio" id="call-me" name="callback" hidden="">
+                                            <div class="radio"></div>
+                                            Позвоните мне
+                                        </label>
+                                        <select name="time-call" id="time-call">
+                                            <option value="0">Время звонка</option>
+                                            <option value="10">Через 10 минут</option>
+                                            <option value="15">Через 15 минут</option>
+                                            <option value="30">Через 30 минут</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="block-mb-green">
-                                <input type="submit" name="enter-account" class="main-button" id="enter-account" value="Войти">
-                            </div>
-                        </form>
-                        <div class="block-mb-green">
-                            <div class="little-title">
-                                <span>или</span>
-                            </div>
-                        </div>
-                        <div class="block-mb-blue">
-                            <div class="social-networks">
-                                <p>Войти через социальные сети:</p>
-                                <div class="social-networks-row block-mt-orange">
-                                    <a href="#" class="social-networks__ref">
-                                        <img class="img-svg" src="./img/icon_vk.svg" alt="">
-                                    </a>
-                                    <a href="#" class="social-networks__ref">
-                                        <img class="img-svg" src="./img/icon_cl.svg" alt="">
-                                    </a>
-                                    <a href="#" class="social-networks__ref">
-                                        <img class="img-svg" src="./img/icon_fb.svg" alt="">
-                                    </a>
-                                    <a href="#" class="social-networks__ref">
-                                        <img class="img-svg" src="./img/icon_gm.svg" alt="">
-                                    </a>
+                                <div class="block-mt-green">
+                                    <label for="phone">Телефон</label>
+                                    <input type="text" name="phone" id="phone" placeholder="+7">
                                 </div>
-                            </div>
+                                <div class="block-mt-green">
+                                    <label for="message">Сообщение</label>
+                                    <textarea name="message" id="message"></textarea>
+                                </div>
+                                <p class="block-mt-green" style="font-size: 14px;">* - поля, обязательные для заполнения</p>
+                                <p class="block-mt-green" style="font-size: 14px;">Нажимая кнопку «Зарегистрироваться», Вы даёте своё согласие на обработку персональных данных</p>
+                                <div class="block-mt-green">
+                                    <input type="submit" class="main-button" name="submit-answer" value="Отправить">
+                                </div>
+                            </form>
                         </div>
-                        <div class="registration-offer">
-                            <p>У вас ещё нет аккаунта? <a href="#">Зарегистрируйтесь</a></p>
-                        </div>
-                    </div>   
+                    </div>
                 </div>
             </div>
         </div>

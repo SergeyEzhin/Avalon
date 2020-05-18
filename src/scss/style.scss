@@ -372,6 +372,7 @@ input[type="text"], input[type="password"]
     letter-spacing: normal;
     color: $color-disabled;
     border: solid 2px currentColor;
+    width: 100%;
 }
 
 input[type="text"]::placeholder, input[type="password"]::placeholder
@@ -430,6 +431,7 @@ select
     padding-left: 20px;
 }
 
+
 .choices__inner
 {
     border: solid 2px #dddce8 !important;
@@ -459,7 +461,7 @@ select
     background-color: #ffffff;
     top: 101%;
     box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
-    height: 108px;
+    max-height: 108px;
     overflow: auto;
 }
 .choices__list--dropdown::-webkit-scrollbar
@@ -517,6 +519,28 @@ select
 .choices[data-type*=select-one]:after
 {
     right: 20px;
+}
+
+.choices.disabled
+{
+    pointer-events: none;
+}
+
+.choices.disabled .choices__inner 
+{
+    border: solid 2px #dddce8 !important;
+    border-color: #dddce8 !important;
+    background: transparent;
+}
+
+.choices.disabled .choices__list--single .choices__item
+{
+    color: #b7b6c3 !important;
+}
+
+.choices.disabled[data-type*=select-one]:after
+{
+    border-top-color: #dddce8;
 }
 
 // Стили для блока с файлом
@@ -2483,7 +2507,6 @@ button
 .container-compressed
 {
     width: 610px;
-    margin: 0 auto;
     form
     {
         input[type="text"], input[type="submit"], input[type="password"]
@@ -2510,6 +2533,11 @@ button
             justify-content: space-between;
         }
     }
+}
+
+.container-compressed_center 
+{
+    margin: 0 auto;
 }
 
 
@@ -3097,6 +3125,29 @@ ymaps[class$='pie-chart-content']
             letter-spacing: normal;
             color: $color-primary;
             margin-bottom: 32px;
+        }
+        &__vacancy 
+        {
+            font-family: Montserrat Bold;
+            font-size: 16px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+            a 
+            {
+                font-family: Montserrat Bold;
+                font-size: 16px;
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                margin-left: 17px;
+                padding-bottom: 7px;
+            }
         }
         &__rating 
         {
@@ -3743,19 +3794,105 @@ input[type="submit"]
     }
 }
 
-// Отклик детальная
+// Отклик на резюме и на вакансию
 
-#answer-employer 
+// #form-answer-employer, #form-message-employer 
+.container-compressed
 {
     label 
     {
-        display: block;
+        // display: block;
         margin-bottom: 10px;
     }
     textarea 
     {
-        width: 610px;
         height: 198px;
+        width: 100%;
+    }
+}
+
+
+// Отклик на вакансию без регистрации
+
+.block-callback 
+{
+    display: flex;
+    align-items: center;
+    .block-radio 
+    {
+        display: flex;
+        align-items: center;
+        margin-top: 0;
+        label 
+        {
+            display: flex;
+            margin-bottom: 0;
+        }
+    }
+    .block-radio:nth-child(2)
+    {
+        margin-left: 65px;
+    }
+    .choices 
+    {
+        margin-left: 23px;
+        width: 233px;
+    }
+}
+
+// Страница Подписка 
+
+.subscription 
+{
+    form 
+    {
+        .block-checkbox 
+        {
+            margin-top: 0;
+            margin-bottom: 22px;
+        }
+        .other-position 
+        {
+            display: flex;
+            .button-text 
+            {
+                margin-left: 12px;
+            }
+        }
+        .other-position ~ p
+        {
+            margin-top: 22px;
+            font-family: Montserrat Regular;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.57;
+            letter-spacing: normal;
+            color: $color-primary;
+        }
+        .mailing-method
+        {
+            &-block 
+            {
+                display: flex;
+                .block-radio:nth-child(2)
+                {
+                    margin-left: 40px;
+                }
+            }
+            &-option 
+            {
+                .container-compressed 
+                {
+                    display: none;
+                }
+                .container-compressed.mailing-method-option_selected
+                {
+                    display: block;
+                }
+            }
+        }
     }
 }
 
