@@ -2507,6 +2507,7 @@ button
 .container-compressed
 {
     width: 610px;
+    position: relative;
     form
     {
         input[type="text"], input[type="submit"], input[type="password"]
@@ -2532,6 +2533,22 @@ button
             align-items: center;
             justify-content: space-between;
         }
+    }
+}
+
+label 
+{
+    font-family: Montserrat Regular;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $color-primary;
+    span 
+    {
+        color: $color-hover;
     }
 }
 
@@ -3893,6 +3910,104 @@ input[type="submit"]
                 }
             }
         }
+    }
+}
+
+// Страница Разместить резюме - Шаг 1
+
+.post-resume 
+{
+    .steps-post-resume 
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__arrow 
+        {
+            margin-left: 60px;
+            margin-right: 60px;
+        }
+        &__step 
+        {
+            font-family: Montserrat Bold;
+            font-size: 15px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-disabled;
+            text-transform: uppercase;
+            border: 0;
+        }
+        &__step_current 
+        {
+            color: $color-hover;
+            pointer-events: none;
+        }
+        &__step_disabled
+        {
+            pointer-events: none;
+        }
+    }
+    form 
+    {
+        position: relative;
+        .transfer-steps 
+        {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .disabled 
+            {
+                opacity: 0;
+                z-index: -1;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+.load-avatar
+{
+    width: 210px;
+    height: 263px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    &__block 
+    {
+        width: 100%;
+        height: 210px;
+    }
+    label 
+    {
+        width: 210px;
+        height: 53px;
+        background-color: #ffffff;
+        font-family: Montserrat Bold;
+        font-size: 14px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $color-ref;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        cursor: pointer;
+        transition: .3s;
+    }
+    label:hover 
+    {
+        color: $color-hover;
+    }
+    label:active 
+    {
+        color: $color-clicked;
     }
 }
 

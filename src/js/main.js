@@ -218,6 +218,8 @@ if(inputFile.length > 0)
 {
     inputFile.forEach(function(input) 
     {
+        if(input.id = 'load-avatar') return;
+
         input.addEventListener('change', function(e)
         {
             var value = input.value;
@@ -739,6 +741,53 @@ if(buttonMailingPhone && buttonMailingEmail)
     });
   });
 }
+
+
+// Загрузка фото
+
+let canvasAvatar = document.querySelector('#canvas-avatar');
+let ctx = canvasAvatar.getContext("2d");
+
+let initialAvatar = new Image();
+
+// Загружаем файл изображения
+initialAvatar.src = "../img/img_substrate.png";
+
+if(canvasAvatar)
+{
+  initialAvatar.onload = function() 
+  {
+    ctx.drawImage(initialAvatar, 0, 0, 210, 210);
+  }
+
+  let loadAvatar = document.querySelector('#load-avatar');
+
+  loadAvatar.addEventListener('change', () => {
+
+    let file = loadAvatar.files[0];
+    let img;
+    let reader = new FileReader();
+  
+    reader.onload = drawNewImage;
+    reader.readAsDataURL(file);
+  
+    function drawNewImage()
+    {
+      img = new Image();
+      img.onload = function() 
+      {
+        ctx.drawImage(img, 0, 0, 210, 210);
+      }
+      img.src = reader.result;
+    }
+
+  });
+}
+
+
+
+
+
 
 
 
