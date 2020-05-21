@@ -172,62 +172,355 @@
                                             <a href="#" class="steps-post-resume__step">Шаг 3. Опыт работы</a>
                                         </div>
                                         <div class="block-mt-blue">
-                                            <form action="" name="post-resume-step1" id="post-resume-step1">
-                                                <div class="container-compressed">
-                                                    <div class="block-mb-yellow">
-                                                        <label for="name">Имя</label>
-                                                        <input type="text" placeholder="ИМЯ" name="name" id="name">
-                                                    </div>
-                                                    <div class="block-mb-yellow">
-                                                        <label for="sername">Фамилия</label>
-                                                        <input type="text" placeholder="ФАМИЛИЯ" name="sername" id="sername">
-                                                    </div>
-                                                    <div class="block-mb-yellow">
-                                                        <label for="patronymic">Отчество</label>
-                                                        <input type="text" placeholder="ОТЧЕСТВО" name="patronymic" id="patronymic">
-                                                    </div>
-                                                    <div class="block-mb-yellow">
-                                                        <label for="birthday">Дата рождения</label>
-                                                        <input type="text" name="birthday" id="birthday" placeholder="ВЫБЕРИТЕ ДАТУ">
-                                                    </div>
-                                                    <div class="block-gender block-mb-green">
-                                                        <p>Пол:</p>
-                                                        <div class="block-radio">
-                                                            <label for="male">
-                                                                <input type="radio" id="male" name="gender" hidden="" checked>
-                                                                <div class="radio"></div>
-                                                                Мужской
-                                                            </label>
-                                                        </div>
-                                                        <div class="block-radio">
-                                                            <label for="female">
-                                                                <input type="radio" id="female" name="gender" hidden="">
-                                                                <div class="radio"></div>
-                                                                Женский
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="block-mb-yellow">
-                                                        <label for="phone">Телефон</label>
-                                                        <input type="text" name="phone" id="phone" placeholder="+7">
-                                                    </div>
-                                                    <div class="block-mb-yellow">
-                                                        <label for="email">E-mail</label>
-                                                        <input type="text" name="email" id="email" placeholder="E-MAIL">
-                                                    </div>
+                                            <div class="container-compressed">
+                                                <form action="" name="post-resume-step2" id="post-resume-step2">
                                                     <div class="block-mb-orange">
-                                                        <label for="address">Адрес</label>
-                                                        <input type="text" name="address" id="address" placeholder="РЕГИОН / РАЙОН, ГОРОД / Н.П., УЛИЦА">
+                                                        <label for="position">Желаемая должность</label>
+                                                        <select name="position" id="position">
+                                                            <option value="1">Должность 1</option>
+                                                            <option value="2">Должность 2</option>
+                                                            <option value="3">Должность 3</option>
+                                                            <option value="other">Другая</option>
+                                                        </select>
                                                     </div>
-                                                    <p class="block-mb-green" style="font-size: 14px;">Начните вводить адрес и выберите подходящий из появившегося списка</p>
-                                                    <p class="block-mb-green" style="font-size: 14px;">* - поля, обязательные для заполнения</p>
-                                                    <p class="block-mb-blue" style="font-size: 14px;">Нажимая кнопку «Далее», Вы даёте своё согласие на обработку персональных данных</p>
-                                                    <div class="transfer-steps">
-                                                        <button type="button" class="other-button" id="prev-step-resume">Назад</button>
-                                                        <button type="button" class="main-button" id="next-step-resume">Далее</button>
+                                                    <div class="block-mb-yellow">
+                                                        <input type="text" name="other-position" id="other-position" placeholder="ЖЕЛАЕМАЯ ДОЛЖНОСТЬ" disabled>
                                                     </div>
+                                                    <div class="block-mb-green">
+                                                        <label for="desired-salary">Желаемая зарплата, руб</label>
+                                                        <div class="desired-salary">
+                                                            <input type="text" name="desired-salary" id="desired-salary" placeholder="0">
+                                                            <select name="time-salary" id="time-salary">
+                                                                <option value="month">В месяц</option>
+                                                                <option value="week">В неделю</option>
+                                                                <option value="year">В год</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="block-mb-green">
+                                                        <div class="block-post-resume">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="block-post-resume__name">
+                                                                        <p>Стаж работы:</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-8">
+                                                                    <div class="row">
+                                                                        <div class="col-6">
+                                                                            <div class="block-radio">
+                                                                                <label for="no-exp">
+                                                                                    <input type="radio" id="no-exp" name="work-experience" hidden>
+                                                                                    <div class="radio"></div>
+                                                                                    <p>Без опыта</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="block-radio">
+                                                                                <label for="one-three">
+                                                                                    <input type="radio" id="one-three" name="work-experience" hidden>
+                                                                                    <div class="radio"></div>
+                                                                                    <p>1-3 года</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="block-radio">
+                                                                                <label for="season-work">
+                                                                                    <input type="radio" id="season-work" name="work-experience" hidden>
+                                                                                    <div class="radio"></div>
+                                                                                    <p>Студент / сезоннная работа</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="block-radio">
+                                                                                <label for="three-five">
+                                                                                    <input type="radio" id="three-five" name="work-experience" hidden>
+                                                                                    <div class="radio"></div>
+                                                                                    <p>3-5 лет</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="block-radio">
+                                                                                <label for="less-year">
+                                                                                    <input type="radio" id="less-year" name="work-experience" hidden>
+                                                                                    <div class="radio"></div>
+                                                                                    <p>До 1 года</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="block-radio">
+                                                                                <label for="more-five">
+                                                                                    <input type="radio" id="more-five" name="work-experience" hidden>
+                                                                                    <div class="radio"></div>
+                                                                                    <p>Более 5 лет</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="block-radio">
+                                                                                <label for="job-weekend">
+                                                                                    <input type="radio" id="job-weekend" name="work-experience" hidden>
+                                                                                    <div class="radio"></div>
+                                                                                    <p>Подработка на выходные</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="block-mb-green">
+                                                        <div class="block-post-resume">
+                                                            <label for="city">Город, в котором готов работать</label>
+                                                            <select name="city" id="city">
+                                                                <option value="month">Москва</option>
+                                                                <option value="week">Казань</option>
+                                                                <option value="year">Нижний Новгород</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="block-add">
+                                                            <a href="#" class="button-text add-other-city">
+                                                                <img class="img-svg" src="./img/icon_plus.svg" alt="">
+                                                                Добавить город
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="block-mb-green">
+                                                        <div class="block-post-resume">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="block-post-resume__name">
+                                                                        <p>Тип занятости:</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-8">
+                                                                    <div class="row">
+                                                                        <div class="col-6">
+                                                                            <div class="block-checkbox">
+                                                                                <label for="shifts30">
+                                                                                    <input type="checkbox" id="shifts30" name="shifts30" hidden>
+                                                                                    <div class="check"></div>
+                                                                                    <p>Вахта 30 смен</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="block-checkbox">
+                                                                                <label for="full-employment">
+                                                                                    <input type="checkbox" id="full-employment" name="full-employment" hidden>
+                                                                                    <div class="check"></div>
+                                                                                    <p>Полная занятость</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="block-checkbox">
+                                                                                <label for="shifts45">
+                                                                                    <input type="checkbox" id="shifts45" name="shifts45" hidden>
+                                                                                    <div class="check"></div>
+                                                                                    <p>Вахта 45 смен</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="block-checkbox">
+                                                                                <label for="part-time">
+                                                                                    <input type="checkbox" id="part-time" name="part-time" hidden>
+                                                                                    <div class="check"></div>
+                                                                                    <p>Частичная занятость</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="block-checkbox">
+                                                                                <label for="shifts60">
+                                                                                    <input type="checkbox" id="shifts60" name="shifts60" hidden>
+                                                                                    <div class="check"></div>
+                                                                                    <p>Вахта 60 смен</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="block-checkbox">
+                                                                                <label for="temporary-job">
+                                                                                    <input type="checkbox" id="temporary-job" name="temporary-job" hidden>
+                                                                                    <div class="check"></div>
+                                                                                    <p>Временная работа</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="block-checkbox">
+                                                                                <label for="more-shifts60">
+                                                                                    <input type="checkbox" id="more-shifts60" name="more-shifts60" hidden>
+                                                                                    <div class="check"></div>
+                                                                                    <p>Вахта более 60 смен</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="block-mb-green">
+                                                        <div class="block-post-resume">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="block-post-resume__name">
+                                                                        <p>График работы:</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-8">
+                                                                    <div class="row">
+                                                                        <div class="col-6">
+                                                                            <div class="block-checkbox">
+                                                                                <label for="full-day">
+                                                                                    <input type="checkbox" id="full-day" name="full-day" hidden>
+                                                                                    <div class="check"></div>
+                                                                                    <p>Полный день</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="block-checkbox">
+                                                                                <label for="change">
+                                                                                    <input type="checkbox" id="change" name="change" hidden>
+                                                                                    <div class="check"></div>
+                                                                                    <p>Смена</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="block-checkbox">
+                                                                                <label for="flexible-schedule">
+                                                                                    <input type="checkbox" id="flexible-schedule" name="flexible-schedule" hidden>
+                                                                                    <div class="check"></div>
+                                                                                    <p>Гибкий график</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="block-checkbox">
+                                                                                <label for="remote-work">
+                                                                                    <input type="checkbox" id="remote-work" name="remote-work" hidden>
+                                                                                    <div class="check"></div>
+                                                                                    <p>Удалённая работа</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="block-checkbox">
+                                                                                <label for="business-trips">
+                                                                                    <input type="checkbox" id="business-trips" name="business-trips" hidden>
+                                                                                    <div class="check"></div>
+                                                                                    <p>Готов к командировкам</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div class="block-checkbox">
+                                                                                <label for="ready-move">
+                                                                                    <input type="checkbox" id="ready-move" name="ready-move" hidden>
+                                                                                    <div class="check"></div>
+                                                                                    <p>Готов к переездам</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="block-mb-green">
+                                                        <div class="block-post-resume">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="block-post-resume__name">
+                                                                        <p>Способ связи:</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-8">
+                                                                    <div class="block-callback">
+                                                                        <div class="block-radio">
+                                                                            <label for="call-myself">
+                                                                                <input type="radio" id="call-myself" name="callback" hidden="" checked="">
+                                                                                <div class="radio"></div>
+                                                                                Позвоню сам
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="block-radio">
+                                                                            <label for="call-me">
+                                                                                <input type="radio" id="call-me" name="callback" hidden="">
+                                                                                <div class="radio"></div>
+                                                                                Позвоните мне
+                                                                            </label>
+                                                                           <select name="time-call" id="time-call">
+                                                                               <option value="0">Время звонка</option>
+                                                                               <option value="10">Через 10 минут</option>
+                                                                               <option value="15">Через 15 минут</option>
+                                                                               <option value="30">Через 30 минут</option>
+                                                                           </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="block-mb-green">
+                                                        <div class="block-post-resume">
+                                                            <div class="row">
+                                                                <div class="col-4">
+                                                                    <div class="block-post-resume__name">
+                                                                        <p>Дополнительная информация:</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-8">
+                                                                    <div class="row">
+                                                                        <div class="col-12">
+                                                                            <div class="block-checkbox">
+                                                                                <label for="criminal-record">
+                                                                                    <input type="checkbox" id="criminal-record" name="criminal-record" hidden>
+                                                                                    <div class="check"></div>
+                                                                                    <p>Наличие судимости</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12">
+                                                                            <div class="block-checkbox">
+                                                                                <label for="chronic-diseases">
+                                                                                    <input type="checkbox" id="chronic-diseases" name="chronic-diseases" hidden>
+                                                                                    <div class="check"></div>
+                                                                                    <p>Наличие хронических заболеваний</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-12">
+                                                                            <div class="block-checkbox">
+                                                                                <label for="medical-book">
+                                                                                    <input type="checkbox" id="medical-book" name="medical-book" hidden>
+                                                                                    <div class="check"></div>
+                                                                                    <p>Наличие медицинской книжки</p>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <div class="transfer-steps">
+                                                    <button type="button" class="other-button" id="prev-step-resume">Назад</button>
+                                                    <button type="button" class="main-button" id="next-step-resume">Далее</button>
                                                 </div>
-                                            </form>
+                                            </div> 
                                         </div>
                                     </div>
                                 </div>

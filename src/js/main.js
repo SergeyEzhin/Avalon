@@ -742,19 +742,20 @@ if(buttonMailingPhone && buttonMailingEmail)
   });
 }
 
-
 // Загрузка фото
 
 let canvasAvatar = document.querySelector('#canvas-avatar');
-let ctx = canvasAvatar.getContext("2d");
-
-let initialAvatar = new Image();
-
-// Загружаем файл изображения
-initialAvatar.src = "../img/img_substrate.png";
 
 if(canvasAvatar)
 {
+  let ctx = canvasAvatar.getContext("2d");
+
+  let initialAvatar = new Image();
+
+  // Загружаем файл изображения
+
+  initialAvatar.src = "../img/img_substrate.png";
+
   initialAvatar.onload = function() 
   {
     ctx.drawImage(initialAvatar, 0, 0, 210, 210);
@@ -783,6 +784,156 @@ if(canvasAvatar)
 
   });
 }
+
+
+// Выбор должности
+
+let position = document.querySelector('#position');
+let otherPosition = document.querySelector('#other-position');
+
+if(position && otherPosition)
+{
+  position.addEventListener('change', () => {
+    console.log(1);
+    if(position.value === 'other')
+    {
+      otherPosition.removeAttribute('disabled');
+    }
+    else 
+    {
+      otherPosition.setAttribute('disabled', 'disabled');
+    }
+  });
+}
+
+
+// Добавить другой город
+
+let addOtherCity = document.querySelectorAll('.add-other-city');
+let indexCity = 0
+
+if(addOtherCity.length)
+{
+  addOtherCity.forEach(elem => {
+    elem.addEventListener('click', (e) => {
+      e.preventDefault();
+      let newCity = document.createElement('input');
+      indexCity++;
+      newCity.type = "text";
+      newCity.id = 'other-city' + indexCity;
+      newCity.name = 'other-city' + indexCity;
+      newCity.placeholder = 'ГОРОД';
+      newCity.style.marginTop = '7px';
+      elem.parentElement.parentElement.querySelector('.block-post-resume').appendChild(newCity);
+    });
+  });
+}
+
+
+// Начало и конец работы 
+
+let inputWork = document.querySelectorAll('.work-period__block input');
+
+if(inputWork.length)
+{
+  inputWork.forEach(elem => 
+  {
+    datepicker(elem, {
+      formatter: (input, date, instance) => 
+      {
+        const value = date.toLocaleDateString();
+        input.value = value; // => '1/1/2099'
+      },
+      startDay: 0,
+      customDays: ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
+      customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+      showAllDates: true, 
+      overlayButton: 'Выбрать', 
+      overlayPlaceholder: 'Укажите год'
+    
+    });
+  });
+}
+
+
+// Добавление места работы 
+
+let addPlaceWork = document.querySelectorAll('.add-place-work');
+let indexPlaceWork = 0;
+
+if(addPlaceWork.length)
+{
+  addPlaceWork.forEach(elem => {
+    elem.addEventListener('click', (e) => 
+    {
+      e.preventDefault();
+      let newForm = elem.parentElement.parentElement.querySelector('.data-form-experience').cloneNode(true);
+      newForm.style.marginTop = '43px';
+      let newInputs = newForm.querySelectorAll('input');
+      let newLabels = newForm.querySelectorAll('label');
+      let newSelects = newForm.querySelectorAll('select');
+      let newTextarea = newForm.querySelectorAll('textarea');
+      indexPlaceWork++;
+      
+      newInputs.forEach(input => {
+        let oldName = input.name;
+        input.name = oldName + indexPlaceWork;
+        let oldId = input.id;
+        input.id = oldId + indexPlaceWork;
+      });
+
+      newLabels.forEach(label => {
+        let oldFor = label.getAttribute('for');
+        label.setAttribute('for', oldFor + indexPlaceWork);
+      });
+
+      newSelects.forEach(select => {
+        let oldName = select.name;
+        select.name = oldName + indexPlaceWork;
+        let oldId = select.id;
+        select.id = oldId + indexPlaceWork;
+      });
+
+      newTextarea.forEach(textarea => {
+        let oldName = textarea.name;
+        textarea.name = oldName + indexPlaceWork;
+        let oldId = textarea.id;
+        textarea.id = oldId + indexPlaceWork;
+      });
+
+      elem.parentElement.parentElement.insertBefore(newForm, elem.parentElement);
+
+      newSelects.forEach(select => {
+        new Choices(select, {
+          choices: [],
+          placeholder: true,
+          searchEnabled: false,
+          itemSelectText: ''
+        });
+      });
+
+      newForm.querySelectorAll('.work-period__block input').forEach(elem => {
+        datepicker(elem, {
+          formatter: (input, date, instance) => 
+          {
+            const value = date.toLocaleDateString();
+            input.value = value; // => '1/1/2099'
+          },
+          startDay: 0,
+          customDays: ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
+          customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+          showAllDates: true, 
+          overlayButton: 'Выбрать', 
+          overlayPlaceholder: 'Укажите год'
+        
+        });
+      });
+
+    });
+  });
+}
+
+
 
 
 

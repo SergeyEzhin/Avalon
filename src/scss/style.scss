@@ -695,6 +695,18 @@ ul
         {
             background-color: #b7b6c3;
         }
+        p 
+        {
+            font-family: Montserrat Regular;
+            font-size: 15px;
+            font-weight: 400;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+            width: 80%;
+        }
     }
 }
 .block-radio:hover 
@@ -754,6 +766,18 @@ ul
         input[type="checkbox"]:checked ~ .check:before 
         {
             opacity: 1;
+        }
+        p 
+        {
+            font-family: Montserrat Regular;
+            font-size: 15px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+            width: 80%;
         }
     }
 }
@@ -3939,6 +3963,11 @@ input[type="submit"]
             color: $color-disabled;
             text-transform: uppercase;
             border: 0;
+            transition: .3s;
+        }
+        &__step:hover 
+        {
+            color: $color-hover;
         }
         &__step_current 
         {
@@ -3953,18 +3982,19 @@ input[type="submit"]
     form 
     {
         position: relative;
-        .transfer-steps 
-        {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            .disabled 
-            {
-                opacity: 0;
-                z-index: -1;
-                pointer-events: none;
-            }
-        }
+    }
+}
+
+.transfer-steps 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .disabled 
+    {
+        opacity: 0;
+        z-index: -1;
+        pointer-events: none;
     }
 }
 
@@ -4010,6 +4040,101 @@ input[type="submit"]
         color: $color-clicked;
     }
 }
+
+
+// Страница Разместить резюме - Шаг 2 
+
+.desired-salary 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .choices, input{
+        width: 49.5% !important;
+    }
+}
+
+.block-post-resume 
+{
+    border-top: 2px solid #DDDCE8;
+    padding-top: 43px;
+    &__name 
+    {
+        font-family: Raleway Regular;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $color-primary;
+    }
+    .block-radio, .block-checkbox
+    {
+        margin-top: 0;
+        margin-bottom: 22px;
+    }
+    .block-callback
+    {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .block-callback .block-radio:nth-child(2)
+    {
+        margin-left: 0;
+    }
+}
+
+.block-add
+{
+    margin-top: 32px;
+    display: flex;
+}
+
+// Разместить резюме - Шаг 3
+
+.form-experience
+{
+    border-bottom: 2px solid #DDDCE8;
+}
+
+.block-skip-step 
+{
+    padding-bottom: 43px;
+    border-bottom: 2px solid #DDDCE8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.work-period 
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__block 
+    {
+        display: flex;
+        align-items: center;
+        input 
+        {
+            width: 184px;
+            margin-left: 10px;
+        }
+    }
+    p 
+    {
+        font-family: Montserrat Regular;
+        font-size: 15px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.88;
+        letter-spacing: normal;
+        color: $color-primary;
+    }
+}
+
 
 
 .footer 
