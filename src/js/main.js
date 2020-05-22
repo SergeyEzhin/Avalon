@@ -788,22 +788,26 @@ if(canvasAvatar)
 
 // Выбор должности
 
-let position = document.querySelector('#position');
-let otherPosition = document.querySelector('#other-position');
+let position = document.querySelectorAll('select[data-position="choice-position"]');
+console.log(position);
 
-if(position && otherPosition)
+if(position.length)
 {
-  position.addEventListener('change', () => {
-    console.log(1);
-    if(position.value === 'other')
-    {
-      otherPosition.removeAttribute('disabled');
-    }
-    else 
-    {
-      otherPosition.setAttribute('disabled', 'disabled');
-    }
+  position.forEach(elem => {
+    elem.addEventListener('change', () => {
+      if(elem.value === 'other')
+      {
+        console.log(1);
+        // elem.parentElement.parentElement.querySelectorAll('[data-position="other-position"]')[1].removeAttribute('disabled');
+      }
+      else 
+      {
+        console.log(2);
+        // elem.parentElement.parentElement.querySelectorAll].setAttribute('disabled', 'disabled');
+      }
+    });
   });
+
 }
 
 
@@ -855,80 +859,78 @@ if(inputWork.length)
   });
 }
 
-
 // Добавление места работы 
 
 let addPlaceWork = document.querySelectorAll('.add-place-work');
-let indexPlaceWork = 0;
 
 if(addPlaceWork.length)
 {
+  let indexPlacework = 0;
+
   addPlaceWork.forEach(elem => {
     elem.addEventListener('click', (e) => 
     {
       e.preventDefault();
-      let newForm = elem.parentElement.parentElement.querySelector('.data-form-experience').cloneNode(true);
-      newForm.style.marginTop = '43px';
-      let newInputs = newForm.querySelectorAll('input');
-      let newLabels = newForm.querySelectorAll('label');
-      let newSelects = newForm.querySelectorAll('select');
-      let newTextarea = newForm.querySelectorAll('textarea');
-      indexPlaceWork++;
-      
-      newInputs.forEach(input => {
-        let oldName = input.name;
-        input.name = oldName + indexPlaceWork;
-        let oldId = input.id;
-        input.id = oldId + indexPlaceWork;
-      });
+     
+      indexPlacework++;
 
-      newLabels.forEach(label => {
-        let oldFor = label.getAttribute('for');
-        label.setAttribute('for', oldFor + indexPlaceWork);
-      });
+      let tempateForm = `
+        <div class="data-form-experience">
+          <div class="block-mb-yellow">
+            <label for="company">Компания</label>
+            <input type="text" name="company${indexPlacework}" id="company${indexPlacework}" placeholder="КОМПАНИЯ">
+          </div>
+          <div class="block-mb-orange">
+              <label for="position${indexPlacework}">Желаемая должность</label>
+              <select name="position${indexPlacework}" id="position${indexPlacework}" data-position="choice-position">
+                  <option value="1">Должность 1</option>
+                  <option value="2">Должность 2</option>
+                  <option value="3">Должность 3</option>
+                  <option value="other">Другая</option>
+              </select>
+          </div>
+          <div class="block-mb-yellow">
+              <input type="text" name="other-position${indexPlacework}" id="other-position${indexPlacework}" data-position="other-position" placeholder="ЖЕЛАЕМАЯ ДОЛЖНОСТЬ">
+          </div>
+          <div class="block-mb-yellow">
+              <div class="work-period">
+                  <p>Период работы</p>
+                  <div class="work-period__block">
+                      <p>с</p>
+                      <input type="text" name="start-work${indexPlacework}" id="start-work${indexPlacework}">
+                  </div>
+                  <div class="work-period__block">
+                      <p>по</p>
+                      <input type="text" name="end-work${indexPlacework}" id="end-work${indexPlacework}">
+                  </div>
+              </div>
+          </div>
+          <div class="block-mb-yellow">
+              <div class="block-checkbox">
+                  <label for="working${indexPlacework}">
+                      <input type="checkbox" id="working${indexPlacework}" name="working${indexPlacework}" hidden>
+                      <div class="check"></div>
+                      <p>Работаю в данный момент</p>
+                  </label>
+              </div>
+          </div>
+          <div class="block-mb-yellow">
+              <label for="city-work${indexPlacework}">Город</label>
+              <select name="city-work${indexPlacework}" id="city-work${indexPlacework}">
+                  <option value="month">Москва</option>
+                  <option value="week">Казань</option>
+                  <option value="year">Нижний Новгород</option>
+              </select>
+          </div>
+          <div class="block-mb-green">
+              <label for="responsibility${indexPlacework}">Обязанности</label>
+              <textarea name="responsibility${indexPlacework}" id="responsibility${indexPlacework}"></textarea>
+          </div>
+        </div>`;
 
-      newSelects.forEach(select => {
-        let oldName = select.name;
-        select.name = oldName + indexPlaceWork;
-        let oldId = select.id;
-        select.id = oldId + indexPlaceWork;
-      });
+      elem.parentElement.insertAdjacentHTML('beforebegin', tempateForm);
 
-      newTextarea.forEach(textarea => {
-        let oldName = textarea.name;
-        textarea.name = oldName + indexPlaceWork;
-        let oldId = textarea.id;
-        textarea.id = oldId + indexPlaceWork;
-      });
-
-      elem.parentElement.parentElement.insertBefore(newForm, elem.parentElement);
-
-      newSelects.forEach(select => {
-        new Choices(select, {
-          choices: [],
-          placeholder: true,
-          searchEnabled: false,
-          itemSelectText: ''
-        });
-      });
-
-      newForm.querySelectorAll('.work-period__block input').forEach(elem => {
-        datepicker(elem, {
-          formatter: (input, date, instance) => 
-          {
-            const value = date.toLocaleDateString();
-            input.value = value; // => '1/1/2099'
-          },
-          startDay: 0,
-          customDays: ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
-          customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-          showAllDates: true, 
-          overlayButton: 'Выбрать', 
-          overlayPlaceholder: 'Укажите год'
-        
-        });
-      });
-
+  
     });
   });
 }

@@ -3063,6 +3063,23 @@ ymaps[class$='pie-chart-content']
     }
 }
 
+.block-to-edit 
+{
+    width: 210px;
+    height: 188px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
 .rating__group
 {
     position: relative;
@@ -3138,6 +3155,7 @@ ymaps[class$='pie-chart-content']
 {
     display: flex;
     justify-content: space-between;
+    position: relative;
     &-block 
     {
         display: flex;
@@ -3213,7 +3231,7 @@ ymaps[class$='pie-chart-content']
         }
         &__contacts 
         {
-            p, a 
+            a, p
             {
                 font-family: Montserrat Regular;
                 font-size: 15px;
@@ -3231,6 +3249,12 @@ ymaps[class$='pie-chart-content']
                     margin-right: 20px;
                     width: 20px;
                 }
+                p 
+                {
+                    color: $color-disabled;
+                    margin-top: 7px;
+                    margin-left: 42px;
+                }
             }
         }
     }
@@ -3246,6 +3270,7 @@ ymaps[class$='pie-chart-content']
     {
         display: flex;
         margin-bottom: 32px;
+        justify-content: space-between;
         &__name 
         {
             width: 16%;
@@ -3441,6 +3466,22 @@ input[type="submit"]
         {
             padding-left: 25px;
             padding-right: 25px;
+        }
+        .detailed-description-block__name
+        {
+            width: 22%;
+            p 
+            {
+                line-height: normal;
+            }
+        }
+        .detailed-description-block__text
+        {
+            width: 76%;
+            p 
+            {
+                line-height: normal;
+            }
         }
     }
     .sidebar-profile 
@@ -3941,6 +3982,7 @@ input[type="submit"]
 
 .post-resume 
 {
+    position: relative;
     .steps-post-resume 
     {
         display: flex;
@@ -4093,9 +4135,10 @@ input[type="submit"]
 
 // Разместить резюме - Шаг 3
 
-.form-experience
+.data-form-experience
 {
     border-bottom: 2px solid #DDDCE8;
+    margin-bottom: 43px;
 }
 
 .block-skip-step 
@@ -4132,6 +4175,31 @@ input[type="submit"]
         line-height: 1.88;
         letter-spacing: normal;
         color: $color-primary;
+    }
+}
+
+
+// Разместить резюме - Шаг 4
+
+.work-experience
+{
+    &-block 
+    {
+        &__time 
+        {
+            font-family: Montserrat Bold;
+            font-size: 16px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.31;
+            letter-spacing: normal;
+            color: $color-primary;
+        }
+        p 
+        {
+            margin-bottom: 22px;
+        }
     }
 }
 
