@@ -125,35 +125,39 @@
             <div class="quick-job-search block-mb-purple">     
                 <h1>Воспользуйтесь быстрым поиском</h1> 
                 <div class="container">
-                    <div class="quick-job-search-content block-mt-dark-blue"> 
-                        <form action="" id="quick-search-form">
-                            <input type="text" name="position" placeholder="ДОЛЖНОСТЬ">
-                            <input type="text" name="city" placeholder="ГОРОД">
-                            <input type="text" name="salary" placeholder="ЗАРПЛАТА">
-                            <input type="submit" class="main-button" value="Найти">
-                        </form>
-                        <a href="#" class="button-text detailed-search">
-                            <img class="img-svg" src="./img/icon_search.svg" alt="">
-                            Расширенный поиск
-                        </a>
-                        <div class="hash-tags">
-                            <a href="#" class="hash-tags__link"># работа рядом <span>(5)</span></a>
-                            <a href="#" class="hash-tags__link"># работа прямо сейчас <span>(3)</span></a>
-                            <a href="#" class="hash-tags__link"># работа завтра <span>(18)</span></a>
-                            <a href="#" class="hash-tags__link"># работа через месяц <span>(11)</span></a>
-                            <a href="#" class="hash-tags__link"># сезонная работа <span>(8)</span></a>
-                            <a href="#" class="hash-tags__link"># постоянная работа <span>(8)</span></a>
+                    <div class="quick-job-search-block">
+                        <div class="quick-job-search-block-content block-mt-dark-blue"> 
+                            <form action="" id="quick-search-form">
+                                <input type="text" name="position" placeholder="ДОЛЖНОСТЬ">
+                                <input type="text" name="city" placeholder="ГОРОД">
+                                <input type="text" name="salary" placeholder="ЗАРПЛАТА">
+                                <input type="submit" class="main-button" value="Найти">
+                            </form>
+                            <div class="wrapper-button-center block-mt-green">
+                                <a href="#" class="button-text detailed-search">
+                                    <img class="img-svg" src="./img/icon_search.svg" alt="">
+                                    Расширенный поиск
+                                </a>
+                            </div>
+                            <div class="hash-tags block-mt-dark-blue">
+                                <a href="#" class="hash-tags__link"># работа рядом <span>(5)</span></a>
+                                <a href="#" class="hash-tags__link"># работа прямо сейчас <span>(3)</span></a>
+                                <a href="#" class="hash-tags__link"># работа завтра <span>(18)</span></a>
+                                <a href="#" class="hash-tags__link"># работа через месяц <span>(11)</span></a>
+                                <a href="#" class="hash-tags__link"># сезонная работа <span>(8)</span></a>
+                                <a href="#" class="hash-tags__link"># постоянная работа <span>(8)</span></a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="quick-job-search__buttons"> 
-                        <a href="#" class="button-text release-resume">
-                            <img class="img-svg" src="./img/icon_resume.svg" alt="">
-                            Разместить резюме
-                        </a>
-                        <a href="#" class="button-text vacancies-map">
-                            <img class="img-svg" src="./img/icon_map.svg" alt="">
-                            Вакансии на карте
-                        </a>
+                        <div class="quick-job-search-block__buttons"> 
+                            <a href="#" class="button-text release-resume">
+                                <img class="img-svg" src="./img/icon_resume.svg" alt="">
+                                Разместить резюме
+                            </a>
+                            <a href="#" class="button-text vacancies-map">
+                                <img class="img-svg" src="./img/icon_map.svg" alt="">
+                                Вакансии на карте
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -341,17 +345,19 @@
                         </div>
                     </div>
                 </div>
-                <a href="vacancies-list.html" class="button-text ref-detail block-mt-blue">
-                    <img class="img-svg" src="./img/icon_more.svg" alt="">
-                    Все вакансии
-                </a>
+                <div class="wrapper-button-center block-mt-blue">
+                    <a href="vacancies-list.html" class="button-text ref-detail">
+                        <img class="img-svg" src="./img/icon_more.svg" alt="">
+                        Все вакансии
+                    </a>
+                </div>
             </div>
             <div class="top-companies block-mb-purple">
                 <h1>Лучшие компании</h1>
                 <div class="container">
                     <div class="top-companies-slider block-mt-dark-blue">
                         <div class="top-companies-slider-wrapper owl-carousel owl-theme">
-                            <div class="company-card popular">
+                            <a href="#" class="company-card popular">
                                 <div class="company-card__left">
                                     <div class="company-card__image">
                                         <img src="./img/img_top_company1.png" alt="">
@@ -377,8 +383,8 @@
                                     <p class="company-card__desc">Компания занимается предоставлением услуг связи и Интернета.</p>
                                 </div>
                                 <div class="label-top" style="background-image: url(./img/icon_label_top.svg);"></div>
-                            </div>
-                            <div class="company-card popular">
+                            </a>
+                            <a href="#" class="company-card popular">
                                 <div class="company-card__left">
                                     <div class="company-card__image">
                                         <img src="./img/img_top_company2.png" alt="">
@@ -404,8 +410,8 @@
                                     <p class="company-card__desc">Одна из крупнейших сетей по продаже мебели и товаров для дома.</p>
                                 </div>
                                 <div class="label-top" style="background-image: url(./img/icon_label_top.svg);"></div>
-                            </div>
-                            <div class="company-card popular">
+                            </a>
+                            <a href="#" class="company-card popular">
                                 <div class="company-card__left">
                                     <div class="company-card__image">
                                         <img src="./img/img_top_company3.png" alt="">
@@ -431,8 +437,8 @@
                                     <p class="company-card__desc">Компания занимается предоставлением услуг связи и Интернета.</p>
                                 </div>
                                 <div class="label-top" style="background-image: url(./img/icon_label_top.svg);"></div>
-                            </div>
-                            <div class="company-card">
+                            </a>
+                            <a href="#" class="company-card">
                                 <div class="company-card__left">
                                     <div class="company-card__image">
                                         <img src="./img/img_top_company1.png" alt="">
@@ -458,8 +464,8 @@
                                     <p class="company-card__desc">Компания занимается предоставлением услуг связи и Интернета.</p>
                                 </div>
                                 <div class="label-top" style="background-image: url(./img/icon_label_top.svg);"></div>
-                            </div>
-                            <div class="company-card">
+                            </a>
+                            <a href="#" class="company-card">
                                 <div class="company-card__left">
                                     <div class="company-card__image">
                                         <img src="./img/img_top_company2.png" alt="">
@@ -485,8 +491,8 @@
                                     <p class="company-card__desc">Компания занимается предоставлением услуг связи и Интернета.</p>
                                 </div>
                                 <div class="label-top" style="background-image: url(./img/icon_label_top.svg);"></div>
-                            </div>
-                            <div class="company-card">
+                            </a>
+                            <a href="#" class="company-card">
                                 <div class="company-card__left">
                                     <div class="company-card__image">
                                         <img src="./img/img_top_company3.png" alt="">
@@ -512,14 +518,16 @@
                                     <p class="company-card__desc">Компания занимается предоставлением услуг связи и Интернета.</p>
                                 </div>
                                 <div class="label-top" style="background-image: url(./img/icon_label_top.svg);"></div>
-                            </div>
+                            </a>
                         </div>
                         <div class="navigation-top-companies"></div>
                     </div>
-                    <a href="companies-list.html" class="button-text ref-detail block-mt-blue">
-                        <img class="img-svg" src="./img/icon_more.svg" alt="">
-                        Все компании
-                    </a>
+                    <div class="wrapper-button-center block-mt-blue">
+                        <a href="companies-list.html" class="button-text ref-detail">
+                            <img class="img-svg" src="./img/icon_more.svg" alt="">
+                            Все компании
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="main-images block-mb-purple">
@@ -638,10 +646,12 @@
                         </div>
                     </div>
                 </div>
-                <a href="faq.html" class="button-text ref-detail block-mt-blue">
-                    <img class="img-svg" src="./img/icon_more.svg" alt="">
-                    Все вопросы и ответы
-                </a>
+                <div class="wrapper-button-center block-mt-blue">
+                    <a href="faq.html" class="button-text ref-detail">
+                        <img class="img-svg" src="./img/icon_more.svg" alt="">
+                        Все вопросы и ответы
+                    </a>
+                </div>
             </div>
             <div class="useful-articles">
                 <h1>Полезные статьи</h1>
@@ -699,10 +709,12 @@
                         </div>
                     </div>
                 </div>
-                <a href="articles.html" class="button-text ref-detail block-mt-blue">
-                    <img class="img-svg" src="./img/icon_more.svg" alt="">
-                    Все статьи
-                </a>
+                <div class="wrapper-button-center block-mt-blue">
+                    <a href="articles.html" class="button-text ref-detail">
+                        <img class="img-svg" src="./img/icon_more.svg" alt="">
+                        Все статьи
+                    </a>
+                </div>
             </div>
         </div>
         <footer class="footer">

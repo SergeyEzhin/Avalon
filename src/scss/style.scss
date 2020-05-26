@@ -87,7 +87,7 @@ h1
 {
     font-family: Raleway Bold;
     font-size: 48px;
-    font-weight: bold;
+    
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -99,7 +99,7 @@ h2
 {
     font-family: Raleway Bold;
     font-size: 30px;
-    font-weight: bold;
+    
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -111,7 +111,7 @@ h3
 {
     font-family: Montserrat Bold;
     font-size: 19px;
-    font-weight: bold;
+    
     font-stretch: normal;
     font-style: normal;
     line-height: 1.47;
@@ -123,7 +123,7 @@ h4
 {
     font-family: Montserrat Bold;
     font-size: 15px;
-    font-weight: bold;
+    
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -141,6 +141,10 @@ p
     line-height: 1.88;
     letter-spacing: normal;
     color: $color-primary;
+    span 
+    {
+        color: $color-hover;
+    }
 }
 
 /* Ссылки */
@@ -178,7 +182,7 @@ a:hover
     padding: 15px 30px;
     font-family: Montserrat Bold;
     font-size: 14px;
-    font-weight: bold;
+    
     font-stretch: normal;
     font-style: normal;
     border: 0;
@@ -224,7 +228,7 @@ button
     transition: .3s;
     font-family: Montserrat Bold;
     font-size: 15px;
-    font-weight: bold;
+    
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -266,7 +270,7 @@ button
     align-items: center;
     font-family: Montserrat Bold;
     font-size: 14px;
-    font-weight: bold;
+    
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -291,8 +295,21 @@ button
 .wrapper-button 
 {
     display: flex;
+    justify-content: flex-start;
+}
+
+.wrapper-button-center
+{
+    display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.wrapper-button-fullwidth 
+{
+    * {
+        width: 100% !important;
+    }
 }
 
 .wrapper-transition-arrow 
@@ -310,7 +327,7 @@ button
     background-color: #fff;
     font-family: Montserrat Bold;
     font-size: 14px;
-    font-weight: bold;
+    
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -365,7 +382,7 @@ input[type="text"], input[type="password"]
     padding-left: 20px;
     font-family: Montserrat Bold;
     font-size: 13px;
-    font-weight: bold;
+    
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -397,6 +414,13 @@ input[type="text"]:disabled, input[type="password"]:disabled
     background: transparent;
 }
 
+input[data-picker="datepicker"]
+{
+    background-image: url(../img/icon_datepicker.svg);
+    background-position: 97%;
+    background-repeat: no-repeat;
+}
+
 .wrapper 
 {
     display: flex;
@@ -418,7 +442,7 @@ select
     height: 53px;
     font-family: Montserrat Bold;
     font-size: 13px;
-    font-weight: bold;
+    
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -448,7 +472,7 @@ select
 {
     font-family: Montserrat Bold;
     font-size: 13px;
-    font-weight: bold;
+    
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -482,7 +506,7 @@ select
 {
     font-family: Montserrat Bold;
     font-size: 13px;
-    font-weight: bold;
+    
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -638,7 +662,7 @@ ul
 
 .block-radio 
 {
-    margin-top: 22px;
+    // margin-top: 22px;
     label 
     {
         cursor: pointer;
@@ -721,7 +745,7 @@ ul
 
 .block-checkbox 
 {
-    margin-top: 22px;
+    // margin-top: 22px;
     label 
     {
         cursor: pointer;
@@ -834,7 +858,7 @@ textarea:focus
             color: $color-ref;
             font-family: Montserrat Bold;
             font-size: 14px;
-            font-weight: bold;
+            
             font-stretch: normal;
             font-style: normal;
             line-height: normal;
@@ -866,7 +890,7 @@ textarea:focus
     }
 }
 
-// Стили дял календаря
+// Стили для календаря
 
 .qs-datepicker-container 
 {
@@ -880,7 +904,7 @@ textarea:focus
 .qs-datepicker .qs-controls
 {
     background: #fff; 
-    padding-top: 10px;
+    padding: 15px 15px 10px 15px;
 }
 
 .qs-datepicker .qs-squares
@@ -893,7 +917,7 @@ textarea:focus
 {
     font-family: Montserrat Bold;
     font-size: 13px;
-    font-weight: bold;
+    
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -906,7 +930,7 @@ textarea:focus
 {
     font-family: Montserrat Bold;
     font-size: 11px;
-    font-weight: bold;
+    
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -925,7 +949,7 @@ textarea:focus
     background-color: #ffffff;
     font-family: Montserrat Bold;
     font-size: 12px;
-    font-weight: bold;
+    
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -970,22 +994,44 @@ textarea:focus
     color: #fff;
 }
 
-.qs-datepicker .qs-arrow:hover
+
+.qs-datepicker .qs-arrow.qs-right:after, .qs-datepicker .qs-arrow.qs-left:after
 {
-    background: transparent !important;
+    display: none;
 }
 
-// .qs-datepicker .qs-arrow.qs-left:after, .qs-datepicker .qs-arrow.qs-right:after
-// {
-//   display: none;
-// }
+.qs-datepicker .qs-arrow
+{
+    transition: .3s;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 11px;
+    height: 20px;
+}
 
-// .qs-datepicker .qs-arrow.qs-right
-// {
-//     opacity: 0;
-//     z-index: -1;
-//     pointer-events: none;
-// }
+.qs-datepicker .qs-arrow.qs-left 
+{
+    background-image: url(../img/arrow_left_datapicker.svg);
+}
+
+.qs-datepicker .qs-arrow.qs-right
+{
+    background-image: url(../img/arrow_right_datapicker.svg);
+}
+
+.qs-datepicker .qs-arrow.qs-left:hover 
+{
+    background: transparent url(../img/arrow_left_datapicker_hover.svg);
+}
+
+.qs-datepicker .qs-arrow.qs-right:hover 
+{
+    background: transparent url(../img/arrow_right_datapicker_hover.svg);
+}
+
+
+
 
 
 // Шапка 
@@ -1004,7 +1050,7 @@ textarea:focus
             {
                 font-family: Montserrat Bold;
                 font-size: 15px;
-                font-weight: bold;
+                
                 font-stretch: normal;
                 font-style: normal;
                 line-height: normal;
@@ -1049,7 +1095,7 @@ textarea:focus
                 padding: 6px 20px;
                 font-family: Montserrat Bold;
                 font-size: 15px;
-                font-weight: bold;
+                
                 font-stretch: normal;
                 font-style: normal;
                 line-height: normal;
@@ -1086,7 +1132,7 @@ textarea:focus
                 border: 0;
                 font-family: Montserrat Bold;
                 font-size: 15px;
-                font-weight: bold;
+                
                 font-stretch: normal;
                 font-style: normal;
                 line-height: normal;
@@ -1278,7 +1324,7 @@ textarea:focus
     top: 0;
     font-family: Montserrat Bold;
     font-size: 12px;
-    font-weight: bold;
+    
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -1294,79 +1340,75 @@ textarea:focus
     {
         text-align: center;
     }
-    &-content 
+    &-block 
     {
-        border-radius: 3px;
         box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+        border-radius: 3px;
         background-color: #ffffff;
-        padding: 64px 105px 43px 105px;
-        form 
+        &-content 
         {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            input[type="text"]
-            {
-                width: 28%;
-            }
-            input[type="text"]:nth-child(1)
-            {
-                border-right: 0;
-            }
-            input[type="text"]:nth-child(3)
-            {
-                border-left: 0;
-                border-right: 0;
-            }
-            input[type="submit"]
-            {
-                padding-left: 50px;
-                padding-right: 50px;
-            }
-        }
-        .detailed-search 
-        {
-            margin-top: 43px;
-        }
-        .hash-tags 
-        {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 73px;
-            &__link 
+            padding: 64px 105px 43px 105px;
+            form 
             {
                 display: flex;
-                margin-right: 15px;
-                margin-bottom: 15px;
-                align-items: center;
-                font-family: Montserrat Regular;
-                font-size: 13px;
-                font-weight: normal;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: normal;
-                letter-spacing: normal;
-                color: $color-ref;
-                border: 0;
-                span 
+                justify-content: center;
+                flex-wrap: wrap;
+                input[type="text"]
                 {
-                    color: $color-disabled;
-                    margin-left: 3px;
+                    width: 28%;
+                }
+                input[type="text"]:nth-child(1)
+                {
+                    border-right: 0;
+                }
+                input[type="text"]:nth-child(3)
+                {
+                    border-left: 0;
+                    border-right: 0;
+                }
+                input[type="submit"]
+                {
+                    padding-left: 50px;
+                    padding-right: 50px;
+                }
+            }
+            .hash-tags 
+            {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                &__link 
+                {
+                    display: flex;
+                    margin-right: 15px;
+                    margin-bottom: 15px;
+                    align-items: center;
+                    font-family: Montserrat Regular;
+                    font-size: 13px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: normal;
+                    letter-spacing: normal;
+                    border: 0;
+                    span 
+                    {
+                        color: $color-disabled;
+                        margin-left: 3px;
+                    }
                 }
             }
         }
-    }
-    &__buttons 
-    {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding-top: 22px;
-        padding-bottom: 22px;
-        border-top: 1px solid rgba(38, 34, 98, 0.1);
-        background-color: #fff;
+        &__buttons 
+        {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-top: 22px;
+            padding-bottom: 22px;
+            border-top: 1px solid rgba(38, 34, 98, 0.1);
+        }
     }
 }
 
@@ -1405,6 +1447,7 @@ textarea:focus
     justify-content: space-between;
     box-shadow: 0 10px 20px 0 rgba(15,20,91,.1);
     position: relative;
+    overflow: hidden;
     &__desc 
     {
         padding: 31px 33px;
@@ -1415,7 +1458,7 @@ textarea:focus
         {
             font-family: Montserrat Bold;
             font-size: 18px;
-            font-weight: bold;
+            
             font-stretch: normal;
             font-style: normal;
             line-height: normal;
@@ -1443,7 +1486,7 @@ textarea:focus
         }
         .vacancy-card__salary
         {
-            font-weight: bold;
+            
             font-family: Montserrat Bold;
             font-size: 16px;
             font-weight: normal;
@@ -1517,10 +1560,31 @@ textarea:focus
             align-items: center;
             background-color: $body-bg-color;
             border: 0;
+            transition: .3s;
+        }
+        .vacancy-card__toggle:hover 
+        {
+            background-color: $color-ref;
+            .img-svg path 
+            {
+                fill: #fff;
+            }
         }
         .vacancy-card__respond 
         {
-            margin-left: 50px;
+           height: 60px;
+           width: 79%;
+           transition: .3s;
+           background-color: transparent;
+        }
+        .vacancy-card__respond:hover
+        {
+            background-color: $color-ref;
+            color: #fff;
+            .img-svg path
+            {
+                fill: #fff;
+            }
         }
     }
 }
@@ -1556,6 +1620,23 @@ textarea:focus
             fill: #fff;
         }
     }
+    .vacancy-card__toggle:hover 
+    {
+        background-color: $color-ref;
+        .img-svg path 
+        {
+            fill: #fff;
+        }
+    }
+    .vacancy-card__respond:hover
+    {
+        background-color: $color-ref;
+        color: #fff;
+        .img-svg path
+        {
+            fill: #fff;
+        }
+    }
 }
 
 .new-vacancies 
@@ -1584,7 +1665,7 @@ textarea:focus
 {
     font-family: Montserrat Bold;
     font-size: 18px;
-    font-weight: bold;
+    
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -1614,7 +1695,7 @@ textarea:focus
     justify-content: space-between;
     width: 100%;
     position: absolute;
-    top: 33%;
+    top: 43%;
     z-index: 3;
 }
 
@@ -1635,6 +1716,7 @@ button
     border-radius: 3px;
     // width: 400px;
     position: relative;
+    border: 0;
     &__left 
     {
         width: 31%;
@@ -1657,7 +1739,7 @@ button
     {
         font-family: Montserrat Bold;
         font-size: 18px;
-        font-weight: bold;
+        
         font-stretch: normal;
         font-style: normal;
         line-height: normal;
@@ -1721,11 +1803,7 @@ button
         }
         .owl-next 
         {
-            right: 30px;
-        }
-        &-wrapper 
-        {
-
+            right: 0;
         }
     }
 }
@@ -1850,7 +1928,7 @@ button
 {
     font-family: Raleway Bold;
     font-size: 24px;
-    font-weight: bold;
+    
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -1910,7 +1988,7 @@ button
             {
                 font-family: Raleway Bold;
                 font-size: 24px;
-                font-weight: bold;
+                
                 font-stretch: normal;
                 font-style: normal;
                 line-height: normal;
@@ -1957,7 +2035,7 @@ button
             {
                 font-family: Montserrat Bold;
                 font-size: 20px;
-                font-weight: bold;
+                
                 font-stretch: normal;
                 font-style: normal;
                 line-height: normal;
@@ -2088,6 +2166,7 @@ button
     border: 0;
     height: 549px;
     max-height: 549px;
+    overflow: hidden;
     &__image 
     {
         height: 197px;
@@ -2105,7 +2184,7 @@ button
         {
             font-family: Raleway Bold;
             font-size: 18px;
-            font-weight: bold;
+            
             font-stretch: normal;
             font-style: normal;
             line-height: normal;
@@ -2190,32 +2269,32 @@ button
 
 // Страница Часто задаваемые вопросы
 
-.wrapper-ask-question
-{
-    form 
-    {
-        input[type="text"]
-        {
-            width: 300px;
-        }
-        textarea
-        {
-            width: 610px;
-            height: 127px;
-        }
-    }
-}
+// .wrapper-ask-question
+// {
+//     form 
+//     {
+//         input[type="text"]
+//         {
+//             width: 300px;
+//         }
+//         textarea
+//         {
+//             width: 610px;
+//             height: 127px;
+//         }
+//     }
+// }
 
 
 // Список вакансий
 
-.sidebar-filter
-{
-    form 
-    {
+// .sidebar-filter
+// {
+//     form 
+//     {
 
-    }
-}
+//     }
+// }
 
 .block-select-filter 
 {
@@ -2238,7 +2317,7 @@ button
     {
         font-family: Montserrat Bold;
         font-size: 15px;
-        font-weight: bold;
+        
         font-stretch: normal;
         font-style: normal;
         line-height: normal;
@@ -2311,7 +2390,7 @@ button
                 margin-bottom: 22px;
                 font-family: Montserrat Bold;
                 font-size: 14px;
-                font-weight: bold;
+                
                 font-stretch: normal;
                 font-style: normal;
                 line-height: normal;
@@ -2418,7 +2497,7 @@ button
     {
         font-family: Montserrat Bold;
         font-size: 19px;
-        font-weight: bold;
+        
         font-stretch: normal;
         font-style: normal;
         line-height: 1.47;
@@ -2429,6 +2508,7 @@ button
 
 
 // Вход в личный кабинет
+
 
 .little-title
 {
@@ -2507,11 +2587,11 @@ button
         margin-left: 18px;
         margin-right: 18px;
         transition: .3s;
-        .img-svg 
-        {
-            max-width: 100%;
-            height: auto;
-        }
+        // .img-svg 
+        // {
+        //     max-width: 100%;
+        //     height: auto;
+        // }
     }
     .social-networks__ref:hover 
     {
@@ -2578,7 +2658,8 @@ label
 
 .container-compressed_center 
 {
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -2612,7 +2693,7 @@ label
             {
                 font-family: Montserrat Bold;
                 font-size: 15px;
-                font-weight: bold;
+                
                 font-stretch: normal;
                 font-style: normal;
                 line-height: normal;
@@ -2764,7 +2845,7 @@ label
         {
             font-family: Raleway Bold;
             font-size: 16px;
-            font-weight: bold;
+            
             font-stretch: normal;
             font-style: normal;
             line-height: normal;
@@ -2870,18 +2951,18 @@ ymaps[class$='pie-chart']
     align-items: !important;
 }
 
-ymaps[class$='patched-for-print']
-{
-    background-image: none !important;
-    list-style-image: none !important;
-    height: 36px !important;
-    box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1) !important;
-    background: $color-hover !important;
-    border-radius: 50% !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-} 
+// ymaps[class$='patched-for-print']
+// {
+//     background-image: none !important;
+//     list-style-image: none !important;
+//     height: 36px !important;
+//     box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1) !important;
+//     background: $color-hover !important;
+//     border-radius: 50% !important;
+//     display: flex !important;
+//     justify-content: center !important;
+//     align-items: center !important;
+// } 
 
 ymaps[class$='pie-chart-content']
 {
@@ -2916,7 +2997,7 @@ ymaps[class$='pie-chart-content']
         {
             font-family: Montserrat Bold;
             font-size: 14px;
-            font-weight: bold;
+            
             font-stretch: normal;
             font-style: normal;
             line-height: normal;
@@ -3053,7 +3134,7 @@ ymaps[class$='pie-chart-content']
     {
         font-family: Montserrat Bold;
         font-size: 15px;
-        font-weight: bold;
+        
         font-stretch: normal;
         font-style: normal;
         line-height: normal;
@@ -3177,7 +3258,7 @@ ymaps[class$='pie-chart-content']
         {
             font-family: Raleway Bold;
             font-size: 30px;
-            font-weight: bold;
+            
             font-stretch: normal;
             font-style: normal;
             line-height: normal;
@@ -3189,7 +3270,7 @@ ymaps[class$='pie-chart-content']
         {
             font-family: Montserrat Bold;
             font-size: 16px;
-            font-weight: bold;
+            
             font-stretch: normal;
             font-style: normal;
             line-height: normal;
@@ -3199,7 +3280,7 @@ ymaps[class$='pie-chart-content']
             {
                 font-family: Montserrat Bold;
                 font-size: 16px;
-                font-weight: bold;
+                
                 font-stretch: normal;
                 font-style: normal;
                 line-height: normal;
@@ -3221,7 +3302,7 @@ ymaps[class$='pie-chart-content']
                 margin-right: 20px;
                 font-family: Montserrat Bold;
                 font-size: 16px;
-                font-weight: bold;
+                
                 font-stretch: normal;
                 font-style: normal;
                 line-height: normal;
@@ -3278,7 +3359,7 @@ ymaps[class$='pie-chart-content']
             {
                 font-family: Montserrat Bold;
                 font-size: 16px;
-                font-weight: bold;
+                
                 font-stretch: normal;
                 font-style: normal;
                 line-height: 30px;
@@ -3331,14 +3412,13 @@ ymaps[class$='pie-chart-content']
             }
             .block-radio 
             {
-                margin-top: 0;
                 margin-right: 40px;
             }
             &__name 
             {
                 font-family: Raleway Bold;
                 font-size: 18px;
-                font-weight: bold;
+                
                 font-stretch: normal;
                 font-style: normal;
                 line-height: normal;
@@ -3565,7 +3645,7 @@ input[type="submit"]
                 {
                     font-family: Raleway Bold;
                     font-size: 14px;
-                    font-weight: bold;
+                    
                     font-stretch: normal;
                     font-style: normal;
                     line-height: normal;
@@ -3718,11 +3798,11 @@ input[type="submit"]
 
 // Страница Избранное - Список 
 
-.favorites-vacancies-ref
-{
-    width: max-content;
-    margin-bottom: 32px;
-}
+// .favorites-vacancies-ref
+// {
+//     width: max-content;
+//     margin-bottom: 32px;
+// }
 
 .favorites-list 
 {
@@ -3760,7 +3840,7 @@ input[type="submit"]
                 {
                     font-family: Raleway Bold;
                     font-size: 14px;
-                    font-weight: bold;
+                    
                     font-stretch: normal;
                     font-style: normal;
                     line-height: normal;
@@ -3865,7 +3945,7 @@ input[type="submit"]
         position: absolute;
         font-family: Montserrat Bold;
         font-size: 14px;
-        font-weight: bold;
+        
         font-stretch: normal;
         font-style: normal;
         line-height: normal;
@@ -3997,7 +4077,7 @@ input[type="submit"]
         {
             font-family: Montserrat Bold;
             font-size: 15px;
-            font-weight: bold;
+            
             font-stretch: normal;
             font-style: normal;
             line-height: normal;
@@ -4059,7 +4139,7 @@ input[type="submit"]
         background-color: #ffffff;
         font-family: Montserrat Bold;
         font-size: 14px;
-        font-weight: bold;
+        
         font-stretch: normal;
         font-style: normal;
         line-height: normal;
@@ -4189,7 +4269,7 @@ input[type="submit"]
         {
             font-family: Montserrat Bold;
             font-size: 16px;
-            font-weight: bold;
+            
             font-stretch: normal;
             font-style: normal;
             line-height: 1.31;
@@ -4269,7 +4349,7 @@ input[type="submit"]
         {
             font-family: Raleway Bold;
             font-size: 18px;
-            font-weight: bold;
+            
             font-stretch: normal;
             font-style: normal;
             line-height: normal;

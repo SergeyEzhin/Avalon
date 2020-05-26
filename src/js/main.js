@@ -187,8 +187,8 @@ let headerScroll = document.querySelector('.header-scroll');
 function fixedAdaptiveHeader(block, height)
 {
   var scroll = window.pageYOffset || document.documentElement.scrollTop;
-  var heightBlock = block.clientHeight;
-  var wrapperContent = document.querySelector('.wrapper-content');
+  // var heightBlock = block.clientHeight;
+  // var wrapperContent = document.querySelector('.wrapper-content');
     
   if (scroll >= height) 
   {
@@ -279,11 +279,11 @@ if(tabs.length > 0)
 // Datapicker 
 
 
-let inputBirthday = document.querySelector('#birthday');
+let inputBirthday = document.querySelector('input[data-picker="datepicker"]');
 
 if(inputBirthday)
 {
-  const picker = datepicker(inputBirthday, {
+  datepicker(inputBirthday, {
     formatter: (input, date, instance) => 
     {
       const value = date.toLocaleDateString();

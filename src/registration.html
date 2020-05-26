@@ -186,21 +186,21 @@
                                 <div class="tabs-content block-mt-blue">
                                     <form action="" name="form-registration" id="form-registration" enctype="multipart/form-data">
                                         <div class="block-mb-yellow">
-                                            <label for="name">Имя</label>
+                                            <label for="name">Имя <span>*</span></label>
                                             <input type="text" placeholder="ИМЯ" name="name" id="name">
                                         </div>
                                         <div class="block-mb-yellow">
-                                            <label for="sername">Фамилия</label>
+                                            <label for="sername">Фамилия <span>*</span></label>
                                             <input type="text" placeholder="ФАМИЛИЯ" name="sername" id="sername">
                                         </div>
                                         <div class="block-mb-yellow">
-                                            <label for="patronymic">Отчество</label>
+                                            <label for="patronymic">Отчество <span>*</span></label>
                                             <input type="text" placeholder="ОТЧЕСТВО" name="patronymic" id="patronymic">
                                         </div>
                                         <div class="tabs-content-block" data-tab="tab-extended-registration">
                                             <div class="block-mb-yellow">
                                                 <label for="birthday">Дата рождения</label>
-                                                <input type="text" name="birthday" id="birthday" placeholder="ВЫБЕРИТЕ ДАТУ">
+                                                <input type="text" name="birthday" data-picker="datepicker" placeholder="ВЫБЕРИТЕ ДАТУ">
                                             </div>
                                             <div class="block-gender block-mb-green">
                                                 <p>Пол:</p>
@@ -221,12 +221,12 @@
                                             </div>
                                         </div>
                                         <div class="block-mb-yellow">
-                                            <label for="phone">Телефон</label>
+                                            <label for="phone">Телефон <span>*</span></label>
                                             <input type="text" name="phone" id="phone" placeholder="+7">
                                         </div>
                                         <div class="tabs-content-block" data-tab="tab-extended-registration">
                                             <div class="block-mb-yellow">
-                                                <label for="email">E-mail</label>
+                                                <label for="email">E-mail <span>*</span></label>
                                                 <input type="text" name="email" id="email" placeholder="E-MAIL">
                                             </div>
                                             <div class="block-mb-yellow">
@@ -235,10 +235,10 @@
                                             </div>
                                         </div>
                                         <div class="block-mb-green">
-                                            <label for="password">Пароль</label>
+                                            <label for="password">Пароль <span>*</span></label>
                                             <input type="password" name="password" id="password" placeholder="ПАРОЛЬ">
                                         </div>
-                                        <p class="block-mb-green" style="font-size: 14px;">* - поля, обязательные для заполнения</p>
+                                        <p class="block-mb-green" style="font-size: 14px;"><span>*</span> - поля, обязательные для заполнения</p>
                                         <p class="block-mb-green" style="font-size: 14px;">Нажимая кнопку «Зарегистрироваться», Вы даёте своё согласие на обработку персональных данных</p>
                                         <input type="submit" name="submit-registration" class="main-button" id="submit-registration" value="Зарегистрироваться">
                                     </form>
