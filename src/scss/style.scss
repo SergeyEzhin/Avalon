@@ -417,7 +417,8 @@ input[type="text"]:disabled, input[type="password"]:disabled
 input[data-picker="datepicker"]
 {
     background-image: url(../img/icon_datepicker.svg);
-    background-position: 97%;
+    background-position: 96%;
+    // background-position: 174px;
     background-repeat: no-repeat;
 }
 
@@ -1031,13 +1032,48 @@ textarea:focus
 }
 
 
-
+.prompt 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: .3s;
+    opacity: 0;
+    z-index: -1;
+    a 
+    {
+        display: block;
+        font-family: Montserrat Bold;
+        font-size: 14px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+    }
+}
 
 
 // Шапка 
 
 .header 
 {
+    // a 
+    // {
+    //     position: relative;
+    //     display: flex;
+    // }
+    // a:hover .prompt
+    // {
+    //     opacity: 1;
+    //     z-index: 3;
+    // }
     &-top 
     {
         padding-top: 22px;
@@ -1308,6 +1344,7 @@ textarea:focus
         opacity: 1;
     }
 }
+
 
 .feedback:after 
 {
@@ -3798,11 +3835,6 @@ input[type="submit"]
 
 // Страница Избранное - Список 
 
-// .favorites-vacancies-ref
-// {
-//     width: max-content;
-//     margin-bottom: 32px;
-// }
 
 .favorites-list 
 {
@@ -4016,6 +4048,7 @@ input[type="submit"]
         .other-position 
         {
             display: flex;
+            align-items: flex-start;
             .button-text 
             {
                 margin-left: 12px;
@@ -4073,19 +4106,25 @@ input[type="submit"]
             margin-left: 60px;
             margin-right: 60px;
         }
+        &__arrow_passed 
+        {
+            .img-svg path
+            {
+                fill: $color-primary;
+            }
+        }
         &__step 
         {
             font-family: Montserrat Bold;
             font-size: 15px;
-            
             font-stretch: normal;
             font-style: normal;
             line-height: normal;
             letter-spacing: normal;
-            color: $color-disabled;
             text-transform: uppercase;
             border: 0;
             transition: .3s;
+            color: $color-ref;
         }
         &__step:hover 
         {
@@ -4099,6 +4138,7 @@ input[type="submit"]
         &__step_disabled
         {
             pointer-events: none;
+            color: $color-disabled;
         }
     }
     form 

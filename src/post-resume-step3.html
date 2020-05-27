@@ -137,7 +137,7 @@
                                         <img class="img-svg" src="./img/icon_my_resumes.svg" alt="">
                                         Мои резюме
                                     </a>
-                                    <a href="#" class="button-text release-resume current-ref">
+                                    <a href="#" class="button-text current-ref">
                                         <img class="img-svg" src="./img/icon_resume.svg" alt="">
                                         Разместить резюме
                                     </a>
@@ -145,7 +145,7 @@
                                         <img class="img-svg" src="./img/icon_feedback.svg" alt="">
                                         Отклики
                                     </a>
-                                    <a href="#" class="button-text favorites">
+                                    <a href="#" class="button-text">
                                         <img class="img-svg" src="./img/icon_favorites.svg" alt="">
                                         Избранное
                                     </a>
@@ -162,14 +162,14 @@
                                     <div class="block-mt-blue">
                                         <div class="steps-post-resume">
                                             <a href="#" class="steps-post-resume__step">Шаг 2. Пожелания к работе</a>
-                                            <div class="steps-post-resume__arrow">
-                                                <img src="./img/arrow_step.svg" alt="">
+                                            <div class="steps-post-resume__arrow steps-post-resume__arrow_passed">
+                                                <img class="img-svg" src="./img/arrow_step.svg" alt="">
                                             </div>
                                             <a href="#" class="steps-post-resume__step steps-post-resume__step_current">Шаг 3. Опыт работы</a>
                                             <div class="steps-post-resume__arrow">
-                                                <img src="./img/arrow_step.svg" alt="">
+                                                <img class="img-svg" src="./img/arrow_step.svg" alt="">
                                             </div>
-                                            <a href="#" class="steps-post-resume__step">Шаг 4. Моё резюме</a>
+                                            <a href="#" class="steps-post-resume__step steps-post-resume__step_disabled">Шаг 4. Моё резюме</a>
                                         </div>
                                         <div class="block-mt-blue">
                                             <div class="container-compressed">
@@ -187,28 +187,28 @@
                                                             <label for="company">Компания</label>
                                                             <input type="text" name="company" id="company" placeholder="КОМПАНИЯ">
                                                         </div>
-                                                        <div class="block-mb-orange">
+                                                        <div class="block-mb-orange block-choice-position">
                                                             <label for="position">Желаемая должность</label>
-                                                            <select name="position" id="position" data-position="choice-position">
+                                                            <select name="position" id="position">
                                                                 <option value="1">Должность 1</option>
                                                                 <option value="2">Должность 2</option>
                                                                 <option value="3">Должность 3</option>
                                                                 <option value="other">Другая</option>
                                                             </select>
-                                                        </div>
-                                                        <div class="block-mb-yellow">
-                                                            <input type="text" name="other-position" id="other-position" data-position="other-position" placeholder="ЖЕЛАЕМАЯ ДОЛЖНОСТЬ" disabled>
+                                                            <div class="block-mb-yellow">
+                                                                <input type="text" name="other-position" id="other-position" placeholder="ЖЕЛАЕМАЯ ДОЛЖНОСТЬ" disabled>
+                                                            </div>
                                                         </div>
                                                         <div class="block-mb-yellow">
                                                             <div class="work-period">
                                                                 <p>Период работы</p>
                                                                 <div class="work-period__block">
                                                                     <p>с</p>
-                                                                    <input type="text" name="start-work" id="start-work">
+                                                                    <input type="text" name="start-work" data-picker="datepicker" id="start-work">
                                                                 </div>
                                                                 <div class="work-period__block">
                                                                     <p>по</p>
-                                                                    <input type="text" name="end-work" id="end-work">
+                                                                    <input type="text" name="end-work" data-picker="datepicker" id="end-work">
                                                                 </div>
                                                             </div>
                                                         </div>

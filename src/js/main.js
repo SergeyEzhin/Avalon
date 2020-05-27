@@ -9,43 +9,47 @@ import datepicker from 'js-datepicker';
 
 var imgSvg = document.querySelectorAll('.img-svg');
 
-for(var i = 0; i < imgSvg.length; i++)
+if(imgSvg.length)
 {
-    var img = imgSvg[i];
-    var imgClass = img.getAttribute('class');
-    var imgUrl = img.getAttribute('src');
+  for(var i = 0; i < imgSvg.length; i++)
+  {
+      var img = imgSvg[i];
+      var imgClass = img.getAttribute('class');
+      var imgUrl = img.getAttribute('src');
 
-    var request = new XMLHttpRequest();
-    request.open('GET', imgUrl, false);
+      var request = new XMLHttpRequest();
+      request.open('GET', imgUrl, false);
 
-    request.onload = function() {
-        if (this.status >= 200 && this.status < 400) {
-          // Success!
-          var data = this.response;
-          var parser = new DOMParser();
-          var htmlSvg = parser.parseFromString(data, 'text/html');
-          var svg = htmlSvg.querySelector('svg');
+      request.onload = function() {
+          if (this.status >= 200 && this.status < 400) {
+            // Success!
+            var data = this.response;
+            var parser = new DOMParser();
+            var htmlSvg = parser.parseFromString(data, 'text/html');
+            var svg = htmlSvg.querySelector('svg');
 
-          svg.setAttribute('class', 'img-svg');
-          console.log(svg);
+            svg.setAttribute('class', 'img-svg');
+            console.log(svg);
 
-          // img.replaceWith(svg);
-          img.parentElement.insertBefore(svg, img);
-          img.parentElement.removeChild(img);
-          
-        }
-        else 
-        {
-          console.log('error!');
-        }
-      };
-      
-      request.onerror = function(e) {
-          console.log(e);
-        // There was a connection error of some sort
-      };
-      
-      request.send();
+            // img.replaceWith(svg);
+            img.parentElement.insertBefore(svg, img);
+            img.parentElement.removeChild(img);
+            
+          }
+          else 
+          {
+            console.log('error!');
+          }
+        };
+        
+        request.onerror = function(e) {
+            console.log(e);
+          // There was a connection error of some sort
+        };
+        
+        request.send();
+  }
+
 }
 
 // Слайдеры на главной
@@ -134,50 +138,57 @@ $('.similar-vacancies-slider-wrapper').owlCarousel({
 
 // Аккордеон
 
-try
+let accordionContentBlock = document.querySelectorAll('.accordion-content-block');
+
+if(accordionContentBlock.length)
 {
-    let accordionContentBlock = document.querySelectorAll('.accordion-content-block');
-    accordionContentBlock.forEach((elem) => 
+  accordionContentBlock.forEach((elem) => 
+  {
+    elem.addEventListener('click', function(e)
     {
-      elem.addEventListener('click', function(e)
-      {
-        e.preventDefault();
-        elem.classList.toggle('accordion-content-block_hide');
-      })
-    });
+      e.preventDefault();
+      elem.classList.toggle('accordion-content-block_hide');
+    })
+  });
 }
-catch (e) {
-    console.log(e);
-}
+    
 
 // Проверка изображения в карточке статьи
 
 let articleBlocks = document.querySelectorAll('.article-block');
 
-articleBlocks.forEach(article => {
-  if(!article.querySelector('.article-block__image'))
-  {
-    article.querySelector('.article-block__content').style.height = '100%';
-  }
-});
+if(articleBlocks.length)
+{
+  articleBlocks.forEach(article => {
+    if(!article.querySelector('.article-block__image'))
+    {
+      article.querySelector('.article-block__content').style.height = '100%';
+    }
+  });
+}
 
 
 // Кастомизированный селект
 
 var elemsSelect = document.querySelectorAll('select');
 
-if(elemsSelect.length > 0)
+function initChoices(data)
 {
-  elemsSelect.forEach(function(elem)
+  if(data.length)
   {
-    new Choices(elem, {
-      choices: [],
-      placeholder: true,
-      searchEnabled: false,
-      itemSelectText: ''
+    data.forEach(function(elem)
+    {
+      new Choices(elem, {
+        choices: [],
+        placeholder: true,
+        searchEnabled: false,
+        itemSelectText: ''
+      });
     });
-  });
+  }
 }
+
+initChoices(elemsSelect);
 
 // Определение прокрутки шапки и задание фиксированной шапки
 
@@ -214,7 +225,7 @@ fixedAdaptiveHeader(headerScroll, headerHeight);
 
 var inputFile = document.querySelectorAll('input[type="file"]');
 
-if(inputFile.length > 0)
+if(inputFile.length)
 {
     inputFile.forEach(function(input) 
     {
@@ -234,7 +245,7 @@ if(inputFile.length > 0)
 
 var tabs = document.querySelectorAll('.tabs');
 
-if(tabs.length > 0)
+if(tabs.length)
 {
   tabs.forEach(function(elem, index)
   {
@@ -276,28 +287,36 @@ if(tabs.length > 0)
 }
 
 
-// Datapicker 
+// Datapicker
 
+let datepickerElems = document.querySelectorAll('input[data-picker="datepicker"]');
 
-let inputBirthday = document.querySelector('input[data-picker="datepicker"]');
-
-if(inputBirthday)
+function initDatepicker(data)
 {
-  datepicker(inputBirthday, {
-    formatter: (input, date, instance) => 
+ 
+  if(data.length)
+  {
+    data.forEach(elem => 
     {
-      const value = date.toLocaleDateString();
-      input.value = value; // => '1/1/2099'
-    },
-    startDay: 0,
-    customDays: ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
-    customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-    showAllDates: true, 
-    overlayButton: 'Выбрать', 
-    overlayPlaceholder: 'Укажите год'
-  
-  });
+      datepicker(elem, {
+        formatter: (input, date, instance) => 
+        {
+          const value = date.toLocaleDateString();
+          input.value = value; // => '1/1/2099'
+        },
+        startDay: 0,
+        customDays: ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
+        customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+        showAllDates: true, 
+        overlayButton: 'Выбрать', 
+        overlayPlaceholder: 'Укажите год'
+      
+      });
+    });
+  }
 }
+
+initDatepicker(datepickerElems);
 
 
 // Карта
@@ -655,7 +674,7 @@ if(radioShareVk && radioShareEmail)
 
 let togglePassword = document.querySelectorAll('.toggle-password');
 
-if(togglePassword.length > 0)
+if(togglePassword.length)
 {
   togglePassword.forEach(elem => 
   {
@@ -672,7 +691,7 @@ if(togglePassword.length > 0)
 
 let resumesFeedback = document.querySelectorAll('.resumes-content-row-block.resumes-feedback-column p');
 
-if(resumesFeedback.length > 0)
+if(resumesFeedback.length)
 {
   resumesFeedback.forEach(elem => {
     elem.innerHTML === '0' ? elem.style.color = '#b7b6c3' : elem.style.borderBottom = '1px dashed currentColor';
@@ -788,27 +807,31 @@ if(canvasAvatar)
 
 // Выбор должности
 
-let position = document.querySelectorAll('select[data-position="choice-position"]');
-console.log(position);
+let blockChoicePosition = document.querySelectorAll('.block-choice-position');
 
-if(position.length)
+function choicePosition(data)
 {
-  position.forEach(elem => {
-    elem.addEventListener('change', () => {
-      if(elem.value === 'other')
-      {
-        console.log(1);
-        // elem.parentElement.parentElement.querySelectorAll('[data-position="other-position"]')[1].removeAttribute('disabled');
-      }
-      else 
-      {
-        console.log(2);
-        // elem.parentElement.parentElement.querySelectorAll].setAttribute('disabled', 'disabled');
-      }
-    });
-  });
+  if(data.length)
+  {
+    data.forEach(elem => {
+      let select = elem.querySelector('select');
+      let input = elem.querySelector('input');
 
+      select.addEventListener('change', () => {
+        if(select.value === 'other')
+        {
+          input.removeAttribute('disabled');
+        }
+        else 
+        {
+          input.setAttribute('disabled', 'disabled');
+        }
+      });
+    });
+  }
 }
+
+choicePosition(blockChoicePosition);
 
 
 // Добавить другой город
@@ -833,32 +856,6 @@ if(addOtherCity.length)
   });
 }
 
-
-// Начало и конец работы 
-
-let inputWork = document.querySelectorAll('.work-period__block input');
-
-if(inputWork.length)
-{
-  inputWork.forEach(elem => 
-  {
-    datepicker(elem, {
-      formatter: (input, date, instance) => 
-      {
-        const value = date.toLocaleDateString();
-        input.value = value; // => '1/1/2099'
-      },
-      startDay: 0,
-      customDays: ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
-      customMonths: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-      showAllDates: true, 
-      overlayButton: 'Выбрать', 
-      overlayPlaceholder: 'Укажите год'
-    
-    });
-  });
-}
-
 // Добавление места работы 
 
 let addPlaceWork = document.querySelectorAll('.add-place-work');
@@ -867,7 +864,8 @@ if(addPlaceWork.length)
 {
   let indexPlacework = 0;
 
-  addPlaceWork.forEach(elem => {
+  addPlaceWork.forEach(elem => 
+  {
     elem.addEventListener('click', (e) => 
     {
       e.preventDefault();
@@ -877,31 +875,31 @@ if(addPlaceWork.length)
       let tempateForm = `
         <div class="data-form-experience">
           <div class="block-mb-yellow">
-            <label for="company">Компания</label>
+            <label for="company${indexPlacework}">Компания</label>
             <input type="text" name="company${indexPlacework}" id="company${indexPlacework}" placeholder="КОМПАНИЯ">
           </div>
-          <div class="block-mb-orange">
+          <div class="block-mb-orange block-choice-position">
               <label for="position${indexPlacework}">Желаемая должность</label>
-              <select name="position${indexPlacework}" id="position${indexPlacework}" data-position="choice-position">
+              <select name="position${indexPlacework}" id="position${indexPlacework}">
                   <option value="1">Должность 1</option>
                   <option value="2">Должность 2</option>
                   <option value="3">Должность 3</option>
                   <option value="other">Другая</option>
               </select>
-          </div>
-          <div class="block-mb-yellow">
-              <input type="text" name="other-position${indexPlacework}" id="other-position${indexPlacework}" data-position="other-position" placeholder="ЖЕЛАЕМАЯ ДОЛЖНОСТЬ">
+              <div class="block-mb-yellow">
+                <input type="text" name="other-position${indexPlacework}" id="other-position${indexPlacework}" placeholder="ЖЕЛАЕМАЯ ДОЛЖНОСТЬ">
+              </div>
           </div>
           <div class="block-mb-yellow">
               <div class="work-period">
                   <p>Период работы</p>
                   <div class="work-period__block">
                       <p>с</p>
-                      <input type="text" name="start-work${indexPlacework}" id="start-work${indexPlacework}">
+                      <input type="text" name="start-work${indexPlacework}" data-picker="datepicker" id="start-work${indexPlacework}">
                   </div>
                   <div class="work-period__block">
                       <p>по</p>
-                      <input type="text" name="end-work${indexPlacework}" id="end-work${indexPlacework}">
+                      <input type="text" name="end-work${indexPlacework}" data-picker="datepicker" id="end-work${indexPlacework}">
                   </div>
               </div>
           </div>
@@ -930,7 +928,15 @@ if(addPlaceWork.length)
 
       elem.parentElement.insertAdjacentHTML('beforebegin', tempateForm);
 
-  
+      let dataFormNew = document.querySelectorAll('.data-form-experience')[indexPlacework];
+      let datepickerElemsNew = dataFormNew.querySelectorAll('input[data-picker="datepicker"]');
+      let selectsNew = dataFormNew.querySelectorAll('select');
+      let blockChoicePositionNew = dataFormNew.querySelectorAll('.block-choice-position');
+
+      initDatepicker(datepickerElemsNew);
+      initChoices(selectsNew);
+      choicePosition(blockChoicePositionNew);
+
     });
   });
 }

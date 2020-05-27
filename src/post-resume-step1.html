@@ -137,7 +137,7 @@
                                         <img class="img-svg" src="./img/icon_my_resumes.svg" alt="">
                                         Мои резюме
                                     </a>
-                                    <a href="#" class="button-text release-resume current-ref">
+                                    <a href="#" class="button-text current-ref">
                                         <img class="img-svg" src="./img/icon_resume.svg" alt="">
                                         Разместить резюме
                                     </a>
@@ -145,7 +145,7 @@
                                         <img class="img-svg" src="./img/icon_feedback.svg" alt="">
                                         Отклики
                                     </a>
-                                    <a href="#" class="button-text favorites">
+                                    <a href="#" class="button-text">
                                         <img class="img-svg" src="./img/icon_favorites.svg" alt="">
                                         Избранное
                                     </a>
@@ -163,11 +163,11 @@
                                         <div class="steps-post-resume">
                                             <a href="#" class="steps-post-resume__step steps-post-resume__step_current">Шаг 1. Личные данные</a>
                                             <div class="steps-post-resume__arrow">
-                                                <img src="./img/arrow_step.svg" alt="">
+                                                <img class="img-svg" src="./img/arrow_step.svg" alt="">
                                             </div>
-                                            <a href="#" class="steps-post-resume__step">Шаг 2. Пожелания к работе</a>
+                                            <a href="#" class="steps-post-resume__step steps-post-resume__step_disabled">Шаг 2. Пожелания к работе</a>
                                             <div class="steps-post-resume__arrow">
-                                                <img src="./img/arrow_step.svg" alt="">
+                                                <img class="img-svg" src="./img/arrow_step.svg" alt="">
                                             </div>
                                             <a href="#" class="steps-post-resume__step steps-post-resume__step_disabled">Шаг 3. Опыт работы</a>
                                         </div>
@@ -175,20 +175,20 @@
                                             <form action="" name="post-resume-step1" id="post-resume-step1">
                                                 <div class="container-compressed">
                                                     <div class="block-mb-yellow">
-                                                        <label for="name">Имя</label>
+                                                        <label for="name">Имя <span>*</span></label>
                                                         <input type="text" placeholder="ИМЯ" name="name" id="name">
                                                     </div>
                                                     <div class="block-mb-yellow">
-                                                        <label for="sername">Фамилия</label>
+                                                        <label for="sername">Фамилия <span>*</span></label>
                                                         <input type="text" placeholder="ФАМИЛИЯ" name="sername" id="sername">
                                                     </div>
                                                     <div class="block-mb-yellow">
-                                                        <label for="patronymic">Отчество</label>
+                                                        <label for="patronymic">Отчество <span>*</span></label>
                                                         <input type="text" placeholder="ОТЧЕСТВО" name="patronymic" id="patronymic">
                                                     </div>
                                                     <div class="block-mb-yellow">
                                                         <label for="birthday">Дата рождения</label>
-                                                        <input type="text" name="birthday" id="birthday" placeholder="ВЫБЕРИТЕ ДАТУ">
+                                                        <input type="text" name="birthday" id="birthday" data-picker="datepicker" placeholder="ВЫБЕРИТЕ ДАТУ">
                                                     </div>
                                                     <div class="block-gender block-mb-green">
                                                         <p>Пол:</p>
@@ -208,11 +208,15 @@
                                                         </div>
                                                     </div>
                                                     <div class="block-mb-yellow">
-                                                        <label for="phone">Телефон</label>
+                                                        <label for="phone">Телефон <span>*</span></label>
                                                         <input type="text" name="phone" id="phone" placeholder="+7">
                                                     </div>
                                                     <div class="block-mb-yellow">
-                                                        <label for="email">E-mail</label>
+                                                        <label for="phone-friend">Телефон близкого знакомого</label>
+                                                        <input type="text" name="phone-friend" id="phone-friend" placeholder="+7">
+                                                    </div>
+                                                    <div class="block-mb-yellow">
+                                                        <label for="email">E-mail <span>*</span></label>
                                                         <input type="text" name="email" id="email" placeholder="E-MAIL">
                                                     </div>
                                                     <div class="block-mb-orange">
@@ -220,7 +224,7 @@
                                                         <input type="text" name="address" id="address" placeholder="РЕГИОН / РАЙОН, ГОРОД / Н.П., УЛИЦА">
                                                     </div>
                                                     <p class="block-mb-green" style="font-size: 14px;">Начните вводить адрес и выберите подходящий из появившегося списка</p>
-                                                    <p class="block-mb-green" style="font-size: 14px;">* - поля, обязательные для заполнения</p>
+                                                    <p class="block-mb-green" style="font-size: 14px;"><span>*</span> - поля, обязательные для заполнения</p>
                                                     <p class="block-mb-blue" style="font-size: 14px;">Нажимая кнопку «Далее», Вы даёте своё согласие на обработку персональных данных</p>
                                                     <div class="transfer-steps">
                                                         <button type="button" class="other-button disabled" id="prev-step-resume">Назад</button>

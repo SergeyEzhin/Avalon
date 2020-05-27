@@ -137,7 +137,7 @@
                                         <img class="img-svg" src="./img/icon_my_resumes.svg" alt="">
                                         Мои резюме
                                     </a>
-                                    <a href="#" class="button-text release-resume current-ref">
+                                    <a href="#" class="button-text current-ref">
                                         <img class="img-svg" src="./img/icon_resume.svg" alt="">
                                         Разместить резюме
                                     </a>
@@ -145,7 +145,7 @@
                                         <img class="img-svg" src="./img/icon_feedback.svg" alt="">
                                         Отклики
                                     </a>
-                                    <a href="#" class="button-text favorites">
+                                    <a href="#" class="button-text">
                                         <img class="img-svg" src="./img/icon_favorites.svg" alt="">
                                         Избранное
                                     </a>
@@ -162,29 +162,29 @@
                                     <div class="block-mt-blue">
                                         <div class="steps-post-resume">
                                             <a href="#" class="steps-post-resume__step">Шаг 1. Личные данные</a>
-                                            <div class="steps-post-resume__arrow">
-                                                <img src="./img/arrow_step.svg" alt="">
+                                            <div class="steps-post-resume__arrow steps-post-resume__arrow_passed">
+                                                <img class="img-svg" src="./img/arrow_step.svg" alt="">
                                             </div>
                                             <a href="#" class="steps-post-resume__step steps-post-resume__step_current">Шаг 2. Пожелания к работе</a>
                                             <div class="steps-post-resume__arrow">
-                                                <img src="./img/arrow_step.svg" alt="">
+                                                <img class="img-svg" src="./img/arrow_step.svg" alt="">
                                             </div>
-                                            <a href="#" class="steps-post-resume__step">Шаг 3. Опыт работы</a>
+                                            <a href="#" class="steps-post-resume__step steps-post-resume__step_disabled">Шаг 3. Опыт работы</a>
                                         </div>
                                         <div class="block-mt-blue">
                                             <div class="container-compressed">
                                                 <form action="" name="post-resume-step2" id="post-resume-step2">
-                                                    <div class="block-mb-orange">
-                                                        <label for="position">Желаемая должность</label>
-                                                        <select name="position" id="position" data-position="choice-position">
+                                                    <div class="block-mb-orange block-choice-position">
+                                                        <label for="position">Желаемая должность <span>*</span></label>
+                                                        <select name="position" id="position">
                                                             <option value="1">Должность 1</option>
                                                             <option value="2">Должность 2</option>
                                                             <option value="3">Должность 3</option>
                                                             <option value="other">Другая</option>
                                                         </select>
-                                                    </div>
-                                                    <div class="block-mb-yellow">
-                                                        <input type="text" name="other-position" id="other-position" data-position="other-position" placeholder="ЖЕЛАЕМАЯ ДОЛЖНОСТЬ" disabled>
+                                                        <div class="block-mb-yellow">
+                                                            <input type="text" name="other-position" id="other-position" placeholder="ЖЕЛАЕМАЯ ДОЛЖНОСТЬ" disabled>
+                                                        </div>
                                                     </div>
                                                     <div class="block-mb-green">
                                                         <label for="desired-salary">Желаемая зарплата, руб</label>
@@ -443,7 +443,7 @@
                                                             <div class="row">
                                                                 <div class="col-4">
                                                                     <div class="block-post-resume__name">
-                                                                        <p>Способ связи:</p>
+                                                                        <p>Способ связи <span>*</span>:</p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-8">
