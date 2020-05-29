@@ -255,8 +255,6 @@ if(inputFile.length)
 {
     inputFile.forEach(function(input) 
     {
-        if(input.id = 'load-avatar') return;
-
         input.addEventListener('change', function(e)
         {
             var value = input.value;

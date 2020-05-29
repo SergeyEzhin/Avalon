@@ -1,0 +1,19 @@
+@media(max-width: 1280px)
+{
+    .container 
+    {
+        max-width: 100%;
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .quick-job-search-block-content
+    {
+        padding: 64px 78px 43px;
+    }
+    .quick-job-search-block-content form input[type=submit]
+    {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
