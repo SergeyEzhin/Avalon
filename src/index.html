@@ -12,14 +12,21 @@
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto header-top-left">
-                            <a href="#" class="choice-lang">
+                            <div href="#" class="choice-lang prompt">
                                 RU 
                                 <img class="img-svg" src="./img/arrow_down.svg" alt="">
-                            </a>
-                            <a href="#" class="choice-city">
+                                <div class="prompt__block">
+                                    <a href="#">EN</a>
+                                </div>
+                            </div>
+                            <div href="#" class="choice-city prompt">
                                 Нижний Новгород 
                                 <img class="img-svg" src="./img/arrow_down.svg" alt="">
-                            </a>
+                                <div class="prompt__block">
+                                    <a href="#">Казань</a>
+                                    <a href="#">Москва</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-auto header-top-middle">
                             <a href="#" class="choice-mode choice-mode_active">Ищу работу</a>
@@ -34,15 +41,15 @@
                                 <img class="img-svg" src="./img/icon_feedback.svg" alt="">
                                 Отклики
                             </a>
-                            <a href="#" class="help">
+                            <div href="#" class="prompt help">
                                 Помощь
                                 <img class="img-svg" src="./img/arrow_down.svg" alt="">
-                                <div class="prompt">
+                                <div class="prompt__block">
                                     <a href="#">Полезные статьи</a>
                                     <a href="#">Часто задаваемые вопросы</a>
                                     <a href="#">Как пользоваться сервисом</a>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -91,10 +98,13 @@
                             </a>
                         </div>
                         <div class="col-auto">
-                            <a href="#" class="button-text choice-mode">
-                                Ищу работника
+                            <div href="#" class="button-text choice-mode prompt">
+                                Ищу работу
                                 <img class="img-svg" src="./img/arrow_down_scroll.svg" alt="">
-                            </a>
+                                <div class="prompt__block">
+                                    <a href="#">Ищу работника</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-6 header-scroll-right">
                             <a href="#" class="button-text favorites hidden">
@@ -777,6 +787,55 @@
                 </div>
             </div>
         </footer>
+        <div class="wrapper-shadow"></div>
+        <div class="modal-form" id="modal-feedback">
+            <div class="close-modal">
+                <a href="#">
+                    Закрыть
+                    <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                </a>
+            </div>
+            <div class="modal-form-content block-mt-yellow">
+                <h2>Обратная связь</h2>
+                <div class="block-mt-blue">
+                    <form action="" name="form-feedback" id="form-feedback" data-ajax="true">
+                        <div class="block-mb-yellow">
+                            <label for="name-feedback">Имя <span>*</span></label>
+                            <input type="text" name="name-feedback" id="name-feedback" pattern="[^-\s0-9`~!@#№$%^&*()_=+\\|\[\]{};:',.<>\/?]+$" placeholder="ВАШЕ ИМЯ" data-required="true">
+                        </div>
+                        <div class="block-mb-yellow">
+                            <label for="phone-feedback">Телефон <span>*</span></label>
+                            <input type="text" name="phone-feedback" id="phone-feedback" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" placeholder="+7" data-required="true">
+                        </div>
+                        <div class="block-mb-yellow">
+                            <label for="email-feedback">E-mail</label>
+                            <input type="text" name="email-feedback" id="email-feedback" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$" placeholder="E-MAIL">
+                        </div>
+                        <div class="block-mb-green">
+                            <label for="message-feedback">Сообщение <span>*</span></label>
+                            <textarea name="message-feedback" id="message-feedback" data-required="true"></textarea>
+                        </div>
+                        <p class="block-mb-green" style="font-size: 14px;"><span>*</span> - поля, обязательные для заполнения</p>
+                        <p class="block-mb-green" style="font-size: 14px;">Нажимая кнопку «Отправить», Вы даёте своё согласие на обработку персональных данных</p>
+                        <div class="wrapper-button-center">
+                            <input type="submit" class="main-button" id="submit-feedback" name="submit-feedback" value="Отправить">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal-form successful-sending">
+            <div class="close-modal">
+                <a href="#">
+                    Закрыть
+                    <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                </a>
+            </div>
+            <div class="modal-form-content block-mt-yellow">
+                <h2>Спасибо за обращение!</h2>
+                <p class="block-mt-blue">Наш менеджер свяжется с Вами в ближайшее время.</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>

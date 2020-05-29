@@ -5,6 +5,32 @@ import Choices from  '../../node_modules/choices.js/src/scripts/choices';
 import 'owl.carousel';
 import datepicker from 'js-datepicker';
 
+(function() 
+{
+  var lastTime = 0;
+  var vendors = ['ms', 'moz', 'webkit', 'o'];
+  for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+      window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+      window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] 
+                              || window[vendors[x]+'CancelRequestAnimationFrame'];
+  }
+
+  if (!window.requestAnimationFrame)
+      window.requestAnimationFrame = function(callback, element) {
+          var currTime = new Date().getTime();
+          var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+          var id = window.setTimeout(function() { callback(currTime + timeToCall); }, 
+          timeToCall);
+          lastTime = currTime + timeToCall;
+          return id;
+      };
+
+  if (!window.cancelAnimationFrame)
+      window.cancelAnimationFrame = function(id) {
+          clearTimeout(id);
+      };
+}());
+
 // Вывод svg
 
 var imgSvg = document.querySelectorAll('.img-svg');
@@ -940,6 +966,227 @@ if(addPlaceWork.length)
     });
   });
 }
+
+// Формы в модальных окнах
+
+let shadow = document.querySelector('.wrapper-shadow');
+let closeModal = document.querySelectorAll('.close-modal a');
+let arrayFields = [shadow, ...closeModal];
+
+let buttonFeedback = document.querySelectorAll('.button-feedback');
+let modalFeedback = document.querySelector('#modal-feedback');
+
+
+const animationModalForm = fn =>
+{
+  window.requestAnimationFrame(function()
+  {
+    window.requestAnimationFrame(function()
+    {
+      fn();
+    });
+  });
+}
+
+function viewForm(buttons, form)
+{
+  buttons.forEach(button => 
+  {
+    button.addEventListener('click', (e) => 
+    {
+      e.preventDefault();
+
+      shadow.appendChild(form);
+      document.body.classList.add('disabled');
+      shadow.classList.add('wrapper-shadow_active');
+      
+      animationModalForm(function() 
+      {
+        form.classList.add('modal-form_active');
+      });
+      
+      arrayFields.forEach(field => 
+      {
+        field.addEventListener('click', (e) => 
+        {
+          e.preventDefault();
+          
+          form.classList.remove('modal-form_active'); 
+          shadow.classList.remove('wrapper-shadow_active');
+          document.body.appendChild(form);
+          document.body.classList.remove('disabled');
+        
+          setTimeout(() => 
+          {
+            shadow.innerHTML = '';
+          }, 500);
+           
+        });
+      });
+
+      form.addEventListener('click', e => e.stopPropagation());
+    });
+  });
+}
+
+if(buttonFeedback.length > 0)
+{
+  viewForm(buttonFeedback, modalFeedback);
+}
+
+// Валидация формы и отправка данных
+
+const forms = document.querySelectorAll('form[data-ajax="true"]');
+
+forms.forEach(function(form)
+{
+  // Подпишемся на событие отправки
+  form.addEventListener('submit', function(e)
+  {
+    e.preventDefault();
+  
+    let valid = true;
+
+    // Проверим все текстовые инпуты
+
+    const fieldsText = form.querySelectorAll('input[type="text"][data-required="true"]');
+
+    fieldsText.forEach(function(input)
+    {
+      if(input.style.display === 'none') return;
+      if(!checkFieldText(input)) valid = false;
+    });
+
+    // Проверим все textarea
+
+    const fieldsTextarea = form.querySelectorAll('textarea[data-required="true"]');
+
+    fieldsTextarea.forEach(function(textarea)
+    {
+      if(textarea.style.display === 'none') return;
+      if(!checkFieldTextarea(textarea)) valid = false;
+    });
+
+    // Проверим все чекбоксы
+
+    const fieldsCheckbox = form.querySelectorAll('input[type="checkbox"]');
+
+    fieldsCheckbox.forEach(function(input)
+    {
+      if(input.style.display === 'none') return;
+      if(!checkFieldCheckbox(input)) valid = false;
+    });
+
+    
+    // Если были ошибки, не отправляем форму
+
+    if(valid)
+    {
+      sendForm(form);
+    }
+
+  });
+});
+
+function checkFieldText(input) 
+{
+  var errorClass = 'field-error';
+  var pattern = input.pattern;
+  var result;
+  var value = input.value;
+  
+  result = value.match(pattern);
+  result ? input.classList.remove(errorClass) : input.classList.add(errorClass);
+  return result;
+}
+
+function checkFieldCheckbox(input) 
+{
+  var errorClass = 'check-error';
+  const result = input.checked;
+  result ? input.classList.remove(errorClass) : input.classList.add(errorClass);
+  return result;
+}
+
+function checkFieldTextarea(textarea)
+{
+  var errorClass = 'field-error';
+  var value = textarea.value;
+  var result;
+
+  if(value.trim() === '')
+  {
+    result = false;
+  }
+  else 
+  {
+    result = true;
+  }
+
+  result ? textarea.classList.remove(errorClass) : textarea.classList.add(errorClass);
+  return result;
+}
+
+
+
+function sendForm(form)
+{
+  fetch(form.action, { method: 'POST', body: new FormData(form)})
+    .then(response => 
+    {
+      if(document.querySelector('.modal-form_active'))
+      {
+        document.querySelector('.modal-form_active').classList.remove('modal-form_active');             
+        document.body.appendChild(shadow.querySelector('.modal-form'));
+        shadow.innerHTML = '';
+        var successSending = document.querySelector('.successful-sending');
+        successSending.classList.add('successful-sending_active');
+        shadow.appendChild(successSending);
+
+        arrayFields.forEach(field => 
+        {
+          field.addEventListener('click', (e) => 
+          {
+              e.preventDefault();
+              
+              successSending.classList.remove('successful-sending_active'); 
+              shadow.classList.remove('wrapper-shadow_active');
+              document.body.classList.remove('disabled');
+              document.body.appendChild(successSending);
+              shadow.innerHTML = '';
+                      
+          });
+        });
+      }
+      else 
+      {
+        var successSending = document.querySelector('.successful-sending');
+        shadow.appendChild(successSending);
+        shadow.classList.add('wrapper-shadow_active');
+        successSending.classList.add('successful-sending_active');
+
+        arrayFields.forEach(field => 
+        {
+            field.addEventListener('click', (e) => 
+            {
+              e.preventDefault();
+              
+              successSending.classList.remove('successful-sending_active'); 
+              shadow.classList.remove('wrapper-shadow_active');
+              document.body.classList.remove('disabled');
+              document.body.appendChild(successSending);
+              shadow.innerHTML = '';
+                        
+            });
+        });
+
+      }
+    })
+    .catch(error => console.error(error));
+}
+
+
+
 
 
 

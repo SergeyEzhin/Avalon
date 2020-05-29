@@ -387,7 +387,7 @@ input[type="text"], input[type="password"]
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: $color-disabled;
+    color: #dddce8;
     border: solid 2px currentColor;
     width: 100%;
 }
@@ -412,6 +412,11 @@ input[type="text"]:disabled, input[type="password"]:disabled
     color: #b7b6c3;
     border-color: #dddce8;
     background: transparent;
+}
+
+input[type="text"].field-error, input[type="password"].field-error
+{
+    border-color: red !important;
 }
 
 input[data-picker="datepicker"]
@@ -707,6 +712,10 @@ ul
         {
             border-color: #dddce8;
         }
+        input[type="radio"].check-error ~ .radio
+        {
+            border-color: red !important;
+        }
         input[type="radio"]:checked ~ .radio:before 
         {
             opacity: 1;
@@ -792,6 +801,10 @@ ul
         {
             opacity: 1;
         }
+        input[type="checkbox"].check-error ~ .check
+        {
+            border-color: red !important;
+        }
         p 
         {
             font-family: Montserrat Regular;
@@ -833,12 +846,19 @@ textarea
     color: #b7b6c3;
     padding-top: 20px;
     padding-left: 20px;
+    width: 100%;
+    height: 198px;
 }
 
 textarea:focus
 {
     color: $color-ref;
     border-color: $color-ref;
+}
+
+textarea.field-error 
+{
+    border-color: red !important;
 }
 
 
@@ -950,7 +970,6 @@ textarea:focus
     background-color: #ffffff;
     font-family: Montserrat Bold;
     font-size: 12px;
-    
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -1031,32 +1050,197 @@ textarea:focus
     background: transparent url(../img/arrow_right_datapicker_hover.svg);
 }
 
+// Отключение скролла body
 
-.prompt 
+.disabled 
 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
-    background-color: #fff;
-    position: absolute;
+    overflow: hidden;
+}
+
+// Тень для формы
+
+.wrapper-shadow 
+{
+    position: fixed;
+    top: 0;
     bottom: 0;
+    right: 0;
     left: 0;
-    transition: .3s;
-    opacity: 0;
+    width: 100%;
+    height: 100vh;
     z-index: -1;
+    opacity: 0;
+    transition: .1s;
+    background-color: rgba(38, 34, 98, 0.25);
+    overflow: auto;
+}
+
+.wrapper-shadow_active 
+{
+    opacity: 1;
+    z-index: 4;
+}
+
+// Формы в модальном окне
+
+.modal-form 
+{
+    position: fixed;
+    width: 610px;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 20px 40px 0 rgba(15, 20, 91, 0.15);
+    transition: .3s;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    right: calc(50% - 295px);
+    top: calc(50% - 305px);
+    transform: translateY(100%);
+    &-content 
+    {
+        padding-left: 105px;
+        padding-right: 105px;
+        padding-bottom: 75px;
+        h2 
+        {
+            text-align: center;
+        }
+    }
+}
+
+.successful-sending 
+{
+    display: none;
+    z-index: 5;
+    position: absolute;
+    opacity: 1;
+    top: 0;
+    p 
+    {
+        text-align: center;
+    }
+}
+
+.successful-sending_active 
+{
+    display: block;
+}
+
+.close-modal 
+{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     a 
     {
-        display: block;
+        display: flex;
+        align-items: center;
+        transition: .3s;
         font-family: Montserrat Bold;
         font-size: 14px;
-        font-weight: bold;
         font-stretch: normal;
         font-style: normal;
         line-height: normal;
         letter-spacing: normal;
+        border: 0;
+        .img-svg 
+        {
+            margin-left: 10px;
+            transition: .3s;
+        }
     }
+    a:hover 
+    {
+        color: $color-hover;
+        .img-svg path 
+        {
+            fill: $color-hover;
+        }
+    }
+}
+
+.modal-form_active 
+{
+    transform: translateY(0);
+    z-index: 5;
+    opacity: 1;
+    position: absolute;
+}
+
+// Окно подсказки
+
+.prompt 
+{
+    cursor: pointer;
+    font-family: Montserrat Bold;
+    font-size: 15px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $color-primary;
+    display: flex;
+    align-items: center;
+    transition: .3s;   
+    position: relative; 
+    .img-svg 
+    {
+        transition: .3s;
+        margin-left: 10px;
+    }
+    &__block 
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 18px;
+        background-color: #fff;
+        position: absolute;
+        transition: .3s;
+        opacity: 0;
+        z-index: -1;
+        // width: max-content;
+        max-width: 185px;
+        top: calc(100% + 10px);
+        box-shadow: 0 20px 40px 0 rgba(15, 20, 91, 0.15);
+        a 
+        {
+            display: block;
+            font-family: Montserrat Bold;
+            font-size: 14px;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            border: 0;
+            margin-bottom: 22px;
+        }
+        a:last-child 
+        {
+            margin-bottom: 0;
+        }
+    }   
+}
+
+.prompt:hover 
+{
+    color: $color-hover;
+    .img-svg path 
+    {
+        fill: $color-hover;
+    }
+}
+
+.prompt:hover .prompt__block 
+{
+    opacity: 1;
+    z-index: 3;
 }
 
 
@@ -1064,16 +1248,6 @@ textarea:focus
 
 .header 
 {
-    // a 
-    // {
-    //     position: relative;
-    //     display: flex;
-    // }
-    // a:hover .prompt
-    // {
-    //     opacity: 1;
-    //     z-index: 3;
-    // }
     &-top 
     {
         padding-top: 22px;
@@ -1110,6 +1284,13 @@ textarea:focus
                 display: flex;
                 align-items: center;
                 border: 0;
+                .prompt 
+                {
+                    &__block 
+                    {
+                        left: 0;
+                    }
+                }
             }
             .choice-city 
             {
@@ -1117,6 +1298,13 @@ textarea:focus
                 align-items: center;
                 margin-left: 30px;
                 border: 0;
+                .prompt 
+                {
+                    &__block 
+                    {
+                        left: 0;
+                    }
+                }
             }
         }
         &-middle 
@@ -1177,6 +1365,13 @@ textarea:focus
                 .img-svg 
                 {
                     margin-left: 10px;
+                }
+                .prompt 
+                {
+                    &__block 
+                    {
+                        right: 0;
+                    }
                 }
             }
             .help:hover 
@@ -1288,10 +1483,17 @@ textarea:focus
             color: #fff;
             font-family: Montserrat Regular;
             font-style: normal;
-            font-weight: 600;
+            // font-weight: 600;
             font-size: 15px;
             line-height: normal;
             transition: .3s;
+            .prompt 
+            {
+                &__block 
+                {
+                    left: 0;
+                }
+            }
             .img-svg
             {
                 margin-right: 0;

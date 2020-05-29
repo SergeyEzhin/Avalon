@@ -354,6 +354,55 @@
                 </div>
             </div>
         </footer>
+        <div class="wrapper-shadow"></div>
+        <div class="modal-form" id="modal-feedback">
+            <div class="close-modal">
+                <a href="#">
+                    Закрыть
+                    <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                </a>
+            </div>
+            <div class="modal-form-content block-mt-yellow">
+                <h2>Обратная связь</h2>
+                <div class="block-mt-blue">
+                    <form action="" name="form-feedback" id="form-feedback" data-ajax="true">
+                        <div class="block-mb-yellow">
+                            <label for="name-feedback">Имя <span>*</span></label>
+                            <input type="text" name="name-feedback" id="name-feedback" pattern="[^-\s0-9`~!@#№$%^&*()_=+\\|\[\]{};:',.<>\/?]+$" placeholder="ВАШЕ ИМЯ" data-required="true">
+                        </div>
+                        <div class="block-mb-yellow">
+                            <label for="phone-feedback">Телефон <span>*</span></label>
+                            <input type="text" name="phone-feedback" id="phone-feedback" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" placeholder="+7" data-required="true">
+                        </div>
+                        <div class="block-mb-yellow">
+                            <label for="email-feedback">E-mail</label>
+                            <input type="text" name="email-feedback" id="email-feedback" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$" placeholder="E-MAIL">
+                        </div>
+                        <div class="block-mb-green">
+                            <label for="message-feedback">Сообщение <span>*</span></label>
+                            <textarea name="message-feedback" id="message-feedback" data-required="true"></textarea>
+                        </div>
+                        <p class="block-mb-green" style="font-size: 14px;"><span>*</span> - поля, обязательные для заполнения</p>
+                        <p class="block-mb-green" style="font-size: 14px;">Нажимая кнопку «Отправить», Вы даёте своё согласие на обработку персональных данных</p>
+                        <div class="wrapper-button-center">
+                            <input type="submit" class="main-button" id="submit-feedback" name="submit-feedback" value="Отправить">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal-form successful-sending">
+            <div class="close-modal">
+                <a href="#">
+                    Закрыть
+                    <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                </a>
+            </div>
+            <div class="modal-form-content block-mt-yellow">
+                <h2>Спасибо за обращение!</h2>
+                <p class="block-mt-blue">Наш менеджер свяжется с Вами в ближайшее время.</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
