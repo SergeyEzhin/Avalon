@@ -94,6 +94,17 @@ $('.top-companies-slider-wrapper').owlCarousel({
   touchDrag: false,
   navContainer: '.navigation-top-companies',
   navText: ["<div class='arrow-slider'><img src='./img/arrow_slider_left.svg'></div>", "<div class='arrow-slider'><img src='./img/arrow_slider_right.svg'></div>"],
+  responsive:{ 
+    0:{
+        items:1
+    },
+    750:{
+        items:2
+    },
+    1220:{
+        items:3
+    }
+  }
 });
 
 $('.usage-steps-slider-wrapper').owlCarousel({
@@ -107,6 +118,7 @@ $('.usage-steps-slider-wrapper').owlCarousel({
   autoplayTimeout:300, //Время смены слайда
   mouseDrag: false,
   touchDrag: false,
+  autoHeight: true,
   navContainer: '.navigation-steps-slider',
   navText : ["<div class='arrow-steps arrow-steps__left'><img src='./img/arrow_right_step.svg' style='transform:rotateZ(180deg)'>Шаг <span></span></div>","<div class='arrow-steps arrow-steps__right'>Шаг <span></span><img src='./img/arrow_right_step.svg'></div>"],
   onInitialized: function(e) 
@@ -160,6 +172,20 @@ $('.similar-vacancies-slider-wrapper').owlCarousel({
   touchDrag: false,
   navContainer: '.navigation-similar-vacancies',
   navText: ["<div class='arrow-slider'><img src='./img/arrow_slider_left.svg'></div>", "<div class='arrow-slider'><img src='./img/arrow_slider_right.svg'></div>"],
+  responsive:{ 
+    0:{
+      items: 1
+    },
+    550:{
+        items:2
+    },
+    900:{
+        items:3
+    },
+    1220:{
+        items:4
+    }
+  }
 });
 
 // Аккордеон

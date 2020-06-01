@@ -739,7 +739,7 @@ ul
             line-height: normal;
             letter-spacing: normal;
             color: $color-primary;
-            width: 80%;
+            width: auto;
         }
     }
 }
@@ -769,6 +769,7 @@ ul
         line-height: normal;
         letter-spacing: normal;
         color: $color-primary;
+        margin-bottom: 0 !important;
         .check
         {
             display: block;
@@ -815,7 +816,7 @@ ul
             line-height: normal;
             letter-spacing: normal;
             color: $color-primary;
-            width: 80%;
+            width: auto;
         }
     }
 }
@@ -1094,7 +1095,7 @@ textarea.field-error
     z-index: -1;
     opacity: 0;
     display: block;
-    right: calc(50% - 295px);
+    right: calc(50% - 305px);
     top: calc(50% - 305px);
     transform: translateY(100%);
     &-content 
@@ -1790,10 +1791,11 @@ textarea.field-error
     {
         display: flex;
         align-items: center;
+        height: 60px;
         .vacancy-card__toggle 
         {
             width: 60px;
-            height: 60px;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -1811,8 +1813,8 @@ textarea.field-error
         }
         .vacancy-card__respond 
         {
-           height: 60px;
-           width: 79%;
+           height: 100%;
+           width: 80%;
            transition: .3s;
            background-color: transparent;
         }
@@ -1958,7 +1960,8 @@ button
     border: 0;
     &__left 
     {
-        width: 31%;
+        // width: 31%;
+        width: 100px;
     }
     &__right 
     {
@@ -1967,6 +1970,7 @@ button
     }
     &__image 
     {
+        width: 100%;
         img 
         {
             max-width: 100%;
@@ -1978,7 +1982,6 @@ button
     {
         font-family: Montserrat Bold;
         font-size: 18px;
-        
         font-stretch: normal;
         font-style: normal;
         line-height: normal;
@@ -2116,6 +2119,7 @@ button
         // margin-bottom: 22px;
         padding-left: 10px;
         padding-right: 10px; 
+        margin-bottom: 22px;
         // height: 184px;
     }
     &__block
@@ -2423,13 +2427,12 @@ button
         {
             font-family: Raleway Bold;
             font-size: 18px;
-            
             font-stretch: normal;
             font-style: normal;
             line-height: normal;
             letter-spacing: normal;
             color: $color-primary;
-            height: 86px;
+            // height: 86px;
             max-height: 86px;
             overflow: hidden;
             margin-bottom: 22px;
@@ -2444,7 +2447,7 @@ button
             line-height: normal;
             letter-spacing: normal;
             color: $color-primary;
-            height: 136px;
+            // height: 136px;
             max-height: 136px;
             overflow: hidden;
             margin-bottom: 22px;
@@ -2459,7 +2462,7 @@ button
             line-height: 1.57;
             letter-spacing: normal;
             color: $color-disabled;
-            height: 22px;
+            // height: 22px;
             max-height: 22px;
             overflow: hidden;
             position: absolute;
@@ -2484,6 +2487,7 @@ button
             {
                 padding-left: 10px;
                 padding-right: 10px;
+                margin-bottom: 22px;
             }
         }
     }
@@ -2629,7 +2633,6 @@ button
                 margin-bottom: 22px;
                 font-family: Montserrat Bold;
                 font-size: 14px;
-                
                 font-stretch: normal;
                 font-style: normal;
                 line-height: normal;
@@ -3588,12 +3591,12 @@ ymaps[class$='pie-chart-content']
     }
     &-block 
     {
-        display: flex;
+        // display: flex;
         margin-bottom: 32px;
-        justify-content: space-between;
+        // justify-content: space-between;
         &__name 
         {
-            width: 16%;
+            // width: 16%;
             p
             {
                 font-family: Montserrat Bold;
@@ -3608,7 +3611,7 @@ ymaps[class$='pie-chart-content']
         }
         &__text 
         {
-            width: 84%;
+            // width: 84%;
             p 
             {
                 font-family: Montserrat Regular;
@@ -3627,6 +3630,7 @@ ymaps[class$='pie-chart-content']
 .wrapper-map 
 {
     box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+    height: 420px;
 }
 
 .wrapper-form-share 

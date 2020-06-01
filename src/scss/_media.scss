@@ -1,3 +1,16 @@
+@media(max-width: 1310px)
+{
+    .advantages-registration-row 
+    {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    .advantages-registration-row .block-advantages-registration
+    {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
 @media(max-width: 1280px)
 {
     .container 
@@ -15,5 +28,441 @@
     {
         padding-left: 30px;
         padding-right: 30px;
+    }
+    .list-container-row
+    {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+    .list-container-row .col-3, .list-container-row .col-9
+    {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .main-search .search-list-row-companies .col-6
+    {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+@media(max-width: 1180px)
+{
+    .new-vacancies-content .col-3
+    {
+        flex: 0 0 33%;
+        max-width: 33%;
+    }
+    .vacancy-card
+    {
+        max-width: initial;
+    }
+    .useful-articles-content .row .col-3
+    {
+        flex: 0 0 33%;
+        max-width: 33%;
+    }
+    .main-search .search-list-row-vacancies .col-4
+    {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .image-vacancies
+    {
+        max-width: initial;
+    }
+    .vacancy-card .vacancy-card__toggle
+    {
+        width: 20%;
+    }
+    .all-articles .row .col-3
+    {
+        max-width: 33%;
+        flex: 0 0 33%;
+    }
+    .block-tooltip:after
+    {
+        left: -248px;
+    }
+    .block-tooltip:before
+    {
+        left: -18px;
+        transform: rotate(180deg);
+    }
+    .vacancies-company .row .col-3
+    {
+        max-width: 33%;
+        flex: 0 0 33%;
+    }
+    .footer .footer-right .col-auto 
+    {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+@media(max-width: 1000px)
+{
+    .faq-main-content__right
+    {
+        display: none;
+    }
+    .faq-main-content__left
+    {
+        width: 100%;
+    }
+    .block-mt-purple
+    {
+        margin-top: 72px;
+    }
+    .block-mt-dark-blue 
+    {
+        margin-top: 56px;
+    }
+    .block-mt-blue 
+    {
+        margin-top: 48px;
+    }
+    .block-mt-green 
+    {
+        margin-top: 32px;
+    }
+    .block-mt-yellow 
+    {
+        margin-top: 24px;
+    }
+    .block-mt-orange 
+    {
+        margin-top: 17px;
+    }
+    .block-mb-purple
+    {
+        margin-bottom: 72px;
+    }
+    .block-mb-dark-blue 
+    {
+        margin-bottom: 56px;
+    }
+    .block-mb-blue 
+    {
+        margin-bottom: 48px;
+    }
+    .block-mb-green 
+    {
+        margin-bottom: 32px;
+    }
+    .block-mb-yellow 
+    {
+        margin-bottom: 24px;
+    }
+    .block-mb-orange 
+    {
+        margin-bottom: 17px;
+    }
+    h1 
+    {
+        font-size: 36px;
+    }
+    h2 
+    {
+        font-size: 23px;
+    }
+    h3 
+    {
+        font-size: 17px;
+    }
+    p 
+    {
+        font-size: 15px;
+    }
+    a 
+    {
+        font-size: 15px;
+    }
+    ul li 
+    {
+        font-size: 15px;
+    }
+    .advantages-registration-row .col-3
+    {
+        flex: 0 0 50%;
+        max-width: 50%;
+        margin-bottom: 25px;
+    }
+    .main-images .col-3
+    {
+        max-width: 33%;
+        flex: 0 0 33%;
+    }
+}
+@media(max-width: 965px)
+{
+    .footer .row:nth-child(1)
+    {
+        flex-direction: column;
+        justify-content: center !important;
+        align-items: center;
+    }
+    .footer .footer-left, .footer .footer-right 
+    {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+    .footer .footer-left
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-pages 
+    {
+        display: none;
+    }
+    .footer .footer-right
+    {
+        margin-top: 25px;
+    }
+    .footer .footer-contacts 
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer .footer-right .col-auto
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .footer
+    {
+        padding-top: 54px;
+        padding-bottom: 48px;
+    }
+}
+@media(max-width: 940px)
+{
+    .quick-job-search-block-content form input[type=text]
+    {
+        width: 25%;
+    }
+    .quick-job-search-block-content
+    {
+        padding: 43px;
+    }
+}
+@media(max-width: 900px)
+{
+    .vacancies-company .row .col-3
+    {
+        max-width: 50%;
+        flex: 0 0 50%;
+    }
+    .new-vacancies-content .col-3
+    {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media(max-width: 850px)
+{
+    .brief-information
+    {
+        flex-direction: column;
+    }
+    .useful-articles-content .row .col-3
+    {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media(max-width: 800px)
+{
+    .detailed-description-block .col-3, .detailed-description-block .col-9
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .navigation-steps-slider
+    {
+        position: relative;
+        top: 0;
+        margin-top: 50px;
+    }
+    .usage-steps-slider-block__image
+    {
+        height: auto;
+    }
+    .usage-steps-slider-block__desc, .usage-steps-slider-block__name
+    {
+        width: 100%;
+    }
+    .usage-steps-slider-block__name
+    {
+        margin-top: 50px;
+    }
+    .usage-steps-slider-block__desc
+    {
+        margin-top: 32px;
+    }
+}
+@media(max-width: 750px)
+{
+    .main-images .col-3
+    {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media(max-width: 700px)
+{
+    .container-compressed
+    {
+        width: 100%;
+    }
+    .wrapper-form-share form input[type=text]
+    {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+    }
+    .wrapper-form-share form input[type=submit]
+    {
+        margin-top: 10px;
+    }
+}
+@media(max-width: 650px)
+{
+    .tabs-items
+    {
+        flex-wrap: wrap;
+        margin: 0;
+    }
+    .tabs-items .tabs-item
+    {
+        width: 100%;
+        margin: 0;
+        padding-top: 20px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .modal-form
+    {
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+}
+@media(max-width: 600px)
+{
+    .brief-information-block
+    {
+        flex-direction: column;
+    }
+    .block-to-rate
+    {
+        margin-top: 20px;
+    }
+    .brief-information-block__info
+    {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .new-vacancies-content .col-3
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .useful-articles-content .row .col-3
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+@media(max-width: 550px)
+{
+    .advantages-registration-row .col-3
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    .wrapper-map 
+    {
+        height: 270px;
+    }
+    .vacancies-company .row .col-3
+    {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+    .company-card
+    {
+        flex-direction: column;
+    }
+    .company-card__right
+    {
+        width: 100%;
+        margin-top: 25px;
+        margin-left: 0;
+    }
+    .modal-form-content
+    {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+    }
+}
+@media(max-width: 500px)
+{
+    .block-file label
+    {
+        flex-direction: column;
+    }
+    .block-file label .file-value
+    {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .block-file label .button-attach-file
+    {
+        width: 100%;
+    }
+    .wrapper-form-share form .block-choice-filter
+    {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .wrapper-form-share form .block-choice-filter .block-radio
+    {
+        margin-right: 0;
+        margin-top: 20px;
+    }
+    .main-images .col-3
+    {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+}
+@media(max-width: 450px)
+{
+    .block-gender 
+    {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .block-gender .block-radio
+    {
+        margin-top: 20px;
+        margin-left: 0;
+    }
+}
+@media(max-width: 400px)
+{
+    .container-compressed form .block-remember
+    {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .container-compressed form .block-remember a
+    {
+        margin-top: 10px;
     }
 }
