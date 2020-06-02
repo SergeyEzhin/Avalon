@@ -55,7 +55,7 @@ if(imgSvg.length)
             var svg = htmlSvg.querySelector('svg');
 
             svg.setAttribute('class', 'img-svg');
-            console.log(svg);
+            // console.log(svg);
 
             // img.replaceWith(svg);
             img.parentElement.insertBefore(svg, img);
@@ -250,18 +250,14 @@ let headerScroll = document.querySelector('.header-scroll');
 function fixedAdaptiveHeader(block, height)
 {
   var scroll = window.pageYOffset || document.documentElement.scrollTop;
-  // var heightBlock = block.clientHeight;
-  // var wrapperContent = document.querySelector('.wrapper-content');
     
   if (scroll >= height) 
   {
     block.classList.add('header_fixed');
-    // wrapperContent.style.paddingTop = heightBlock + 'px';
   } 
   else 
   {
     block.classList.remove('header_fixed');
-    // wrapperContent.style.paddingTop = '0px';
   }
 }
 
@@ -1208,6 +1204,66 @@ function sendForm(form)
     })
     .catch(error => console.error(error));
 }
+
+
+// Адаптивная версия шапки
+
+// if(window.matchMedia('(max-width: 1180px)').matches)
+// {
+//   let buttonText = document.querySelectorAll('.header-bottom-right .button-text');
+
+//   if(buttonText.length)
+//   {
+//     buttonText.forEach(button => {
+//       button.querySelector('p') ? button.querySelector('p').remove() : null;
+//     });
+//   }
+// }
+
+// Меню
+
+let buttonHelp = document.querySelector('.button-help');
+let menuMain = document.querySelector('.menu-main');
+
+if(buttonHelp && menuMain)
+{
+  buttonHelp.addEventListener('click', (e) => {
+    e.preventDefault();
+    menuMain.classList.add('menu-main_active');
+
+    let changeRefs = menuMain.querySelectorAll('.change-ref');
+
+    changeRefs.forEach(ref => {
+      ref.addEventListener('click', (e) => {
+        e.preventDefault();
+        let dataChange = ref.dataset.change;
+        menuMain.querySelector('.menu-submenu[data-change='+dataChange+']').classList.add('menu-submenu_active');
+      });
+    });
+
+    let menuClose = menuMain.querySelectorAll('.menu__close');
+
+    menuClose.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        menuMain.classList.remove('menu-main_active');
+      });
+    });
+
+    let backMenu = menuMain.querySelectorAll('.back-menu');
+
+    backMenu.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        menuMain.querySelector('.menu-submenu_active').classList.remove('menu-submenu_active');
+      });
+    });
+
+  });
+}
+
+
+
 
 
 

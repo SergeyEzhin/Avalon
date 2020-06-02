@@ -228,7 +228,6 @@ button
     transition: .3s;
     font-family: Montserrat Bold;
     font-size: 15px;
-    
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -240,6 +239,17 @@ button
     {
         margin-right: 10px;
     }
+    p 
+    {
+        font-family: Montserrat Bold;
+        font-size: 15px;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $color-ref;
+        transition: .3s;
+    }
 }
 
 .button-text:hover 
@@ -249,6 +259,10 @@ button
     {
         fill: $color-hover;
     }
+    p 
+    {
+        color: $color-hover;
+    }
 }
 
 .button-text:active 
@@ -257,6 +271,10 @@ button
     .img-svg path 
     {
         fill: $color-clicked;
+    }
+    p 
+    {
+        color: $color-clicked;
     }
 }
 
@@ -432,6 +450,7 @@ input[data-picker="datepicker"]
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    position: relative;
     &-content 
     {
         flex: 1 1 auto;
@@ -1244,6 +1263,204 @@ textarea.field-error
     z-index: 3;
 }
 
+// Выбор режима
+
+.choice-mode 
+{
+    border: 0;
+    border-radius: 20px;
+    background-color: transparent;
+    padding: 6px 20px;
+    font-family: Montserrat Bold;
+    font-size: 15px;
+    
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $color-disabled;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+.choice-mode:hover 
+{
+    background-color: $color-ref;
+    color: #fff;
+}
+.choice-mode_active 
+{
+    background-color: $color-ref;
+    color: #fff;
+}
+
+// Меню помощь
+
+.menu-main 
+{
+    z-index: -1;
+    // opacity: 0;
+    transform: translateX(-100%);
+    overflow: auto;
+}
+
+.menu 
+{
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition: .3s;
+    padding: 16px;
+    &-title 
+    {
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__close 
+    {
+        display: block;
+        border: 0;
+    }
+    &__close:hover .img-svg path
+    {
+        fill: $color-hover;
+    }
+    &-content 
+    {
+        margin-top: 28px;
+        &-block 
+        {
+            padding-bottom: 43px;
+            margin-bottom: 43px;
+            border-bottom: 2px solid #DDDCE8;
+            padding-left: 16px;
+            &__title 
+            {
+                font-family: Raleway Regular;
+                font-size: 30px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $color-primary;
+            }
+            &__points 
+            {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 32px;
+                p 
+                {
+                    font-family: Montserrat Bold;
+                    font-size: 16px;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: normal;
+                    letter-spacing: normal;
+                    color: $color-primary;
+                }
+                .change-ref 
+                {
+                    font-size: 14px;
+                    .img-svg
+                    {
+                        margin-left: 10px;
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+        &-block__help, &-block__values
+        {
+            a 
+            {
+                display: block;
+                margin-top: 32px;
+                font-family: Montserrat Bold;
+                font-size: 16px;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $color-primary;
+                border: 0;
+                transition: .3s;
+            }
+            a:hover 
+            {
+                color: $color-hover;
+            }
+        }
+        &__block:last-child, &-block__values 
+        {
+            border: 0;
+        }
+    }
+    &-submenu 
+    {
+        z-index: -1;
+        // opacity: 0;
+        transform: translateX(-100%);
+        &-title 
+        {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 16px;
+            &__block 
+            {
+                display: flex;
+                align-items: center;
+                p 
+                {
+                    margin-left: 10px;
+                    font-family: Raleway Regular;
+                    font-size: 24px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: normal;
+                    letter-spacing: normal;
+                    color: $color-primary;
+                }
+                a 
+                {
+                    border: 0;
+                    display: block;
+                }
+                .back-menu:hover .img-svg path
+                {
+                    fill: $color-hover;
+                }
+            }
+        }
+    }
+    &-submenu_active 
+    {
+        z-index: 10;
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.menu-main_active 
+{
+    z-index: 5;
+    opacity: 1;
+    transform: translateX(0);
+}
+
 
 // Шапка 
 
@@ -1311,40 +1528,7 @@ textarea.field-error
         &-middle 
         {
             display: flex;
-            align-items: center;
-            .choice-mode 
-            {
-                border: 0;
-                border-radius: 20px;
-                background-color: transparent;
-                padding: 6px 20px;
-                font-family: Montserrat Bold;
-                font-size: 15px;
-                
-                font-stretch: normal;
-                font-style: normal;
-                line-height: normal;
-                letter-spacing: normal;
-                color: $color-disabled;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                transition: .3s;
-                margin-left: 20px;
-                margin-right: 20px;
-
-            }
-            .choice-mode:hover 
-            {
-                background-color: $color-ref;
-                color: #fff;
-            }
-            .choice-mode_active 
-            {
-                background-color: $color-ref;
-                color: #fff;
-            }
-            
+            align-items: center;  
         }
         &-right 
         {
@@ -1383,6 +1567,41 @@ textarea.field-error
                     fill: $color-hover;
                 }
             }
+        }
+    }
+    &-top-tablet 
+    {
+        padding-top: 22px;
+        padding-bottom: 22px;
+        display: none;
+        &__left 
+        {
+            display: flex;
+            .choice-mode
+            {
+                margin: 0;
+            }
+            .choice-mode:nth-child(2)
+            {
+                margin-left: 30px;
+            }
+        }
+        &__middle 
+        {
+            display: flex;
+            a 
+            {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            .feedback::after
+            {
+                margin-left: 0;
+            }
+        }
+        &__right 
+        {
+
         }
     }
     &-bottom 
@@ -3393,9 +3612,9 @@ ymaps[class$='pie-chart-content']
     border-radius: 3px;
     background-color: #ffffff;
     box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
-    position: absolute;
-    top: 0;
-    right: 0;
+    // position: absolute;
+    // top: 0;
+    // right: 0;
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -3588,6 +3807,14 @@ ymaps[class$='pie-chart-content']
     h2 
     {
         margin-bottom: 43px;
+    }
+    .row 
+    {
+        .col-3 
+        {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
     }
     &-block 
     {

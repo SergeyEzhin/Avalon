@@ -98,6 +98,34 @@
         flex: 0 0 25%;
         max-width: 25%;
     }
+    .header-top
+    {
+        display: none;
+    }
+    .header-top-tablet
+    {
+        display: block;
+    }
+    .header-bottom-right .button-text, .header-profile .logout
+    {
+        margin-left: 40px;
+    }
+    .header-bottom-right .button-text .img-svg 
+    {
+        margin: 0;
+    }
+    .header-scroll-right .button-text
+    {
+        margin-left: 40px;
+    }
+    .header-bottom-right .button-text p 
+    {
+        display: none;
+    }
+    .brief-information
+    {
+        flex-direction: column;
+    }
 }
 @media(max-width: 1000px)
 {
@@ -263,9 +291,22 @@
 }
 @media(max-width: 850px)
 {
-    .brief-information
+    .brief-information-block
     {
         flex-direction: column;
+    }
+    .block-to-rate
+    {
+        margin-top: 20px;
+    }
+    .brief-information-block__info
+    {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .block-to-rate
+    {
+        margin-top: 25px;
     }
     .useful-articles-content .row .col-3
     {
@@ -310,6 +351,10 @@
         flex: 0 0 50%;
         max-width: 50%;
     }
+    .header-bottom-left p
+    {
+        display: none;
+    }
 }
 @media(max-width: 700px)
 {
@@ -326,6 +371,15 @@
     .wrapper-form-share form input[type=submit]
     {
         margin-top: 10px;
+    }
+    .block-callback
+    {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .block-callback .block-radio:nth-child(2)
+    {
+        margin-left: 0;
     }
 }
 @media(max-width: 650px)
@@ -349,22 +403,23 @@
         left: 0;
         right: 0;
     }
+    .header .feedback
+    {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .header-top-tablet__middle a
+    {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    .header-bottom-right .button-text, .header-profile .logout
+    {
+        margin-left: 30px;
+    }
 }
 @media(max-width: 600px)
 {
-    .brief-information-block
-    {
-        flex-direction: column;
-    }
-    .block-to-rate
-    {
-        margin-top: 20px;
-    }
-    .brief-information-block__info
-    {
-        margin-left: 0;
-        margin-top: 20px;
-    }
     .new-vacancies-content .col-3
     {
         flex: 0 0 100%;
@@ -439,6 +494,19 @@
     {
         max-width: 100%;
         flex: 0 0 100%;
+    }
+    .block-callback .choices
+    {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 25px;
+    }
+    .block-callback .block-radio
+    {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 25px;
+        width: 100%;
     }
 }
 @media(max-width: 450px)

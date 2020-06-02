@@ -42,6 +42,29 @@
                     </div>
                 </div>
             </div>
+            <div class="header-top-tablet">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto header-top-tablet__left">
+                            <a href="#" class="choice-mode choice-mode_active">Ищу работу</a>
+                            <a href="#" class="choice-mode">Ищу работника</a>
+                        </div>
+                        <div class="col-auto header-top-tablet__middle">
+                            <a href="#" class="button-text favorites hidden">
+                                <img class="img-svg" src="./img/icon_favorites.svg" alt="">
+                            </a>
+                            <a href="#" class="button-text feedback hidden" data-count="+16">
+                                <img class="img-svg" src="./img/icon_feedback.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-auto header-top-tablet__right">
+                            <a href="#" class="button-help">
+                                <img src="./img/icon_button_help.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="header-bottom">
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
@@ -54,20 +77,20 @@
                         <div class="col-auto header-bottom-right">
                             <a href="#" class="button-text search-work">
                                 <img class="img-svg" src="./img/icon_search.svg" alt="">
-                                Найти работу
+                                <p>Найти работу</p>
                             </a>
                             <a href="#" class="button-text release-resume">
                                 <img class="img-svg" src="./img/icon_resume.svg" alt="">
-                                Разместить резюме
+                                <p>Разместить резюме</p>
                             </a>
-                            <a href="#" class="button-text login hidden">
+                            <a href="#" class="button-text login">
                                 <img class="img-svg" src="./img/icon_enter.svg" alt="">
-                                Войти
+                                <p>Войти</p>
                             </a>
-                            <div class="header-profile">
+                            <div class="header-profile header-profile_hidden">
                                 <a href="#" class="button-text profile">
                                     <img class="img-svg" src="./img/icon_profile.svg" alt="">
-                                    Иванов Иван
+                                    <p>Иван Иванов</p>
                                 </a>
                                 <a href="#" class="button-text logout">
                                     <img class="img-svg" src="./img/icon_logout.svg" alt="">
@@ -121,6 +144,81 @@
                 </div>
             </div>
         </header>
+        <div class="menu menu-main">
+            <div class="menu-title">
+                <a href="#" class="menu__close">
+                    <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                </a>
+            </div>
+            <div class="menu-content">
+                <div class="menu-content-block menu-content-block__help">
+                    <p class="menu-content-block__title">Помощь</p>
+                    <a href="#">Полезные статьи</a>
+                    <a href="#">Часто задаваемые вопросы</a>
+                    <a href="#">Как пользоваться сервисом</a>
+                </div>
+                <div class="menu-content-block menu-content-block__change">
+                    <p class="menu-content-block__title">Язык</p>
+                    <div class="menu-content-block__points">
+                        <p>Русский</p>
+                        <a href="#" class="button-text change-ref" data-change="lang">
+                            Изменить
+                            <img class="img-svg" src="./img/arrow_change.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="menu-content-block menu-content-block__change">
+                    <p class="menu-content-block__title">Город</p>
+                    <div class="menu-content-block__points">
+                        <p>Нижний Новгород</p>
+                        <a href="#" class="button-text change-ref" data-change="city">
+                            Изменить
+                            <img class="img-svg" src="./img/arrow_change.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu menu-submenu" data-change="lang">
+                <div class="menu-submenu-title">
+                    <div class="menu-submenu-title__block">
+                        <a href="#" class="back-menu">
+                            <img class="img-svg" src="./img/arrow_back_change.svg" alt="">
+                        </a>
+                        <p>Язык</p>
+                    </div>
+                    <a href="#" class="menu__close">
+                        <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                    </a>
+                </div>
+                <div class="menu-content">
+                    <div class="menu-content-block menu-content-block__values">
+                        <a href="#">Русский</a>
+                        <a href="#">Таджикский</a>
+                        <a href="#">Узбекский</a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu menu-submenu" data-change="city">
+                <div class="menu-submenu-title">
+                    <div class="menu-submenu-title__block">
+                        <a href="#" class="back-menu">
+                            <img class="img-svg" src="./img/arrow_back_change.svg" alt="">
+                        </a>
+                        <p>Город</p>
+                    </div>
+                    <a href="#" class="menu__close">
+                        <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                    </a>
+                </div>
+                <div class="menu-content">
+                    <div class="menu-content-block menu-content-block__values">
+                        <a href="#">Нижний Новгород</a>
+                        <a href="#">Москва</a>
+                        <a href="#">Казань</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="wrapper-content block-mt-dark-blue block-mb-purple">
             <div class="container">
                 <h1>Мои резюме</h1>
