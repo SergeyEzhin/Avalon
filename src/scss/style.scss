@@ -310,6 +310,19 @@ button
     color: $color-clicked;
 }
 
+.button-filter 
+{
+    width: 56px;
+    height: 50px;
+    padding: 0;
+    display: none;
+}
+
+.button-filter:hover .img-svg path
+{
+    fill: $color-hover;
+}
+
 .wrapper-button 
 {
     display: flex;

@@ -39,14 +39,18 @@
         padding-right: 20px;
         padding-left: 20px;
     }
+}
+@media(max-width: 1180px)
+{
+    .image-companies
+    {
+        max-width: 100%;
+    }
     .main-search .search-list-row-companies .col-6
     {
         padding-left: 15px;
         padding-right: 15px;
     }
-}
-@media(max-width: 1180px)
-{
     .new-vacancies-content .col-3
     {
         flex: 0 0 33%;
@@ -61,11 +65,11 @@
         flex: 0 0 33%;
         max-width: 33%;
     }
-    .main-search .search-list-row-vacancies .col-4
-    {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
+    // .main-search .search-list-row-vacancies .col-4
+    // {
+    //     flex: 0 0 50%;
+    //     max-width: 50%;
+    // }
     .image-vacancies
     {
         max-width: initial;
@@ -126,9 +130,46 @@
     {
         flex-direction: column;
     }
+    .button-filter 
+    {
+        display: flex;
+    }
+    .additional-search 
+    {
+        flex-wrap: wrap;
+    }
+    .additional-search form 
+    {
+        width: 100%;
+        margin-top: 32px;
+    }
+    .additional-search form input[type=text]
+    {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    .list-container-row .col-3
+    {
+        display: none;
+    }
+    .list-container-row .col-9 
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .main-search .search-list-row-vacancies .col-4
+    {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
 }
 @media(max-width: 1000px)
 {
+    .main-search .search-list-row-vacancies .col-4
+    {
+        flex: 0 0 33%;
+        max-width: 33%;
+    }
     .faq-main-content__right
     {
         display: none;
@@ -316,6 +357,16 @@
 }
 @media(max-width: 800px)
 {
+    .main-search .search-list-row-companies .col-6
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .main-search .search-list-row-vacancies .col-4
+    {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
     .detailed-description-block .col-3, .detailed-description-block .col-9
     {
         flex: 0 0 100%;
@@ -433,6 +484,10 @@
 }
 @media(max-width: 550px)
 {
+    .main-search .search-list-row-companies .company-card
+    {
+        height: auto;
+    }
     .advantages-registration-row .col-3
     {
         flex: 0 0 100%;
@@ -467,6 +522,19 @@
 }
 @media(max-width: 500px)
 {
+    .pagination
+    {
+        flex-wrap: wrap;
+    }
+    .wrapper-pagination .pagination__block
+    {
+        margin-bottom: 10px;
+    }
+    .main-search .search-list-row-vacancies .col-4
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
     .block-file label
     {
         flex-direction: column;
