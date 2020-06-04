@@ -39,13 +39,31 @@
         padding-right: 20px;
         padding-left: 20px;
     }
+    .main-search .search-list-row-companies
+    {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .main-search .search-list-row-companies .col-6
+    {
+        padding-left: 10px;
+        padding-right: 12px;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .profile-container-row
+    {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+    .profile-container-row .col-3, .profile-container-row .col-9
+    {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 @media(max-width: 1180px)
 {
-    .image-companies
-    {
-        max-width: 100%;
-    }
     .main-search .search-list-row-companies .col-6
     {
         padding-left: 15px;
@@ -64,15 +82,6 @@
     {
         flex: 0 0 33%;
         max-width: 33%;
-    }
-    // .main-search .search-list-row-vacancies .col-4
-    // {
-    //     flex: 0 0 50%;
-    //     max-width: 50%;
-    // }
-    .image-vacancies
-    {
-        max-width: initial;
     }
     .vacancy-card .vacancy-card__toggle
     {
@@ -130,45 +139,40 @@
     {
         flex-direction: column;
     }
-    .button-filter 
+    .main-search .search-list-row-vacancies .col-4
     {
-        display: flex;
+        flex: 0 0 50%;
+        max-width: 50%;
     }
-    .additional-search 
+    .block-to-rate
     {
-        flex-wrap: wrap;
-    }
-    .additional-search form 
-    {
-        width: 100%;
         margin-top: 32px;
     }
-    .additional-search form input[type=text]
-    {
-        min-width: 100%;
-        max-width: 100%;
-    }
-    .list-container-row .col-3
+    .profile-container .sidebar-image
     {
         display: none;
     }
-    .list-container-row .col-9 
+    .favorites-list-row .col-4
     {
-        flex: 0 0 100%;
-        max-width: 100%;
+        flex: 0 0 50%;
+        max-width: 50%;
     }
-    .main-search .search-list-row-vacancies .col-4
+    .load-avatar
     {
-        flex: 0 0 25%;
-        max-width: 25%;
+        position: relative;
+        margin-bottom: 32px;
+    }
+    .header-scroll-right .button-text p 
+    {
+        display: none;
     }
 }
 @media(max-width: 1000px)
 {
-    .main-search .search-list-row-vacancies .col-4
+    .main-button, .other-button 
     {
-        flex: 0 0 33%;
-        max-width: 33%;
+        padding-left: 15px;
+        padding-right: 15px;
     }
     .faq-main-content__right
     {
@@ -306,6 +310,75 @@
         padding-bottom: 48px;
     }
 }
+@media(max-width: 950px)
+{
+    .all-articles .row .col-3
+    {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .close-modal
+    {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 16px;
+    }
+    .modal-form-content
+    {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .button-filter, .button-account
+    {
+        display: flex;
+    }
+    .button-account
+    {
+        margin-bottom: 48px;
+    }
+    .additional-search 
+    {
+        flex-wrap: wrap;
+    }
+    .additional-search form 
+    {
+        width: 100%;
+        margin-top: 32px;
+    }
+    .additional-search form input[type=text]
+    {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    .list-container-row .col-3
+    {
+        display: none;
+    }
+    .list-container-row .col-9
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .map-api
+    {
+        height: 400px;
+    }
+    .profile-container-row .col-3
+    {
+        display: none;
+    }
+    .profile-container-row .col-9
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .sidebar-profile 
+    {
+        border-radius: 0;
+        padding: 0;
+        box-shadow: none;
+    }
+}
 @media(max-width: 940px)
 {
     .quick-job-search-block-content form input[type=text]
@@ -336,18 +409,10 @@
     {
         flex-direction: column;
     }
-    .block-to-rate
-    {
-        margin-top: 20px;
-    }
     .brief-information-block__info
     {
         margin-left: 0;
         margin-top: 20px;
-    }
-    .block-to-rate
-    {
-        margin-top: 25px;
     }
     .useful-articles-content .row .col-3
     {
@@ -466,7 +531,11 @@
     }
     .header-bottom-right .button-text, .header-profile .logout
     {
-        margin-left: 30px;
+        margin-left: 25px;
+    }
+    .header-scroll-right .button-text, .header-scroll-right .logout 
+    {
+        margin-left: 25px;
     }
 }
 @media(max-width: 600px)

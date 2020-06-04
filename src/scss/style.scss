@@ -310,7 +310,7 @@ button
     color: $color-clicked;
 }
 
-.button-filter 
+.button-filter, .button-account 
 {
     width: 56px;
     height: 50px;
@@ -771,7 +771,7 @@ ul
             line-height: normal;
             letter-spacing: normal;
             color: $color-primary;
-            width: auto;
+            width: 80%;
         }
     }
 }
@@ -848,7 +848,7 @@ ul
             line-height: normal;
             letter-spacing: normal;
             color: $color-primary;
-            width: auto;
+            width: 80%;
         }
     }
 }
@@ -1140,6 +1140,44 @@ textarea.field-error
             text-align: center;
         }
     }
+    &__filter
+    {
+        position: fixed !important;
+        border-radius: 0;
+        left: initial !important;
+        right: 0 !important;
+        top: 0 !important;
+        bottom: 0;
+        height: 100vh;
+        width: 85% !important;
+        transform: translateX(100%);
+        overflow-y: auto;
+        .close-modal 
+        {
+            .img-svg 
+            {
+                margin: 0;
+            }
+        }
+    }
+    &__account 
+    {
+        position: fixed !important;
+        border-radius: 0;
+        right: initial !important;
+        left: 0 !important;
+        top: 0 !important;
+        bottom: 0;
+        height: 100vh;
+        width: 85% !important;
+        transform: translateX(-100%);
+        overflow-y: auto;
+        .modal-form-content
+        {
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+    }
 }
 
 .successful-sending 
@@ -1199,7 +1237,7 @@ textarea.field-error
 
 .modal-form_active 
 {
-    transform: translateY(0);
+    transform: translate(0);
     z-index: 5;
     opacity: 1;
     position: absolute;
@@ -1720,6 +1758,7 @@ textarea.field-error
             font-size: 15px;
             line-height: normal;
             transition: .3s;
+            background-color: transparent;
             .prompt 
             {
                 &__block 
@@ -2627,6 +2666,7 @@ button
     display: block;
     border: 0;
     height: 549px;
+    max-width: 295px;
     max-height: 549px;
     background-position: center;
     background-repeat: no-repeat;
@@ -4014,6 +4054,38 @@ input[type="submit"]
 
 // Страница Профиль
 
+.sidebar-profile 
+{
+    border-radius: 3px;
+    background-color: #ffffff;
+    padding: 43px 26px;
+    box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+    a 
+    {
+        justify-content: flex-start;
+        margin-bottom: 32px;
+        .img-svg 
+        {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            max-width: 20px;
+        }
+    }
+    a.current-ref 
+    {
+        color: $color-hover;
+        .img-svg path
+        {
+            fill: $color-hover;
+        }
+    }
+    a:last-child 
+    {
+        margin-bottom: 0;
+    }
+}
+
 .profile-container 
 {
     &-row 
@@ -4045,35 +4117,6 @@ input[type="submit"]
             {
                 line-height: normal;
             }
-        }
-    }
-    .sidebar-profile 
-    {
-        border-radius: 3px;
-        background-color: #ffffff;
-        padding: 43px 26px;
-        box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
-        a 
-        {
-            justify-content: flex-start;
-            margin-bottom: 32px;
-            .img-svg 
-            {
-                width: 20px;
-                height: 20px;
-            }
-        }
-        a.current-ref 
-        {
-            color: $color-hover;
-            .img-svg path
-            {
-                fill: $color-hover;
-            }
-        }
-        a:last-child 
-        {
-            margin-bottom: 0;
         }
     }
     .sidebar-image 

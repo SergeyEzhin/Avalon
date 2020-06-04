@@ -108,11 +108,14 @@
                                 <img src="./img/logo_fixed.svg" alt="">
                             </a>
                         </div>
-                        <div class="col-auto">
-                            <a href="#" class="button-text choice-mode">
-                                Ищу работника
+                        <div class="col">
+                            <div href="#" class="button-text choice-mode prompt">
+                                Ищу работу
                                 <img class="img-svg" src="./img/arrow_down_scroll.svg" alt="">
-                            </a>
+                                <div class="prompt__block">
+                                    <a href="#">Ищу работника</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-6 header-scroll-right">
                             <a href="#" class="button-text favorites hidden">
@@ -133,7 +136,7 @@
                             <div class="header-profile header-profile_hidden">
                                 <a href="#" class="button-text profile">
                                     <img class="img-svg" src="./img/icon_profile_scroll.svg" alt="">
-                                    Чапаев
+                                    <p>Иван Иванов</p>
                                 </a>
                                 <a href="#" class="button-text logout">
                                     <img class="img-svg" src="./img/icon_logout_scroll.svg" alt="">
@@ -721,6 +724,124 @@
                 <p class="block-mt-blue">Наш менеджер свяжется с Вами в ближайшее время.</p>
             </div>
         </div>
-    </div>
+        <div class="modal-form modal-form__filter" id="modal-filter">
+            <div class="close-modal">
+                <a href="#">
+                    <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                </a>
+            </div>
+            <div class="modal-form-content block-mt-orange">
+                <div class="sidebar-filter">
+                    <form action="" id="form-filter">
+                        <div class="block-select-filter block-mb-yellow">
+                            <p class="block-select-filter__name">Город</p>
+                            <select name="city">
+                                <option value="0">Выберите город</option>
+                                <option value="city1">Москва</option>
+                                <option value="city2">Нижний Новгород</option>
+                                <option value="city3">Казань</option>
+                            </select>
+                        </div>
+                        <div class="block-choice-filter block-mb-yellow">
+                            <p class="block-choice-filter__name">Тип работодателя</p>
+                            <div class="block-checkbox block-mt-orange">
+                                <label for="direct-employers-mobile">
+                                    <input type="checkbox" id="direct-employers-mobile" name="direct-employers" hidden checked>
+                                    <div class="check"></div>
+                                    Прямые работодатели
+                                </label>
+                            </div>
+                            <div class="block-checkbox block-mt-orange">
+                                <label for="recruitment-agencies-mobile">
+                                    <input type="checkbox" id="recruitment-agencies-mobile" name="recruitment-agencies" hidden checked>
+                                    <div class="check"></div>
+                                    Кадровые агенства
+                                </label>
+                            </div>
+                        </div>
+                        <div class="block-choice-filter block-mb-yellow">
+                            <p class="block-choice-filter__name">Сфера деятельности</p>
+                            <div class="block-checkbox block-mt-orange">
+                                <label for="building-mobile">
+                                    <input type="checkbox" id="building-mobile" name="building" hidden>
+                                    <div class="check"></div>
+                                    Строительство
+                                </label>
+                            </div>
+                            <div class="block-checkbox block-mt-orange">
+                                <label for="repairs-mobile">
+                                    <input type="checkbox" id="repairs-mobile" name="repairs" hidden>
+                                    <div class="check"></div>
+                                    Ремонт
+                                </label>
+                            </div>
+                            <div class="block-checkbox block-mt-orange">
+                                <label for="security-mobile">
+                                    <input type="checkbox" id="security-mobile" name="security" hidden checked>
+                                    <div class="check"></div>
+                                    Охрана, безопасность
+                                </label>
+                            </div>
+                            <div class="block-checkbox block-mt-orange">
+                                <label for="working-staff-mobile">
+                                    <input type="checkbox" id="working-staff-mobile" name="working-staff" hidden checked>
+                                    <div class="check"></div>
+                                    Рабочий персонал
+                                </label>
+                            </div>
+                            <div class="block-checkbox block-mt-orange">
+                                <label for="administrative-staff-mobile">
+                                    <input type="checkbox" id="administrative-staff-mobile" name="administrative-staff" hidden checked>
+                                    <div class="check"></div>
+                                    Административный персонал
+                                </label>
+                            </div>
+                            <div class="block-checkbox block-mt-orange">
+                                <label for="service-mobile">
+                                    <input type="checkbox" id="service-mobile" name="service" hidden checked>
+                                    <div class="check"></div>
+                                    Инсталляция и сервис
+                                </label>
+                            </div>
+                            <div class="block-checkbox block-mt-orange">
+                                <label for="production-mobile">
+                                    <input type="checkbox" id="production-mobile" name="production" hidden checked>
+                                    <div class="check"></div>
+                                    Производство
+                                </label>
+                            </div>
+                            <div class="block-checkbox block-mt-orange">
+                                <label for="agriculture-mobile">
+                                    <input type="checkbox" id="agriculture-mobile" name="agriculture" hidden checked>
+                                    <div class="check"></div>
+                                    Сельское хозяйство
+                                </label>
+                            </div>
+                        </div>
+                        <div class="block-choice-filter block-mb-yellow">
+                            <p class="block-choice-filter__name">Наличие открытых вакансий</p>
+                            <div class="block-checkbox block-mt-orange">
+                                <label for="open-vacancies-yes-mobile">
+                                    <input type="checkbox" id="open-vacancies-yes-mobile" name="open-vacancies-yes" hidden>
+                                    <div class="check"></div>
+                                    Да
+                                </label>
+                            </div>
+                            <div class="block-checkbox block-mt-orange">
+                                <label for="open-vacancies-no-mobile">
+                                    <input type="checkbox" id="open-vacancies-no-mobile" name="open-vacancies-no" hidden>
+                                    <div class="check"></div>
+                                    Нет
+                                </label>
+                            </div>
+                        </div>
+                        <div class="block-mt-green">
+                            <input type="submit" name="submit-filter" class="main-button" value="Применить фильтр">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </>
 </body>
 </html>

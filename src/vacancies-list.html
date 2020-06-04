@@ -108,11 +108,14 @@
                                 <img src="./img/logo_fixed.svg" alt="">
                             </a>
                         </div>
-                        <div class="col-auto">
-                            <a href="#" class="button-text choice-mode">
-                                Ищу работника
+                        <div class="col">
+                            <div href="#" class="button-text choice-mode prompt">
+                                Ищу работу
                                 <img class="img-svg" src="./img/arrow_down_scroll.svg" alt="">
-                            </a>
+                                <div class="prompt__block">
+                                    <a href="#">Ищу работника</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-6 header-scroll-right">
                             <a href="#" class="button-text favorites hidden">
@@ -133,7 +136,7 @@
                             <div class="header-profile header-profile_hidden">
                                 <a href="#" class="button-text profile">
                                     <img class="img-svg" src="./img/icon_profile_scroll.svg" alt="">
-                                    Чапаев
+                                    <p>Иван Иванов</p>
                                 </a>
                                 <a href="#" class="button-text logout">
                                     <img class="img-svg" src="./img/icon_logout_scroll.svg" alt="">
@@ -268,14 +271,14 @@
                                                 <label for="advance-payment-yes">
                                                     <input type="radio" id="advance-payment-yes" name="advance-payment" hidden checked>
                                                     <div class="radio"></div>
-                                                    Да
+                                                    <p>Да</p>
                                                 </label>
                                             </div>
                                             <div class="block-radio block-mt-orange">
                                                 <label for="advance-payment-no">
                                                     <input type="radio" id="advance-payment-no" name="advance-payment" hidden>
                                                     <div class="radio"></div>
-                                                    Нет
+                                                    <p>Нет</p>
                                                 </label>
                                             </div>
                                         </div>
@@ -302,21 +305,21 @@
                                                 <label for="apartment">
                                                     <input type="checkbox" id="apartment" name="apartment" hidden>
                                                     <div class="check"></div>
-                                                    Проживание в квартире
+                                                    <p>Проживание в квартире</p>
                                                 </label>
                                             </div>
                                             <div class="block-checkbox block-mt-orange">
                                                 <label for="hostel">
                                                     <input type="checkbox" id="hostel" name="hostel" hidden>
                                                     <div class="check"></div>
-                                                    Проживание в общежитии
+                                                    <p>Проживание в общежитии</p>
                                                 </label>
                                             </div>
                                             <div class="block-checkbox block-mt-orange">
                                                 <label for="residence-no">
                                                     <input type="checkbox" id="residence-no" name="residence-no" hidden checked>
                                                     <div class="check"></div>
-                                                    Не требуется
+                                                    <p>Не требуется</p>
                                                 </label>
                                             </div>
                                         </div>
@@ -326,14 +329,14 @@
                                                 <label for="food-yes">
                                                     <input type="radio" id="food-yes" name="food" hidden checked>
                                                     <div class="radio"></div>
-                                                    Да
+                                                    <p>Да</p>
                                                 </label>
                                             </div>
                                             <div class="block-radio block-mt-orange">
                                                 <label for="food-no">
                                                     <input type="radio" id="food-no" name="food" hidden>
                                                     <div class="radio"></div>
-                                                    Нет
+                                                    <p>Да</p>
                                                 </label>
                                             </div>
                                         </div>
@@ -343,14 +346,14 @@
                                                 <label for="transport-yes">
                                                     <input type="radio" id="transport-yes" name="transport" hidden checked>
                                                     <div class="radio"></div>
-                                                    Да
+                                                    <p>Да</p>
                                                 </label>
                                             </div>
                                             <div class="block-radio block-mt-orange">
                                                 <label for="transport-no">
                                                     <input type="radio" id="transport-no" name="transport" hidden>
                                                     <div class="radio"></div>
-                                                    Нет
+                                                    <p>Нет</p>
                                                 </label>
                                             </div>
                                         </div>
@@ -360,21 +363,21 @@
                                                 <label for="work-clothes-free">
                                                     <input type="checkbox" id="work-clothes-free" name="work-clothes-free" hidden>
                                                     <div class="check"></div>
-                                                    Бесплатная спецодежда
+                                                    <p>Бесплатная спецодежда</p>
                                                 </label>
                                             </div>
                                             <div class="block-checkbox block-mt-orange">
                                                 <label for="work-clothes-pay">
                                                     <input type="checkbox" id="work-clothes-pay" name="work-clothes-pay" hidden>
                                                     <div class="check"></div>
-                                                    Вычитается из з/п
+                                                    <p>Вычитается из з/п</p>
                                                 </label>
                                             </div>
                                             <div class="block-checkbox block-mt-orange">
                                                 <label for="work-clothes-no">
                                                     <input type="checkbox" id="work-clothes-no" name="work-clothes-no" hidden checked>
                                                     <div class="check"></div>
-                                                    Не требуется
+                                                    <p>Не требуется</p>
                                                 </label>
                                             </div>
                                         </div>
@@ -384,14 +387,14 @@
                                                 <label for="direct-employers">
                                                     <input type="checkbox" id="direct-employers" name="direct-employers" hidden checked>
                                                     <div class="check"></div>
-                                                    Прямые работодатели
+                                                    <p>Прямые работодатели</p>
                                                 </label>
                                             </div>
                                             <div class="block-checkbox block-mt-orange">
                                                 <label for="recruitment-agencies">
                                                     <input type="checkbox" id="recruitment-agencies" name="recruitment-agencies" hidden checked>
                                                     <div class="check"></div>
-                                                    Кадровые агенства
+                                                    <p>Кадровые агенства</p>
                                                 </label>
                                             </div>
                                         </div>
@@ -852,6 +855,189 @@
             <div class="modal-form-content block-mt-yellow">
                 <h2>Спасибо за обращение!</h2>
                 <p class="block-mt-blue">Наш менеджер свяжется с Вами в ближайшее время.</p>
+            </div>
+        </div>
+        <div class="modal-form modal-form__filter" id="modal-filter">
+            <div class="close-modal">
+                <a href="#">
+                    <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                </a>
+            </div>
+            <div class="modal-form-content block-mt-orange">
+                <div class="sidebar-filter">
+                    <form action="" id="form-filter">
+                        <div class="block-select-filter block-mb-yellow">
+                            <p class="block-select-filter__name">Город</p>
+                            <select name="city">
+                                <option value="0">Выберите город</option>
+                                <option value="city1">Москва</option>
+                                <option value="city2">Нижний Новгород</option>
+                                <option value="city3">Казань</option>
+                            </select>
+                        </div>
+                        <div class="block-select-filter block-mb-yellow">
+                            <p class="block-select-filter__name">Должность</p>
+                            <select name="position">
+                                <option value="all">Все</option>
+                                <option value="position1">Должность 1</option>
+                                <option value="position2">Должность 2</option>
+                                <option value="position3">Должность 3</option>
+                            </select>
+                        </div>
+                        <div class="block-select-filter block-mb-yellow">
+                            <p class="block-select-filter__name">Оплата труда, от</p>
+                            <div class="block-filter-row">
+                                <div class="block-filter-row__block">
+                                    <input type="text" name="payment" placeholder="0">
+                                </div>
+                                <div class="block-filter-row__block">
+                                    <select name="payment-time">
+                                        <option value="hour">В час</option>
+                                        <option value="week">В неделю</option>
+                                        <option value="month">В месяц</option>
+                                        <option value="day">В день</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-choice-filter block-mb-yellow">
+                            <p class="block-choice-filter__name">Авансирование</p>
+                            <div class="block-radio block-mt-orange">
+                                <label for="advance-payment-yes-mobile">
+                                    <input type="radio" id="advance-payment-yes-mobile" name="advance-payment" hidden checked>
+                                    <div class="radio"></div>
+                                    <p>Да</p>
+                                </label>
+                            </div>
+                            <div class="block-radio block-mt-orange">
+                                <label for="advance-payment-no-mobile">
+                                    <input type="radio" id="advance-payment-no-mobile" name="advance-payment" hidden>
+                                    <div class="radio"></div>
+                                    <p>Нет</p>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="block-select-filter block-mb-yellow">
+                            <p class="block-select-filter__name">Тип занятости</p>
+                            <select name="employment">
+                                <option value="shifts-30">Вахта 30 смен</option>
+                                <option value="shifts-30">Вахта 30 смен</option>
+                                <option value="shifts-30">Вахта 30 смен</option>
+                                <option value="shifts-30">Вахта 30 смен</option>
+                            </select>
+                        </div>
+                        <div class="block-select-filter block-mb-yellow">
+                            <p class="block-select-filter__name">График</p>
+                            <select name="schedule">
+                                <option value="schedule1">Полный рабочий день</option>
+                                <option value="schedule2">Полный рабочий день</option>
+                                <option value="schedule3">Полный рабочий день</option>
+                            </select>
+                        </div>
+                        <div class="block-choice-filter block-mb-yellow">
+                            <p class="block-choice-filter__name">Проживание</p>
+                            <div class="block-checkbox block-mt-orange">
+                                <label for="apartment-mobile">
+                                    <input type="checkbox" id="apartment-mobile" name="apartment" hidden>
+                                    <div class="check"></div>
+                                    <p>Проживание в квартире</p>
+                                </label>
+                            </div>
+                            <div class="block-checkbox block-mt-orange">
+                                <label for="hostel-mobile">
+                                    <input type="checkbox" id="hostel-mobile" name="hostel" hidden>
+                                    <div class="check"></div>
+                                    <p>Проживание в общежитии</p>
+                                </label>
+                            </div>
+                            <div class="block-checkbox block-mt-orange">
+                                <label for="residence-no-mobile">
+                                    <input type="checkbox" id="residence-no-mobile" name="residence-no" hidden checked>
+                                    <div class="check"></div>
+                                    <p>Не требуется</p>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="block-choice-filter block-mb-yellow">
+                            <p class="block-choice-filter__name">Питание</p>
+                            <div class="block-radio block-mt-orange">
+                                <label for="food-yes-mobile">
+                                    <input type="radio" id="food-yes-mobile" name="food" hidden checked>
+                                    <div class="radio"></div>
+                                    <p>Да</p>
+                                </label>
+                            </div>
+                            <div class="block-radio block-mt-orange">
+                                <label for="food-no-mobile">
+                                    <input type="radio" id="food-no-mobile" name="food" hidden>
+                                    <div class="radio"></div>
+                                    <p>Да</p>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="block-choice-filter block-mb-yellow">
+                            <p class="block-choice-filter__name">Служебный транспорт</p>
+                            <div class="block-radio block-mt-orange">
+                                <label for="transport-yes-mobile">
+                                    <input type="radio" id="transport-yes-mobile" name="transport" hidden checked>
+                                    <div class="radio"></div>
+                                    <p>Да</p>
+                                </label>
+                            </div>
+                            <div class="block-radio block-mt-orange">
+                                <label for="transport-no-mobile">
+                                    <input type="radio" id="transport-no-mobile" name="transport" hidden>
+                                    <div class="radio"></div>
+                                    <p>Нет</p>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="block-choice-filter block-mb-yellow">
+                            <p class="block-choice-filter__name">Спецодежда</p>
+                            <div class="block-checkbox block-mt-orange">
+                                <label for="work-clothes-free-mobile">
+                                    <input type="checkbox" id="work-clothes-free-mobile" name="work-clothes-free" hidden>
+                                    <div class="check"></div>
+                                    <p>Бесплатная спецодежда</p>
+                                </label>
+                            </div>
+                            <div class="block-checkbox block-mt-orange">
+                                <label for="work-clothes-pay-mobile">
+                                    <input type="checkbox" id="work-clothes-pay-mobile" name="work-clothes-pay" hidden>
+                                    <div class="check"></div>
+                                    <p>Вычитается из з/п</p>
+                                </label>
+                            </div>
+                            <div class="block-checkbox block-mt-orange">
+                                <label for="work-clothes-no-mobile">
+                                    <input type="checkbox" id="work-clothes-no-mobile" name="work-clothes-no" hidden checked>
+                                    <div class="check"></div>
+                                    <p>Не требуется</p>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="block-choice-filter block-mb-yellow">
+                            <p class="block-choice-filter__name">Тип работодателя</p>
+                            <div class="block-checkbox block-mt-orange">
+                                <label for="direct-employers-mobile">
+                                    <input type="checkbox" id="direct-employers-mobile" name="direct-employers" hidden checked>
+                                    <div class="check"></div>
+                                    <p>Прямые работодатели</p>
+                                </label>
+                            </div>
+                            <div class="block-checkbox block-mt-orange">
+                                <label for="recruitment-agencies-mobile">
+                                    <input type="checkbox" id="recruitment-agencies-mobile" name="recruitment-agencies" hidden checked>
+                                    <div class="check"></div>
+                                    <p>Кадровые агенства</p>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="block-mt-green">
+                            <input type="submit" name="submit-filter" class="main-button" value="Применить фильтр">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

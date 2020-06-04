@@ -108,17 +108,20 @@
                                 <img src="./img/logo_fixed.svg" alt="">
                             </a>
                         </div>
-                        <div class="col-auto">
-                            <a href="#" class="button-text choice-mode">
-                                Ищу работника
+                        <div class="col">
+                            <div href="#" class="button-text choice-mode prompt">
+                                Ищу работу
                                 <img class="img-svg" src="./img/arrow_down_scroll.svg" alt="">
-                            </a>
+                                <div class="prompt__block">
+                                    <a href="#">Ищу работника</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-6 header-scroll-right">
-                            <a href="#" class="button-text favorites">
+                            <a href="#" class="button-text favorites hidden">
                                 <img class="img-svg" src="./img/icon_favorites_scroll.svg" alt="">
                             </a>
-                            <a href="#" class="button-text feedback" data-count="+16">
+                            <a href="#" class="button-text feedback hidden" data-count="+16">
                                 <img class="img-svg" src="./img/icon_feedback_scroll.svg" alt="">
                             </a>
                             <a href="#" class="button-text search-work">
@@ -127,13 +130,13 @@
                             <a href="#" class="button-text release-resume">
                                 <img class="img-svg" src="./img/icon_resume_scroll.svg" alt="">
                             </a>
-                            <a href="#" class="button-text login hidden">
+                            <a href="#" class="button-text login">
                                 <img class="img-svg" src="./img/icon_enter_scroll.svg" alt="">
                             </a>
-                            <div class="header-profile">
+                            <div class="header-profile header-profile_hidden">
                                 <a href="#" class="button-text profile">
                                     <img class="img-svg" src="./img/icon_profile_scroll.svg" alt="">
-                                    Иванов Иван
+                                    <p>Иван Иванов</p>
                                 </a>
                                 <a href="#" class="button-text logout">
                                     <img class="img-svg" src="./img/icon_logout_scroll.svg" alt="">
@@ -255,6 +258,9 @@
                                 <div class="sidebar-image block-mt-blue" style="background-image: url(./img/img_banner5.png);"></div>
                             </div>
                             <div class="col-9">
+                                <button type="button" class="other-button button-account">
+                                    <img class="img-svg" src="./img/icon_burger.svg" alt="">
+                                </button>
                                 <div class="post-resume">
                                     <p>Основная цель резюме – выделить тебя на фоне других соискателей, привлечь внимание работодателя и, в конечном итоге, пригласить тебя на собеседование. А это сделать очень непросто. Представь себе на минуту тот факт, что почтовый ящик твоего потенциального работодателя засыпают десятками и даже сотнями (зависит от размера компании) резюме в день. И на просмотр твоего резюме он потратит максимум 30 секунд – и в течение этого маленького времени решится твоя дальнейшая судьба и дается ответ на главный вопрос работодателя: подходит ли мне этот сотрудник?</p>
                                     <div class="block-mt-blue">
@@ -730,6 +736,41 @@
             <div class="modal-form-content block-mt-yellow">
                 <h2>Спасибо за обращение!</h2>
                 <p class="block-mt-blue">Наш менеджер свяжется с Вами в ближайшее время.</p>
+            </div>
+        </div>
+        <div class="modal-form modal-form__account" id="modal-account">
+            <div class="close-modal">
+                <a href="#">
+                    <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                </a>
+            </div>
+            <div class="modal-form-content block-mt-orange">
+                <div class="sidebar-profile">
+                    <a href="#" class="button-text current-ref">
+                        <img class="img-svg" src="./img/icon_profile.svg" alt="">
+                        Профиль
+                    </a>
+                    <a href="#" class="button-text">
+                        <img class="img-svg" src="./img/icon_my_resumes.svg" alt="">
+                        Мои резюме
+                    </a>
+                    <a href="#" class="button-text">
+                        <img class="img-svg" src="./img/icon_resume.svg" alt="">
+                        Разместить резюме
+                    </a>
+                    <a href="#" class="button-text feedback" data-count="+16">
+                        <img class="img-svg" src="./img/icon_feedback.svg" alt="">
+                        Отклики
+                    </a>
+                    <a href="#" class="button-text">
+                        <img class="img-svg" src="./img/icon_favorites.svg" alt="">
+                        Избранное
+                    </a>
+                    <a href="#" class="button-text">
+                        <img class="img-svg" src="./img/icon_subscribe.svg" alt="">
+                        Подписка
+                    </a>
+                </div>
             </div>
         </div>
     </div>

@@ -996,6 +996,13 @@ let arrayFields = [shadow, ...closeModal];
 let buttonFeedback = document.querySelectorAll('.button-feedback');
 let modalFeedback = document.querySelector('#modal-feedback');
 
+let buttonFilter = document.querySelectorAll('.button-filter');
+let modalFilter = document.querySelector('#modal-filter');
+
+let buttonAccount = document.querySelectorAll('.button-account');
+let modalAccount = document.querySelector('#modal-account');
+
+
 
 const animationModalForm = fn =>
 {
@@ -1016,6 +1023,8 @@ function viewForm(buttons, form)
     {
       e.preventDefault();
 
+      let closeModal = form.querySelector('.close-modal a');
+
       shadow.appendChild(form);
       document.body.classList.add('disabled');
       shadow.classList.add('wrapper-shadow_active');
@@ -1025,12 +1034,13 @@ function viewForm(buttons, form)
         form.classList.add('modal-form_active');
       });
       
-      arrayFields.forEach(field => 
+     
+      shadow.addEventListener('click', (e) => 
       {
-        field.addEventListener('click', (e) => 
+        if(e.target.classList.contains('wrapper-shadow'))
         {
           e.preventDefault();
-          
+        
           form.classList.remove('modal-form_active'); 
           shadow.classList.remove('wrapper-shadow_active');
           document.body.appendChild(form);
@@ -1040,18 +1050,42 @@ function viewForm(buttons, form)
           {
             shadow.innerHTML = '';
           }, 500);
-           
-        });
+        }
+       
       });
 
-      form.addEventListener('click', e => e.stopPropagation());
+      closeModal.addEventListener('click', function(e)
+      {
+        e.preventDefault();
+        
+        form.classList.remove('modal-form_active'); 
+        shadow.classList.remove('wrapper-shadow_active');
+        document.body.appendChild(form);
+        document.body.classList.remove('disabled');
+      
+        setTimeout(() => 
+        {
+          shadow.innerHTML = '';
+        }, 500);
+
+      });
+      
+      // form.addEventListener('click', e => e.preventDefault());
     });
   });
 }
 
-if(buttonFeedback.length > 0)
+if(buttonFeedback.length)
 {
   viewForm(buttonFeedback, modalFeedback);
+}
+if(buttonFilter.length)
+{
+  viewForm(buttonFilter, modalFilter);
+}
+if(buttonAccount.length)
+{
+  viewForm(buttonAccount, modalAccount);
 }
 
 // Валидация формы и отправка данных
