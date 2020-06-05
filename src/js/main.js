@@ -246,6 +246,7 @@ initChoices(elemsSelect);
 
 let headerHeight = document.querySelector('.header').clientHeight;
 let headerScroll = document.querySelector('.header-scroll');
+let headerScrollMobile = document.querySelector('.header-scroll-mobile');
 
 function fixedAdaptiveHeader(block, height)
 {
@@ -261,12 +262,25 @@ function fixedAdaptiveHeader(block, height)
   }
 }
 
-window.addEventListener('scroll', function()
+if(window.matchMedia('(min-width: 651px)').matches)
 {
-  fixedAdaptiveHeader(headerScroll, headerHeight);
-});
+	window.addEventListener('scroll', function()
+  {
+    fixedAdaptiveHeader(headerScroll, headerHeight);
+  });
 
-fixedAdaptiveHeader(headerScroll, headerHeight);
+  fixedAdaptiveHeader(headerScroll, headerHeight);
+}
+
+if(window.matchMedia('(max-width: 650px)').matches)
+{
+	window.addEventListener('scroll', function()
+  {
+    fixedAdaptiveHeader(headerScrollMobile, headerHeight);
+  });
+
+  fixedAdaptiveHeader(headerScrollMobile, headerHeight);
+}
 
 
 // Для input[type="file"]

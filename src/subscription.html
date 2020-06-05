@@ -12,14 +12,21 @@
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto header-top-left">
-                            <a href="#" class="choice-lang">
+                            <div href="#" class="choice-lang prompt">
                                 RU 
                                 <img class="img-svg" src="./img/arrow_down.svg" alt="">
-                            </a>
-                            <a href="#" class="choice-city">
+                                <div class="prompt__block">
+                                    <a href="#">EN</a>
+                                </div>
+                            </div>
+                            <div href="#" class="choice-city prompt">
                                 Нижний Новгород 
                                 <img class="img-svg" src="./img/arrow_down.svg" alt="">
-                            </a>
+                                <div class="prompt__block">
+                                    <a href="#">Казань</a>
+                                    <a href="#">Москва</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-auto header-top-middle">
                             <a href="#" class="choice-mode choice-mode_active">Ищу работу</a>
@@ -34,10 +41,15 @@
                                 <img class="img-svg" src="./img/icon_feedback.svg" alt="">
                                 Отклики
                             </a>
-                            <a href="#" class="help">
+                            <div href="#" class="prompt help">
                                 Помощь
                                 <img class="img-svg" src="./img/arrow_down.svg" alt="">
-                            </a>
+                                <div class="prompt__block">
+                                    <a href="#">Полезные статьи</a>
+                                    <a href="#">Часто задаваемые вопросы</a>
+                                    <a href="#">Как пользоваться сервисом</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -50,10 +62,10 @@
                             <a href="#" class="choice-mode">Ищу работника</a>
                         </div>
                         <div class="col-auto header-top-tablet__middle">
-                            <a href="#" class="button-text favorites hidden">
+                            <a href="#" class="button-text favorites">
                                 <img class="img-svg" src="./img/icon_favorites.svg" alt="">
                             </a>
-                            <a href="#" class="button-text feedback hidden" data-count="+16">
+                            <a href="#" class="button-text feedback" data-count="+16">
                                 <img class="img-svg" src="./img/icon_feedback.svg" alt="">
                             </a>
                         </div>
@@ -65,12 +77,17 @@
                     </div>
                 </div>
             </div>
+            <div class="header-mode-mobile"> 
+                <a href="#" class="choice-mode choice-mode_active">Ищу работу</a>
+                <a href="#" class="choice-mode">Ищу работника</a>
+            </div>
             <div class="header-bottom">
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto header-bottom-left">
                             <a href="#">
-                                <img src="./img/logo.svg" alt="">
+                                <img src="./img/logo.svg" class="main-logo" alt="">
+                                <img src="./img/logo_mobile.svg" class="mobile-logo" alt="">
                             </a>
                             <p>Быстрый поиск узкоквалифицированной работы</p>
                         </div>
@@ -83,11 +100,11 @@
                                 <img class="img-svg" src="./img/icon_resume.svg" alt="">
                                 <p>Разместить резюме</p>
                             </a>
-                            <a href="#" class="button-text login">
+                            <a href="#" class="button-text login hidden">
                                 <img class="img-svg" src="./img/icon_enter.svg" alt="">
                                 <p>Войти</p>
                             </a>
-                            <div class="header-profile header-profile_hidden">
+                            <div class="header-profile">
                                 <a href="#" class="button-text profile">
                                     <img class="img-svg" src="./img/icon_profile.svg" alt="">
                                     <p>Иван Иванов</p>
@@ -103,12 +120,12 @@
             <div class="header-scroll">
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
-                        <div class="col-auto">
+                        <div class="col-auto header-scroll-left">
                             <a href="#">
                                 <img src="./img/logo_fixed.svg" alt="">
                             </a>
                         </div>
-                        <div class="col">
+                        <div class="col-auto header-scroll-middle">
                             <div href="#" class="button-text choice-mode prompt">
                                 Ищу работу
                                 <img class="img-svg" src="./img/arrow_down_scroll.svg" alt="">
@@ -118,10 +135,10 @@
                             </div>
                         </div>
                         <div class="col-6 header-scroll-right">
-                            <a href="#" class="button-text favorites hidden">
+                            <a href="#" class="button-text favorites">
                                 <img class="img-svg" src="./img/icon_favorites_scroll.svg" alt="">
                             </a>
-                            <a href="#" class="button-text feedback hidden" data-count="+16">
+                            <a href="#" class="button-text feedback" data-count="+16">
                                 <img class="img-svg" src="./img/icon_feedback_scroll.svg" alt="">
                             </a>
                             <a href="#" class="button-text search-work">
@@ -130,10 +147,38 @@
                             <a href="#" class="button-text release-resume">
                                 <img class="img-svg" src="./img/icon_resume_scroll.svg" alt="">
                             </a>
-                            <a href="#" class="button-text login">
+                            <a href="#" class="button-text login hidden">
                                 <img class="img-svg" src="./img/icon_enter_scroll.svg" alt="">
                             </a>
-                            <div class="header-profile header-profile_hidden">
+                            <div class="header-profile">
+                                <a href="#" class="button-text profile">
+                                    <img class="img-svg" src="./img/icon_profile_scroll.svg" alt="">
+                                    <p>Иван Иванов</p>
+                                </a>
+                                <a href="#" class="button-text logout">
+                                    <img class="img-svg" src="./img/icon_logout_scroll.svg" alt="">
+                                </a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-scroll-mobile">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto header-scroll-mobile-left">
+                            <a href="#" class="button-text search-work">
+                                <img class="img-svg" src="./img/icon_search_scroll.svg" alt="">
+                            </a>
+                            <a href="#" class="button-text release-resume">
+                                <img class="img-svg" src="./img/icon_resume_scroll.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-auto header-scroll-mobile-right">
+                            <a href="#" class="button-text login hidden">
+                                <img class="img-svg" src="./img/icon_enter_scroll.svg" alt="">
+                            </a>
+                            <div class="header-profile">
                                 <a href="#" class="button-text profile">
                                     <img class="img-svg" src="./img/icon_profile_scroll.svg" alt="">
                                     <p>Иван Иванов</p>
@@ -272,42 +317,42 @@
                                                         <label for="handyman">
                                                             <input type="checkbox" id="handyman" name="handyman" hidden="">
                                                             <div class="check"></div>
-                                                            Разнорабочий
+                                                            <p>Разнорабочий</p>
                                                         </label>
                                                     </div>
                                                     <div class="block-checkbox">
                                                         <label for="loader">
                                                             <input type="checkbox" id="loader" name="loader" hidden="">
                                                             <div class="check"></div>
-                                                            Грузчик
+                                                            <p>Грузчик</p>
                                                         </label>
                                                     </div>
                                                     <div class="block-checkbox">
                                                         <label for="production-worker">
                                                             <input type="checkbox" id="production-worker" name="production-worker" hidden="">
                                                             <div class="check"></div>
-                                                            Рабочий на производство
+                                                            <p>Рабочий на производство</p>
                                                         </label>
                                                     </div>
                                                     <div class="block-checkbox">
                                                         <label for="packer">
                                                             <input type="checkbox" id="packer" name="packer" hidden="">
                                                             <div class="check"></div>
-                                                            Фасовщик
+                                                            <p>Фасовщик</p>
                                                         </label>
                                                     </div>
                                                     <div class="block-checkbox">
                                                         <label for="washer">
                                                             <input type="checkbox" id="washer" name="washer" hidden="">
                                                             <div class="check"></div>
-                                                            Мойщик
+                                                            <p>Мойщик</p>
                                                         </label>
                                                     </div>
                                                     <div class="block-checkbox">
                                                         <label for="сompositor">
                                                             <input type="checkbox" id="сompositor" name="сompositor" hidden="">
                                                             <div class="check"></div>
-                                                            Наборщик
+                                                            <p>Наборщик</p>
                                                         </label>
                                                     </div>
                                                 </div>
@@ -316,42 +361,42 @@
                                                         <label for="packer2">
                                                             <input type="checkbox" id="packer2" name="packer2" hidden="">
                                                             <div class="check"></div>
-                                                            Упаковщик
+                                                            <p>Упаковщик</p>
                                                         </label>
                                                     </div>
                                                     <div class="block-checkbox">
                                                         <label for="sticker">
                                                             <input type="checkbox" id="sticker" name="sticker" hidden="">
                                                             <div class="check"></div>
-                                                            Стикеровщик
+                                                            <p>Стикеровщик</p>
                                                         </label>
                                                     </div>
                                                     <div class="block-checkbox">
                                                         <label for="cleaner">
                                                             <input type="checkbox" id="cleaner" name="cleaner" hidden="">
                                                             <div class="check"></div>
-                                                            Уборщик
+                                                            <p>Уборщик</p>
                                                         </label>
                                                     </div>
                                                     <div class="block-checkbox">
                                                         <label for="cashier">
                                                             <input type="checkbox" id="cashier" name="cashier" hidden="">
                                                             <div class="check"></div>
-                                                            Кассир
+                                                            <p>Кассир</p>
                                                         </label>
                                                     </div>
                                                     <div class="block-checkbox">
                                                         <label for="merchandiser">
                                                             <input type="checkbox" id="merchandiser" name="merchandiser" hidden="">
                                                             <div class="check"></div>
-                                                            Мерчендайзер
+                                                            <p>Мерчендайзер</p>
                                                         </label>
                                                     </div>
                                                     <div class="block-checkbox">
                                                         <label for="seller">
                                                             <input type="checkbox" id="seller" name="seller" hidden="">
                                                             <div class="check"></div>
-                                                            Не требуется
+                                                            <p>Не требуется</p>
                                                         </label>
                                                     </div>
                                                 </div>
@@ -360,42 +405,42 @@
                                                         <label for="car-wash">
                                                             <input type="checkbox" id="car-wash" name="car-wash" hidden="">
                                                             <div class="check"></div>
-                                                            Автомойщик
+                                                            <p>Автомойщик</p>
                                                         </label>
                                                     </div>
                                                     <div class="block-checkbox">
                                                         <label for="gas-tanker">
                                                             <input type="checkbox" id="gas-tanker" name="gas-tanker" hidden="">
                                                             <div class="check"></div>
-                                                            Автозаправщик
+                                                            <p>Автозаправщик</p>
                                                         </label>
                                                     </div>
                                                     <div class="block-checkbox">
                                                         <label for="waiter">
                                                             <input type="checkbox" id="waiter" name="waiter" hidden="">
                                                             <div class="check"></div>
-                                                            Официант
+                                                            <p>Официант</p>
                                                         </label>
                                                     </div>
                                                     <div class="block-checkbox">
                                                         <label for="maid">
                                                             <input type="checkbox" id="maid" name="maid" hidden="">
                                                             <div class="check"></div>
-                                                            Горничная
+                                                            <p>Горничная</p>
                                                         </label>
                                                     </div>
                                                     <div class="block-checkbox">
                                                         <label for="courier">
                                                             <input type="checkbox" id="courier" name="courier" hidden="">
                                                             <div class="check"></div>
-                                                            Курьер
+                                                            <p>Курьер</p>
                                                         </label>
                                                     </div>
                                                     <div class="block-checkbox">
                                                         <label for="rush-job">
                                                             <input type="checkbox" id="rush-job" name="rush-job" hidden="">
                                                             <div class="check"></div>
-                                                            Срочная работа
+                                                            <p>Срочная работа</p>
                                                         </label>
                                                     </div>
                                                 </div>
