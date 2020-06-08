@@ -261,7 +261,7 @@ button
     }
     p 
     {
-        color: $color-hover;
+        color: $color-hover !important;
     }
 }
 
@@ -693,6 +693,28 @@ ul
         top: calc(50% - 4px);
     }
 }
+
+// Обертка для таблиц 
+
+.wrapper-table 
+{
+    width: 100%;
+    overflow-x: auto;
+}
+
+.wrapper-table::-webkit-scrollbar
+{
+    width: 5px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: #b7b6c3;
+}
+
+.wrapper-table::-webkit-scrollbar-track { background-color: #b7b6c3;}
+.wrapper-table::-webkit-scrollbar-track-piece { background-color: #ffffff;}
+.wrapper-table::-webkit-scrollbar-thumb { height: 5px; background-color: #b7b6c3; border-radius: 3px;}
+.wrapper-table::-webkit-scrollbar-corner { background-color: #b7b6c3;}
+.wrapper-table::-webkit-resizer {background-color: #b7b6c3;}
 
 
 
@@ -1266,10 +1288,6 @@ textarea.field-error
     }
     &__block 
     {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
         padding: 18px;
         background-color: #fff;
         position: absolute;
@@ -1892,7 +1910,7 @@ textarea.field-error
     &_fixed 
     {
         transform: translateY(0);
-        z-index: 5;
+        z-index: 4;
         opacity: 1;
     }
 }
@@ -1913,7 +1931,6 @@ textarea.field-error
     top: 0;
     font-family: Montserrat Bold;
     font-size: 12px;
-    
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -1922,6 +1939,16 @@ textarea.field-error
 }
 
 // Быстрый поиск 
+
+.input-search-mobile 
+{
+    display: none;
+}
+
+.button-detailed-search
+{
+    display: none;
+}
 
 .quick-job-search 
 {
@@ -1942,6 +1969,7 @@ textarea.field-error
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;
+                position: relative;
                 input[type="text"]
                 {
                     width: 28%;
@@ -1970,7 +1998,8 @@ textarea.field-error
                 &__link 
                 {
                     display: flex;
-                    margin-right: 15px;
+                    margin-left: 7.5px;
+                    margin-right: 7.5px;
                     margin-bottom: 15px;
                     align-items: center;
                     font-family: Montserrat Regular;
@@ -4015,6 +4044,10 @@ ymaps[class$='pie-chart-content']
             .block-radio 
             {
                 margin-right: 40px;
+                p 
+                {
+                    width: auto;
+                }
             }
             &__name 
             {
@@ -4181,22 +4214,31 @@ input[type="submit"]
             padding-left: 25px;
             padding-right: 25px;
         }
-        .detailed-description-block__name
+        .detailed-description
         {
-            width: 22%;
-            p 
+            .col-3, .col-9 
             {
-                line-height: normal;
+                display: block;
+                // padding-left: 16
+                // padding-right: auto;
             }
         }
-        .detailed-description-block__text
-        {
-            width: 76%;
-            p 
-            {
-                line-height: normal;
-            }
-        }
+        // .detailed-description-block__name
+        // {
+        //     width: 22%;
+        //     p 
+        //     {
+        //         line-height: normal;
+        //     }
+        // }
+        // .detailed-description-block__text
+        // {
+        //     width: 76%;
+        //     p 
+        //     {
+        //         line-height: normal;
+        //     }
+        // }
     }
     .sidebar-image 
     {
@@ -4236,6 +4278,7 @@ input[type="submit"]
     background-color: #fff;
     border-top: 4px solid #dddce8;
     box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+    min-width: 895px;
     &-header 
     {
         padding: 22px 39px 22px 27px;
@@ -4306,6 +4349,12 @@ input[type="submit"]
         .button-text 
         {
             font-size: 12px;
+            p 
+            {
+                font-size: 12px;
+                width: 85%;
+                margin: 0;
+            }
         }
         .button-text:nth-child(2)
         {
@@ -4426,6 +4475,7 @@ input[type="submit"]
     background-color: #fff;
     border-top: 4px solid #dddce8;
     box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+    min-width: 895px;
     &-header 
     {
         padding: 20px 30px 20px 20px;
@@ -4440,7 +4490,7 @@ input[type="submit"]
                 {
                     font-family: Raleway Bold;
                     font-size: 14px;
-                    
+                    text-align: center;
                     font-stretch: normal;
                     font-style: normal;
                     line-height: normal;

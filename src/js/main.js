@@ -1016,6 +1016,8 @@ let modalFilter = document.querySelector('#modal-filter');
 let buttonAccount = document.querySelectorAll('.button-account');
 let modalAccount = document.querySelector('#modal-account');
 
+let buttonDetailedSearch = document.querySelectorAll('.button-detailed-search');
+let modalDetailedSearch = document.querySelector('#detailed-search');
 
 
 const animationModalForm = fn =>
@@ -1100,6 +1102,10 @@ if(buttonFilter.length)
 if(buttonAccount.length)
 {
   viewForm(buttonAccount, modalAccount);
+}
+if(buttonDetailedSearch.length)
+{
+  viewForm(buttonDetailedSearch, modalDetailedSearch);
 }
 
 // Валидация формы и отправка данных
@@ -1254,20 +1260,6 @@ function sendForm(form)
 }
 
 
-// Адаптивная версия шапки
-
-// if(window.matchMedia('(max-width: 1180px)').matches)
-// {
-//   let buttonText = document.querySelectorAll('.header-bottom-right .button-text');
-
-//   if(buttonText.length)
-//   {
-//     buttonText.forEach(button => {
-//       button.querySelector('p') ? button.querySelector('p').remove() : null;
-//     });
-//   }
-// }
-
 // Меню
 
 let buttonHelp = document.querySelector('.button-help');
@@ -1309,6 +1301,57 @@ if(buttonHelp && menuMain)
 
   });
 }
+
+
+// Адаптив для таблицы Резюме и Отклики 
+
+let resumes = document.querySelectorAll('.resumes');
+let responses = document.querySelectorAll('.response');
+
+if(resumes.length)
+{
+  // resumes.forEach(function(resume) 
+  // {
+  //   let headers = resume.querySelectorAll('.resumes-header-row-block p');
+  //   let strBody = resume.querySelectorAll('.resumes-content-row');
+    
+  //   strBody.forEach(function(str)
+  //   {
+  //     let columns = str.querySelectorAll('.resumes-content-row-block');
+
+  //     for(let i = 0; i < columns.length; i++)
+  //     {
+  //       columns[i].dataset.label = headers[i].innerHTML;
+  //     }
+  //   });
+  // });
+  resumes.forEach(function(resume)
+  {
+    resume.insertAdjacentHTML('beforebegin', '<div class="wrapper-table"></div>');
+    let wrapperTable = resume.previousElementSibling;
+    wrapperTable.appendChild(resume);
+  });
+}
+
+if(responses.length)
+{
+  responses.forEach(function(response)
+  {
+    response.insertAdjacentHTML('beforebegin', '<div class="wrapper-table"></div>');
+    let wrapperTable = response.previousElementSibling;
+    wrapperTable.appendChild(response);
+  });
+}
+
+// Адаптив для формы быстрого поиска
+
+if(window.matchMedia('(max-width: 650px)').matches)
+{
+  let submitButton = document.querySelector('.quick-job-search-block-content form input[type="submit"]');
+  submitButton.value = ''
+}
+
+
 
 
 

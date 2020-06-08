@@ -64,6 +64,15 @@
 }
 @media(max-width: 1180px)
 {
+    .brief-information-block
+    {
+        flex-direction: column;
+    }
+    .brief-information-block__info
+    {
+        margin-left: 0;
+        margin-top: 20px;
+    }
     .main-search .search-list-row-companies .col-6
     {
         padding-left: 15px;
@@ -135,18 +144,10 @@
     {
         display: none;
     }
-    .brief-information
-    {
-        flex-direction: column;
-    }
     .main-search .search-list-row-vacancies .col-4
     {
         flex: 0 0 50%;
         max-width: 50%;
-    }
-    .block-to-rate
-    {
-        margin-top: 32px;
     }
     .profile-container .sidebar-image
     {
@@ -203,78 +204,6 @@
     .faq-main-content__left
     {
         width: 100%;
-    }
-    .block-mt-purple
-    {
-        margin-top: 72px;
-    }
-    .block-mt-dark-blue 
-    {
-        margin-top: 56px;
-    }
-    .block-mt-blue 
-    {
-        margin-top: 48px;
-    }
-    .block-mt-green 
-    {
-        margin-top: 32px;
-    }
-    .block-mt-yellow 
-    {
-        margin-top: 24px;
-    }
-    .block-mt-orange 
-    {
-        margin-top: 17px;
-    }
-    .block-mb-purple
-    {
-        margin-bottom: 72px;
-    }
-    .block-mb-dark-blue 
-    {
-        margin-bottom: 56px;
-    }
-    .block-mb-blue 
-    {
-        margin-bottom: 48px;
-    }
-    .block-mb-green 
-    {
-        margin-bottom: 32px;
-    }
-    .block-mb-yellow 
-    {
-        margin-bottom: 24px;
-    }
-    .block-mb-orange 
-    {
-        margin-bottom: 17px;
-    }
-    h1 
-    {
-        font-size: 36px;
-    }
-    h2 
-    {
-        font-size: 23px;
-    }
-    h3 
-    {
-        font-size: 17px;
-    }
-    p 
-    {
-        font-size: 15px;
-    }
-    a 
-    {
-        font-size: 15px;
-    }
-    ul li 
-    {
-        font-size: 15px;
     }
     .advantages-registration-row .col-3
     {
@@ -334,6 +263,16 @@
 }
 @media(max-width: 950px)
 {
+    .profile-container .detailed-description .row
+    {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+    .profile-container .detailed-description .col-3, .profile-container .detailed-description .col-9
+    {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
     .all-articles .row .col-3
     {
         flex: 0 0 50%;
@@ -427,15 +366,6 @@
 }
 @media(max-width: 850px)
 {
-    .brief-information-block
-    {
-        flex-direction: column;
-    }
-    .brief-information-block__info
-    {
-        margin-left: 0;
-        margin-top: 20px;
-    }
     .useful-articles-content .row .col-3
     {
         flex: 0 0 50%;
@@ -511,6 +441,15 @@
     {
         margin-bottom: 0;
     }
+    .post-resume .steps-post-resume__step
+    {
+        display: none;
+    }
+    .post-resume .steps-post-resume__step_current
+    {
+        display: block;
+        margin-bottom: 0;
+    }
 }
 @media(max-width: 700px)
 {
@@ -565,9 +504,93 @@
     {
         width: 100%;
     }
+    // .resumes-header
+    // {
+    //     display: none;
+    // }
+    // .resumes-content-row
+    // {
+    //     display: block;
+    //     padding-left: 16px;
+    //     padding-right: 16px;
+    // }
+    // .resumes-content-row-block
+    // {
+    //     width: 100% !important;
+    //     display: block !important;
+    //     text-align: right;
+    //     margin-bottom: 20px;
+    // }
+    // .resumes-content-row-block:last-child 
+    // {
+    //     margin-bottom: 0;
+    // }
+    // .resumes__actions
+    // {
+    //     flex-direction: column;
+    //     align-items: flex-end;
+    //     margin-bottom: 20px;
+    // }
+    // .resumes__actions .button-text:nth-child(2)
+    // {
+    //     margin-top: 17px;
+    //     margin-left: 0;
+    // }
+    // .resumes-content-row-block::before 
+    // {
+	//     content: attr(data-label);
+	//     float: left;
+    //     font-family: Raleway Bold;
+    //     font-size: 14px;
+    //     font-stretch: normal;
+    //     font-style: normal;
+    //     line-height: normal;
+    //     letter-spacing: normal;
+    //     color: $color-primary;
+    //     margin-top: 7px;
+    //     text-align: left;
+    //     width: 30%;
+    //     margin-right: 10px;
+    // }
+    // .resumes__actions .button-text p
+    // {
+    //     width: 100%;
+    // }
+    // .resumes__name
+    // {
+    //     margin-bottom: 17px;
+    //     display: flex;
+    //     justify-content: flex-end;
+    //     align-items: center;
+    //     text-align: right;
+    // }
+    // .resumes-content-row-block p
+    // {
+    //     margin-bottom: 0;
+    // }
 }
 @media(max-width: 650px)
 {
+    .profile-container .detailed-description .row
+    {
+        margin-left: -16px;
+        margin-right: -16px;
+    }
+    .profile-container .detailed-description .col-3, .profile-container .detailed-description .col-9
+    {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .brief-information
+    {
+        flex-direction: column;
+    }
+    .block-to-rate 
+    {
+        margin-top: 32px;
+        height: auto;
+        padding: 16px 24px;
+    }
     .tabs-items
     {
         flex-wrap: wrap;
@@ -586,6 +609,8 @@
         width: 100%;
         left: 0;
         right: 0;
+        top: 0;
+        border-radius: 0;
     }
     .header .feedback
     {
@@ -765,7 +790,7 @@
         flex-direction: column;
         align-items: flex-start;
     }
-    .transfer-steps a:first-child 
+    .transfer-steps *:first-child 
     {
         margin-bottom: 32px;
     }
@@ -773,6 +798,166 @@
     {
         flex: 0 0 100%;
         max-width: 100%;
+    }
+    .quick-job-search h1, .new-vacancies h1, .top-companies h1, .usage-steps h1, .faq-main h1, .useful-articles h1
+    {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .quick-job-search-block__buttons
+    {
+        flex-direction: column;
+    }
+    .quick-job-search-block__buttons .button-text:last-child
+    {
+        margin-top: 22px;
+    }
+    .quick-job-search-block-content
+    {
+        padding: 32px 16px 32px 16px;
+    }
+    .quick-job-search-block-content form input[type=text]
+    {
+        display: none;
+    }
+    .input-search-mobile 
+    {
+        display: block;
+        width: calc(100% - 60px) !important;
+        height: 56px !important;
+        position: relative;
+    }
+    .input-search-mobile input 
+    {
+        display: initial !important;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    .button-detailed-search
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        border: 0;
+        outline: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 45px;
+        margin: 0;
+        padding: 0;
+    }
+    .quick-job-search-block-content form input[type=submit]
+    {
+        width: 56px;
+        height: 56px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url(../img/icon_bg_submit.svg);
+    }
+    .accordion-content-block .accordion-block-title p
+    {
+        font-size: 17px;
+    }
+    .accordion-content-block .accordion-block-desc
+    {
+        font-size: 15px;
+    }
+    .block-mt-purple
+    {
+        margin-top: 72px;
+    }
+    .block-mt-dark-blue 
+    {
+        margin-top: 56px;
+    }
+    .block-mt-blue 
+    {
+        margin-top: 48px;
+    }
+    .block-mt-green 
+    {
+        margin-top: 32px;
+    }
+    .block-mt-yellow 
+    {
+        margin-top: 24px;
+    }
+    .block-mt-orange 
+    {
+        margin-top: 17px;
+    }
+    .block-mb-purple
+    {
+        margin-bottom: 72px;
+    }
+    .block-mb-dark-blue 
+    {
+        margin-bottom: 56px;
+    }
+    .block-mb-blue 
+    {
+        margin-bottom: 48px;
+    }
+    .block-mb-green 
+    {
+        margin-bottom: 32px;
+    }
+    .block-mb-yellow 
+    {
+        margin-bottom: 24px;
+    }
+    .block-mb-orange 
+    {
+        margin-bottom: 17px;
+    }
+    h1 
+    {
+        font-size: 36px;
+    }
+    h2 
+    {
+        font-size: 23px;
+    }
+    h3 
+    {
+        font-size: 17px;
+    }
+    p 
+    {
+        font-size: 15px;
+    }
+    a 
+    {
+        font-size: 15px;
+    }
+    ul li 
+    {
+        font-size: 15px;
+    }
+    #detailed-search
+    {
+        height: 361px;
+        top: calc(50% - 180px);
+        left: 16px;
+        right: 16px;
+        border-radius: 3px;
+        width: auto;
+        .modal-form-content
+        {
+            padding-bottom: 56px;
+        }
+    }
+    #form-detailed-search input
+    {
+        width: 100% !important;
+        height: 56px !important;
+    }
+    .block-to-rate, .block-to-edit
+    {
+        width: 100%;
     }
 }
 @media(max-width: 550px)
@@ -787,7 +972,7 @@
         max-width: 100%;
         margin-bottom: 30px;
     }
-    .wrapper-map 
+    .wrapper-map, .map-api
     {
         height: 270px;
     }
@@ -805,12 +990,6 @@
         width: 100%;
         margin-top: 25px;
         margin-left: 0;
-    }
-    .modal-form-content
-    {
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 20px;
     }
     .all-articles .row .col-3
     {
