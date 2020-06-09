@@ -188,6 +188,23 @@ $('.similar-vacancies-slider-wrapper').owlCarousel({
   }
 });
 
+// Слайдер Партнеры
+
+$('.partners-slider-wrapper').owlCarousel({
+  loop:true, //Зацикливаем слайдер
+  items:6,
+  margin:68, //Отступ от элемента справа в 50px
+  nav:true, //Отключение навигации
+  dots: false,
+  autoplay: false, //Автозапуск слайдера
+  smartSpeed:300, //Время движения слайда
+  autoplayTimeout:300, //Время смены слайда
+  mouseDrag: false,
+  touchDrag: false,
+  navContainer: '.navigation-partners',
+  navText: ["<div class='arrow-slider'><img src='./img/arrow_slider_left.svg'></div>", "<div class='arrow-slider'><img src='./img/arrow_slider_right.svg'></div>"]
+});
+
 // Аккордеон
 
 let accordionContentBlock = document.querySelectorAll('.accordion-content-block');

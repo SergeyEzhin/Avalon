@@ -78,12 +78,12 @@
         padding-left: 15px;
         padding-right: 15px;
     }
-    .new-vacancies-content .col-3
+    .new-vacancies-content .col-3, .new-resumes-content .col-3
     {
         flex: 0 0 33%;
         max-width: 33%;
     }
-    .vacancy-card
+    .card
     {
         max-width: initial;
     }
@@ -92,7 +92,7 @@
         flex: 0 0 33%;
         max-width: 33%;
     }
-    .vacancy-card .vacancy-card__toggle
+    .card .card__toggle
     {
         width: 20%;
     }
@@ -358,7 +358,7 @@
         max-width: 50%;
         flex: 0 0 50%;
     }
-    .new-vacancies-content .col-3
+    .new-vacancies-content .col-3,  .new-resumes-content .col-3
     {
         flex: 0 0 50%;
         max-width: 50%;
@@ -411,6 +411,10 @@
     {
         margin-top: 32px;
     }
+    .header-bottom-left p
+    {
+        display: none;
+    }
 }
 @media(max-width: 750px)
 {
@@ -418,10 +422,6 @@
     {
         flex: 0 0 50%;
         max-width: 50%;
-    }
-    .header-bottom-left p
-    {
-        display: none;
     }
     .post-resume .steps-post-resume
     {
@@ -799,7 +799,7 @@
         flex: 0 0 100%;
         max-width: 100%;
     }
-    .quick-job-search h1, .new-vacancies h1, .top-companies h1, .usage-steps h1, .faq-main h1, .useful-articles h1
+    .quick-job-search h1, .new-vacancies h1, .top-companies h1, .usage-steps h1, .faq-main h1, .useful-articles h1, .new-resumes h1
     {
         padding-left: 16px;
         padding-right: 16px;
@@ -1001,7 +1001,7 @@
         max-width: 100%;
         flex: 0 0 100%;
     }
-    .useful-articles-content .row .col-3, .new-vacancies-content .col-3
+    .useful-articles-content .row .col-3, .new-vacancies-content .col-3, .new-resumes-content .col-3
     {
         flex: 0 0 100%;
         max-width: 100%;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Избранное</title>
+    <title>Статьи</title>
 </head>
 <body>
     <div class="wrapper">
@@ -29,8 +29,8 @@
                             </div>
                         </div>
                         <div class="col-auto header-top-middle">
-                            <a href="#" class="choice-mode choice-mode_active">Ищу работу</a>
-                            <a href="#" class="choice-mode">Ищу работника</a>
+                            <a href="#" class="choice-mode">Ищу работу</a>
+                            <a href="#" class="choice-mode choice-mode_active">Ищу работника</a>
                         </div>
                         <div class="col-auto header-top-right justify-content-between">
                             <a href="#" class="button-text favorites">
@@ -58,8 +58,8 @@
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto header-top-tablet__left">
-                            <a href="#" class="choice-mode choice-mode_active">Ищу работу</a>
-                            <a href="#" class="choice-mode">Ищу работника</a>
+                            <a href="#" class="choice-mode">Ищу работу</a>
+                            <a href="#" class="choice-mode choice-mode_active">Ищу работника</a>
                         </div>
                         <div class="col-auto header-top-tablet__middle">
                             <a href="#" class="button-text favorites">
@@ -78,8 +78,8 @@
                 </div>
             </div>
             <div class="header-mode-mobile"> 
-                <a href="#" class="choice-mode choice-mode_active">Ищу работу</a>
-                <a href="#" class="choice-mode">Ищу работника</a>
+                <a href="#" class="choice-mode">Ищу работу</a>
+                <a href="#" class="choice-mode choice-mode_active">Ищу работника</a>
             </div>
             <div class="header-bottom">
                 <div class="container">
@@ -91,14 +91,18 @@
                             </a>
                             <p>Быстрый поиск узкоквалифицированной работы</p>
                         </div>
-                        <div class="col-auto header-bottom-right">
-                            <a href="#" class="button-text search-work">
+                        <div class="col header-bottom-right">
+                            <a href="#" class="button-text">
                                 <img class="img-svg" src="./img/icon_search.svg" alt="">
-                                <p>Найти работу</p>
+                                <p>Найти<br> работника</p>
                             </a>
-                            <a href="#" class="button-text release-resume">
+                            <a href="#" class="button-text">
                                 <img class="img-svg" src="./img/icon_resume.svg" alt="">
-                                <p>Разместить резюме</p>
+                                <p>Разместить<br> вакансию</p>
+                            </a>
+                            <a href="#" class="button-text">
+                                <img class="img-svg" src="./img/icon_base_success.svg" alt="">
+                                <p>Доступ к базе</p>
                             </a>
                             <a href="#" class="button-text login hidden">
                                 <img class="img-svg" src="./img/icon_enter.svg" alt="">
@@ -127,25 +131,28 @@
                         </div>
                         <div class="col-auto header-scroll-middle">
                             <div href="#" class="button-text choice-mode prompt">
-                                Ищу работу
+                                Ищу работника
                                 <img class="img-svg" src="./img/arrow_down_scroll.svg" alt="">
                                 <div class="prompt__block">
-                                    <a href="#">Ищу работника</a>
+                                    <a href="#">Ищу работу</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 header-scroll-right">
+                        <div class="col-7 header-scroll-right">
                             <a href="#" class="button-text favorites">
                                 <img class="img-svg" src="./img/icon_favorites_scroll.svg" alt="">
                             </a>
                             <a href="#" class="button-text feedback" data-count="+16">
                                 <img class="img-svg" src="./img/icon_feedback_scroll.svg" alt="">
                             </a>
-                            <a href="#" class="button-text search-work">
+                            <a href="#" class="button-text">
                                 <img class="img-svg" src="./img/icon_search_scroll.svg" alt="">
                             </a>
-                            <a href="#" class="button-text release-resume">
+                            <a href="#" class="button-text">
                                 <img class="img-svg" src="./img/icon_resume_scroll.svg" alt="">
+                            </a>
+                            <a href="#" class="button-text">
+                                <img class="img-svg" src="./img/icon_base_success_scroll.svg" alt="">
                             </a>
                             <a href="#" class="button-text login hidden">
                                 <img class="img-svg" src="./img/icon_enter_scroll.svg" alt="">
@@ -167,11 +174,14 @@
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto header-scroll-mobile-left">
-                            <a href="#" class="button-text search-work">
+                            <a href="#" class="button-text">
                                 <img class="img-svg" src="./img/icon_search_scroll.svg" alt="">
                             </a>
-                            <a href="#" class="button-text release-resume">
+                            <a href="#" class="button-text">
                                 <img class="img-svg" src="./img/icon_resume_scroll.svg" alt="">
+                            </a>
+                            <a href="#" class="button-text">
+                                <img class="img-svg" src="./img/icon_base_success_scroll.svg" alt="">
                             </a>
                         </div>
                         <div class="col-auto header-scroll-mobile-right">
@@ -269,225 +279,174 @@
         </div>
         <div class="wrapper-content block-mt-dark-blue block-mb-purple">
             <div class="container">
-                <h1>Избранное</h1>
+                <h1>Полезные статьи</h1>
                 <div class="content-page block-mt-dark-blue">
-                    <div class="profile-container">
-                        <div class="row profile-container-row">
+                    <div class="all-articles">
+                        <div class="row">
                             <div class="col-3">
-                                <div class="sidebar-profile">
-                                    <a href="#" class="button-text">
-                                        <img class="img-svg" src="./img/icon_profile.svg" alt="">
-                                        Профиль
-                                    </a>
-                                    <a href="#" class="button-text">
-                                        <img class="img-svg" src="./img/icon_my_resumes.svg" alt="">
-                                        Мои резюме
-                                    </a>
-                                    <a href="#" class="button-text">
-                                        <img class="img-svg" src="./img/icon_resume.svg" alt="">
-                                        Разместить резюме
-                                    </a>
-                                    <a href="#" class="button-text feedback" data-count="+16">
-                                        <img class="img-svg" src="./img/icon_feedback.svg" alt="">
-                                        Отклики
-                                    </a>
-                                    <a href="#" class="button-text current-ref">
-                                        <img class="img-svg" src="./img/icon_favorites.svg" alt="">
-                                        Избранное
-                                    </a>
-                                    <a href="#" class="button-text">
-                                        <img class="img-svg" src="./img/icon_subscribe.svg" alt="">
-                                        Подписка
-                                    </a>
-                                </div>
-                                <div class="sidebar-image block-mt-blue" style="background-image: url(./img/img_banner5.png);"></div>
+                                <a href="#" class="article-block">
+                                    <div class="article-block__image" style="background-image: url(./img/img_article1.png);"></div>
+                                    <div class="article-block__content">
+                                        <p class="article-block__name">Двустрочный заголовок статьи</p>
+                                        <p class="article-block__text">Lorem ipsum — классический текст-«рыба» (условный, зачастую бессмысленный текст-заполнитель, вставляемый в макет страницы).</p>
+                                        <p class="article-block__date">12.12.2019</p>
+                                    </div>
+                                </a>
                             </div>
-                            <div class="col-9">
-                                <button type="button" class="other-button button-account">
-                                    <img class="img-svg" src="./img/icon_burger.svg" alt="">
-                                </button>
-                                <div class="wrapper-button block-mb-yellow">
-                                    <a href="#" class="button-text">
-                                        <img class="img-svg" src="./img/icon_map.svg" alt="">
-                                        Показать на карте
-                                    </a>
-                                </div>
-                                <div class="favorites-list">
-                                    <div class="row favorites-list-row">
-                                        <div class="col-4">
-                                            <a href="#" class="image-vacancies" style="background-image: url(./img/img_banner3.png);"></a>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="card popular">
-                                                <div class="card__desc">
-                                                    <p class="card__name">Помощник мастера</p>
-                                                    <p class="card__company">ОКБМ им. Африкантова</p>
-                                                    <p class="card__salary">30 000 руб/мес</p>
-                                                    <p class="card__city">Нижний Новгород</p>
-                                                    <p class="card__parameters">Полный день, Гибкий график, Смена, Удалённая...</p>
-                                                    <p class="card__date">12.12.2019 г.</p>
-                                                </div>
-                                                <div class="card__buttons">
-                                                    <a href="#" class="card__toggle">
-                                                        <img class="img-svg" src="./img/icon_remove_vacancy.svg" alt="">
-                                                    </a>
-                                                    <a href="#" class="button-text card__respond">
-                                                        <img class="img-svg" class="img-svg" src="./img/icon_mail.svg" alt="">
-                                                        Откликнуться
-                                                    </a>
-                                                </div>
-                                                <div class="label-top" style="background-image: url(./img/icon_label_top.svg);"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="card popular">
-                                                <div class="card__desc">
-                                                    <p class="card__name">Помощник мастера</p>
-                                                    <p class="card__company">ОКБМ им. Африкантова</p>
-                                                    <p class="card__salary">30 000 руб/мес</p>
-                                                    <p class="card__city">Нижний Новгород</p>
-                                                    <p class="card__parameters">Полный день, Гибкий график, Смена, Удалённая...</p>
-                                                    <p class="card__date">12.12.2019 г.</p>
-                                                </div>
-                                                <div class="card__buttons">
-                                                    <a href="#" class="card__toggle">
-                                                        <img class="img-svg" src="./img/icon_remove_vacancy.svg" alt="">
-                                                    </a>
-                                                    <a href="#" class="button-text card__respond">
-                                                        <img class="img-svg" class="img-svg" src="./img/icon_mail.svg" alt="">
-                                                        Откликнуться
-                                                    </a>
-                                                </div>
-                                                <div class="label-top" style="background-image: url(./img/icon_label_top.svg);"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="card">
-                                                <div class="card__desc">
-                                                    <p class="card__name">Помощник мастера</p>
-                                                    <p class="card__company">ОКБМ им. Африкантова</p>
-                                                    <p class="card__salary">30 000 руб/мес</p>
-                                                    <p class="card__city">Нижний Новгород</p>
-                                                    <p class="card__parameters">Полный день, Гибкий график, Смена, Удалённая...</p>
-                                                    <p class="card__date">12.12.2019 г.</p>
-                                                </div>
-                                                <div class="card__buttons">
-                                                    <a href="#" class="card__toggle">
-                                                        <img class="img-svg" src="./img/icon_remove_vacancy.svg" alt="">
-                                                    </a>
-                                                    <a href="#" class="button-text card__respond">
-                                                        <img class="img-svg" class="img-svg" src="./img/icon_mail.svg" alt="">
-                                                        Откликнуться
-                                                    </a>
-                                                </div>
-                                                <div class="label-top" style="background-image: url(./img/icon_label_top.svg);"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="card">
-                                                <div class="card__desc">
-                                                    <p class="card__name">Помощник мастера</p>
-                                                    <p class="card__company">ОКБМ им. Африкантова</p>
-                                                    <p class="card__salary">30 000 руб/мес</p>
-                                                    <p class="card__city">Нижний Новгород</p>
-                                                    <p class="card__parameters">Полный день, Гибкий график, Смена, Удалённая...</p>
-                                                    <p class="card__date">12.12.2019 г.</p>
-                                                </div>
-                                                <div class="card__buttons">
-                                                    <a href="#" class="card__toggle">
-                                                        <img class="img-svg" src="./img/icon_remove_vacancy.svg" alt="">
-                                                    </a>
-                                                    <a href="#" class="button-text card__respond">
-                                                        <img class="img-svg" class="img-svg" src="./img/icon_mail.svg" alt="">
-                                                        Откликнуться
-                                                    </a>
-                                                </div>
-                                                <div class="label-top" style="background-image: url(./img/icon_label_top.svg);"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="card">
-                                                <div class="card__desc">
-                                                    <p class="card__name">Помощник мастера</p>
-                                                    <p class="card__company">ОКБМ им. Африкантова</p>
-                                                    <p class="card__salary">30 000 руб/мес</p>
-                                                    <p class="card__city">Нижний Новгород</p>
-                                                    <p class="card__parameters">Полный день, Гибкий график, Смена, Удалённая...</p>
-                                                    <p class="card__date">12.12.2019 г.</p>
-                                                </div>
-                                                <div class="card__buttons">
-                                                    <a href="#" class="card__toggle">
-                                                        <img class="img-svg" src="./img/icon_remove_vacancy.svg" alt="">
-                                                    </a>
-                                                    <a href="#" class="button-text card__respond">
-                                                        <img class="img-svg" class="img-svg" src="./img/icon_mail.svg" alt="">
-                                                        Откликнуться
-                                                    </a>
-                                                </div>
-                                                <div class="label-top" style="background-image: url(./img/icon_label_top.svg);"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="card">
-                                                <div class="card__desc">
-                                                    <p class="card__name">Помощник мастера</p>
-                                                    <p class="card__company">ОКБМ им. Африкантова</p>
-                                                    <p class="card__salary">30 000 руб/мес</p>
-                                                    <p class="card__city">Нижний Новгород</p>
-                                                    <p class="card__parameters">Полный день, Гибкий график, Смена, Удалённая...</p>
-                                                    <p class="card__date">12.12.2019 г.</p>
-                                                </div>
-                                                <div class="card__buttons">
-                                                    <a href="#" class="card__toggle">
-                                                        <img class="img-svg" src="./img/icon_remove_vacancy.svg" alt="">
-                                                    </a>
-                                                    <a href="#" class="button-text card__respond">
-                                                        <img class="img-svg" class="img-svg" src="./img/icon_mail.svg" alt="">
-                                                        Откликнуться
-                                                    </a>
-                                                </div>
-                                                <div class="label-top" style="background-image: url(./img/icon_label_top.svg);"></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="card">
-                                                <div class="card__desc">
-                                                    <p class="card__name">Помощник мастера</p>
-                                                    <p class="card__company">ОКБМ им. Африкантова</p>
-                                                    <p class="card__salary">30 000 руб/мес</p>
-                                                    <p class="card__city">Нижний Новгород</p>
-                                                    <p class="card__parameters">Полный день, Гибкий график, Смена, Удалённая...</p>
-                                                    <p class="card__date">12.12.2019 г.</p>
-                                                </div>
-                                                <div class="card__buttons">
-                                                    <a href="#" class="card__toggle">
-                                                        <img class="img-svg" src="./img/icon_remove_vacancy.svg" alt="">
-                                                    </a>
-                                                    <a href="#" class="button-text card__respond">
-                                                        <img class="img-svg" class="img-svg" src="./img/icon_mail.svg" alt="">
-                                                        Откликнуться
-                                                    </a>
-                                                </div>
-                                                <div class="label-top" style="background-image: url(./img/icon_label_top.svg);"></div>
-                                            </div>
-                                        </div>
+                            <div class="col-3">
+                                <a href="#" class="article-block">
+                                    <!-- <div class="article-block__image" style="background-image: url(./img/img_article1.png);"></div> -->
+                                    <div class="article-block__content">
+                                        <p class="article-block__name">Двустрочный заголовок статьи</p>
+                                        <p class="article-block__text">Lorem ipsum — классический текст-«рыба» (условный, зачастую бессмысленный текст-заполнитель, вставляемый в макет страницы).</p>
+                                        <p class="article-block__date">12.12.2019</p>
                                     </div>
-                                    <div class="wrapper-button-center block-mt-green">
-                                        <button type="button" class="other-button">Показать ещё</button>
-                                    </div>
-                                    <div class="wrapper-pagination block-mt-blue">
-                                        <div class="pagination">
-                                            <a href="#" class="pagination__block pagination__block_current">1</a>
-                                            <a href="#" class="pagination__block">2</a>
-                                            <a href="#" class="pagination__block">3</a>
-                                            <a href="#" class="pagination__block">4</a>
-                                            <a href="#" class="pagination__block">5</a>
-                                            <a href="#" class="pagination__block ellipsis">...</a>
-                                            <a href="#" class="pagination__block">18</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                </a>
                             </div>
+                            <div class="col-3">
+                                <a href="#" class="article-block">
+                                    <div class="article-block__image" style="background-image: url(./img/img_article1.png);"></div>
+                                    <div class="article-block__content">
+                                        <p class="article-block__name">Двустрочный заголовок статьи</p>
+                                        <p class="article-block__text">Lorem ipsum — классический текст-«рыба» (условный, зачастую бессмысленный текст-заполнитель, вставляемый в макет страницы).</p>
+                                        <p class="article-block__date">12.12.2019</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#" class="article-block">
+                                    <div class="article-block__image" style="background-image: url(./img/img_article1.png);"></div>
+                                    <div class="article-block__content">
+                                        <p class="article-block__name">Двустрочный заголовок статьи</p>
+                                        <p class="article-block__text">Lorem ipsum — классический текст-«рыба» (условный, зачастую бессмысленный текст-заполнитель, вставляемый в макет страницы).</p>
+                                        <p class="article-block__date">12.12.2019</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#" class="article-block">
+                                    <div class="article-block__image" style="background-image: url(./img/img_article1.png);"></div>
+                                    <div class="article-block__content">
+                                        <p class="article-block__name">Двустрочный заголовок статьи</p>
+                                        <p class="article-block__text">Lorem ipsum — классический текст-«рыба» (условный, зачастую бессмысленный текст-заполнитель, вставляемый в макет страницы).</p>
+                                        <p class="article-block__date">12.12.2019</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#" class="article-block">
+                                    <div class="article-block__image" style="background-image: url(./img/img_article1.png);"></div>
+                                    <div class="article-block__content">
+                                        <p class="article-block__name">Двустрочный заголовок статьи</p>
+                                        <p class="article-block__text">Lorem ipsum — классический текст-«рыба» (условный, зачастую бессмысленный текст-заполнитель, вставляемый в макет страницы).</p>
+                                        <p class="article-block__date">12.12.2019</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#" class="article-block">
+                                    <div class="article-block__image" style="background-image: url(./img/img_article1.png);"></div>
+                                    <div class="article-block__content">
+                                        <p class="article-block__name">Двустрочный заголовок статьи</p>
+                                        <p class="article-block__text">Lorem ipsum — классический текст-«рыба» (условный, зачастую бессмысленный текст-заполнитель, вставляемый в макет страницы).</p>
+                                        <p class="article-block__date">12.12.2019</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#" class="article-block">
+                                    <div class="article-block__image" style="background-image: url(./img/img_article1.png);"></div>
+                                    <div class="article-block__content">
+                                        <p class="article-block__name">Двустрочный заголовок статьи</p>
+                                        <p class="article-block__text">Lorem ipsum — классический текст-«рыба» (условный, зачастую бессмысленный текст-заполнитель, вставляемый в макет страницы).</p>
+                                        <p class="article-block__date">12.12.2019</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#" class="article-block">
+                                    <div class="article-block__image" style="background-image: url(./img/img_article1.png);"></div>
+                                    <div class="article-block__content">
+                                        <p class="article-block__name">Двустрочный заголовок статьи</p>
+                                        <p class="article-block__text">Lorem ipsum — классический текст-«рыба» (условный, зачастую бессмысленный текст-заполнитель, вставляемый в макет страницы).</p>
+                                        <p class="article-block__date">12.12.2019</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#" class="article-block">
+                                    <div class="article-block__image" style="background-image: url(./img/img_article1.png);"></div>
+                                    <div class="article-block__content">
+                                        <p class="article-block__name">Двустрочный заголовок статьи</p>
+                                        <p class="article-block__text">Lorem ipsum — классический текст-«рыба» (условный, зачастую бессмысленный текст-заполнитель, вставляемый в макет страницы).</p>
+                                        <p class="article-block__date">12.12.2019</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#" class="article-block">
+                                    <div class="article-block__image" style="background-image: url(./img/img_article1.png);"></div>
+                                    <div class="article-block__content">
+                                        <p class="article-block__name">Двустрочный заголовок статьи</p>
+                                        <p class="article-block__text">Lorem ipsum — классический текст-«рыба» (условный, зачастую бессмысленный текст-заполнитель, вставляемый в макет страницы).</p>
+                                        <p class="article-block__date">12.12.2019</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#" class="article-block">
+                                    <div class="article-block__image" style="background-image: url(./img/img_article1.png);"></div>
+                                    <div class="article-block__content">
+                                        <p class="article-block__name">Двустрочный заголовок статьи</p>
+                                        <p class="article-block__text">Lorem ipsum — классический текст-«рыба» (условный, зачастую бессмысленный текст-заполнитель, вставляемый в макет страницы).</p>
+                                        <p class="article-block__date">12.12.2019</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#" class="article-block">
+                                    <div class="article-block__image" style="background-image: url(./img/img_article1.png);"></div>
+                                    <div class="article-block__content">
+                                        <p class="article-block__name">Двустрочный заголовок статьи</p>
+                                        <p class="article-block__text">Lorem ipsum — классический текст-«рыба» (условный, зачастую бессмысленный текст-заполнитель, вставляемый в макет страницы).</p>
+                                        <p class="article-block__date">12.12.2019</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#" class="article-block">
+                                    <div class="article-block__image" style="background-image: url(./img/img_article1.png);"></div>
+                                    <div class="article-block__content">
+                                        <p class="article-block__name">Двустрочный заголовок статьи</p>
+                                        <p class="article-block__text">Lorem ipsum — классический текст-«рыба» (условный, зачастую бессмысленный текст-заполнитель, вставляемый в макет страницы).</p>
+                                        <p class="article-block__date">12.12.2019</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#" class="article-block">
+                                    <div class="article-block__image" style="background-image: url(./img/img_article1.png);"></div>
+                                    <div class="article-block__content">
+                                        <p class="article-block__name">Двустрочный заголовок статьи</p>
+                                        <p class="article-block__text">Lorem ipsum — классический текст-«рыба» (условный, зачастую бессмысленный текст-заполнитель, вставляемый в макет страницы).</p>
+                                        <p class="article-block__date">12.12.2019</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrapper-button-center block-mt-green">
+                        <button type="button" class="other-button">Показать ещё</button>
+                    </div>
+                    <div class="wrapper-pagination block-mt-blue">
+                        <div class="pagination">
+                            <a href="#" class="pagination__block pagination__block_current">1</a>
+                            <a href="#" class="pagination__block">2</a>
+                            <a href="#" class="pagination__block">3</a>
+                            <a href="#" class="pagination__block">4</a>
+                            <a href="#" class="pagination__block">5</a>
+                            <a href="#" class="pagination__block ellipsis">...</a>
+                            <a href="#" class="pagination__block">18</a>
                         </div>
                     </div>
                 </div>
@@ -595,41 +554,6 @@
             <div class="modal-form-content block-mt-yellow">
                 <h2>Спасибо за обращение!</h2>
                 <p class="block-mt-blue">Наш менеджер свяжется с Вами в ближайшее время.</p>
-            </div>
-        </div>
-        <div class="modal-form modal-form__account" id="modal-account">
-            <div class="close-modal">
-                <a href="#">
-                    <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
-                </a>
-            </div>
-            <div class="modal-form-content block-mt-orange">
-                <div class="sidebar-profile">
-                    <a href="#" class="button-text current-ref">
-                        <img class="img-svg" src="./img/icon_profile.svg" alt="">
-                        Профиль
-                    </a>
-                    <a href="#" class="button-text">
-                        <img class="img-svg" src="./img/icon_my_resumes.svg" alt="">
-                        Мои резюме
-                    </a>
-                    <a href="#" class="button-text">
-                        <img class="img-svg" src="./img/icon_resume.svg" alt="">
-                        Разместить резюме
-                    </a>
-                    <a href="#" class="button-text feedback" data-count="+16">
-                        <img class="img-svg" src="./img/icon_feedback.svg" alt="">
-                        Отклики
-                    </a>
-                    <a href="#" class="button-text">
-                        <img class="img-svg" src="./img/icon_favorites.svg" alt="">
-                        Избранное
-                    </a>
-                    <a href="#" class="button-text">
-                        <img class="img-svg" src="./img/icon_subscribe.svg" alt="">
-                        Подписка
-                    </a>
-                </div>
             </div>
         </div>
     </div>

@@ -1730,7 +1730,7 @@ textarea.field-error
         {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-end;
             // margin-right: -15px;
             margin-left: -30px;
             .button-text 
@@ -1802,11 +1802,13 @@ textarea.field-error
             color: #fff;
             font-family: Montserrat Regular;
             font-style: normal;
-            // font-weight: 600;
             font-size: 15px;
             line-height: normal;
             transition: .3s;
-            background-color: transparent;
+            background-color: rgba(0,0,0,0);
+            margin: 0;
+            padding: 0;
+            border-radius: 0;
             .prompt 
             {
                 &__block 
@@ -2053,7 +2055,7 @@ textarea.field-error
     transition: .3s;
 }
 
-.vacancy-card 
+.card 
 {
     max-width: 295px;
     // min-width: 295px;
@@ -2066,13 +2068,14 @@ textarea.field-error
     box-shadow: 0 10px 20px 0 rgba(15,20,91,.1);
     position: relative;
     overflow: hidden;
+    border: 0;
     &__desc 
     {
         padding: 31px 33px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        .vacancy-card__name
+        .card__name
         {
             font-family: Montserrat Bold;
             font-size: 18px;
@@ -2087,7 +2090,7 @@ textarea.field-error
             margin-bottom: 32px;
             overflow: hidden;
         }
-        .vacancy-card__company 
+        .card__company 
         {
             font-family: Montserrat Regular;
             font-size: 16px;
@@ -2102,7 +2105,7 @@ textarea.field-error
             margin-bottom: 32px;
             overflow: hidden;
         }
-        .vacancy-card__salary
+        .card__salary
         {
             
             font-family: Montserrat Bold;
@@ -2118,7 +2121,7 @@ textarea.field-error
             max-height: 19px;
             height: 19px;
         }
-        .vacancy-card__city
+        .card__city
         {
             font-family: Montserrat Regular;
             font-size: 16px;
@@ -2133,7 +2136,7 @@ textarea.field-error
             max-height: 19px;
             height: 19px;
         }   
-        .vacancy-card__parameters
+        .card__parameters
         {
             font-family: Montserrat Regular;
             font-size: 16px;
@@ -2148,7 +2151,7 @@ textarea.field-error
             max-height: 40px;
             height: 40px;
         }
-        .vacancy-card__date
+        .card__date
         {
             font-family: Montserrat Light;
             font-size: 16px;
@@ -2170,7 +2173,7 @@ textarea.field-error
         display: flex;
         align-items: center;
         height: 60px;
-        .vacancy-card__toggle 
+        .card__toggle 
         {
             width: 60px;
             height: 100%;
@@ -2181,7 +2184,7 @@ textarea.field-error
             border: 0;
             transition: .3s;
         }
-        .vacancy-card__toggle:hover 
+        .card__toggle:hover 
         {
             background-color: $color-ref;
             .img-svg path 
@@ -2189,14 +2192,14 @@ textarea.field-error
                 fill: #fff;
             }
         }
-        .vacancy-card__respond 
+        .card__respond 
         {
            height: 100%;
            width: 80%;
            transition: .3s;
            background-color: transparent;
         }
-        .vacancy-card__respond:hover
+        .card__respond:hover
         {
             background-color: $color-ref;
             color: #fff;
@@ -2216,14 +2219,14 @@ textarea.field-error
     }
 }
 
-.vacancy-card.popular 
+.card.popular 
 {
     background-color: $color-hover;
     p 
     {
         color: #ffffff;
     }
-    .vacancy-card__toggle
+    .card__toggle
     {
         background-color: #82b435;
         .img-svg path
@@ -2231,7 +2234,7 @@ textarea.field-error
             fill: #fff;
         }
     }
-    .vacancy-card__respond
+    .card__respond
     {
         color: #fff !important;
         .img-svg path 
@@ -2239,7 +2242,7 @@ textarea.field-error
             fill: #fff;
         }
     }
-    .vacancy-card__toggle:hover 
+    .card__toggle:hover 
     {
         background-color: $color-ref;
         .img-svg path 
@@ -2247,7 +2250,7 @@ textarea.field-error
             fill: #fff;
         }
     }
-    .vacancy-card__respond:hover
+    .card__respond:hover
     {
         background-color: $color-ref;
         color: #fff;
@@ -2258,7 +2261,7 @@ textarea.field-error
     }
 }
 
-.new-vacancies 
+.new-vacancies, .new-resumes 
 {
     h1 
     {
@@ -4941,6 +4944,242 @@ input[type="submit"]
     }
 }
 
+// Версия для работодателей
+
+// Блок тарифа 
+
+.list-options 
+{
+    li 
+    {
+        padding-left: 28px;
+        margin-bottom: 22px;
+        line-height: normal;
+        p 
+        {
+            font-family: Montserrat Bold;
+            font-size: 16px;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+        }
+    }
+    li:last-child 
+    {
+        margin-bottom: 0;
+    }
+    li:before 
+    {
+        content: url(../img/icon_list_open.svg);
+        left: -8px;
+        top: 2px;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        border-radius: 0;
+    }
+    .unavailable p 
+    {
+        color: $color-disabled;
+    }
+    .unavailable:before 
+    {
+        content: url(../img/icon_list_close.svg);
+    }
+}
+
+.tariff-block 
+{
+    box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+    &__title 
+    {
+        height: 72px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-primary;
+        position: relative;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        p 
+        {
+            font-family: Raleway Bold;
+            font-size: 24px;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+    }
+    &__content 
+    {
+        padding: 35px 61px 43px 61px;
+        background-color: #fff;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        &__price 
+        {
+            margin-top: 43px;
+            .old-price 
+            {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                p 
+                {
+                    font-family: Montserrat Regular;
+                    font-size: 20px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: normal;
+                    letter-spacing: normal;
+                    color: $color-disabled;
+                    margin-bottom: 22px;
+                    position: relative;
+                }
+                p:before 
+                {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #eb5757;
+                    top: 12px;
+                    left: 0;
+                    right: 0;
+                }
+            }
+            .current-price 
+            {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                p 
+                {
+                    font-family: Montserrat Regular;
+                    font-size: 32px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: normal;
+                    letter-spacing: normal;
+                    color: $color-primary;
+                }
+            }
+        }
+        &__action 
+        {
+            text-align: center;
+            margin-top: 43px;
+        }
+    }
+}
+
+.tariff-block.discount 
+{
+    .tariff-block__title 
+    {
+        background: $color-hover;
+    }
+    .tariff-block__title:after 
+    {
+        content: url(../img/icon_discount.svg);
+        right: 18px;
+        top: 15px;
+        position: absolute;
+    }
+    .tariff-block__content
+    {
+        &__price 
+        {
+            .old-price 
+            {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.job-posting-rates, .top-company-label, .tariffs-base-resumes, .top-job-label, .offer-website
+{
+    h1, h1 ~p 
+    {
+        text-align: center;
+    }
+    .row 
+    {
+        margin-left: -20px;
+        margin-right: -20px;
+        .col-4 
+        {
+            padding-left: 10px;
+            padding-right: 10px;
+            // margin-bottom: 22px;
+        }
+    }
+}
+
+
+.partners 
+{
+    h1 
+    {
+        text-align: center;
+    }
+    &-slider 
+    {
+        &-wrapper 
+        {
+            a 
+            {
+                display: block;
+                border: 0;
+                img 
+                {
+                    transition: .3s;
+                    width: auto !important;
+                    max-width: 100%;
+                    height: auto;
+                    filter: grayscale(100%);
+                }
+            }
+            a:hover img 
+            {
+                filter: grayscale(0);
+            }
+        }
+        .navigation-partners 
+        {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            // height: 32px;
+            // bottom: calc(50% - 16px);
+            bottom: 50%;
+            z-index: 4;
+            button 
+            {
+                position: absolute;
+            }
+            .owl-prev 
+            {
+                left: 0;
+            }
+            .owl-next 
+            {
+                right: 0;
+            }
+        }
+    }
+}
 
 
 .footer 
