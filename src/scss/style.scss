@@ -664,6 +664,7 @@ ul
     list-style-type: none;
     list-style-image: none;
     padding-left: 4px;
+    margin-bottom: 0;
     li 
     {
         font-family: Montserrat Regular;
@@ -3394,6 +3395,7 @@ label
     cursor: pointer;
     width: 16px;
     height: 16px;
+    margin-left: 10px;
     .img-svg 
     {
         max-width: 100%;
@@ -3466,11 +3468,11 @@ label
         display: flex;
         margin-left: -20px;
         margin-right: -20px;
+        flex-wrap: wrap;
         .tabs-item 
         {
             font-family: Raleway Bold;
             font-size: 16px;
-            
             font-stretch: normal;
             font-style: normal;
             line-height: normal;
@@ -3486,10 +3488,7 @@ label
             margin-left: 20px;
             margin-right: 20px;
             justify-content: center;
-            .block-tooltip 
-            {
-                margin-left: 10px;
-            }
+            padding-top: 15px;
         }
         .tabs-item_active 
         {
@@ -3504,11 +3503,11 @@ label
     {
         &-block 
         {
-            display: none;
+            // display: none;
         }
         &-block_active 
         {
-            display: block;
+            display: block !important;
         }
     }
 }
@@ -5021,15 +5020,18 @@ input[type="submit"]
         background-color: #fff;
         border-bottom-left-radius: 3px;
         border-bottom-right-radius: 3px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         &__price 
         {
             margin-top: 43px;
             .old-price 
             {
-                display: flex;
+                display: none;
                 justify-content: center;
                 align-items: center;
-                opacity: 0;
+                // opacity: 0;
                 p 
                 {
                     font-family: Montserrat Regular;
@@ -5100,9 +5102,22 @@ input[type="submit"]
         {
             .old-price 
             {
-                opacity: 1;
+                // opacity: 1;
+                display: flex;
             }
         }
+    }
+}
+
+.row-tariffs
+{
+    margin-left: -10px;
+    margin-right: -10px;
+    .col-4 
+    {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 43px;
     }
 }
 
@@ -5112,15 +5127,11 @@ input[type="submit"]
     {
         text-align: center;
     }
-    .row 
+    .row-tariffs
     {
-        margin-left: -20px;
-        margin-right: -20px;
         .col-4 
         {
-            padding-left: 10px;
-            padding-right: 10px;
-            // margin-bottom: 22px;
+            margin-bottom: 0;
         }
     }
 }
@@ -5180,6 +5191,83 @@ input[type="submit"]
         }
     }
 }
+
+.posting-pictures
+{
+    &-block 
+    {
+        border-bottom: 2px solid #DDDCE8;
+        padding-bottom: 43px;
+        &__image 
+        {
+            img 
+            {
+                max-width: 100%;
+                height: auto;
+                box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+            }
+        }
+        &__title 
+        {
+            display: flex;
+            align-items: center;
+            font-family: Montserrat Bold;
+            font-size: 19px;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.47;
+            letter-spacing: normal;
+            color: $color-primary;
+        }
+        form 
+        {
+            .block-radio label 
+            {
+                .radio 
+                {
+                    margin-right: 20px;
+                }
+                p 
+                {
+                    font-family: Montserrat Bold;
+                    font-size: 16px;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.88;
+                    letter-spacing: normal;
+                    color: $color-primary;
+                    span 
+                    {
+                        margin-left: 40px;
+                        font-family: Montserrat Regular;
+                        font-size: 16px;
+                        font-weight: normal;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.88;
+                        letter-spacing: normal;
+                        color: $color-primary;
+                    }
+                }
+            }
+        }   
+    }
+}
+
+.posting-pictures .posting-pictures-block:last-child
+{
+    border: 0;
+    margin-bottom: 0;
+}
+
+.banner-info 
+{
+    text-align: center;
+}
+
+
+
+// Футер 
 
 
 .footer 

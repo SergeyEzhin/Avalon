@@ -318,52 +318,6 @@ if(inputFile.length)
 }
 
 
-// Табы 
-
-var tabs = document.querySelectorAll('.tabs');
-
-if(tabs.length)
-{
-  tabs.forEach(function(elem, index)
-  {
-    var tabsItem = elem.querySelectorAll('.tabs-item');
-    var tabsContent = elem.querySelector('.tabs-content');
-    var tabsItems = elem.querySelector('.tabs-items')
-
-    tabsItem.forEach(function(elem, index)
-    {
-      elem.addEventListener('click', function(e)
-      {
-        e.preventDefault();
-        if(!elem.classList.contains('tabs-item_active'))
-        {
-          // var prevDataTab = tabsItems.querySelector('.tabs-item_active').dataset.tab;
-          tabsItems.querySelector('.tabs-item_active').classList.remove('tabs-item_active');
-          elem.classList.add('tabs-item_active');
-          var dataTab = elem.dataset.tab;
-          if(tabsContent.querySelectorAll('.tabs-content-block_active').length > 0)
-          {
-            let oldTabsContent = tabsContent.querySelectorAll('.tabs-content-block_active');
-            oldTabsContent.forEach(tab => {
-              tab.classList.remove('tabs-content-block_active');
-            });
-            // tabsContent.querySelector('.tabs-content-block_active').classList.remove('tabs-content-block_active');
-          }
-          if(tabsContent.querySelectorAll('div[data-tab="' + dataTab + '"]').length > 0)
-          {
-            let newTabsContent = tabsContent.querySelectorAll('div[data-tab="' + dataTab + '"]');
-            newTabsContent.forEach(tab => {
-              tab.classList.add('tabs-content-block_active');
-            });
-            // tabsContent.querySelector('div[data-tab="' + dataTab + '"]').classList.add('tabs-content-block_active');
-          }
-        }
-      });
-    });
-  });
-}
-
-
 // Datapicker
 
 let datepickerElems = document.querySelectorAll('input[data-picker="datepicker"]');
@@ -1018,6 +972,7 @@ if(addPlaceWork.length)
   });
 }
 
+
 // Формы в модальных окнах
 
 let shadow = document.querySelector('.wrapper-shadow');
@@ -1035,6 +990,9 @@ let modalAccount = document.querySelector('#modal-account');
 
 let buttonDetailedSearch = document.querySelectorAll('.button-detailed-search');
 let modalDetailedSearch = document.querySelector('#detailed-search');
+
+let buttonAppBanner = document.querySelectorAll('.button-app-banner');
+let modalAppBanner = document.querySelector('#modal-app-banner');
 
 
 const animationModalForm = fn =>
@@ -1123,6 +1081,50 @@ if(buttonAccount.length)
 if(buttonDetailedSearch.length)
 {
   viewForm(buttonDetailedSearch, modalDetailedSearch);
+}
+if(buttonAppBanner.length)
+{
+  // Обработка форм с опциями о размещении баннера
+
+  const bannerForms = document.querySelectorAll('form[data-picture="true"]');
+
+  if(bannerForms.length)
+  {
+    bannerForms.forEach(form => 
+    {
+      form.addEventListener('submit', (e) => 
+      {
+        e.preventDefault();
+
+        let bannerInfo = document.querySelector('.banner-info');
+        let inputBannerSizes = document.querySelector('input[name="banner-sizes"]');
+        let inputCountDays = document.querySelector('input[name="banner-count-days"]');
+
+        let sizesBanner = form.elements[0].value;
+        let countDays;
+        let allRadio = Array.from(form.querySelectorAll('input[type="radio"]'));
+      
+        allRadio.forEach(elem => {
+          if(elem.checked)
+          {
+            countDays = elem.value;
+          }
+        });
+
+        console.log(sizesBanner);
+        console.log(countDays);
+
+        inputBannerSizes.value = sizesBanner;
+        inputCountDays.value = countDays;
+
+        bannerInfo.innerHTML = `Баннер ${sizesBanner} сроком на ${countDays}`;
+
+        viewForm(buttonAppBanner, modalAppBanner);
+
+      });
+    });
+  }
+
 }
 
 // Валидация формы и отправка данных
@@ -1217,8 +1219,6 @@ function checkFieldTextarea(textarea)
   result ? textarea.classList.remove(errorClass) : textarea.classList.add(errorClass);
   return result;
 }
-
-
 
 function sendForm(form)
 {
@@ -1367,6 +1367,107 @@ if(window.matchMedia('(max-width: 650px)').matches)
   let submitButton = document.querySelector('.quick-job-search-block-content form input[type="submit"]');
   submitButton.value = ''
 }
+
+
+// Выравнивание тарифов по высоте 
+
+let rows = document.querySelectorAll('.row-tariffs');
+
+if(rows.length)
+{
+  rows.forEach(row => {
+    let tariffContents = row.querySelectorAll('.tariff-block__content');
+
+    if(tariffContents.length)
+    {
+      window.addEventListener('load', function()
+      {
+        let maxHeight = tariffContents[0].getBoundingClientRect().height;
+
+        console.log(maxHeight);
+
+        tariffContents.forEach(content => 
+        {
+          if(maxHeight < content.getBoundingClientRect().height)
+          {
+            maxHeight = content.getBoundingClientRect().height;
+          }
+        });
+
+        tariffContents.forEach(content => 
+        {
+          content.style.height = maxHeight + 'px';
+        });
+
+      });
+    }
+  });
+}
+
+// Скрытие табов 
+
+window.addEventListener('load', function()
+{
+  if(document.querySelectorAll('.tabs-content-block'))
+  {
+    document.querySelectorAll('.tabs-content-block').forEach(content => {
+      if(!content.classList.contains('tabs-content-block_active')) 
+      {
+        content.style.display = 'none';
+      }
+    });
+  }
+});
+
+// Табы 
+
+var tabs = document.querySelectorAll('.tabs');
+
+if(tabs.length)
+{
+  window.addEventListener('load', () => 
+  {
+    tabs.forEach(function(elem, index)
+    {
+      var tabsItem = elem.querySelectorAll('.tabs-item');
+      var tabsContent = elem.querySelector('.tabs-content');
+      var tabsItems = elem.querySelector('.tabs-items')
+
+      tabsItem.forEach(function(elem, index)
+      {
+        elem.addEventListener('click', function(e)
+        {
+          e.preventDefault();
+          if(!elem.classList.contains('tabs-item_active'))
+          {
+            // var prevDataTab = tabsItems.querySelector('.tabs-item_active').dataset.tab;
+            tabsItems.querySelector('.tabs-item_active').classList.remove('tabs-item_active');
+            elem.classList.add('tabs-item_active');
+            var dataTab = elem.dataset.tab;
+            if(tabsContent.querySelectorAll('.tabs-content-block_active').length > 0)
+            {
+              let oldTabsContent = tabsContent.querySelectorAll('.tabs-content-block_active');
+              oldTabsContent.forEach(tab => {
+                tab.classList.remove('tabs-content-block_active');
+                tab.style.display = 'none';
+              });
+              // tabsContent.querySelector('.tabs-content-block_active').classList.remove('tabs-content-block_active');
+            }
+            if(tabsContent.querySelectorAll('div[data-tab="' + dataTab + '"]').length > 0)
+            {
+              let newTabsContent = tabsContent.querySelectorAll('div[data-tab="' + dataTab + '"]');
+              newTabsContent.forEach(tab => {
+                tab.classList.add('tabs-content-block_active');
+              });
+              // tabsContent.querySelector('div[data-tab="' + dataTab + '"]').classList.add('tabs-content-block_active');
+            }
+          }
+        });
+      });
+    });
+  });
+}
+
 
 
 
