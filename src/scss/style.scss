@@ -413,7 +413,6 @@ input[type="text"], input[type="password"]
     padding-left: 20px;
     font-family: Montserrat Bold;
     font-size: 13px;
-    
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -5263,6 +5262,15 @@ input[type="submit"]
 .banner-info 
 {
     text-align: center;
+}
+
+.type-employer .block-radio
+{
+    margin-bottom: 22px;
+}
+.type-employer .block-radio:last-child 
+{
+    margin: 0;
 }
 
 

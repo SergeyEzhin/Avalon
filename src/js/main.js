@@ -995,6 +995,47 @@ let buttonAppBanner = document.querySelectorAll('.button-app-banner');
 let modalAppBanner = document.querySelector('#modal-app-banner');
 
 
+function checkFormPostPicture(button)
+{
+  let currentForm = button.parentElement;
+  let valid = true;
+
+  const fieldRadio = currentForm.querySelector('input[type="radio"]:checked');
+  const fieldsRadio = currentForm.querySelectorAll('input[type="radio"]');
+
+  if(!fieldRadio)
+  {
+    fieldsRadio.forEach((input) => input.classList.add('check-error'));
+    valid = false;
+  }
+
+  if(valid)
+  {
+    fieldsRadio.forEach((input) => input.classList.remove('check-error'));
+
+    let bannerInfo = document.querySelector('.banner-info');
+    let sizesBanner = currentForm.elements[0].value;
+    let countDays;
+    let allRadio = Array.from(currentForm.querySelectorAll('input[type="radio"]'));
+  
+    allRadio.forEach(elem => 
+    {
+      if(elem.checked)
+      {
+        countDays = elem.value;
+      }
+    });
+
+    bannerInfo.innerHTML = `Баннер ${sizesBanner} сроком на ${countDays}`;
+    return true;
+
+  }
+  else 
+  {
+    return false;
+  }
+}
+
 const animationModalForm = fn =>
 {
   window.requestAnimationFrame(function()
@@ -1013,6 +1054,11 @@ function viewForm(buttons, form)
     button.addEventListener('click', (e) => 
     {
       e.preventDefault();
+
+      if(button.classList.contains('button-app-banner'))
+      {
+        if(!checkFormPostPicture(button)) return;
+      }
 
       let closeModal = form.querySelector('.close-modal a');
 
@@ -1084,48 +1130,9 @@ if(buttonDetailedSearch.length)
 }
 if(buttonAppBanner.length)
 {
-  // Обработка форм с опциями о размещении баннера
-
-  const bannerForms = document.querySelectorAll('form[data-picture="true"]');
-
-  if(bannerForms.length)
-  {
-    bannerForms.forEach(form => 
-    {
-      form.addEventListener('submit', (e) => 
-      {
-        e.preventDefault();
-
-        let bannerInfo = document.querySelector('.banner-info');
-        let inputBannerSizes = document.querySelector('input[name="banner-sizes"]');
-        let inputCountDays = document.querySelector('input[name="banner-count-days"]');
-
-        let sizesBanner = form.elements[0].value;
-        let countDays;
-        let allRadio = Array.from(form.querySelectorAll('input[type="radio"]'));
-      
-        allRadio.forEach(elem => {
-          if(elem.checked)
-          {
-            countDays = elem.value;
-          }
-        });
-
-        console.log(sizesBanner);
-        console.log(countDays);
-
-        inputBannerSizes.value = sizesBanner;
-        inputCountDays.value = countDays;
-
-        bannerInfo.innerHTML = `Баннер ${sizesBanner} сроком на ${countDays}`;
-
-        viewForm(buttonAppBanner, modalAppBanner);
-
-      });
-    });
-  }
-
+  viewForm(buttonAppBanner, modalAppBanner);
 }
+
 
 // Валидация формы и отправка данных
 
@@ -1168,6 +1175,26 @@ forms.forEach(function(form)
     {
       if(input.style.display === 'none') return;
       if(!checkFieldCheckbox(input)) valid = false;
+    });
+
+    // Проверим все радиокнопки
+
+    const fieldsRadio = form.querySelectorAll('input[type="radio"]');
+
+    fieldsRadio.forEach(function(input)
+    {
+      if(input.style.display === 'none') return;
+      if(!checkFieldCheckbox(input)) valid = false;
+    });
+
+    // Проверка пароля
+
+    const fieldsPassword = form.querySelectorAll('input[type="password"]');
+
+    fieldsPassword.forEach(function(input)
+    {
+      if(input.style.display === 'none') return;
+      if(!checkFieldPassword(input)) valid = false;
     });
 
     
@@ -1217,6 +1244,25 @@ function checkFieldTextarea(textarea)
   }
 
   result ? textarea.classList.remove(errorClass) : textarea.classList.add(errorClass);
+  return result;
+}
+
+function checkFieldPassword(password)
+{
+  var errorClass = 'field-error';
+  var value = password.value;
+  var result;
+
+  if(value.trim() === '')
+  {
+    result = false;
+  }
+  else 
+  {
+    result = true;
+  }
+
+  result ? password.classList.remove(errorClass) : password.classList.add(errorClass);
   return result;
 }
 
@@ -1467,6 +1513,10 @@ if(tabs.length)
     });
   });
 }
+
+
+
+
 
 
 
