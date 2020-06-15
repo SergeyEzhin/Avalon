@@ -48,6 +48,7 @@
     "js-datepicker": "^5.11.0",
     "nodelist-foreach-polyfill": "^1.2.0",
     "normalize.css": "^8.0.1",
+    "nouislider": "^14.5.0",
     "owl.carousel": "^2.3.4",
     "tiny-slider": "^2.9.2",
     "webpack-bundle-analyzer": "^3.6.0",

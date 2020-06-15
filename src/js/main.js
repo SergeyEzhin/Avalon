@@ -4,6 +4,7 @@ import '../scss/style.scss';
 import Choices from  '../../node_modules/choices.js/src/scripts/choices';
 import 'owl.carousel';
 import datepicker from 'js-datepicker';
+import noUiSlider from "nouislider";
 
 (function() 
 {
@@ -378,6 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let vacanciesMap = document.querySelector('#vacancies-map');
   let companiesMap = document.querySelector('#companies-map');
   let favoritesVacanciesMap = document.querySelector('#favorites-vacancies-map');
+  let resumesMap = document.querySelector('#resumes-map');
 
   if(vacanciesMap)
   {
@@ -587,6 +589,106 @@ document.addEventListener('DOMContentLoaded', () => {
             {
 
               let map = new ymaps.Map('favorites-vacancies-map', {
+                  center: [55.751574, 37.573856],
+                  zoom: 12,
+                  controls: []
+              })
+
+              let objectManagerData = {
+                  "type": "FeatureCollection",
+                  "features": []
+              };
+
+              
+              let MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass(
+                '<div class="balloon-header-vacancy"><div class="balloon-header-vacancy__left"><p>$[properties.nameWork]</p><p>$[properties.salary]</p></div><div class="balloon-header-vacancy__right"><a class="button-text" href="current-vacancy.html"><img class="img-svg" src="./img/arrow_balloon.svg"></a></div></div>' +
+                '<div class="balloon-content-vacancy"><div class="balloon-content-vacancy-block"><div class="balloon-content-vacancy-block__image"><img src="$[properties.logoCompany]"></div><p class="balloon-content-vacancy-block__name">$[properties.nameCompany]</p></div></div>'
+              );
+
+              data.forEach((item, index) => {
+
+                  let featureObj = {
+                      "type": "Feature",
+                      "id": index,
+                      "geometry": {
+                          "type": "Point", 
+                          "coordinates": item.coords
+                      }, 
+                      "properties": {
+                          "nameWork": item.nameWork,
+                          "salary": item.salary,
+                          "nameCompany": item.nameCompany,
+                          "logoCompany":item.logoCompany
+                      },
+                      "options": {
+                          "iconLayout": "default#image",
+                          "iconColor": "#dc3535",
+                          "iconImageHref": "./img/icon_pin.svg",
+                          "iconImageSize": [33, 47],
+                          "balloonOffset": [-70, -45],
+                          "balloonContentLayout": MyBalloonContentLayout,
+                          "hideIconOnBalloonOpen": false,
+                          "balloonCloseButton": false,
+                          "zIndex": 100,
+                          "zIndexHover": 500,
+                          "zIndexActive": 1000
+                      }
+                  };
+
+                  objectManagerData["features"].push(featureObj);
+              });
+
+              let objectManager = new ymaps.ObjectManager({
+                  clusterize: true,
+                  gridSize: 128,
+                  clusterIconLayout: "default#pieChart",
+                  clusterIconPieChartStrokeWidth: 0
+              });
+
+              map.geoObjects.add(objectManager);
+              objectManager.add(objectManagerData);
+              map.setBounds(map.geoObjects.getBounds());
+
+              objectManager.objects.events.add('click', function (e) {
+
+                  var objectId = e.get('objectId');
+                  if (objectManager.objects.balloon.isOpen(objectId)) {
+                      objectManager.objects.balloon.close();
+                  }
+
+                  map.events.add('click', function (e) 
+                  {
+                    if(e.get('target') === map) 
+                    { 
+                      objectManager.objects.balloon.close();
+                    }
+                  });
+              });
+
+              objectManager.objects.events.add('balloonopen', function(e) {
+                  objectManager.objects.setObjectOptions(e.get('target')._objectIdWithOpenBalloon, {'iconImageHref': './img/icon_pin_active.svg', 'zIndex': 1000});
+              });
+
+              objectManager.objects.events.add('balloonclose', function(e) {
+                  objectManager.objects.setObjectOptions(e.get('target')._objectIdWithOpenBalloon, {'iconImageHref': './img/icon_pin.svg', 'zIndex': 250});
+              });
+
+            })
+        })
+    });
+  }
+  if(resumesMap)
+  {
+    fetch('./php/favorites-vacancies.php')
+    .then(response => response.json())
+    .then(data => {
+        
+        let apiKey = 'e158c5a2-b717-4552-9b2d-e21a7b7d540b';
+        getScript('https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=' + apiKey, function(){
+            ymaps.ready(function () 
+            {
+
+              let map = new ymaps.Map('resumes-map', {
                   center: [55.751574, 37.573856],
                   zoom: 12,
                   controls: []
@@ -1411,7 +1513,11 @@ if(responses.length)
 if(window.matchMedia('(max-width: 650px)').matches)
 {
   let submitButton = document.querySelector('.quick-job-search-block-content form input[type="submit"]');
-  submitButton.value = ''
+
+  if(submitButton)
+  {
+    submitButton.value = ''
+  }
 }
 
 
@@ -1512,6 +1618,57 @@ if(tabs.length)
       });
     });
   });
+}
+
+
+// Range Slider 
+
+let blockRangeSliders = document.querySelectorAll('.block-range-slider');
+
+if(blockRangeSliders.length)
+{
+  blockRangeSliders.forEach(block => 
+  {
+    let rangeSlider = block.querySelector('[data-id="range-slider"]');
+
+    let snapValues = [
+      block.querySelector('input[name="min-value-range"]'),
+      block.querySelector('input[name="max-value-range"]')
+    ];
+
+    noUiSlider.create(rangeSlider, {
+      start: [18, 52],
+      tooltips: false,
+      step: 1,
+      connect: true,
+      range: {
+          'min': 18,
+          'max': 99
+      }
+    });
+    
+    rangeSlider.noUiSlider.on('update', function (values, handle) {
+        snapValues[handle].value = Math.round(values[handle]);
+    });
+
+    snapValues.forEach((field, index) => 
+    {
+      field.addEventListener('change', function(e)
+      {
+        let value = field.value;
+        if(index === 0)
+        {
+          rangeSlider.noUiSlider.set([value, null]);
+        }
+        else 
+        {
+          rangeSlider.noUiSlider.set([null, value]);
+        }
+      });
+    });
+    
+  });
+ 
 }
 
 

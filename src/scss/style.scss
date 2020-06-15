@@ -286,9 +286,8 @@ button
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Montserrat Bold;
-    font-size: 14px;
-    
+    font-family: Montserrat Bold !important;
+    font-size: 14px !important;
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -602,6 +601,73 @@ select
 .choices.disabled[data-type*=select-one]:after
 {
     border-top-color: #dddce8;
+}
+
+// Стили для range-slider
+
+.range-slider
+{
+    margin-top: 22px;
+    margin-bottom: 22px;
+    padding-right: 16px;
+    // width: 250px;
+    &__title 
+    {
+        font-family: Montserrat Bold;
+        font-size: 15px;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $color-primary;
+    }
+    &__values 
+    {
+        display: flex;
+        justify-content: space-between;
+        input 
+        {
+            width: 80px;
+        }
+    }
+}
+
+.noUi-connect
+{
+    background: $color-ref;
+}
+
+.noUi-target
+{
+    background: $color-disabled;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: none;
+}
+
+.noUi-horizontal, .noUi-base, .noUi-connects
+{
+    height: 4px;
+}
+
+.noUi-horizontal .noUi-handle
+{
+    right: -16px;
+}
+
+.noUi-handle
+{
+    width: 16px !important;
+    height: 16px !important;
+    border-radius: 6px !important;
+    box-shadow: 0 2px 5px 0 rgba(15, 20, 91, 0.1) !important;
+    border: solid 1px #dddce8 !important;
+    background-color: #fff !important;
+    outline: none;
+}
+.noUi-handle:before, .noUi-handle:after 
+{
+    display: none;
 }
 
 // Стили для блока с файлом
@@ -2984,7 +3050,7 @@ button
 .main-search
 {
     margin-top: 32px;
-    .search-list-row-vacancies
+    .search-list-row
     {
         margin-left: -10px;
         margin-right: -10px;
@@ -3958,6 +4024,16 @@ ymaps[class$='pie-chart-content']
                     color: $color-disabled;
                     margin-top: 7px;
                     margin-left: 42px;
+                }
+            }
+            .show-contacts-block 
+            {
+                display: flex;
+                align-items: center;
+                .other-button
+                {
+                    margin-right: 10px;
+                    margin-bottom: 0;
                 }
             }
         }
@@ -5271,6 +5347,26 @@ input[type="submit"]
 .type-employer .block-radio:last-child 
 {
     margin: 0;
+}
+
+.base-resume 
+{
+    position: relative;
+}
+
+.base-resume:after 
+{
+    content: attr(data-count);
+    position: relative;
+    margin-left: 10px;
+    font-family: Montserrat Regular;
+    font-size: 15px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $color-disabled;
 }
 
 
