@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Резюме</title>
+    <title>Избранное</title>
 </head>
 <body>
     <div class="wrapper">
@@ -279,110 +279,58 @@
         </div>
         <div class="wrapper-content block-mt-dark-blue block-mb-purple">
             <div class="container">
-                <h1>Резюме</h1>
+                <h1>Избранное</h1>
                 <div class="content-page block-mt-dark-blue">
-                    <div class="list-container">
-                        <div class="row list-container-row">
+                    <div class="profile-container">
+                        <div class="row profile-container-row">
                             <div class="col-3">
-                                <div class="sidebar-filter">
-                                    <form action="" id="form-filter">
-                                        <div class="block-select-filter block-mb-yellow">
-                                            <p class="block-select-filter__name">Город</p>
-                                            <select name="city">
-                                                <option value="0">Выберите город</option>
-                                                <option value="city1">Москва</option>
-                                                <option value="city2">Нижний Новгород</option>
-                                                <option value="city3">Казань</option>
-                                            </select>
-                                        </div>
-                                        <div class="block-select-filter block-mb-yellow">
-                                            <p class="block-select-filter__name">Должность</p>
-                                            <select name="position">
-                                                <option value="all">Все</option>
-                                                <option value="position1">Должность 1</option>
-                                                <option value="position2">Должность 2</option>
-                                                <option value="position3">Должность 3</option>
-                                            </select>
-                                        </div>
-                                        <div class="block-select-filter block-mb-yellow">
-                                            <p class="block-select-filter__name">Тип занятости</p>
-                                            <select name="employment">
-                                                <option value="shifts-30">Вахта 30 смен</option>
-                                                <option value="shifts-30">Вахта 30 смен</option>
-                                                <option value="shifts-30">Вахта 30 смен</option>
-                                                <option value="shifts-30">Вахта 30 смен</option>
-                                            </select>
-                                        </div>
-                                        <div class="block-select-filter block-mb-yellow">
-                                            <p class="block-select-filter__name">График</p>
-                                            <select name="schedule">
-                                                <option value="schedule1">Полный рабочий день</option>
-                                                <option value="schedule2">Полный рабочий день</option>
-                                                <option value="schedule3">Полный рабочий день</option>
-                                            </select>
-                                        </div>
-                                        <div class="block-choice-filter block-mb-yellow">
-                                            <p class="block-choice-filter__name">Пол</p>
-                                            <div class="block-radio block-mt-orange">
-                                                <label for="male">
-                                                    <input type="radio" id="male" name="gender" hidden checked>
-                                                    <div class="radio"></div>
-                                                    <p>Мужской</p>
-                                                </label>
-                                            </div>
-                                            <div class="block-radio block-mt-orange">
-                                                <label for="female">
-                                                    <input type="radio" id="female" name="gender" hidden>
-                                                    <div class="radio"></div>
-                                                    <p>Женский</p>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="block-range-slider block-mb-yellow">
-                                            <p class="range-slider__title">Возраст</p>
-                                            <div class="range-slider" data-id="range-slider"></div>
-                                            <div class="range-slider__values">
-                                                <input type="text" name="min-value-range" value="18">
-                                                <input type="text" name="max-value-range" value="52">
-                                            </div>
-                                        </div>
-                                        <div class="block-choice-filter block-mb-yellow">
-                                            <p class="block-choice-filter__name">Тип работодателя</p>
-                                            <div class="block-checkbox block-mt-orange">
-                                                <label for="direct-employers">
-                                                    <input type="checkbox" id="direct-employers" name="direct-employers" hidden checked>
-                                                    <div class="check"></div>
-                                                    <p>Прямые работодатели</p>
-                                                </label>
-                                            </div>
-                                            <div class="block-checkbox block-mt-orange">
-                                                <label for="recruitment-agencies">
-                                                    <input type="checkbox" id="recruitment-agencies" name="recruitment-agencies" hidden checked>
-                                                    <div class="check"></div>
-                                                    <p>Кадровые агенства</p>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="block-mt-green">
-                                            <input type="submit" name="submit-filter" class="main-button" value="Применить фильтр">
-                                        </div>
-                                    </form>
+                                <div class="sidebar-profile">
+                                    <a href="#" class="button-text">
+                                        <img class="img-svg" src="./img/icon_profile.svg" alt="">
+                                        Профиль
+                                    </a>
+                                    <a href="#" class="button-text">
+                                        <img class="img-svg" src="./img/icon_my_resumes.svg" alt="">
+                                        Мои вакансии
+                                    </a>
+                                    <a href="#" class="button-text">
+                                        <img class="img-svg" src="./img/icon_resume.svg" alt="">
+                                        Разместить вакансию
+                                    </a>
+                                    <a href="#" class="button-text base-resume" data-count="6 дн.">
+                                        <img class="img-svg" src="./img/icon_base_success.svg" alt="">
+                                        База резюме
+                                    </a>
+                                    <a href="#" class="button-text feedback" data-count="+16">
+                                        <img class="img-svg" src="./img/icon_feedback.svg" alt="">
+                                        Отклики
+                                    </a>
+                                    <a href="#" class="button-text current-ref">
+                                        <img class="img-svg" src="./img/icon_favorites.svg" alt="">
+                                        Избранное
+                                    </a>
+                                    <a href="#" class="button-text">
+                                        <img class="img-svg" src="./img/icon_mailing.svg" alt="">
+                                        Рассылка
+                                    </a>
+                                    <a href="#" class="button-text">
+                                        <img class="img-svg" src="./img/icon_order.svg" alt="">
+                                        Мои заказы
+                                    </a>
+                                    <a href="#" class="button-text">
+                                        <img class="img-svg" src="./img/icon_watch.svg" alt="">
+                                        История заказов
+                                    </a>
+                                    <a href="#" class="button-text">
+                                        <img class="img-svg" src="./img/icon_statistics.svg" alt="">
+                                        Статистика
+                                    </a>
                                 </div>
                             </div>
                             <div class="col-9">
-                                <div class="additional-search block-mb-green">
-                                    <a href="#" class="button-text">
-                                        <img class="img-svg" src="./img/icon_map.svg" alt="">
-                                        Показать на карте
-                                    </a>
-                                    <button type="button" class="other-button button-filter">
-                                        <img class="img-svg" src="./img/icon_option.svg" alt="">
-                                    </button>
-                                    <form action="" id="quick-search">
-                                        <input type="text" name="q" placeholder="Поиск по резюме">
-                                        <input type="submit" name="submit-quick-search" value="" style="background-image: url(./img/bg-submit-quick-search.svg);">
-                                    </form>
-                                </div>
+                                <button type="button" class="other-button button-account">
+                                    <img class="img-svg" src="./img/icon_burger.svg" alt="">
+                                </button>
                                 <div class="main-search">
                                     <div class="row search-list-row">
                                         <div class="col-4">
@@ -650,20 +598,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="wrapper-button-center block-mt-green">
-                                        <button type="button" class="other-button">Показать ещё</button>
-                                    </div>
-                                    <div class="wrapper-pagination block-mt-blue">
-                                        <div class="pagination">
-                                            <a href="#" class="pagination__block pagination__block_current">1</a>
-                                            <a href="#" class="pagination__block">2</a>
-                                            <a href="#" class="pagination__block">3</a>
-                                            <a href="#" class="pagination__block">4</a>
-                                            <a href="#" class="pagination__block">5</a>
-                                            <a href="#" class="pagination__block ellipsis">...</a>
-                                            <a href="#" class="pagination__block">18</a>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -775,96 +709,54 @@
                 <p class="block-mt-blue">Наш менеджер свяжется с Вами в ближайшее время.</p>
             </div>
         </div>
-        <div class="modal-form modal-form__filter" id="modal-filter">
+        <div class="modal-form modal-form__account" id="modal-account">
             <div class="close-modal">
                 <a href="#">
                     <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
                 </a>
             </div>
             <div class="modal-form-content block-mt-orange">
-                <div class="sidebar-filter">
-                    <form action="" id="form-filter">
-                        <div class="block-select-filter block-mb-yellow">
-                            <p class="block-select-filter__name">Город</p>
-                            <select name="city">
-                                <option value="0">Выберите город</option>
-                                <option value="city1">Москва</option>
-                                <option value="city2">Нижний Новгород</option>
-                                <option value="city3">Казань</option>
-                            </select>
-                        </div>
-                        <div class="block-select-filter block-mb-yellow">
-                            <p class="block-select-filter__name">Должность</p>
-                            <select name="position">
-                                <option value="all">Все</option>
-                                <option value="position1">Должность 1</option>
-                                <option value="position2">Должность 2</option>
-                                <option value="position3">Должность 3</option>
-                            </select>
-                        </div>
-                        <div class="block-select-filter block-mb-yellow">
-                            <p class="block-select-filter__name">Тип занятости</p>
-                            <select name="employment">
-                                <option value="shifts-30">Вахта 30 смен</option>
-                                <option value="shifts-30">Вахта 30 смен</option>
-                                <option value="shifts-30">Вахта 30 смен</option>
-                                <option value="shifts-30">Вахта 30 смен</option>
-                            </select>
-                        </div>
-                        <div class="block-select-filter block-mb-yellow">
-                            <p class="block-select-filter__name">График</p>
-                            <select name="schedule">
-                                <option value="schedule1">Полный рабочий день</option>
-                                <option value="schedule2">Полный рабочий день</option>
-                                <option value="schedule3">Полный рабочий день</option>
-                            </select>
-                        </div>
-                        <div class="block-choice-filter block-mb-yellow">
-                            <p class="block-choice-filter__name">Пол</p>
-                            <div class="block-radio block-mt-orange">
-                                <label for="male">
-                                    <input type="radio" id="male" name="gender" hidden checked>
-                                    <div class="radio"></div>
-                                    <p>Мужской</p>
-                                </label>
-                            </div>
-                            <div class="block-radio block-mt-orange">
-                                <label for="female">
-                                    <input type="radio" id="female" name="gender" hidden>
-                                    <div class="radio"></div>
-                                    <p>Женский</p>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="block-range-slider block-mb-yellow">
-                            <p class="range-slider__title">Возраст</p>
-                            <div class="range-slider" data-id="range-slider"></div>
-                            <div class="range-slider__values">
-                                <input type="text" name="min-value-range" value="18">
-                                <input type="text" name="max-value-range" value="52">
-                            </div>
-                        </div>
-                        <div class="block-choice-filter block-mb-yellow">
-                            <p class="block-choice-filter__name">Тип работодателя</p>
-                            <div class="block-checkbox block-mt-orange">
-                                <label for="direct-employers">
-                                    <input type="checkbox" id="direct-employers" name="direct-employers" hidden checked>
-                                    <div class="check"></div>
-                                    <p>Прямые работодатели</p>
-                                </label>
-                            </div>
-                            <div class="block-checkbox block-mt-orange">
-                                <label for="recruitment-agencies">
-                                    <input type="checkbox" id="recruitment-agencies" name="recruitment-agencies" hidden checked>
-                                    <div class="check"></div>
-                                    <p>Кадровые агенства</p>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="block-mt-green">
-                            <input type="submit" name="submit-filter" class="main-button" value="Применить фильтр">
-                        </div>
-                    </form>
+                <div class="sidebar-profile">
+                    <a href="#" class="button-text">
+                        <img class="img-svg" src="./img/icon_profile.svg" alt="">
+                        Профиль
+                    </a>
+                    <a href="#" class="button-text">
+                        <img class="img-svg" src="./img/icon_my_resumes.svg" alt="">
+                        Мои вакансии
+                    </a>
+                    <a href="#" class="button-text">
+                        <img class="img-svg" src="./img/icon_resume.svg" alt="">
+                        Разместить вакансию
+                    </a>
+                    <a href="#" class="button-text base-resume" data-count="6 дн.">
+                        <img class="img-svg" src="./img/icon_base_success.svg" alt="">
+                        База резюме
+                    </a>
+                    <a href="#" class="button-text feedback" data-count="+16">
+                        <img class="img-svg" src="./img/icon_feedback.svg" alt="">
+                        Отклики
+                    </a>
+                    <a href="#" class="button-text current-ref">
+                        <img class="img-svg" src="./img/icon_favorites.svg" alt="">
+                        Избранное
+                    </a>
+                    <a href="#" class="button-text">
+                        <img class="img-svg" src="./img/icon_mailing.svg" alt="">
+                        Рассылка
+                    </a>
+                    <a href="#" class="button-text">
+                        <img class="img-svg" src="./img/icon_order.svg" alt="">
+                        Мои заказы
+                    </a>
+                    <a href="#" class="button-text">
+                        <img class="img-svg" src="./img/icon_watch.svg" alt="">
+                        История заказов
+                    </a>
+                    <a href="#" class="button-text">
+                        <img class="img-svg" src="./img/icon_statistics.svg" alt="">
+                        Статистика
+                    </a>
                 </div>
             </div>
         </div>

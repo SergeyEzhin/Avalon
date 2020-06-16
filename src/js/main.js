@@ -1470,31 +1470,16 @@ if(buttonHelp && menuMain)
 
 // Адаптив для таблицы Резюме и Отклики 
 
-let resumes = document.querySelectorAll('.resumes');
+let tables = document.querySelectorAll('.table');
 let responses = document.querySelectorAll('.response');
 
-if(resumes.length)
+if(tables.length)
 {
-  // resumes.forEach(function(resume) 
-  // {
-  //   let headers = resume.querySelectorAll('.resumes-header-row-block p');
-  //   let strBody = resume.querySelectorAll('.resumes-content-row');
-    
-  //   strBody.forEach(function(str)
-  //   {
-  //     let columns = str.querySelectorAll('.resumes-content-row-block');
-
-  //     for(let i = 0; i < columns.length; i++)
-  //     {
-  //       columns[i].dataset.label = headers[i].innerHTML;
-  //     }
-  //   });
-  // });
-  resumes.forEach(function(resume)
+  tables.forEach(function(table)
   {
-    resume.insertAdjacentHTML('beforebegin', '<div class="wrapper-table"></div>');
-    let wrapperTable = resume.previousElementSibling;
-    wrapperTable.appendChild(resume);
+    table.insertAdjacentHTML('beforebegin', '<div class="wrapper-table"></div>');
+    let wrapperTable = table.previousElementSibling;
+    wrapperTable.appendChild(table);
   });
 }
 
@@ -1669,6 +1654,54 @@ if(blockRangeSliders.length)
     
   });
  
+}
+
+// Скрипт для отображния фильтра для таблиц 
+
+let filterBlock = document.querySelectorAll('.filter-block');
+
+if(filterBlock.length)
+{
+  filterBlock.forEach(block => {
+    let ref = block.querySelector('.filter-block__ref');
+
+    ref.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      ref.classList.toggle('filter-block__ref_active');
+      block.querySelector('.filter-block__content').classList.toggle('filter-block__content_active');
+    });
+  });
+}
+
+// Скрипт для выбора периода времени в фильтре
+
+let filterBlockContent = document.querySelectorAll('.filter-block__content');
+
+if(filterBlockContent.length)
+{
+  filterBlockContent.forEach(block => 
+  {
+    let radioButtons = block.querySelectorAll('input[type="radio"]');
+    let inputDate = block.querySelectorAll('[data-picker="datepicker"]');
+
+    radioButtons.forEach((button, index) => {
+      button.addEventListener('change', () => {
+        if(index === 1 && button.checked)
+        {
+          inputDate.forEach(input => {
+            input.removeAttribute('disabled');
+          });
+        }
+        if(index === 0 && button.checked)
+        {
+          inputDate.forEach(input => {
+            input.setAttribute('disabled', 'disabled');
+          });
+        }
+      });
+    });
+  });
 }
 
 

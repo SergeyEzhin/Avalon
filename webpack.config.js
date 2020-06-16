@@ -10,7 +10,8 @@ const pages = ['index', 'articles', 'faq', 'vacancies-list', 'current-article', 
 'favorites-vacancies-map', 'response', 'response-resume', 'response-vacancy', 'response-vacancy-not-reg', 'subscription',
 'post-resume-step1', 'post-resume-step2', 'post-resume-step3', 'post-resume-step4', 'current-resume', 'index-employer', 'articles-employer', 'faq-employer',
 'current-article-employer', 'service-rules-employer', 'access-account-employer', 'tariffs', 'password-recovery-employer', 'registration-employer', 
-'resumes-list', 'resumes-map', 'current-resume-employer', 'resume-paid'];
+'resumes-list', 'resumes-map', 'current-resume-employer', 'resume-paid', 'current-vacancy-employer', 'favorites-employer', 'my-vacancies',
+'response-employer'];
 
 const webpackConfig = {
     context: path.resolve(__dirname, 'src'),

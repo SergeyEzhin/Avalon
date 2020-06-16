@@ -3049,7 +3049,7 @@ button
 
 .main-search
 {
-    margin-top: 32px;
+    // margin-top: 32px;
     .search-list-row
     {
         margin-left: -10px;
@@ -3534,6 +3534,7 @@ label
         margin-left: -20px;
         margin-right: -20px;
         flex-wrap: wrap;
+        margin-top: -15px;
         .tabs-item 
         {
             font-family: Raleway Bold;
@@ -4350,12 +4351,13 @@ input[type="submit"]
 
 // Страница Мои резюме
 
-.resumes 
+.table 
 {
     background-color: #fff;
     border-top: 4px solid #dddce8;
     box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
     min-width: 895px;
+    margin-bottom: 0;
     &-header 
     {
         padding: 22px 39px 22px 27px;
@@ -4440,7 +4442,7 @@ input[type="submit"]
     }
     &-actual 
     {
-        .resumes-name-column
+        .table-name-column
         {
             display: flex;
             justify-content: flex-start;
@@ -4448,17 +4450,17 @@ input[type="submit"]
             width: 39%;
             text-align: left;
         }
-        .resumes-views-column 
+        .table-views-column 
         {
             justify-content: center;
             width: 10%;
         }
-        .resumes-feedback-column
+        .table-feedback-column
         {
             justify-content: center;
             width: 10%
         }
-        .resumes-date-column
+        .table-date-column
         {
             justify-content: center;
             width: 10%
@@ -4466,7 +4468,7 @@ input[type="submit"]
     }
     &-drafts 
     {
-        .resumes-name-column
+        .table-name-column
         {
             display: flex;
             justify-content: flex-start;
@@ -4474,7 +4476,7 @@ input[type="submit"]
             width: 39%;
             text-align: left;
         }
-        .resumes-remove-column 
+        .table-remove-column 
         {
             display: flex;
             justify-content: center;
@@ -4483,7 +4485,7 @@ input[type="submit"]
     }
     &-archive 
     {
-        .resumes-name-column
+        .table-name-column
         {
             display: flex;
             justify-content: flex-start;
@@ -4491,34 +4493,34 @@ input[type="submit"]
             width: 46%;
             text-align: left;
         }
-        .resumes-views-column 
+        .table-views-column 
         {
             justify-content: center;
             width: 10%;
         }
-        .resumes-feedback-column
+        .table-feedback-column
         {
             justify-content: center;
             width: 7%
         }
-        .resumes-date-column
+        .table-date-column
         {
             justify-content: center;
             width: 10%
         }
-        .resumes-remove-column 
+        .table-remove-column 
         {
             display: flex;
             justify-content: center;
             width: 7%;
         }
     }
-    .remove-resume 
+    .remove-data
     {
         border: 0;
         transition: .3s;
     }
-    .remove-resume:hover 
+    .remove-data:hover 
     {
         .img-svg path
         {
@@ -5367,6 +5369,59 @@ input[type="submit"]
     line-height: normal;
     letter-spacing: normal;
     color: $color-disabled;
+}
+
+.filter-block 
+{
+    width: 400px;
+    &__title
+    {
+        display: flex;
+        align-items: center;
+        .filter-block__ref
+        {
+            .img-svg 
+            {
+                transition: .3s;
+                margin-left: 10px;
+                transform: rotateX(180deg);
+            }
+        }
+        .filter-block__ref.filter-block__ref_active 
+        {
+            .img-svg 
+            {
+                transform: rotateX(0);
+            }
+        }
+    }
+    &__content 
+    {
+        display: none;
+    }
+    &__content_active 
+    {
+        display: block;
+    }
+}
+
+.periods 
+{
+    &__stage 
+    {
+        display: flex;
+        align-items: center;
+        // justify-content: space-between;
+        label 
+        {
+            width: 54%;
+            margin: 0;
+        }
+        input 
+        {
+            margin-left: 10px;
+        }
+    }
 }
 
 
