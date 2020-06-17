@@ -5425,6 +5425,34 @@ input[type="submit"]
 }
 
 
+.job-applicant-data
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    .img-svg 
+    {
+        margin-right: 20px;
+    }
+}
+
+.communication-method
+{
+    display: flex;
+    align-items: center;
+    p 
+    {
+        font-family: Montserrat Bold;
+        font-size: 15px;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: $color-primary;
+        margin-left: 10px;
+    }
+}
+
 
 // Футер 
 
