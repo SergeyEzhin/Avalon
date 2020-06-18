@@ -4356,7 +4356,7 @@ input[type="submit"]
     background-color: #fff;
     border-top: 4px solid #dddce8;
     box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
-    min-width: 895px;
+    // min-width: 925px;
     margin-bottom: 0;
     &-header 
     {
@@ -4554,10 +4554,10 @@ input[type="submit"]
     background-color: #fff;
     border-top: 4px solid #dddce8;
     box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
-    min-width: 895px;
+    // min-width: 925px;
     &-header 
     {
-        padding: 20px 30px 20px 20px;
+        padding: 20px 15px 20px 20px;
         &-row 
         {
             display: flex;
@@ -4585,7 +4585,7 @@ input[type="submit"]
             {
                 display: flex;
                 justify-content: space-between;
-                padding-left: 140px;
+                padding-left: 110px;
                 width: 76%;
             }
         }
@@ -4598,22 +4598,23 @@ input[type="submit"]
             justify-content: space-between;
             &-left 
             {
-                width: 24%;
+                width: 22%;
                 padding-left: 20px;
                 padding-top: 20px;
                 padding-bottom: 20px;
                 border-top: 1px solid #dddce8;
+                padding-right: 20px;
             }
             &-right 
             {
-                width: 76%;
+                width: 78%;
                 &-wrapper 
                 {
-                    padding-left: 150px;
+                    padding-left: 140px;
                     border-top: 1px solid #dddce8;
                     .response-content-row 
                     {
-                        padding-right: 30px;
+                        padding-right: 15px;
                         padding-top: 20px;
                         padding-bottom: 20px;
                         border-top: 1px solid #dddce8;
@@ -4633,22 +4634,50 @@ input[type="submit"]
     &-name-column 
     {
         justify-content: flex-start;
+        align-items: center;
         width: 24%;
     }
     &-company-column
     {
         justify-content: flex-start;
-        width: 40%;
+        align-items: center;
+        width: 31%;
     }
     &-date-column 
     {
         justify-content: center;
         width: 25%;
+        align-items: center;
     }
     &-feedback-column 
     {
         justify-content: center;
         width: 20%;
+    }
+    &-communication-method
+    {
+        width: 21%; 
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        a 
+        {
+            border: 0;
+            display: block;
+            line-height: normal;
+        }
+        span 
+        {
+            display: block;
+            font-family: Montserrat Regular;
+            font-size: 13px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-disabled;
+        }
     }
     &-ref 
     {
@@ -5434,6 +5463,35 @@ input[type="submit"]
     {
         margin-right: 20px;
     }
+    a 
+    {
+        font-family: Montserrat Regular;
+        font-size: 15px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+    }
+    &__title 
+    {
+        margin-top: -7px;
+        p 
+        {
+            font-family: Montserrat Regular;
+            font-size: 15px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-ref;
+            border-bottom: 1px dashed currentColor;
+            padding-bottom: 7px;
+            padding-top: 7px;
+        }
+    }
+    
 }
 
 .communication-method
@@ -5453,6 +5511,84 @@ input[type="submit"]
     }
 }
 
+.payment-services 
+{
+    &-block 
+    {
+        &__title 
+        {
+            font-family: Montserrat Bold;
+            font-size: 19px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+        }
+    }
+    form 
+    {
+        .col-3, .col-9 
+        {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}
+
+.invoice-payment 
+{
+    background: #fff;
+    border-top: 3px solid #DDDCE8;
+    box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+    &-block 
+    {
+        padding: 20px;
+        border-bottom: 1px solid #DDDCE8;
+        p 
+        {
+            line-height: normal;
+        }
+    }
+}
+
+.order-block 
+{
+    padding-bottom: 43px;
+    border-bottom: 2px solid #DDDCE8;
+    &-content 
+    {
+        &__name 
+        {
+            font-family: Montserrat Bold;
+            font-size: 16px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
+        }
+    }
+    &-content:last-child 
+    {
+        margin: 0;
+    }
+    &-actions 
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.order-block:last-child 
+{
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
 
 // Футер 
 
