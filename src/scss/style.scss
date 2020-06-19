@@ -4819,10 +4819,10 @@ input[type="submit"]
 
 // Страница Разместить резюме - Шаг 1
 
-.post-resume 
+.post 
 {
     position: relative;
-    .steps-post-resume 
+    .steps-post
     {
         display: flex;
         align-items: center;
@@ -4942,7 +4942,7 @@ input[type="submit"]
     }
 }
 
-.block-post-resume 
+.block-post
 {
     border-top: 2px solid #DDDCE8;
     padding-top: 43px;
@@ -5588,6 +5588,13 @@ input[type="submit"]
     border: 0;
     margin: 0;
     padding: 0;
+}
+
+hr 
+{
+    border: 1px solid #DDDCE8;
+    background-color: #DDDCE8;
+    margin: 0;
 }
 
 // Футер 
