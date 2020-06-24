@@ -4762,13 +4762,21 @@ input[type="submit"]
 
 // Страница Подписка 
 
-.subscription 
+.subscription, .mailing 
 {
     form 
     {
         .block-checkbox 
         {
             margin-top: 0;
+            margin-bottom: 22px;
+        }
+        .col-4 .block-checkbox:last-child 
+        {
+            margin-bottom: 0;
+        }
+        .col-4 .block-checkbox:first-child 
+        {
             margin-bottom: 22px;
         }
         .other-position 
@@ -4878,6 +4886,20 @@ input[type="submit"]
     display: flex;
     justify-content: space-between;
     align-items: center;
+    &__left 
+    {
+        display: flex;
+        align-items: center;
+        a:nth-child(2)
+        {
+            margin-left: 20px;
+        }
+    }
+    &__right 
+    {
+        display: flex;
+        align-items: center;
+    }
     .disabled 
     {
         opacity: 0;
@@ -5595,6 +5617,119 @@ hr
     border: 1px solid #DDDCE8;
     background-color: #DDDCE8;
     margin: 0;
+}
+
+// Таблица Тарифы
+
+.rates 
+{
+    background-color: #fff;
+    border-top: 4px solid #dddce8;
+    box-shadow: 0 10px 20px 0 rgba(15,20,91,.1);
+
+    &-header 
+    {
+        padding: 22px 20px;
+        &-row 
+        {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &-block 
+            {
+                p 
+                {
+                    font-family: Raleway Bold;
+                    font-size: 14px;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1;
+                    letter-spacing: normal;
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+    &-content 
+    {
+        &-row 
+        {
+            padding: 22px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #dddce8;
+        }
+        &-row__price 
+        {
+            align-items: flex-start;
+        }
+    }
+    &-opportunities-column, &-choice-column, &-price-column  
+    {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 30%;
+    }
+    &-name-column,  &-choice-value-column 
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 14%;
+    }
+    &-price-value-column 
+    {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 14%;
+        .current-price-value 
+        {
+            p 
+            {
+                font-family: Montserrat Bold;
+                font-size: 16px;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $color-primary;
+            }
+        }
+        .old-price-value 
+        {
+            p 
+            {
+                font-family: Montserrat Regular;
+                font-size: 16px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $color-disabled;
+                position: relative;
+            }
+            p:before 
+            {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: #eb5757;
+                top: 8px;
+                left: 0;
+                right: 0;
+            }
+        }
+    }
+    label 
+    {
+        margin: 0;
+    }
 }
 
 // Футер 

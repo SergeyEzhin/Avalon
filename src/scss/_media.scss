@@ -180,12 +180,12 @@
     {
         display: none;
     }
-    .subscription form .other-position .button-text
+    .subscription form .other-position .button-text, .mailing form .other-position .button-text
     {
         margin-left: 0;
         margin-top: 17px;
     }
-    .subscription form .other-position
+    .subscription form .other-position, .mailing form .other-position
     {
         flex-direction: column;
     }

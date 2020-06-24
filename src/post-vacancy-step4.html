@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Разместить вакансию</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header-top">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto header-top-left">
+                            <div href="#" class="choice-lang prompt">
+                                RU 
+                                <img class="img-svg" src="./img/arrow_down.svg" alt="">
+                                <div class="prompt__block">
+                                    <a href="#">EN</a>
+                                </div>
+                            </div>
+                            <div href="#" class="choice-city prompt">
+                                Нижний Новгород 
+                                <img class="img-svg" src="./img/arrow_down.svg" alt="">
+                                <div class="prompt__block">
+                                    <a href="#">Казань</a>
+                                    <a href="#">Москва</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto header-top-middle">
+                            <a href="#" class="choice-mode">Ищу работу</a>
+                            <a href="#" class="choice-mode choice-mode_active">Ищу работника</a>
+                        </div>
+                        <div class="col-auto header-top-right justify-content-between">
+                            <a href="#" class="button-text favorites">
+                                <img class="img-svg" src="./img/icon_favorites.svg" alt="">
+                                Избранное
+                            </a>
+                            <a href="#" class="button-text feedback" data-count="+16">
+                                <img class="img-svg" src="./img/icon_feedback.svg" alt="">
+                                Отклики
+                            </a>
+                            <div href="#" class="prompt help">
+                                Помощь
+                                <img class="img-svg" src="./img/arrow_down.svg" alt="">
+                                <div class="prompt__block">
+                                    <a href="#">Полезные статьи</a>
+                                    <a href="#">Часто задаваемые вопросы</a>
+                                    <a href="#">Как пользоваться сервисом</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-top-tablet">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto header-top-tablet__left">
+                            <a href="#" class="choice-mode">Ищу работу</a>
+                            <a href="#" class="choice-mode choice-mode_active">Ищу работника</a>
+                        </div>
+                        <div class="col-auto header-top-tablet__middle">
+                            <a href="#" class="button-text favorites">
+                                <img class="img-svg" src="./img/icon_favorites.svg" alt="">
+                            </a>
+                            <a href="#" class="button-text feedback" data-count="+16">
+                                <img class="img-svg" src="./img/icon_feedback.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-auto header-top-tablet__right">
+                            <a href="#" class="button-help">
+                                <img src="./img/icon_button_help.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-mode-mobile"> 
+                <a href="#" class="choice-mode">Ищу работу</a>
+                <a href="#" class="choice-mode choice-mode_active">Ищу работника</a>
+            </div>
+            <div class="header-bottom">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto header-bottom-left">
+                            <a href="#">
+                                <img src="./img/logo.svg" class="main-logo" alt="">
+                                <img src="./img/logo_mobile.svg" class="mobile-logo" alt="">
+                            </a>
+                            <p>Быстрый поиск узкоквалифицированной работы</p>
+                        </div>
+                        <div class="col header-bottom-right">
+                            <a href="#" class="button-text">
+                                <img class="img-svg" src="./img/icon_search.svg" alt="">
+                                <p>Найти<br> работника</p>
+                            </a>
+                            <a href="#" class="button-text">
+                                <img class="img-svg" src="./img/icon_resume.svg" alt="">
+                                <p>Разместить<br> вакансию</p>
+                            </a>
+                            <a href="#" class="button-text">
+                                <img class="img-svg" src="./img/icon_base_success.svg" alt="">
+                                <p>Доступ к базе</p>
+                            </a>
+                            <a href="#" class="button-text login hidden">
+                                <img class="img-svg" src="./img/icon_enter.svg" alt="">
+                                <p>Войти</p>
+                            </a>
+                            <div class="header-profile">
+                                <a href="#" class="button-text profile">
+                                    <img class="img-svg" src="./img/icon_profile.svg" alt="">
+                                    <p>Иван Иванов</p>
+                                </a>
+                                <a href="#" class="button-text logout">
+                                    <img class="img-svg" src="./img/icon_logout.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-scroll">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto header-scroll-left">
+                            <a href="#">
+                                <img src="./img/logo_fixed.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-auto header-scroll-middle">
+                            <div href="#" class="button-text choice-mode prompt">
+                                Ищу работника
+                                <img class="img-svg" src="./img/arrow_down_scroll.svg" alt="">
+                                <div class="prompt__block">
+                                    <a href="#">Ищу работу</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-7 header-scroll-right">
+                            <a href="#" class="button-text favorites">
+                                <img class="img-svg" src="./img/icon_favorites_scroll.svg" alt="">
+                            </a>
+                            <a href="#" class="button-text feedback" data-count="+16">
+                                <img class="img-svg" src="./img/icon_feedback_scroll.svg" alt="">
+                            </a>
+                            <a href="#" class="button-text">
+                                <img class="img-svg" src="./img/icon_search_scroll.svg" alt="">
+                            </a>
+                            <a href="#" class="button-text">
+                                <img class="img-svg" src="./img/icon_resume_scroll.svg" alt="">
+                            </a>
+                            <a href="#" class="button-text">
+                                <img class="img-svg" src="./img/icon_base_success_scroll.svg" alt="">
+                            </a>
+                            <a href="#" class="button-text login hidden">
+                                <img class="img-svg" src="./img/icon_enter_scroll.svg" alt="">
+                            </a>
+                            <div class="header-profile">
+                                <a href="#" class="button-text profile">
+                                    <img class="img-svg" src="./img/icon_profile_scroll.svg" alt="">
+                                    <p>Иван Иванов</p>
+                                </a>
+                                <a href="#" class="button-text logout">
+                                    <img class="img-svg" src="./img/icon_logout_scroll.svg" alt="">
+                                </a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-scroll-mobile">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto header-scroll-mobile-left">
+                            <a href="#" class="button-text">
+                                <img class="img-svg" src="./img/icon_search_scroll.svg" alt="">
+                            </a>
+                            <a href="#" class="button-text">
+                                <img class="img-svg" src="./img/icon_resume_scroll.svg" alt="">
+                            </a>
+                            <a href="#" class="button-text">
+                                <img class="img-svg" src="./img/icon_base_success_scroll.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-auto header-scroll-mobile-right">
+                            <a href="#" class="button-text login hidden">
+                                <img class="img-svg" src="./img/icon_enter_scroll.svg" alt="">
+                            </a>
+                            <div class="header-profile">
+                                <a href="#" class="button-text profile">
+                                    <img class="img-svg" src="./img/icon_profile_scroll.svg" alt="">
+                                    <p>Иван Иванов</p>
+                                </a>
+                                <a href="#" class="button-text logout">
+                                    <img class="img-svg" src="./img/icon_logout_scroll.svg" alt="">
+                                </a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="menu menu-main">
+            <div class="menu-title">
+                <a href="#" class="menu__close">
+                    <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                </a>
+            </div>
+            <div class="menu-content">
+                <div class="menu-content-block menu-content-block__help">
+                    <p class="menu-content-block__title">Помощь</p>
+                    <a href="#">Полезные статьи</a>
+                    <a href="#">Часто задаваемые вопросы</a>
+                    <a href="#">Как пользоваться сервисом</a>
+                </div>
+                <div class="menu-content-block menu-content-block__change">
+                    <p class="menu-content-block__title">Язык</p>
+                    <div class="menu-content-block__points">
+                        <p>Русский</p>
+                        <a href="#" class="button-text change-ref" data-change="lang">
+                            Изменить
+                            <img class="img-svg" src="./img/arrow_change.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="menu-content-block menu-content-block__change">
+                    <p class="menu-content-block__title">Город</p>
+                    <div class="menu-content-block__points">
+                        <p>Нижний Новгород</p>
+                        <a href="#" class="button-text change-ref" data-change="city">
+                            Изменить
+                            <img class="img-svg" src="./img/arrow_change.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu menu-submenu" data-change="lang">
+                <div class="menu-submenu-title">
+                    <div class="menu-submenu-title__block">
+                        <a href="#" class="back-menu">
+                            <img class="img-svg" src="./img/arrow_back_change.svg" alt="">
+                        </a>
+                        <p>Язык</p>
+                    </div>
+                    <a href="#" class="menu__close">
+                        <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                    </a>
+                </div>
+                <div class="menu-content">
+                    <div class="menu-content-block menu-content-block__values">
+                        <a href="#">Русский</a>
+                        <a href="#">Таджикский</a>
+                        <a href="#">Узбекский</a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu menu-submenu" data-change="city">
+                <div class="menu-submenu-title">
+                    <div class="menu-submenu-title__block">
+                        <a href="#" class="back-menu">
+                            <img class="img-svg" src="./img/arrow_back_change.svg" alt="">
+                        </a>
+                        <p>Город</p>
+                    </div>
+                    <a href="#" class="menu__close">
+                        <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                    </a>
+                </div>
+                <div class="menu-content">
+                    <div class="menu-content-block menu-content-block__values">
+                        <a href="#">Нижний Новгород</a>
+                        <a href="#">Москва</a>
+                        <a href="#">Казань</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper-content block-mt-dark-blue block-mb-purple">
+            <div class="container">
+                <h1>Разместить вакансию</h1>
+                <div class="content-page block-mt-dark-blue">
+                    <div class="profile-container">
+                        <div class="row profile-container-row">
+                            <div class="col-3">
+                                <div class="sidebar-profile">
+                                    <a href="#" class="button-text">
+                                        <img class="img-svg" src="./img/icon_profile.svg" alt="">
+                                        Профиль
+                                    </a>
+                                    <a href="#" class="button-text">
+                                        <img class="img-svg" src="./img/icon_my_resumes.svg" alt="">
+                                        Мои вакансии
+                                    </a>
+                                    <a href="#" class="button-text current-ref">
+                                        <img class="img-svg" src="./img/icon_resume.svg" alt="">
+                                        Разместить вакансию
+                                    </a>
+                                    <a href="#" class="button-text base-resume" data-count="6 дн.">
+                                        <img class="img-svg" src="./img/icon_base_success.svg" alt="">
+                                        База резюме
+                                    </a>
+                                    <a href="#" class="button-text feedback" data-count="+16">
+                                        <img class="img-svg" src="./img/icon_feedback.svg" alt="">
+                                        Отклики
+                                    </a>
+                                    <a href="#" class="button-text">
+                                        <img class="img-svg" src="./img/icon_favorites.svg" alt="">
+                                        Избранное
+                                    </a>
+                                    <a href="#" class="button-text">
+                                        <img class="img-svg" src="./img/icon_mailing.svg" alt="">
+                                        Рассылка
+                                    </a>
+                                    <a href="#" class="button-text">
+                                        <img class="img-svg" src="./img/icon_order.svg" alt="">
+                                        Мои заказы
+                                    </a>
+                                    <a href="#" class="button-text">
+                                        <img class="img-svg" src="./img/icon_watch.svg" alt="">
+                                        История заказов
+                                    </a>
+                                    <a href="#" class="button-text">
+                                        <img class="img-svg" src="./img/icon_statistics.svg" alt="">
+                                        Статистика
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-9">
+                                <button type="button" class="other-button button-account">
+                                    <img class="img-svg" src="./img/icon_burger.svg" alt="">
+                                </button>
+                                <div class="post">
+                                    <p>Основная цель резюме – выделить тебя на фоне других соискателей, привлечь внимание работодателя и, в конечном итоге, пригласить тебя на собеседование. А это сделать очень непросто. Представь себе на минуту тот факт, что почтовый ящик твоего потенциального работодателя засыпают десятками и даже сотнями (зависит от размера компании) резюме в день. И на просмотр твоего резюме он потратит максимум 30 секунд – и в течение этого маленького времени решится твоя дальнейшая судьба и дается ответ на главный вопрос работодателя: подходит ли мне этот сотрудник?</p>
+                                    <div class="block-mt-blue">
+                                        <div class="steps-post">
+                                            <a href="#" class="steps-post__step">Шаг 3. Требования к кандидату</a>
+                                            <div class="steps-post__arrow steps-post__arrow_passed">
+                                                <img class="img-svg" src="./img/arrow_step.svg" alt="">
+                                            </div>
+                                            <a href="#" class="steps-post__step steps-post__step_current">Шаг 4. Моя вакансия</a>
+                                            <div class="steps-post__arrow">
+                                                <img class="img-svg" src="./img/arrow_step.svg" alt="">
+                                            </div>
+                                            <a href="#" class="steps-post__step steps-post__step_disabled">Шаг 5. Выбор тарифа</a>
+                                        </div>
+                                        <div class="block-mt-blue">
+                                            <h2>Помощник мастера</h2>
+                                            <div class="brief-information block-mb-blue block-mt-blue">
+                                                <div class="brief-information-block">
+                                                    <div class="brief-information-block__image">
+                                                        <img src="./img/logo_employer.svg" alt="">
+                                                    </div>
+                                                    <div class="brief-information-block__info">
+                                                        <p class="brief-information-block__title">ИП Чапаев</p>
+                                                        <div class="brief-information-block__contacts">
+                                                            <p class="brief-information-block__name">
+                                                                <img src="./img/icon_profile.svg" alt="">
+                                                                Петров Василий Иванович
+                                                            </p>
+                                                            <a href="mailto:chapai@gmail.ru" class="brief-information-block__email">
+                                                               <img src="./img/icon_mail.svg" alt="">
+                                                               chapai@gmail.ru
+                                                            </a>
+                                                            <a href="tel:79876543210" class="brief-information-block__phone">
+                                                                <img src="./img/icon_phone.svg" alt="">
+                                                                +79876543210
+                                                             </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="detailed-description block-mb-blue">
+                                                <h2>Основные данные</h2>
+                                                <div class="detailed-description-block">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="detailed-description-block__name">
+                                                                <p>Предполагаемый доход:</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <div class="detailed-description-block__text">
+                                                                <p>30 000 руб.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="detailed-description-block">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="detailed-description-block__name">
+                                                                <p>Адрес:</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <div class="detailed-description-block__text">
+                                                                <p>г. Нижний Новгород, ул. Ивана Романова, д. 2</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="detailed-description-block">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="detailed-description-block__name">
+                                                                <p>Описание:</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <div class="detailed-description-block__text">
+                                                                <p>Текст о компании – это краткая презентация фирмы. Он рассказывает, чем занимается компания, какие у нее достижения, чем она отличается от конкурентов, как фирма появилась и развивалась. Цель текста о компании – сформировать у читателей доверие к фирме. Когда человек находит сайт компании в интернете, он не может заглянуть в ее офис, лично поговорить с менеджерами. Он не знает, есть ли за яркой вывеской в виде сайта реальная компания. А если и есть, то не обманут ли его? Возможно, компания появилась вчера и завтра закроется? Текст о компании должен развеять сомнения клиента и показать, что фирма надежная, и с ней можно работать. В данном мастер-классе мы расскажем, как правильно написать текст о компании для сайта.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="detailed-description block-mb-blue">
+                                                <h2>Условия работы</h2>
+                                                <div class="detailed-description-block">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="detailed-description-block__name">
+                                                                <p>Тип занятости:</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <div class="detailed-description-block__text">
+                                                                <p>Полный день, гибкий график</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="detailed-description-block">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="detailed-description-block__name">
+                                                                <p>График работы:</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <div class="detailed-description-block__text">
+                                                                <p>Полная занятость, временная работа, частичная занятость</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="detailed-description-block">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="detailed-description-block__name">
+                                                                <p>Авансирование:</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <div class="detailed-description-block__text">
+                                                                <p>Да</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="detailed-description-block">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="detailed-description-block__name">
+                                                                <p>Проживание:</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <div class="detailed-description-block__text">
+                                                                <p>Не предоставляется</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                            <div class="detailed-description block-mb-blue">
+                                                <h2>Требования к кандидату</h2>
+                                                <div class="detailed-description-block">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="detailed-description-block__name">
+                                                                <p>Возраст:</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <div class="detailed-description-block__text">
+                                                                <p>от 20 до 45 лет</p>
+                                                            </div>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                                <div class="detailed-description-block">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="detailed-description-block__name">
+                                                                <p>Стаж работы:</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <div class="detailed-description-block__text">
+                                                                <p>1-3 года</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="detailed-description-block">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="detailed-description-block__name">
+                                                                <p>Отсутствие судимостей:</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <div class="detailed-description-block__text">
+                                                                <p>Да</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="detailed-description-block">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="detailed-description-block__name">
+                                                                <p>Наличие медкнижки:</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-9">
+                                                            <div class="detailed-description-block__text">
+                                                                <p>Да</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="wrapper-map block-mb-blue">
+                                                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A805e8a92d74677c7d0faadbbe38c16ccd54442663acf6a9591c2c8ce6d3b9c9e&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+                                            </div>
+                                            <div class="transfer-steps">
+                                                <div class="transfer-steps__left">
+                                                    <a href="#" class="other-button" id="back-to-edit">Вернуться к редактированию</a>
+                                                    <a href="#" class="other-button" id="save">Сохранить</a>
+                                                </div>
+                                                <div class="transfer-steps__right">
+                                                    <a href="#" class="main-button" id="choose-rate">Выбрать тариф</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-3 footer-left">
+                        <a href="#">
+                            <img src="./img/logo.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-9 footer-right">
+                        <div class="row justify-content-between">
+                            <div class="col-auto footer-pages">
+                                <a href="#" class="footer-right__title">О сервисе</a>
+                                <a href="#" class="footer-pages__link">Полезные статьи</a>
+                                <a href="#" class="footer-pages__link">Часто задаваемые вопросы</a>
+                                <a href="#" class="footer-pages__link">Как пользоваться сервисом</a>
+                            </div>
+                            <div class="col-auto footer-pages">
+                                <a href="#" class="footer-right__title">Соискателям</a>
+                                <a href="#" class="footer-pages__link">Разместить резюме</a>
+                                <a href="#" class="footer-pages__link">Поиск работы</a>
+                                <a href="#" class="footer-pages__link">Работа рядом</a>
+                            </div>
+                            <div class="col-auto footer-pages">
+                                <a href="#" class="footer-right__title">Работодателям</a>
+                                <a href="#" class="footer-pages__link">Разместить вакансию</a>
+                                <a href="#" class="footer-pages__link">Доступ к базе резюме</a>
+                                <a href="#" class="footer-pages__link">Реклама на сайте</a>
+                                <a href="#" class="footer-pages__link">Метка TOP-компании</a>
+                            </div>
+                            <div class="col-auto footer-contacts">
+                                <a href="#" class="footer-right__title">Контакты</a>
+                                <div class="footer-contacts__block">
+                                    <div class="footer-contacts__block__image">
+                                        <img src="./img/icon_phone.svg" alt="">
+                                    </div>
+                                    <div class="footer-contacts__block__content">
+                                        <a href="tel:79876543210">+7 987 654 32 10</a>
+                                        <a href="tel:71234567890">+7 123 456 78 90</a>
+                                    </div>
+                                </div>
+                                <div class="footer-contacts__block">
+                                    <div class="footer-contacts__block__image">
+                                        <img src="./img/icon_mail.svg" alt="">
+                                    </div>
+                                    <div class="footer-contacts__block__content">
+                                        <a href="mailto:info@vaxta-online.ru">info@vaxta-online.ru</a>
+                                    </div>
+                                </div>
+                                <button type="button" class="main-button button-feedback">Обратная связь</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="wrapper-shadow"></div>
+        <div class="modal-form" id="modal-feedback">
+            <div class="close-modal">
+                <a href="#">
+                    Закрыть
+                    <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                </a>
+            </div>
+            <div class="modal-form-content block-mt-yellow">
+                <h2>Обратная связь</h2>
+                <div class="block-mt-blue">
+                    <form action="" name="form-feedback" id="form-feedback" data-ajax="true">
+                        <div class="block-mb-yellow">
+                            <label for="name-feedback">Имя <span>*</span></label>
+                            <input type="text" name="name-feedback" id="name-feedback" pattern="[^-\s0-9`~!@#№$%^&*()_=+\\|\[\]{};:',.<>\/?]+$" placeholder="ВАШЕ ИМЯ" data-required="true">
+                        </div>
+                        <div class="block-mb-yellow">
+                            <label for="phone-feedback">Телефон <span>*</span></label>
+                            <input type="text" name="phone-feedback" id="phone-feedback" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" placeholder="+7" data-required="true">
+                        </div>
+                        <div class="block-mb-yellow">
+                            <label for="email-feedback">E-mail</label>
+                            <input type="text" name="email-feedback" id="email-feedback" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$" placeholder="E-MAIL">
+                        </div>
+                        <div class="block-mb-green">
+                            <label for="message-feedback">Сообщение <span>*</span></label>
+                            <textarea name="message-feedback" id="message-feedback" data-required="true"></textarea>
+                        </div>
+                        <p class="block-mb-green" style="font-size: 14px;"><span>*</span> - поля, обязательные для заполнения</p>
+                        <p class="block-mb-green" style="font-size: 14px;">Нажимая кнопку «Отправить», Вы даёте своё согласие на обработку персональных данных</p>
+                        <div class="wrapper-button-center">
+                            <input type="submit" class="main-button" id="submit-feedback" name="submit-feedback" value="Отправить">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal-form successful-sending">
+            <div class="close-modal">
+                <a href="#">
+                    Закрыть
+                    <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                </a>
+            </div>
+            <div class="modal-form-content block-mt-yellow">
+                <h2>Спасибо за обращение!</h2>
+                <p class="block-mt-blue">Наш менеджер свяжется с Вами в ближайшее время.</p>
+            </div>
+        </div>
+        <div class="modal-form modal-form__account" id="modal-account">
+            <div class="close-modal">
+                <a href="#">
+                    <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                </a>
+            </div>
+            <div class="modal-form-content block-mt-orange">
+                <div class="sidebar-profile">
+                    <a href="#" class="button-text">
+                        <img class="img-svg" src="./img/icon_profile.svg" alt="">
+                        Профиль
+                    </a>
+                    <a href="#" class="button-text">
+                        <img class="img-svg" src="./img/icon_my_resumes.svg" alt="">
+                        Мои вакансии
+                    </a>
+                    <a href="#" class="button-text current-ref">
+                        <img class="img-svg" src="./img/icon_resume.svg" alt="">
+                        Разместить вакансию
+                    </a>
+                    <a href="#" class="button-text base-resume" data-count="6 дн.">
+                        <img class="img-svg" src="./img/icon_base_success.svg" alt="">
+                        База резюме
+                    </a>
+                    <a href="#" class="button-text feedback" data-count="+16">
+                        <img class="img-svg" src="./img/icon_feedback.svg" alt="">
+                        Отклики
+                    </a>
+                    <a href="#" class="button-text">
+                        <img class="img-svg" src="./img/icon_favorites.svg" alt="">
+                        Избранное
+                    </a>
+                    <a href="#" class="button-text">
+                        <img class="img-svg" src="./img/icon_mailing.svg" alt="">
+                        Рассылка
+                    </a>
+                    <a href="#" class="button-text">
+                        <img class="img-svg" src="./img/icon_order.svg" alt="">
+                        Мои заказы
+                    </a>
+                    <a href="#" class="button-text">
+                        <img class="img-svg" src="./img/icon_watch.svg" alt="">
+                        История заказов
+                    </a>
+                    <a href="#" class="button-text">
+                        <img class="img-svg" src="./img/icon_statistics.svg" alt="">
+                        Статистика
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
