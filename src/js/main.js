@@ -303,18 +303,19 @@ if(window.matchMedia('(max-width: 650px)').matches)
 
 // Для input[type="file"]
 
-var inputFile = document.querySelectorAll('input[type="file"]');
+let inputFile = document.querySelectorAll('input[type="file"]');
 
 if(inputFile.length)
 {
     inputFile.forEach(function(input) 
     {
-        input.addEventListener('change', function(e)
-        {
-            var value = input.value;
-            value = value.replace( 'C:\\fakepath\\', '');
-            input.parentElement.querySelector('.file-value').innerHTML = value;
-        });
+      input.addEventListener('change', function(e)
+      {
+          if(input.id === 'load-photo') return;
+          var value = input.value;
+          value = value.replace( 'C:\\fakepath\\', '');
+          input.parentElement.querySelector('.file-value').innerHTML = value;
+      });
     });
 }
 
@@ -896,28 +897,29 @@ if(buttonMailingPhone && buttonMailingEmail)
 
 // Загрузка фото
 
-let canvasAvatar = document.querySelector('#canvas-avatar');
+// let canvasPhoto = document.querySelector('#canvas-photo');
 
-if(canvasAvatar)
+let loadPhoto = document.querySelector('#load-photo');
+let photoBlock = document.querySelector('.load-photo__block');
+
+if(loadPhoto && photoBlock)
 {
-  let ctx = canvasAvatar.getContext("2d");
+  // let ctx = canvasPhoto.getContext("2d");
 
-  let initialAvatar = new Image();
+  // let initialAvatar = new Image();
 
   // Загружаем файл изображения
 
-  initialAvatar.src = "../img/img_substrate.png";
+  // initialAvatar.src = "../img/img_substrate_employee.png";
 
-  initialAvatar.onload = function() 
-  {
-    ctx.drawImage(initialAvatar, 0, 0, 210, 210);
-  }
+  // initialAvatar.onload = function() 
+  // {
+  //   ctx.drawImage(initialAvatar, 0, 0, 210, 210);
+  // }
 
-  let loadAvatar = document.querySelector('#load-avatar');
+  loadPhoto.addEventListener('change', () => {
 
-  loadAvatar.addEventListener('change', () => {
-
-    let file = loadAvatar.files[0];
+    let file = loadPhoto.files[0];
     let img;
     let reader = new FileReader();
   
@@ -927,11 +929,23 @@ if(canvasAvatar)
     function drawNewImage()
     {
       img = new Image();
+      img.src = reader.result;
+
       img.onload = function() 
       {
-        ctx.drawImage(img, 0, 0, 210, 210);
+        // 1 способ через канвас без масштабирования
+        // ctx.drawImage(img, 0, 0, 210, 210);
+
+        // 2 способ через канвас с масштабированием
+        // let scaleFactor = Math.min((canvasPhoto.width / img.width),(canvasPhoto.height / img.height));
+        // ctx.drawImage(img,0,0,img.width*scaleFactor,img.height*scaleFactor);
+        // console.log(canvasPhoto.width, canvasPhoto.height, img.width, img.height, scaleFactor);
+
+        // 3 способ через background
+
+        photoBlock.style.backgroundImage = 'url(' + img.src + ')';
       }
-      img.src = reader.result;
+     
     }
 
   });

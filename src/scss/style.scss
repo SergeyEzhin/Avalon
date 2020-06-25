@@ -581,24 +581,24 @@ select
     right: 20px;
 }
 
-.choices.disabled
+.choices.is-disabled
 {
     pointer-events: none;
 }
 
-.choices.disabled .choices__inner 
+.choices.is-disabled .choices__inner 
 {
     border: solid 2px #dddce8 !important;
     border-color: #dddce8 !important;
     background: transparent;
 }
 
-.choices.disabled .choices__list--single .choices__item
+.choices.is-disabled .choices__list--single .choices__item
 {
     color: #b7b6c3 !important;
 }
 
-.choices.disabled[data-type*=select-one]:after
+.choices.is-disabled[data-type*=select-one]:after
 {
     border-top-color: #dddce8;
 }
@@ -845,6 +845,10 @@ ul
             border-color:#dddce8;
             background: transparent;
         }
+        input[type="radio"]:disabled ~ p
+        {
+            color: #b7b6c3;
+        }
         input[type="radio"]:disabled ~ .radio:before 
         {
             background-color: #b7b6c3;
@@ -980,6 +984,11 @@ textarea:focus
 textarea.field-error 
 {
     border-color: red !important;
+}
+
+textarea:disabled 
+{
+    background-color: transparent;
 }
 
 
@@ -4281,7 +4290,7 @@ input[type="submit"]
     &-row 
     {
         margin-left: -25px;
-        margin-right: -25px;
+        margin-right: -5px;
         .col-3 
         {
             padding-left: 25px;
@@ -4290,7 +4299,7 @@ input[type="submit"]
         .col-9 
         {
             padding-left: 25px;
-            padding-right: 25px;
+            padding-right: 5px;
         }
         .detailed-description
         {
@@ -4762,23 +4771,43 @@ input[type="submit"]
 
 // Страница Подписка 
 
+.row 
+{
+    .block-checkbox, .block-radio
+    {
+        margin-top: 0;
+        margin-bottom: 22px;
+        label 
+        {
+            margin: 0;
+        }
+    }
+    .col-4 
+    {
+        p 
+        {
+            font-size: 15px;
+        }
+    }
+    .col-8 
+    {
+        .col-4 .block-checkbox:last-child, .col-4 .block-radio:last-child,
+        .col-12 .block-checkbox:last-child, .col-12 .block-radio:last-child
+        {
+            margin-bottom: 0;
+        }
+        .col-4 .block-checkbox:first-child,  .col-4 .block-radio:first-child,
+        .col-12 .block-checkbox:first-child, .col-12 .block-radio:first-child 
+        {
+            margin-bottom: 22px;
+        }
+    }
+}
+
 .subscription, .mailing 
 {
     form 
     {
-        .block-checkbox 
-        {
-            margin-top: 0;
-            margin-bottom: 22px;
-        }
-        .col-4 .block-checkbox:last-child 
-        {
-            margin-bottom: 0;
-        }
-        .col-4 .block-checkbox:first-child 
-        {
-            margin-bottom: 22px;
-        }
         .other-position 
         {
             display: flex;
@@ -4908,17 +4937,21 @@ input[type="submit"]
     }
 }
 
-.load-avatar
+.load-photo
 {
     width: 210px;
     height: 263px;
     position: absolute;
+    box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
     right: 0;
     top: 0;
     &__block 
     {
         width: 100%;
         height: 210px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     label 
     {
@@ -5729,6 +5762,142 @@ hr
     label 
     {
         margin: 0;
+    }
+}
+
+
+// Таблица сотрудников
+
+.employees 
+{
+    background-color: #fff;
+    border-top: 4px solid #dddce8;
+    box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+    &-header 
+    {
+        padding: 22px 20px;
+        &-row 
+        {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &-block 
+            {
+                display: block;
+                p 
+                {
+                    font-family: Raleway Bold;
+                    font-size: 14px;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1;
+                    letter-spacing: normal;
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+    &-content 
+    {   
+        &-row 
+        {
+            border-top: 1px solid #dddce8;
+            padding: 22px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &-block 
+            {
+                display: block;
+                p 
+                {
+                    line-height: normal;
+                }
+            }
+        }
+        &-row_new 
+        {
+            background-color: rgba(146, 200, 62, 0.1);
+            .employees-label-column 
+            {
+                p 
+                {
+                    opacity: 1;
+                    pointer-events: auto;
+                }
+            }
+            .employees-button-column 
+            {
+                .add-employee 
+                {
+                    opacity: 1;
+                    pointer-events: auto;
+                }
+            }
+        }
+
+    }
+    &-label-column 
+    {
+        width: 10%;
+        p 
+        {
+            opacity: 0;
+            pointer-events: none;
+            font-family: Montserrat Bold;
+            font-size: 14px;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-hover;
+        }
+    }
+    &-name-column 
+    {
+        width: 22%;
+    }
+    &-button-column 
+    {
+        width: 14%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .add-employee 
+        {
+            opacity: 0;
+            pointer-events: none;
+            padding-bottom: 4px;
+            line-height: normal;
+        }
+    }
+    &-status-column 
+    {
+        width: 14%;
+        text-align: center;
+    }
+    &-email-column 
+    {
+        width: 22%;
+    }
+    &-remove-column 
+    {
+        width: 9%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .remove-employee 
+        {
+            border: 0;
+            display: block;
+        }
+        .remove-employee:hover 
+        {
+            .img-svg path 
+            {
+                fill: $color-hover;
+            }
+        }
     }
 }
 

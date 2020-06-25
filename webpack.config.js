@@ -12,7 +12,8 @@ const pages = ['index', 'articles', 'faq', 'vacancies-list', 'current-article', 
 'current-article-employer', 'service-rules-employer', 'access-account-employer', 'tariffs', 'password-recovery-employer', 'registration-employer', 
 'resumes-list', 'resumes-map', 'current-resume-employer', 'resume-paid', 'current-vacancy-employer', 'favorites-employer', 'my-vacancies',
 'response-employer', 'response-vacancy-employer1', 'response-vacancy-employer2', 'employee-invitation', 'payment-services', 'invoice-payment', 'my-orders',
-'post-vacancy-step1', 'post-vacancy-step2', 'post-vacancy-step3', 'post-vacancy-step4', 'post-vacancy-step5', 'mailing', 'profile-employer', 'profile-editing-employer'];
+'post-vacancy-step1', 'post-vacancy-step2', 'post-vacancy-step3', 'post-vacancy-step4', 'post-vacancy-step5', 'mailing', 'profile-employer', 'profile-editing-employer',
+'profile-preview-employer', 'profile-employee'];
 
 const webpackConfig = {
     context: path.resolve(__dirname, 'src'),
