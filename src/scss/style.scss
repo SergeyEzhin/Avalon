@@ -9,6 +9,8 @@
     position: relative;
 }
 
+// Margin
+
 .block-mt-purple
 {
     margin-top: 96px;
@@ -57,6 +59,58 @@
 .block-mb-orange 
 {
     margin-bottom: 22px;
+}
+
+// Padding 
+
+.block-pt-purple
+{
+    padding-top: 96px;
+}
+.block-pt-dark-blue 
+{
+    padding-top: 75px;
+}
+.block-pt-blue 
+{
+    padding-top: 64px;
+}
+.block-pt-green 
+{
+    padding-top: 43px;
+}
+.block-pt-yellow 
+{
+    padding-top: 32px;
+}
+.block-pt-orange 
+{
+    padding-top: 22px;
+}
+
+.block-pb-purple
+{
+    padding-bottom: 96px;
+}
+.block-pb-dark-blue 
+{
+    padding-bottom: 75px;
+}
+.block-pb-blue 
+{
+    padding-bottom: 64px;
+}
+.block-pb-green 
+{
+    padding-bottom: 43px;
+}
+.block-pb-yellow 
+{
+    padding-bottom: 32px;
+}
+.block-pb-orange 
+{
+    padding-bottom: 22px;
 }
 
 body 
@@ -2130,6 +2184,7 @@ textarea:disabled
     transition: .3s;
 }
 
+
 .card 
 {
     max-width: 295px;
@@ -2342,20 +2397,20 @@ textarea:disabled
     {
         text-align: center;
     }
-    &-content 
-    {
-        .row 
-        {
-            margin-right: -10px;
-            margin-left: -10px;
-        }
-        .col-3
-        {
-            margin-bottom: 22px;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-    }
+    // &-content 
+    // {
+    //     .row 
+    //     {
+    //         margin-right: -10px;
+    //         margin-left: -10px;
+    //     }
+    //     .col-3
+    //     {
+    //         margin-bottom: 22px;
+    //         padding-left: 10px;
+    //         padding-right: 10px;
+    //     }
+    // }
 }
 
 .ref-detail 
@@ -2722,9 +2777,9 @@ button
 {
     &-block 
     {
-        margin-bottom: 33px;
+        // margin-bottom: 33px;
         border-top: solid 2px #dddce8;
-        padding-top: 33px;
+        // padding-top: 33px;
         cursor: pointer;
         .accordion-block-title
         {
@@ -2772,7 +2827,10 @@ button
             line-height: normal;
             letter-spacing: normal;
             color: $color-primary;
-            margin-top: 33px;
+            // margin-top: 33px;
+            overflow: hidden;
+            transition: all .5s;
+            height: 0;
         }
     }
     &-block:nth-child(1)
@@ -2795,7 +2853,9 @@ button
     {
         .accordion-block-desc 
         {
-            display: none;
+            // display: none;
+            // height: 0;
+            margin: 0;
         }
         .accordion-block-title
         {
@@ -2935,37 +2995,37 @@ button
     {
         text-align: center;
     }
-    &-content 
-    {
-        .row 
-        {
-            margin-left: -10px;
-            margin-right: -10px;
-            .col-3 
-            {
-                padding-left: 10px;
-                padding-right: 10px;
-                margin-bottom: 22px;
-            }
-        }
-    }
+    // &-content 
+    // {
+    //     .row 
+    //     {
+    //         margin-left: -10px;
+    //         margin-right: -10px;
+    //         .col-3 
+    //         {
+    //             padding-left: 10px;
+    //             padding-right: 10px;
+    //             margin-bottom: 22px;
+    //         }
+    //     }
+    // }
 }
 
 // Страница Статьи
 
 .all-articles
 {
-    .row 
-    {
-        margin-left: -10px;
-        margin-right: -10px;
-        .col-3 
-        {
-            padding-left: 10px;
-            padding-right: 10px;
-            margin-bottom: 22px;
-        }
-    }
+    // .row 
+    // {
+    //     margin-left: -10px;
+    //     margin-right: -10px;
+    //     .col-3 
+    //     {
+    //         padding-left: 10px;
+    //         padding-right: 10px;
+    //         margin-bottom: 22px;
+    //     }
+    // }
 }
 
 // Страница Часто задаваемые вопросы
@@ -3059,17 +3119,17 @@ button
 .main-search
 {
     // margin-top: 32px;
-    .search-list-row
-    {
-        margin-left: -10px;
-        margin-right: -10px;
-        .col-4
-        {
-            margin-bottom: 22px;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-    }
+    // .search-list-row
+    // {
+    //     margin-left: -10px;
+    //     margin-right: -10px;
+    //     .col-4
+    //     {
+    //         margin-bottom: 22px;
+    //         padding-left: 10px;
+    //         padding-right: 10px;
+    //     }
+    // }
     .search-list-row-companies
     {
         margin-left: -9px;
@@ -3191,13 +3251,11 @@ button
         line-height: 1.57;
         letter-spacing: normal;
         color: $color-disabled;
-        margin-bottom: 32px;
     }
     &__preview 
     {
         font-family: Montserrat Bold;
         font-size: 19px;
-        
         font-stretch: normal;
         font-style: normal;
         line-height: 1.47;
@@ -3461,7 +3519,8 @@ label
 
 .block-tooltip 
 {
-    position: relative;
+    // position: relative;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3470,6 +3529,7 @@ label
     width: 16px;
     height: 16px;
     margin-left: 10px;
+    right: -10px;
     .img-svg 
     {
         max-width: 100%;
@@ -3564,6 +3624,7 @@ label
             margin-right: 20px;
             justify-content: center;
             padding-top: 15px;
+            position: relative;
         }
         .tabs-item_active 
         {
@@ -4773,15 +4834,15 @@ input[type="submit"]
 
 .row 
 {
-    .block-checkbox, .block-radio
-    {
-        margin-top: 0;
-        margin-bottom: 22px;
-        label 
-        {
-            margin: 0;
-        }
-    }
+    // .block-checkbox, .block-radio
+    // {
+    //     margin-top: 0;
+    //     margin-bottom: 22px;
+    //     label 
+    //     {
+    //         margin: 0;
+    //     }
+    // }
     .col-4 
     {
         p 
@@ -5898,6 +5959,20 @@ hr
                 fill: $color-hover;
             }
         }
+    }
+}
+
+// Rows для карточек 
+
+.row-card, .row-article 
+{
+    margin-right: -10px;
+    margin-left: -10px;
+    .col-3, .col-4 
+    {
+       padding-left: 10px;
+       padding-right: 10px;
+       margin-bottom: 22px;
     }
 }
 

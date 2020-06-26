@@ -217,9 +217,31 @@ if(accordionContentBlock.length)
     elem.addEventListener('click', function(e)
     {
       e.preventDefault();
-      elem.classList.toggle('accordion-content-block_hide');
+      // elem.classList.toggle('accordion-content-block_hide');
+      if(elem.classList.contains('accordion-content-block_hide'))
+      {
+        elem.classList.remove('accordion-content-block_hide');
+        let contentBlock = elem.querySelector('.accordion-block-desc');
+        showTextAccordion(contentBlock);
+      }
+      else 
+      {
+        elem.classList.add('accordion-content-block_hide');
+        let contentBlock = elem.querySelector('.accordion-block-desc');
+        hideTextAccordion(contentBlock);
+      }
     })
   });
+}
+
+function showTextAccordion(elem)
+{
+  elem.style.height = elem.scrollHeight + 'px';
+}
+
+function hideTextAccordion(elem)
+{
+  elem.style.height = '0';
 }
     
 
