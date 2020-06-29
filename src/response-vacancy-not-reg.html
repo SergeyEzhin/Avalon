@@ -293,14 +293,14 @@
                                 <div class="block-mt-green block-callback">
                                     <div class="block-radio">
                                         <label for="call-myself">
-                                            <input type="radio" id="call-myself" name="callback" hidden="" checked="">
+                                            <input type="radio" id="call-myself" name="callback" hidden="" checked="" required>
                                             <div class="radio"></div>
                                             Позвоню сам
                                         </label>
                                     </div>
                                     <div class="block-radio">
                                         <label for="call-me">
-                                            <input type="radio" id="call-me" name="callback" hidden="">
+                                            <input type="radio" id="call-me" name="callback" hidden="" required>
                                             <div class="radio"></div>
                                             Позвоните мне
                                         </label>
@@ -314,7 +314,7 @@
                                 </div>
                                 <div class="block-mt-green">
                                     <label for="phone">Телефон <span>*</span></label>
-                                    <input type="text" name="phone" id="phone" placeholder="+7" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" data-required="true">
+                                    <input type="text" name="phone" id="phone" placeholder="+7 (___)___-__-__" data-phone="true" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" data-required="true">
                                 </div>
                                 <div class="block-mt-green">
                                     <label for="message">Сообщение <span>*</span></label>

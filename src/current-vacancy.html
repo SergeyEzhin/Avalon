@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Заголовок для репоста"/>
+    <meta property="og:description" content="Подпись для репоста" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://vk-book.ru/folder-test/share/"/>
+    <meta property="og:image" content="./img/logo.svg"/>
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="1200" /> 
+    <meta property="og:image:height" content="628" />
     <title>Вакансия</title>
 </head>
 <body>
@@ -463,30 +471,32 @@
                         </div>
                     </div>
                     <div class="wrapper-map block-mb-blue">
-                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A805e8a92d74677c7d0faadbbe38c16ccd54442663acf6a9591c2c8ce6d3b9c9e&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+                        <!-- <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A805e8a92d74677c7d0faadbbe38c16ccd54442663acf6a9591c2c8ce6d3b9c9e&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe> -->
+                        <div class="map-api" id="current-vacancy-map"></div>
                     </div>
                     <div class="wrapper-form-share">
-                        <form action="" id="form-share" name="form-share">
+                        <form action="" id="form-share" name="form-share" data-ajax="true">
                             <div class="block-choice-filter">
                                 <p class="block-choice-filter__name">Поделиться:</p>
                                 <div class="block-radio">
                                     <label for="share-vk">
-                                        <input type="radio" id="share-vk" name="way-share" hidden="">
+                                        <input type="radio" id="share-vk" name="way-share" hidden="" required>
                                         <div class="radio"></div>
                                         <img src="./img/share_vk.svg" alt="">
                                     </label>
                                 </div>
                                 <div class="block-radio">
                                     <label for="share-email">
-                                        <input type="radio" id="share-email" name="way-share" hidden="" checked>
+                                        <input type="radio" id="share-email" name="way-share" hidden="" checked required>
                                         <div class="radio"></div>
                                         <p>E-mail</p>
                                     </label>
                                 </div>
                             </div>
                             <div class="block-mt-yellow">
-                               <input type="text" name="email" class="data-email-share" placeholder="E-MAIL">
-                               <input type="submit" class="main-button" name="submit-share" value="Поделиться">
+                               <input type="text" name="email" class="data-email-share" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$" data-required="true" placeholder="E-MAIL">
+                               <input type="submit" class="main-button" name="submit-share-email" value="Поделиться">
+                               <button type="button" class="main-button" id="submit-share-vk" style="display: none;">Поделиться</button>
                             </div>
                         </form>
                     </div>

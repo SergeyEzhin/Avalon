@@ -163,7 +163,8 @@ $('.usage-steps-slider-wrapper').owlCarousel({
 $('.similar-vacancies-slider-wrapper').owlCarousel({
   loop:true, //Зацикливаем слайдер
   items:4,
-  margin:20, //Отступ от элемента справа в 50px
+  margin: 20,
+  // margin:20, //Отступ от элемента справа в 50px
   nav:true, //Отключение навигации
   dots: false,
   autoplay: false, //Автозапуск слайдера
@@ -403,6 +404,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let companiesMap = document.querySelector('#companies-map');
   let favoritesVacanciesMap = document.querySelector('#favorites-vacancies-map');
   let resumesMap = document.querySelector('#resumes-map');
+  let currentVacancyMap = document.querySelector('#current-vacancy-map');
+  let currentCompanyMap = document.querySelector('#current-company-map');
 
   if(vacanciesMap)
   {
@@ -418,14 +421,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     center: [55.751574, 37.573856],
                     zoom: 12,
                     controls: []
-                })
+                });
 
                 let objectManagerData = {
                     "type": "FeatureCollection",
                     "features": []
                 };
 
-                
                 let MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass(
                   '<div class="balloon-header-vacancy"><div class="balloon-header-vacancy__left"><p>$[properties.nameWork]</p><p>$[properties.salary]</p></div><div class="balloon-header-vacancy__right"><a class="button-text" href="current-vacancy.html"><img class="img-svg" src="./img/arrow_balloon.svg"></a></div></div>' +
                   '<div class="balloon-content-vacancy"><div class="balloon-content-vacancy-block"><div class="balloon-content-vacancy-block__image"><img src="$[properties.logoCompany]"></div><p class="balloon-content-vacancy-block__name">$[properties.nameCompany]</p></div></div>'
@@ -467,13 +469,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 let objectManager = new ymaps.ObjectManager({
                     clusterize: true,
                     gridSize: 128,
-                    clusterIconLayout: "default#pieChart",
-                    clusterIconPieChartStrokeWidth: 0
+                    // clusterIconLayout: "default#pieChart",
+                    // clusterIconLayout: "custom#icon",
+                    clusterIconPieChartStrokeWidth: 0,
+                    clusterDisableClickZoom: false
+                });
+
+                objectManager.clusters.options.set({
+                  clusterIconLayout: ymaps.templateLayoutFactory.createClass('<div class="cluster-icon">{{ properties.geoObjects.length }}</div>')
                 });
 
                 map.geoObjects.add(objectManager);
                 objectManager.add(objectManagerData);
-                map.setBounds(map.geoObjects.getBounds());
+                map.setBounds(map.geoObjects.getBounds(), {
+                  checkZoomRange: true
+                });
 
                 objectManager.objects.events.add('click', function (e) {
 
@@ -566,6 +576,10 @@ document.addEventListener('DOMContentLoaded', () => {
                   gridSize: 128,
                   clusterIconLayout: "default#pieChart",
                   clusterIconPieChartStrokeWidth: 0
+              });
+
+              objectManager.clusters.options.set({
+                clusterIconLayout: ymaps.templateLayoutFactory.createClass('<div class="cluster-icon">{{ properties.geoObjects.length }}</div>')
               });
 
               map.geoObjects.add(objectManager);
@@ -668,6 +682,10 @@ document.addEventListener('DOMContentLoaded', () => {
                   clusterIconPieChartStrokeWidth: 0
               });
 
+              objectManager.clusters.options.set({
+                clusterIconLayout: ymaps.templateLayoutFactory.createClass('<div class="cluster-icon">{{ properties.geoObjects.length }}</div>')
+              });
+
               map.geoObjects.add(objectManager);
               objectManager.add(objectManagerData);
               map.setBounds(map.geoObjects.getBounds());
@@ -768,6 +786,10 @@ document.addEventListener('DOMContentLoaded', () => {
                   clusterIconPieChartStrokeWidth: 0
               });
 
+              objectManager.clusters.options.set({
+                clusterIconLayout: ymaps.templateLayoutFactory.createClass('<div class="cluster-icon">{{ properties.geoObjects.length }}</div>')
+              });
+
               map.geoObjects.add(objectManager);
               objectManager.add(objectManagerData);
               map.setBounds(map.geoObjects.getBounds());
@@ -800,6 +822,213 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     });
   }
+  if(currentVacancyMap)
+  {
+    fetch('./php/current-vacancy.php')
+    .then(response => response.json())
+    .then(data => {
+        
+        let apiKey = 'e158c5a2-b717-4552-9b2d-e21a7b7d540b';
+        getScript('https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=' + apiKey, function(){
+            ymaps.ready(function () 
+            {
+
+              let map = new ymaps.Map('current-vacancy-map', {
+                  center: [55.751574, 37.573856],
+                  zoom: 12,
+                  controls: []
+              })
+
+              let objectManagerData = {
+                  "type": "FeatureCollection",
+                  "features": []
+              };
+
+              
+              let MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass(
+                '<div class="balloon-header-vacancy"><div class="balloon-header-vacancy__left"><p>$[properties.nameWork]</p><p>$[properties.salary]</p></div><div class="balloon-header-vacancy__right"><a class="button-text" href="current-vacancy.html"><img class="img-svg" src="./img/arrow_balloon.svg"></a></div></div>' +
+                '<div class="balloon-content-vacancy"><div class="balloon-content-vacancy-block"><div class="balloon-content-vacancy-block__image"><img src="$[properties.logoCompany]"></div><p class="balloon-content-vacancy-block__name">$[properties.nameCompany]</p></div></div>'
+              );
+
+              data.forEach((item, index) => {
+
+                  let featureObj = {
+                      "type": "Feature",
+                      "id": index,
+                      "geometry": {
+                          "type": "Point", 
+                          "coordinates": item.coords
+                      }, 
+                      "properties": {
+                          "nameWork": item.nameWork,
+                          "salary": item.salary,
+                          "nameCompany": item.nameCompany,
+                          "logoCompany":item.logoCompany
+                      },
+                      "options": {
+                          "iconLayout": "default#image",
+                          "iconColor": "#dc3535",
+                          "iconImageHref": "./img/icon_marker_address.svg",
+                          "iconImageSize": [47, 55],
+                          "balloonOffset": [-70, -45],
+                          "balloonContentLayout": MyBalloonContentLayout,
+                          "hideIconOnBalloonOpen": false,
+                          "balloonCloseButton": false,
+                          "zIndex": 100,
+                          "zIndexHover": 500,
+                          "zIndexActive": 1000
+                      }
+                  };
+
+                  objectManagerData["features"].push(featureObj);
+              });
+
+              let objectManager = new ymaps.ObjectManager({
+                  clusterize: true,
+                  gridSize: 128,
+                  clusterIconLayout: "default#pieChart",
+                  clusterIconPieChartStrokeWidth: 0
+              });
+
+              objectManager.clusters.options.set({
+                clusterIconLayout: ymaps.templateLayoutFactory.createClass('<div class="cluster-icon">{{ properties.geoObjects.length }}</div>')
+              });
+
+              map.geoObjects.add(objectManager);
+              objectManager.add(objectManagerData);
+              map.setBounds(map.geoObjects.getBounds());
+
+              objectManager.objects.events.add('click', function (e) {
+
+                  var objectId = e.get('objectId');
+                  if (objectManager.objects.balloon.isOpen(objectId)) {
+                      objectManager.objects.balloon.close();
+                  }
+
+                  map.events.add('click', function (e) 
+                  {
+                    if(e.get('target') === map) 
+                    { 
+                      objectManager.objects.balloon.close();
+                    }
+                  });
+              });
+
+              // objectManager.objects.events.add('balloonopen', function(e) {
+              //     objectManager.objects.setObjectOptions(e.get('target')._objectIdWithOpenBalloon, {'iconImageHref': './img/icon_pin_active.svg', 'zIndex': 1000});
+              // });
+
+              // objectManager.objects.events.add('balloonclose', function(e) {
+              //     objectManager.objects.setObjectOptions(e.get('target')._objectIdWithOpenBalloon, {'iconImageHref': './img/icon_pin.svg', 'zIndex': 250});
+              // });
+
+            })
+        })
+    });
+  }
+  if(currentCompanyMap)
+  {
+    fetch('./php/current-company.php')
+    .then(response => response.json())
+    .then(data => {
+        
+        let apiKey = 'e158c5a2-b717-4552-9b2d-e21a7b7d540b';
+        getScript('https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=' + apiKey, function(){
+            ymaps.ready(function () 
+            {
+
+              let map = new ymaps.Map('current-company-map', {
+                  center: [55.751574, 37.573856],
+                  zoom: 12,
+                  controls: []
+              })
+
+              let objectManagerData = {
+                  "type": "FeatureCollection",
+                  "features": []
+              };
+
+              
+              let MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass(
+                '<div class="balloon-header-companies"><div class="balloon-header-companies__left"><div class="balloon-content-companies-block"><div class="balloon-content-companies-block__image"><img src="$[properties.logoCompany]"></div><p class="balloon-content-companies-block__name">$[properties.nameCompany]</p></div></div><div class="balloon-header-companies__right"><a class="button-text" href="current-company.html"><img class="img-svg" src="./img/arrow_balloon.svg"></a></div></div>'
+              );
+
+              data.forEach((item, index) => {
+
+                  let featureObj = {
+                      "type": "Feature",
+                      "id": index,
+                      "geometry": {
+                          "type": "Point", 
+                          "coordinates": item.coords
+                      }, 
+                      "properties": {
+                          "nameWork": item.nameWork,
+                          "salary": item.salary,
+                          "nameCompany": item.nameCompany,
+                          "logoCompany":item.logoCompany
+                      },
+                      "options": {
+                          "iconLayout": "default#image",
+                          "iconColor": "#dc3535",
+                          "iconImageHref": "./img/icon_marker_address.svg",
+                          "iconImageSize": [47, 55],
+                          "balloonOffset": [-70, -45],
+                          "balloonContentLayout": MyBalloonContentLayout,
+                          "hideIconOnBalloonOpen": false,
+                          "balloonCloseButton": false,
+                          "zIndex": 100,
+                          "zIndexHover": 500,
+                          "zIndexActive": 1000
+                      }
+                  };
+
+                  objectManagerData["features"].push(featureObj);
+              });
+
+              let objectManager = new ymaps.ObjectManager({
+                  clusterize: true,
+                  gridSize: 128,
+                  clusterIconLayout: "default#pieChart",
+                  clusterIconPieChartStrokeWidth: 0
+              });
+
+              objectManager.clusters.options.set({
+                clusterIconLayout: ymaps.templateLayoutFactory.createClass('<div class="cluster-icon">{{ properties.geoObjects.length }}</div>')
+              });
+
+              map.geoObjects.add(objectManager);
+              objectManager.add(objectManagerData);
+              map.setBounds(map.geoObjects.getBounds());
+
+              objectManager.objects.events.add('click', function (e) {
+
+                  var objectId = e.get('objectId');
+                  if (objectManager.objects.balloon.isOpen(objectId)) {
+                      objectManager.objects.balloon.close();
+                  }
+
+                  map.events.add('click', function (e) 
+                  {
+                    if(e.get('target') === map) 
+                    { 
+                      objectManager.objects.balloon.close();
+                    }
+                  });
+              });
+
+              // objectManager.objects.events.add('balloonopen', function(e) {
+              //     objectManager.objects.setObjectOptions(e.get('target')._objectIdWithOpenBalloon, {'iconImageHref': './img/icon_pin_active.svg', 'zIndex': 1000});
+              // });
+
+              // objectManager.objects.events.add('balloonclose', function(e) {
+              //     objectManager.objects.setObjectOptions(e.get('target')._objectIdWithOpenBalloon, {'iconImageHref': './img/icon_pin.svg', 'zIndex': 250});
+              // });
+
+            })
+        })
+    });
+  }
 });
 
 // Форма Поделиться 
@@ -807,6 +1036,8 @@ document.addEventListener('DOMContentLoaded', () => {
 let radioShareVk = document.querySelector('#share-vk');
 let radioShareEmail = document.querySelector('#share-email');
 let dataEmailShare = document.querySelector('.data-email-share');
+let submitShareEmail = document.querySelector('input[name="submit-share-email"]');
+let submitShareVk = document.querySelector('#submit-share-vk');
 
 if(radioShareVk && radioShareEmail)
 {
@@ -814,6 +1045,24 @@ if(radioShareVk && radioShareEmail)
     if(radioShareVk.checked)
     {
       dataEmailShare.style.display = 'none';
+      submitShareEmail.style.display = 'none';
+      submitShareVk.style.display = 'inline-block';
+      submitShareVk.addEventListener('click', (e) =>
+      {
+        e.preventDefault();
+
+        let url_share = location.href;
+        let url_soc = "https://vk.com/share.php?url="+url_share;
+        // размеры окна
+        let width = 800, height = 500;
+        // центруем окно
+        var left = (window.screen.width - width) / 2;
+        var top = (window.screen.height - height) / 2;
+        // открываем окно
+        let social_window = window.open(url_soc, "share_window", "height=" + height + ",width=" + width + ",top=" + top + ",left=" + left);
+        // устанавливаем на окно фокус
+        social_window.focus();
+      });
     }
   });
 
@@ -821,6 +1070,8 @@ if(radioShareVk && radioShareEmail)
     if(radioShareEmail.checked)
     {
       dataEmailShare.style.display = 'inline-block';
+      submitShareEmail.style.display = 'inline-block';
+      submitShareVk.style.display = 'none';
     }
   });
 }
@@ -1276,75 +1527,83 @@ if(buttonAppBanner.length)
 
 const forms = document.querySelectorAll('form[data-ajax="true"]');
 
-forms.forEach(function(form)
+if(forms.length)
 {
-  // Подпишемся на событие отправки
-  form.addEventListener('submit', function(e)
+  validationForms(forms);
+}
+
+function validationForms(forms)
+{
+  forms.forEach(function(form)
   {
-    e.preventDefault();
-  
-    let valid = true;
-
-    // Проверим все текстовые инпуты
-
-    const fieldsText = form.querySelectorAll('input[type="text"][data-required="true"]');
-
-    fieldsText.forEach(function(input)
+    // Подпишемся на событие отправки
+    form.addEventListener('submit', function(e)
     {
-      if(input.style.display === 'none') return;
-      if(!checkFieldText(input)) valid = false;
-    });
-
-    // Проверим все textarea
-
-    const fieldsTextarea = form.querySelectorAll('textarea[data-required="true"]');
-
-    fieldsTextarea.forEach(function(textarea)
-    {
-      if(textarea.style.display === 'none') return;
-      if(!checkFieldTextarea(textarea)) valid = false;
-    });
-
-    // Проверим все чекбоксы
-
-    const fieldsCheckbox = form.querySelectorAll('input[type="checkbox"]');
-
-    fieldsCheckbox.forEach(function(input)
-    {
-      if(input.style.display === 'none') return;
-      if(!checkFieldCheckbox(input)) valid = false;
-    });
-
-    // Проверим все радиокнопки
-
-    const fieldsRadio = form.querySelectorAll('input[type="radio"]');
-
-    fieldsRadio.forEach(function(input)
-    {
-      if(input.style.display === 'none') return;
-      if(!checkFieldCheckbox(input)) valid = false;
-    });
-
-    // Проверка пароля
-
-    const fieldsPassword = form.querySelectorAll('input[type="password"]');
-
-    fieldsPassword.forEach(function(input)
-    {
-      if(input.style.display === 'none') return;
-      if(!checkFieldPassword(input)) valid = false;
-    });
-
+      e.preventDefault();
     
-    // Если были ошибки, не отправляем форму
+      let valid = true;
 
-    if(valid)
-    {
-      sendForm(form);
-    }
+      // Проверим все текстовые инпуты
 
+      const fieldsText = form.querySelectorAll('input[type="text"][data-required="true"]');
+
+      fieldsText.forEach(function(input)
+      {
+        if(input.style.display === 'none') return;
+        if(!checkFieldText(input)) valid = false;
+      });
+
+      // Проверим все textarea
+
+      const fieldsTextarea = form.querySelectorAll('textarea[data-required="true"]');
+
+      fieldsTextarea.forEach(function(textarea)
+      {
+        if(textarea.style.display === 'none') return;
+        if(!checkFieldTextarea(textarea)) valid = false;
+      });
+
+      // Проверим все чекбоксы
+
+      const fieldsCheckbox = form.querySelectorAll('input[type="checkbox"]');
+
+      fieldsCheckbox.forEach(function(input)
+      {
+        if(input.style.display === 'none') return;
+        if(!checkFieldCheckbox(input)) valid = false;
+      });
+
+      // Проверим все радиокнопки
+
+      // const fieldsRadio = form.querySelectorAll('input[type="radio"]');
+
+      // fieldsRadio.forEach(function(input)
+      // {
+      //   if(input.style.display === 'none') return;
+      //   if(!checkFieldCheckbox(input)) valid = false;
+      // });
+
+      // Проверка пароля
+
+      const fieldsPassword = form.querySelectorAll('input[type="password"]');
+
+      fieldsPassword.forEach(function(input)
+      {
+        if(input.style.display === 'none') return;
+        if(!checkFieldPassword(input)) valid = false;
+      });
+
+      
+      // Если были ошибки, не отправляем форму
+
+      if(valid)
+      {
+        sendForm(form);
+      }
+
+    });
   });
-});
+}
 
 function checkFieldText(input) 
 {
@@ -1391,7 +1650,7 @@ function checkFieldPassword(password)
   var value = password.value;
   var result;
 
-  if(value.trim() === '')
+  if(value.trim() === '' || value.trim().split('').length < 6)
   {
     result = false;
   }
@@ -1739,6 +1998,46 @@ if(filterBlockContent.length)
     });
   });
 }
+
+
+ // Добавление маски для поля с телефоном
+
+ function addMask(event)
+ {
+     if( !(event.key == 'ArrowLeft' || event.key == 'ArrowRight' || event.key == 'Backspace' || event.key == 'Tab')) { event.preventDefault() }
+     var mask = '+7 (111) 111-11-11'; // Задаем маску
+  
+     if (/[0-9\+\ \-\(\)]/.test(event.key)) {
+         // Здесь начинаем сравнивать this.value и mask
+         // к примеру опять же
+         var currentString = this.value;
+         var currentLength = currentString.length;
+         if (/[0-9]/.test(event.key)) {
+             if (mask[currentLength] == '1') {
+                 this.value = currentString + event.key;
+             } else {
+                 for (var i=currentLength; i<mask.length; i++) {
+                 if (mask[i] == '1') {
+                     this.value = currentString + event.key;
+                     break;
+                 }
+                 currentString += mask[i];
+                 }
+             }
+         }
+     } 
+ }
+     
+
+ let fieldPhones = document.querySelectorAll('input[data-phone="true"]');
+
+ if(fieldPhones.length)
+ {
+     fieldPhones.forEach(input => 
+     {
+         input.addEventListener('keydown', addMask);
+     });
+ }
 
 
 

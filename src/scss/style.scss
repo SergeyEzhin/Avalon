@@ -2469,6 +2469,7 @@ button
     // width: 400px;
     position: relative;
     border: 0;
+    overflow: hidden;
     &__left 
     {
         // width: 31%;
@@ -3130,43 +3131,47 @@ button
     //         padding-right: 10px;
     //     }
     // }
-    .search-list-row-companies
+   
+}
+
+// Row для компаний
+
+.row-companies
+{
+    margin-left: -9px;
+    margin-right: -9px;
+    .col-6 
     {
-        margin-left: -9px;
-        margin-right: -9px;
-        .col-6 
+        margin-bottom: 22px;
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+    .company-card 
+    {
+        height: 300px;
+        box-shadow: 0 10px 20px 0 rgba(15,20,91,.1);
+        border-radius: 3px;
+        .title-rating 
         {
+            margin-top: 22px;
             margin-bottom: 22px;
-            padding-left: 9px;
-            padding-right: 9px;
+            font-family: Montserrat Bold;
+            font-size: 14px;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: $color-primary;
         }
-        .company-card 
+        .company-card__name
         {
-            height: 300px;
-            box-shadow: 0 10px 20px 0 rgba(15,20,91,.1);
-            border-radius: 3px;
-            .title-rating 
-            {
-                margin-top: 22px;
-                margin-bottom: 22px;
-                font-family: Montserrat Bold;
-                font-size: 14px;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: normal;
-                letter-spacing: normal;
-                color: $color-primary;
-            }
-            .company-card__name
-            {
-                height: 66px;
-                max-height: 66px;
-            }
-            .company-card__desc
-            {
-                height: 96px;
-                max-height: 96px;
-            }
+            height: 66px;
+            max-height: 66px;
+        }
+        .company-card__desc
+        {
+            height: 96px;
+            max-height: 96px;
         }
     }
 }
@@ -3431,12 +3436,12 @@ label
     }
     &-row 
     {
-        margin-left: -37.5px;
-        margin-right: -37.5px;
+        // margin-left: -37.5px;
+        // margin-right: -37.5px;
         .block-advantages-registration
         {
-            padding-left: 37.5px;
-            padding-right: 37.5px;
+            padding-left: 15px;
+            padding-right: 15px;
             &__image 
             {
                 text-align: center;
@@ -3704,8 +3709,8 @@ ymaps[class$='balloon__tail']
 ymaps[class$='pie-chart'] 
 {
     line-height: normal !important;
-    height: 36px !important;
-    width: 36px !important;
+    // height: 36px !important;
+    // width: 36px !important;
     display: flex !important;
     justify-content: !important;
     align-items: !important;
@@ -3740,6 +3745,25 @@ ymaps[class$='pie-chart-content']
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.cluster-icon 
+{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-hover;
+    font-family: Montserrat Regular;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
 }
 
 .balloon-header-vacancy
@@ -4167,6 +4191,10 @@ ymaps[class$='pie-chart-content']
 {
     box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
     height: 420px;
+    div 
+    {
+        height: 100%;
+    }
 }
 
 .wrapper-form-share 
@@ -4233,6 +4261,22 @@ input[type="submit"]
     &-slider 
     {
         position: relative;
+    }
+    .owl-stage-outer 
+    {
+        // margin-left: -10px;
+        // margin-right: -10px;
+        .owl-item 
+        {
+            padding-bottom: 30px;
+            // margin-left: 10px !important;
+            // margin-right: 10px !important;
+            // .card 
+            // {
+            //     max-width: initial;
+            //     width: 100%;
+            // }
+        }
     }
     .navigation-similar-vacancies 
     {
@@ -4426,7 +4470,7 @@ input[type="submit"]
     background-color: #fff;
     border-top: 4px solid #dddce8;
     box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
-    // min-width: 925px;
+    width: 922.5px;
     margin-bottom: 0;
     &-header 
     {
@@ -4624,6 +4668,7 @@ input[type="submit"]
     background-color: #fff;
     border-top: 4px solid #dddce8;
     box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+    width: 922.5px;
     // min-width: 925px;
     &-header 
     {
@@ -4843,13 +4888,13 @@ input[type="submit"]
     //         margin: 0;
     //     }
     // }
-    .col-4 
-    {
-        p 
-        {
-            font-size: 15px;
-        }
-    }
+    // .col-4 
+    // {
+    //     p 
+    //     {
+    //         font-size: 15px;
+    //     }
+    // }
     .col-8 
     {
         .col-4 .block-checkbox:last-child, .col-4 .block-radio:last-child,

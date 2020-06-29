@@ -308,35 +308,35 @@
                                 </button>
                                 <div class="current-profile-data">
                                     <div class="container-compressed">
-                                        <form action="" name="form-current-profile" id="form-current-profile" enctype="multipart/form-data">
+                                        <form action="" name="form-current-profile" data-ajax="true" id="form-current-profile" enctype="multipart/form-data">
                                             <div class="block-mb-yellow">
                                                 <label for="name">Имя <span>*</span></label>
-                                                <input type="text" placeholder="ИМЯ" name="name" id="name" value="Иван" disabled>
+                                                <input type="text" placeholder="ИМЯ" pattern="^[А-Яа-яЁё\s]+$" data-required="true" name="name" id="name" value="Иван" disabled>
                                             </div>
                                             <div class="block-mb-yellow">
                                                 <label for="sername">Фамилия <span>*</span></label>
-                                                <input type="text" placeholder="ФАМИЛИЯ" name="sername" id="sername" value="Иванов" disabled>
+                                                <input type="text" placeholder="ФАМИЛИЯ" pattern="^[А-Яа-яЁё\s]+$" data-required="true" name="sername" id="sername" value="Иванов" disabled>
                                             </div>
                                             <div class="block-mb-yellow">
                                                 <label for="patronymic">Отчество <span>*</span></label>
-                                                <input type="text" placeholder="ОТЧЕСТВО" name="patronymic" id="patronymic" value="Иванович" disabled>
+                                                <input type="text" placeholder="ОТЧЕСТВО" pattern="^[А-Яа-яЁё\s]+$" data-required="true" name="patronymic" id="patronymic" value="Иванович" disabled>
                                             </div>
                                             <div class="block-mb-yellow">
                                                 <label for="birthday">Дата рождения</label>
-                                                <input type="text" name="birthday" id="birthday" placeholder="ВЫБЕРИТЕ ДАТУ" value="26.08.1980" disabled>
+                                                <input type="text" name="birthday" id="birthday" data-picker="datepicker" placeholder="ВЫБЕРИТЕ ДАТУ" value="26.08.1980" disabled>
                                             </div>
                                             <div class="block-gender block-mb-green">
                                                 <p>Пол:</p>
                                                 <div class="block-radio">
                                                     <label for="male">
-                                                        <input type="radio" id="male" name="gender" hidden="" checked disabled>
+                                                        <input type="radio" id="male" name="gender" hidden="" checked disabled required>
                                                         <div class="radio"></div>
                                                         Мужской
                                                     </label>
                                                 </div>
                                                 <div class="block-radio">
                                                     <label for="female">
-                                                        <input type="radio" id="female" name="gender" hidden="" disabled>
+                                                        <input type="radio" id="female" name="gender" hidden="" disabled required>
                                                         <div class="radio"></div>
                                                         Женский
                                                     </label>
@@ -344,11 +344,11 @@
                                             </div>
                                             <div class="block-mb-yellow">
                                                 <label for="phone">Телефон <span>*</span></label>
-                                                <input type="text" name="phone" id="phone" placeholder="+7" value="+79876543210" disabled>
+                                                <input type="text" name="phone" id="phone" value="+79876543210" data-required="true" data-phone="true" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" placeholder="+7 (___)___-__-__" disabled>
                                             </div>
                                             <div class="block-mb-yellow">
                                                 <label for="email">E-mail <span>*</span></label>
-                                                <input type="text" name="email" id="email" placeholder="E-MAIL" value="i_ivanov@mail.ru" disabled>
+                                                <input type="text" name="email" id="email" data-required="true" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$" placeholder="E-MAIL" value="i_ivanov@mail.ru" disabled>
                                             </div>
                                             <div class="block-mb-yellow">
                                                 <label for="address">Адрес</label>
@@ -356,10 +356,10 @@
                                             </div>
                                             <div class="block-mb-green">
                                                 <label for="password">Пароль <span>*</span></label>
-                                                <input type="password" name="password" id="password" placeholder="ПАРОЛЬ" value="111111111111" disabled>
+                                                <input type="password" name="password" id="password" data-required="true" placeholder="ПАРОЛЬ" value="111111111111" disabled>
                                             </div>
                                             <p class="block-mb-green" style="font-size: 14px;"><span>*</span> - поля, обязательные для заполнения</p>
-                                            <a href="#" class="main-button edit-profile">Редактировать</a>
+                                            <a href="#" class="main-button">Редактировать</a>
                                         </form>
                                     </div>
                                 </div>
