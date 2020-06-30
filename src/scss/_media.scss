@@ -20,9 +20,6 @@
         padding-left: 15px;
         padding-right: 15px;
     }
-}
-@media(max-width: 1280px)
-{
     .container 
     {
         max-width: 100%;
@@ -30,6 +27,9 @@
         padding-left: 20px;
         padding-right: 20px;
     }
+}
+@media(max-width: 1280px)
+{
     .quick-job-search-block-content
     {
         padding: 64px 78px 43px;
@@ -70,6 +70,10 @@
     {
         padding-left: 20px;
         padding-right: 20px;
+    }
+    .quick-job-search-block-content form input[type=text]
+    {
+        width: 29.7%;
     }
 }
 @media(max-width: 1180px)
@@ -347,13 +351,17 @@
 }
 @media(max-width: 940px)
 {
-    .quick-job-search-block-content form input[type=text]
-    {
-        width: 25%;
-    }
+    // .quick-job-search-block-content form input[type=text]
+    // {
+    //     width: 25%;
+    // }
     .quick-job-search-block-content
     {
         padding: 43px;
+    }
+    .quick-job-search-block-content .hash-tags
+    {
+        justify-content: center;
     }
 }
 @media(max-width: 900px)
@@ -428,29 +436,29 @@
         flex: 0 0 50%;
         max-width: 50%;
     }
-    .post-resume .steps-post-resume
+    .post .steps-post
     {
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
     }
-    .post-resume .steps-post-resume__arrow
+    .post .steps-post__arrow
     {
         display: none;
     }
-    .post-resume .steps-post-resume__step
+    .post .steps-post__step
     {
         margin-bottom: 32px;
     }
-    .post-resume .steps-post-resume__step:last-child
+    .post .steps-post__step:last-child
     {
         margin-bottom: 0;
     }
-    .post-resume .steps-post-resume__step
+    .post .steps-post__step
     {
         display: none;
     }
-    .post-resume .steps-post-resume__step_current
+    .post .steps-post__step_current
     {
         display: block;
         margin-bottom: 0;
@@ -576,6 +584,28 @@
 }
 @media(max-width: 650px)
 {
+    // .subscription, .mailing 
+    // {
+    //     .row 
+    //     {
+    //         .col-4 
+    //         {
+    //             div:last-child 
+    //             {
+    //                 margin: auto;
+    //             }
+    //         }
+    //     }
+    // }
+    .modal-find .quick-job-search-block .quick-job-search-block-content
+    {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .modal-find 
+    {
+        top: 51px;
+    }
     .profile-container .detailed-description .row
     {
         margin-left: -16px;

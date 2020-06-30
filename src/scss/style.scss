@@ -236,7 +236,6 @@ a:hover
     padding: 15px 30px;
     font-family: Montserrat Bold;
     font-size: 14px;
-    
     font-stretch: normal;
     font-style: normal;
     border: 0;
@@ -856,6 +855,7 @@ ul
         line-height: normal;
         letter-spacing: normal;
         color: $color-primary;
+        margin-bottom: 0 !important;
         .radio 
         {
             display: block;
@@ -917,7 +917,7 @@ ul
             line-height: normal;
             letter-spacing: normal;
             color: $color-primary;
-            width: 80%;
+            width: 76%;
         }
     }
 }
@@ -1394,6 +1394,149 @@ textarea:disabled
     position: absolute;
 }
 
+// Окно поиска города 
+
+.modal-search-city 
+{
+    width: 100%;
+    position: fixed;
+    top: 76px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 100vh;
+    height: auto;
+    overflow-y: auto;
+    z-index: -1;
+    opacity: 0;
+    transition: .3s;
+    background-color: #fff;
+    .close-modal 
+    {
+        padding-top: 15px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .city-search 
+    {
+        form 
+        {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            input 
+            {
+                height: 56px;
+            }
+            input[type="text"]
+            {
+                width: 90.7%;
+            }
+        }
+    }
+    .spell-city-search 
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        form 
+        {
+            input[type="submit"]
+            {
+                transition: .3s;
+                font-family: Montserrat Bold;
+                background: transparent;
+                outline: none;
+                width: auto;
+                height: auto;
+                padding: 0;
+                margin: 0;
+                font-size: 18px;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: normal;
+                color: $color-disabled;
+                border: 0;
+                border-bottom: 4px solid transparent;
+                padding-bottom: 13px;
+            }
+            input[type="submit"]:hover 
+            {
+                color: $color-hover;
+                border-bottom: 4px solid currentColor;
+            }
+        }
+        form.chosen-city 
+        {
+            input[type="submit"]
+            {
+                color: $color-ref !important;
+                border-bottom: 4px solid currentColor !important;
+            }
+        }
+    }
+    .found-cities 
+    {
+        .row-cities 
+        {
+            a 
+            {
+                display: block;
+                border: 0;
+                line-height: 2.25;
+            }
+        }
+    }
+}
+
+.modal-search-city_active 
+{
+    opacity: 1;
+    z-index: 3;
+}
+
+// Поиск
+
+.modal-find 
+{
+    min-height: 100vh;
+    height: auto;
+    overflow-y: auto;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 76px;
+    width: 100%;
+    background-color: #fff;
+    transition: .3s;
+    opacity: 0;
+    z-index: -1;
+    .close-modal 
+    {
+        padding-top: 15px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .quick-job-search-block
+    {
+        box-shadow: none;
+        border-radius: 0;
+        background-color: transparent;
+        .quick-job-search-block-content 
+        {
+            padding-top: 0;
+        }
+    }
+}
+
+.modal-find_active 
+{
+    opacity: 1;
+    z-index: 3;
+}
+
 // Окно подсказки
 
 .prompt 
@@ -1419,8 +1562,9 @@ textarea:disabled
     {
         padding: 18px;
         background-color: #fff;
+        z-index: 5;
         position: absolute;
-        transition: .3s;
+        transition: .1s;
         opacity: 0;
         z-index: -1;
         // width: max-content;
@@ -1458,7 +1602,7 @@ textarea:disabled
 .prompt:hover .prompt__block 
 {
     opacity: 1;
-    z-index: 3;
+    z-index: 5;
 }
 
 // Выбор режима
@@ -1719,12 +1863,23 @@ textarea:disabled
                 align-items: center;
                 margin-left: 30px;
                 border: 0;
+                .img-svg 
+                {
+                    transition: .3s;
+                }
                 .prompt 
                 {
                     &__block 
                     {
                         left: 0;
                     }
+                }
+            }
+            .choice-city_active 
+            {
+                .img-svg 
+                {
+                    transform: rotateX(180deg);
                 }
             }
         }
@@ -2098,12 +2253,12 @@ textarea:disabled
             form 
             {
                 display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
+                justify-content: space-between;
+                // flex-wrap: wrap;
                 position: relative;
                 input[type="text"]
                 {
-                    width: 28%;
+                    width: 28.31%;
                 }
                 input[type="text"]:nth-child(1)
                 {
@@ -2124,12 +2279,11 @@ textarea:disabled
             {
                 display: flex;
                 align-items: center;
-                justify-content: center;
                 flex-wrap: wrap;
                 &__link 
                 {
                     display: flex;
-                    margin-left: 7.5px;
+                    // margin-left: 7.5px;
                     margin-right: 7.5px;
                     margin-bottom: 15px;
                     align-items: center;
@@ -3645,10 +3799,18 @@ label
         &-block 
         {
             // display: none;
+            input[type="text"] 
+            {
+                display: none !important;
+            }
         }
         &-block_active 
         {
             display: block !important;
+            input[type="text"] 
+            {
+                display: block !important;
+            }
         }
     }
 }
@@ -4877,81 +5039,68 @@ input[type="submit"]
 
 // Страница Подписка 
 
-.row 
+
+// .subscription, .mailing 
+// {
+//     .row 
+//     {
+//         .col-4 
+//         {
+//             div:last-child 
+//             {
+//                 margin: 0;
+//             }
+//         }
+//     }
+// }
+
+form 
 {
-    // .block-checkbox, .block-radio
-    // {
-    //     margin-top: 0;
-    //     margin-bottom: 22px;
-    //     label 
-    //     {
-    //         margin: 0;
-    //     }
-    // }
-    // .col-4 
-    // {
-    //     p 
-    //     {
-    //         font-size: 15px;
-    //     }
-    // }
-    .col-8 
+    .other-position 
     {
-        .col-4 .block-checkbox:last-child, .col-4 .block-radio:last-child,
-        .col-12 .block-checkbox:last-child, .col-12 .block-radio:last-child
+        display: flex;
+        align-items: flex-start;
+        .button-text 
         {
-            margin-bottom: 0;
-        }
-        .col-4 .block-checkbox:first-child,  .col-4 .block-radio:first-child,
-        .col-12 .block-checkbox:first-child, .col-12 .block-radio:first-child 
-        {
-            margin-bottom: 22px;
+            margin-left: 12px;
         }
     }
-}
-
-.subscription, .mailing 
-{
-    form 
+    .other-position ~ p
     {
-        .other-position 
+        margin-top: 22px;
+        font-family: Montserrat Regular;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.57;
+        letter-spacing: normal;
+        color: $color-primary;
+    }
+    .mailing-method
+    {
+        &-block 
         {
             display: flex;
-            align-items: flex-start;
-            .button-text 
+            .block-radio:nth-child(2)
             {
-                margin-left: 12px;
+                margin-left: 40px;
             }
         }
-        .other-position ~ p
+        &-option 
         {
-            margin-top: 22px;
-            font-family: Montserrat Regular;
-            font-size: 14px;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: 1.57;
-            letter-spacing: normal;
-            color: $color-primary;
-        }
-        .mailing-method
-        {
-            &-block 
+            .container-compressed 
             {
-                display: flex;
-                .block-radio:nth-child(2)
-                {
-                    margin-left: 40px;
-                }
-            }
-            &-option 
-            {
-                .container-compressed 
+                display: none;
+                input 
                 {
                     display: none;
                 }
-                .container-compressed.mailing-method-option_selected
+            }
+            .container-compressed.mailing-method-option_selected
+            {
+                display: block;
+                input 
                 {
                     display: block;
                 }
@@ -4959,6 +5108,7 @@ input[type="submit"]
         }
     }
 }
+
 
 // Страница Разместить резюме - Шаг 1
 
@@ -5106,7 +5256,7 @@ input[type="submit"]
 .block-post
 {
     border-top: 2px solid #DDDCE8;
-    padding-top: 43px;
+    // padding-top: 43px;
     &__name 
     {
         font-family: Raleway Regular;
@@ -5118,11 +5268,11 @@ input[type="submit"]
         letter-spacing: normal;
         color: $color-primary;
     }
-    .block-radio, .block-checkbox
-    {
-        margin-top: 0;
-        margin-bottom: 22px;
-    }
+    // .block-radio, .block-checkbox
+    // {
+    //     margin-top: 0;
+    //     margin-bottom: 22px;
+    // }
     .block-callback
     {
         flex-direction: column;

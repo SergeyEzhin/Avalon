@@ -12,21 +12,17 @@
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto header-top-left">
-                            <div href="#" class="choice-lang prompt">
+                            <div class="choice-lang prompt">
                                 RU 
                                 <img class="img-svg" src="./img/arrow_down.svg" alt="">
                                 <div class="prompt__block">
                                     <a href="#">EN</a>
                                 </div>
                             </div>
-                            <div href="#" class="choice-city prompt">
+                            <a href="#" class="choice-city">
                                 Нижний Новгород 
                                 <img class="img-svg" src="./img/arrow_down.svg" alt="">
-                                <div class="prompt__block">
-                                    <a href="#">Казань</a>
-                                    <a href="#">Москва</a>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-auto header-top-middle">
                             <a href="#" class="choice-mode choice-mode_active">Ищу работу</a>
@@ -92,11 +88,11 @@
                             <p>Быстрый поиск узкоквалифицированной работы</p>
                         </div>
                         <div class="col-auto header-bottom-right">
-                            <a href="#" class="button-text search-work">
+                            <a href="#" class="button-text find-ref">
                                 <img class="img-svg" src="./img/icon_search.svg" alt="">
                                 <p>Найти работу</p>
                             </a>
-                            <a href="#" class="button-text release-resume">
+                            <a href="#" class="button-text">
                                 <img class="img-svg" src="./img/icon_resume.svg" alt="">
                                 <p>Разместить резюме</p>
                             </a>
@@ -134,14 +130,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 header-scroll-right">
+                        <div class="col-7 header-scroll-right">
                             <a href="#" class="button-text favorites">
                                 <img class="img-svg" src="./img/icon_favorites_scroll.svg" alt="">
                             </a>
                             <a href="#" class="button-text feedback" data-count="+16">
                                 <img class="img-svg" src="./img/icon_feedback_scroll.svg" alt="">
                             </a>
-                            <a href="#" class="button-text search-work">
+                            <a href="#" class="button-text find-ref">
                                 <img class="img-svg" src="./img/icon_search_scroll.svg" alt="">
                             </a>
                             <a href="#" class="button-text release-resume">
@@ -167,7 +163,7 @@
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto header-scroll-mobile-left">
-                            <a href="#" class="button-text search-work">
+                            <a href="#" class="button-text find-ref">
                                 <img class="img-svg" src="./img/icon_search_scroll.svg" alt="">
                             </a>
                             <a href="#" class="button-text release-resume">
@@ -385,18 +381,20 @@
                                 </div>
                             </div>
                             <div class="col-9">
-                                <div class="additional-search">
-                                    <a href="#" class="button-text">
-                                        <img class="img-svg" src="./img/icon_list.svg" alt="">
-                                        Показать списком
-                                    </a>
-                                    <button type="button" class="other-button button-filter">
-                                        <img class="img-svg" src="./img/icon_option.svg" alt="">
-                                    </button>
-                                    <form action="" id="quick-search">
-                                        <input type="text" name="q" placeholder="Поиск по компаниям">
-                                        <input type="submit" name="submit-quick-search" value="" style="background-image: url(./img/bg-submit-quick-search.svg);">
-                                    </form>
+                                <div class="block-mb-yellow">
+                                    <div class="additional-search">
+                                        <a href="#" class="button-text">
+                                            <img class="img-svg" src="./img/icon_list.svg" alt="">
+                                            Показать списком
+                                        </a>
+                                        <button type="button" class="other-button button-filter">
+                                            <img class="img-svg" src="./img/icon_option.svg" alt="">
+                                        </button>
+                                        <form action="" id="quick-search">
+                                            <input type="text" name="q" placeholder="Поиск по компаниям">
+                                            <input type="submit" name="submit-quick-search" value="" style="background-image: url(./img/bg-submit-quick-search.svg);">
+                                        </form>
+                                    </div>
                                 </div>
                                 <div class="main-search">
                                     <div class="map-api" id="companies-map"></div>
@@ -626,6 +624,241 @@
                             <input type="submit" name="submit-filter" class="main-button" value="Применить фильтр">
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal-form" id="detailed-search">
+            <div class="close-modal">
+                <a href="#">
+                    <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                </a>
+            </div>
+            <div class="modal-form-content block-mt-orange">
+                <form action="" name="form-detailed-search">
+                    <input type="text" name="position" placeholder="ДОЛЖНОСТЬ">
+                    <input type="text" name="city" placeholder="ГОРОД">
+                    <input type="text" name="salary" placeholder="ЗАРПЛАТА">
+                    <div class="block-mt-green">
+                        <div class="wrapper-button-center">
+                            <input type="submit" class="main-button" name="submit-detailed-search" value="Найти" style="width: 100%;">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal-search-city">
+            <div class="container">
+                <div class="close-modal">
+                    <a href="#">
+                        Закрыть
+                        <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                    </a>
+                </div>
+                <div class="block-mt-yellow">
+                    <div class="city-search">
+                        <form action="" name="city-search" id="city-search" data-ajax-search="true">
+                            <input type="text" name="city" placeholder="ПОИСК ПО ГОРОДАМ">
+                            <input type="submit" class="main-button" name="submit-city-search" value="Найти">
+                        </form>
+                    </div>
+                </div>
+                <div class="block-mt-green">
+                    <div class="spell-city-search">
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="а" hidden>
+                            <input type="submit" name="submit-letter-search" value="А">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="б" hidden>
+                            <input type="submit" name="submit-letter-search" value="Б">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="в" hidden>
+                            <input type="submit" name="submit-letter-search" value="В">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="г" hidden>
+                            <input type="submit" name="submit-letter-search" value="Г">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="д" hidden>
+                            <input type="submit" name="submit-letter-search" value="Д">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="е" hidden>
+                            <input type="submit" name="submit-letter-search" value="Е">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ё" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ё">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ж" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ж">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="з" hidden>
+                            <input type="submit" name="submit-letter-search" value="З">
+                        </form>
+                        <form action="" class="chosen-city" data-ajax-search="true">
+                            <input type="text" name="letter" value="и" hidden>
+                            <input type="submit" name="submit-letter-search" value="И">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="к" hidden>
+                            <input type="submit" name="submit-letter-search" value="К">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="л" hidden>
+                            <input type="submit" name="submit-letter-search" value="Л">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="м" hidden>
+                            <input type="submit" name="submit-letter-search" value="М">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="н" hidden>
+                            <input type="submit" name="submit-letter-search" value="Н">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="о" hidden>
+                            <input type="submit" name="submit-letter-search" value="О">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="п" hidden>
+                            <input type="submit" name="submit-letter-search" value="П">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="р" hidden>
+                            <input type="submit" name="submit-letter-search" value="Р">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="с" hidden>
+                            <input type="submit" name="submit-letter-search" value="С">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="т" hidden>
+                            <input type="submit" name="submit-letter-search" value="Т">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="у" hidden>
+                            <input type="submit" name="submit-letter-search" value="У">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ф" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ф">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="х" hidden>
+                            <input type="submit" name="submit-letter-search" value="Х">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ц" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ц">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ч" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ч">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ш" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ш">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="щ" hidden>
+                            <input type="submit" name="submit-letter-search" value="Щ">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="э" hidden>
+                            <input type="submit" name="submit-letter-search" value="Э">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ю" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ю">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="я" hidden>
+                            <input type="submit" name="submit-letter-search" value="Я">
+                        </form>
+                    </div>
+                </div>
+                <div class="block-mt-dark-blue block-mb-blue">
+                    <div class="found-cities">
+                        <div class="row row-cities">
+                            <div class="col-3">
+                                <a href="#">Ибреси</a>
+                                <a href="#">Ивангород</a>
+                                <a href="#">Иваново</a>
+                                <a href="#">Ивановская</a>
+                                <a href="#">Ивдель</a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#">Ибреси</a>
+                                <a href="#">Ивангород</a>
+                                <a href="#">Иваново</a>
+                                <a href="#">Ивановская</a>
+                                <a href="#">Ивдель</a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#">Ибреси</a>
+                                <a href="#">Ивангород</a>
+                                <a href="#">Иваново</a>
+                                <a href="#">Ивановская</a>
+                                <a href="#">Ивдель</a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#">Ибреси</a>
+                                <a href="#">Ивангород</a>
+                                <a href="#">Иваново</a>
+                                <a href="#">Ивановская</a>
+                                <a href="#">Ивдель</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-find">
+            <div class="container">
+                <div class="close-modal">
+                    <a href="#">
+                        Закрыть
+                        <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                    </a>
+                </div>
+                <div class="block-mt-yellow">
+                    <div class="quick-job-search">     
+                        <div class="quick-job-search-block">
+                            <div class="quick-job-search-block-content"> 
+                                <form action="" name="quick-search-form">
+                                    <input type="text" name="position" placeholder="ДОЛЖНОСТЬ">
+                                    <input type="text" name="city" placeholder="ГОРОД">
+                                    <input type="text" name="salary" placeholder="ЗАРПЛАТА">
+                                    <div class="input-search-mobile">
+                                        <input type="text" name="resume" placeholder="ПОИСК ВАКАНСИИ">
+                                        <button stype="button" class="button-detailed-search">
+                                            <img src="./img/icon_option.svg" alt="">
+                                        </button>
+                                        </div>
+                                    <input type="submit" name="submit-quick-search-form" class="main-button" value="Найти">
+                                </form>
+                                <div class="wrapper-button-center block-mt-green">
+                                    <a href="#" class="button-text detailed-search">
+                                        <img class="img-svg" src="./img/icon_search.svg" alt="">
+                                        Расширенный поиск
+                                    </a>
+                                </div>
+                                <div class="hash-tags block-mt-dark-blue">
+                                    <a href="#" class="hash-tags__link"># работа рядом <span>(5)</span></a>
+                                    <a href="#" class="hash-tags__link"># работа прямо сейчас <span>(3)</span></a>
+                                    <a href="#" class="hash-tags__link"># работа завтра <span>(18)</span></a>
+                                    <a href="#" class="hash-tags__link"># работа через месяц <span>(11)</span></a>
+                                    <a href="#" class="hash-tags__link"># сезонная работа <span>(8)</span></a>
+                                    <a href="#" class="hash-tags__link"># постоянная работа <span>(8)</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

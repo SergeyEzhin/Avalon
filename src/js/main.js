@@ -1549,7 +1549,13 @@ function validationForms(forms)
 
       fieldsText.forEach(function(input)
       {
-        if(input.style.display === 'none') return;
+        // if(input.style.display === 'none') console.log('yes');
+        if(getComputedStyle(input, null).display === 'none' || input.disabled)
+        {
+          input.classList.remove('field-error');
+          return;
+        }
+
         if(!checkFieldText(input)) valid = false;
       });
 
@@ -1559,19 +1565,24 @@ function validationForms(forms)
 
       fieldsTextarea.forEach(function(textarea)
       {
-        if(textarea.style.display === 'none') return;
+        if(getComputedStyle(textarea, null).display === 'none' || textarea.disabled)
+        {
+          textarea.classList.remove('field-error');
+          return;
+        }
+
         if(!checkFieldTextarea(textarea)) valid = false;
       });
 
       // Проверим все чекбоксы
 
-      const fieldsCheckbox = form.querySelectorAll('input[type="checkbox"]');
+      // const fieldsCheckbox = form.querySelectorAll('input[type="checkbox"]');
 
-      fieldsCheckbox.forEach(function(input)
-      {
-        if(input.style.display === 'none') return;
-        if(!checkFieldCheckbox(input)) valid = false;
-      });
+      // fieldsCheckbox.forEach(function(input)
+      // {
+      //   if(input.style.display === 'none') return;
+      //   if(!checkFieldCheckbox(input)) valid = false;
+      // });
 
       // Проверим все радиокнопки
 
@@ -1589,7 +1600,12 @@ function validationForms(forms)
 
       fieldsPassword.forEach(function(input)
       {
-        if(input.style.display === 'none') return;
+        if(getComputedStyle(input, null).display === 'none' || input.disabled)
+        {
+          input.classList.remove('field-error');
+          return;
+        }
+
         if(!checkFieldPassword(input)) valid = false;
       });
 
@@ -1792,11 +1808,14 @@ if(responses.length)
 
 if(window.matchMedia('(max-width: 650px)').matches)
 {
-  let submitButton = document.querySelector('.quick-job-search-block-content form input[type="submit"]');
+  let submitButton = document.querySelectorAll('input[name="submit-quick-search-form"]');
 
-  if(submitButton)
+  if(submitButton.length)
   {
-    submitButton.value = ''
+    submitButton.forEach(button => 
+    {
+      button.value = '';
+    });
   }
 }
 
@@ -2000,44 +2019,116 @@ if(filterBlockContent.length)
 }
 
 
- // Добавление маски для поля с телефоном
+// Добавление маски для поля с телефоном
 
- function addMask(event)
- {
-     if( !(event.key == 'ArrowLeft' || event.key == 'ArrowRight' || event.key == 'Backspace' || event.key == 'Tab')) { event.preventDefault() }
-     var mask = '+7 (111) 111-11-11'; // Задаем маску
-  
-     if (/[0-9\+\ \-\(\)]/.test(event.key)) {
-         // Здесь начинаем сравнивать this.value и mask
-         // к примеру опять же
-         var currentString = this.value;
-         var currentLength = currentString.length;
-         if (/[0-9]/.test(event.key)) {
-             if (mask[currentLength] == '1') {
-                 this.value = currentString + event.key;
-             } else {
-                 for (var i=currentLength; i<mask.length; i++) {
-                 if (mask[i] == '1') {
-                     this.value = currentString + event.key;
-                     break;
-                 }
-                 currentString += mask[i];
-                 }
-             }
-         }
-     } 
- }
+function addMask(event)
+{
+  if( !(event.key == 'ArrowLeft' || event.key == 'ArrowRight' || event.key == 'Backspace' || event.key == 'Tab')) { event.preventDefault() }
+  var mask = '+7 (111) 111-11-11'; // Задаем маску
+
+  if (/[0-9\+\ \-\(\)]/.test(event.key)) {
+      // Здесь начинаем сравнивать this.value и mask
+      // к примеру опять же
+      var currentString = this.value;
+      var currentLength = currentString.length;
+      if (/[0-9]/.test(event.key)) {
+          if (mask[currentLength] == '1') {
+              this.value = currentString + event.key;
+          } else {
+              for (var i=currentLength; i<mask.length; i++) {
+              if (mask[i] == '1') {
+                  this.value = currentString + event.key;
+                  break;
+              }
+              currentString += mask[i];
+              }
+        }
+      }
+  } 
+}
      
 
- let fieldPhones = document.querySelectorAll('input[data-phone="true"]');
+let fieldPhones = document.querySelectorAll('input[data-phone="true"]');
 
- if(fieldPhones.length)
- {
-     fieldPhones.forEach(input => 
-     {
-         input.addEventListener('keydown', addMask);
-     });
- }
+if(fieldPhones.length)
+{
+    fieldPhones.forEach(input => 
+    {
+        input.addEventListener('keydown', addMask);
+    });
+}
+
+// Окно поиска города 
+
+let choiceCity = document.querySelector('.header-top-left .choice-city');
+let modalSearchCity = document.querySelector('.modal-search-city');
+
+if(choiceCity && modalSearchCity) 
+{
+  choiceCity.addEventListener('click', (e) => 
+  {
+    e.preventDefault();
+    document.body.classList.toggle('disabled');
+    choiceCity.classList.toggle('choice-city_active');
+    modalSearchCity.classList.toggle('modal-search-city_active');
+
+    modalSearchCity.querySelector('.close-modal a').addEventListener('click', (e) => 
+    {
+      e.preventDefault();
+      document.body.classList.remove('disabled');
+      choiceCity.classList.remove('choice-city_active');
+      modalSearchCity.classList.remove('modal-search-city_active');
+    });
+  });
+}
+
+// Окно поиска 
+
+let findRef = document.querySelectorAll('.find-ref');
+let modalFind = document.querySelector('.modal-find');
+
+if(modalFind && findRef.length)
+{
+  findRef.forEach(ref => 
+  {
+    ref.addEventListener('click', (e) => 
+    {
+      e.preventDefault();
+
+      if(window.matchMedia('(min-width: 651px)').matches)
+      {
+        let headerHeight = document.querySelector('.header').clientHeight;
+        let scroll = window.pageYOffset || document.documentElement.scrollTop;
+  
+        if(scroll >= headerHeight)
+        {
+          modalFind.style.top = '60px';
+        }
+        else if(scroll === 0)
+        {
+          modalFind.style.top = '76px';
+        }
+        else 
+        {
+          modalFind.style.top = '0px';
+        }
+      }
+
+      document.body.classList.add('disabled');
+      modalFind.classList.add('modal-find_active');
+  
+      modalFind.querySelector('.close-modal a').addEventListener('click', (e) => 
+      {
+        e.preventDefault();
+        modalFind.classList.remove('modal-find_active');
+        document.body.classList.remove('disabled');
+      });
+    });
+  });
+}
+
+
+
 
 
 

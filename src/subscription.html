@@ -12,21 +12,17 @@
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto header-top-left">
-                            <div href="#" class="choice-lang prompt">
+                            <div class="choice-lang prompt">
                                 RU 
                                 <img class="img-svg" src="./img/arrow_down.svg" alt="">
                                 <div class="prompt__block">
                                     <a href="#">EN</a>
                                 </div>
                             </div>
-                            <div href="#" class="choice-city prompt">
+                            <a href="#" class="choice-city">
                                 Нижний Новгород 
                                 <img class="img-svg" src="./img/arrow_down.svg" alt="">
-                                <div class="prompt__block">
-                                    <a href="#">Казань</a>
-                                    <a href="#">Москва</a>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-auto header-top-middle">
                             <a href="#" class="choice-mode choice-mode_active">Ищу работу</a>
@@ -92,11 +88,11 @@
                             <p>Быстрый поиск узкоквалифицированной работы</p>
                         </div>
                         <div class="col-auto header-bottom-right">
-                            <a href="#" class="button-text search-work">
+                            <a href="#" class="button-text find-ref">
                                 <img class="img-svg" src="./img/icon_search.svg" alt="">
                                 <p>Найти работу</p>
                             </a>
-                            <a href="#" class="button-text release-resume">
+                            <a href="#" class="button-text">
                                 <img class="img-svg" src="./img/icon_resume.svg" alt="">
                                 <p>Разместить резюме</p>
                             </a>
@@ -134,14 +130,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 header-scroll-right">
+                        <div class="col-7 header-scroll-right">
                             <a href="#" class="button-text favorites">
                                 <img class="img-svg" src="./img/icon_favorites_scroll.svg" alt="">
                             </a>
                             <a href="#" class="button-text feedback" data-count="+16">
                                 <img class="img-svg" src="./img/icon_feedback_scroll.svg" alt="">
                             </a>
-                            <a href="#" class="button-text search-work">
+                            <a href="#" class="button-text find-ref">
                                 <img class="img-svg" src="./img/icon_search_scroll.svg" alt="">
                             </a>
                             <a href="#" class="button-text release-resume">
@@ -167,7 +163,7 @@
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto header-scroll-mobile-left">
-                            <a href="#" class="button-text search-work">
+                            <a href="#" class="button-text find-ref">
                                 <img class="img-svg" src="./img/icon_search_scroll.svg" alt="">
                             </a>
                             <a href="#" class="button-text release-resume">
@@ -309,139 +305,175 @@
                                 <div class="subscription">
                                     <p>Наши пользователи уже оценили опцию «Рассылка вакансий». С ее помощью легко и удобно узнавать об обновлениях вакансий в интересующих вас сферах. Не обязательно несколько раз в день просматривать изменения на сайте — достаточно открыть письмо с рассылкой. Теперь удобнее стал шаблон составления подписки на рассылку и изменилось ее оформление!</p>
                                     <div class="block-mt-dark-blue">
-                                        <form action="" id="form-subscribe" name="form-subscribe">
+                                        <form action="" id="form-subscribe" name="form-subscribe" data-ajax="true">
                                             <h2>Выберите желаемые должности</h2>
                                             <div class="row block-mt-green">
                                                 <div class="col-4">
-                                                    <div class="block-checkbox">
-                                                        <label for="handyman">
-                                                            <input type="checkbox" id="handyman" name="handyman" hidden="">
-                                                            <div class="check"></div>
-                                                            <p>Разнорабочий</p>
-                                                        </label>
+                                                    <div class="block-mb-orange">
+                                                        <div class="block-checkbox">
+                                                            <label for="handyman">
+                                                                <input type="checkbox" id="handyman" name="handyman" hidden="">
+                                                                <div class="check"></div>
+                                                                <p>Разнорабочий</p>
+                                                            </label>
+                                                        </div>
                                                     </div>
-                                                    <div class="block-checkbox">
-                                                        <label for="loader">
-                                                            <input type="checkbox" id="loader" name="loader" hidden="">
-                                                            <div class="check"></div>
-                                                            <p>Грузчик</p>
-                                                        </label>
+                                                    <div class="block-mb-orange">
+                                                        <div class="block-checkbox">
+                                                            <label for="loader">
+                                                                <input type="checkbox" id="loader" name="loader" hidden="">
+                                                                <div class="check"></div>
+                                                                <p>Грузчик</p>
+                                                            </label>
+                                                        </div>
                                                     </div>
-                                                    <div class="block-checkbox">
-                                                        <label for="production-worker">
-                                                            <input type="checkbox" id="production-worker" name="production-worker" hidden="">
-                                                            <div class="check"></div>
-                                                            <p>Рабочий на производство</p>
-                                                        </label>
+                                                    <div class="block-mb-orange">
+                                                        <div class="block-checkbox">
+                                                            <label for="production-worker">
+                                                                <input type="checkbox" id="production-worker" name="production-worker" hidden="">
+                                                                <div class="check"></div>
+                                                                <p>Рабочий на производство</p>
+                                                            </label>
+                                                        </div>
                                                     </div>
-                                                    <div class="block-checkbox">
-                                                        <label for="packer">
-                                                            <input type="checkbox" id="packer" name="packer" hidden="">
-                                                            <div class="check"></div>
-                                                            <p>Фасовщик</p>
-                                                        </label>
+                                                    <div class="block-mb-orange">
+                                                        <div class="block-checkbox">
+                                                            <label for="packer">
+                                                                <input type="checkbox" id="packer" name="packer" hidden="">
+                                                                <div class="check"></div>
+                                                                <p>Фасовщик</p>
+                                                            </label>
+                                                        </div>
                                                     </div>
-                                                    <div class="block-checkbox">
-                                                        <label for="washer">
-                                                            <input type="checkbox" id="washer" name="washer" hidden="">
-                                                            <div class="check"></div>
-                                                            <p>Мойщик</p>
-                                                        </label>
+                                                    <div class="block-mb-orange">
+                                                        <div class="block-checkbox">
+                                                            <label for="washer">
+                                                                <input type="checkbox" id="washer" name="washer" hidden="">
+                                                                <div class="check"></div>
+                                                                <p>Мойщик</p>
+                                                            </label>
+                                                        </div>
                                                     </div>
-                                                    <div class="block-checkbox">
-                                                        <label for="сompositor">
-                                                            <input type="checkbox" id="сompositor" name="сompositor" hidden="">
-                                                            <div class="check"></div>
-                                                            <p>Наборщик</p>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="block-checkbox">
-                                                        <label for="packer2">
-                                                            <input type="checkbox" id="packer2" name="packer2" hidden="">
-                                                            <div class="check"></div>
-                                                            <p>Упаковщик</p>
-                                                        </label>
-                                                    </div>
-                                                    <div class="block-checkbox">
-                                                        <label for="sticker">
-                                                            <input type="checkbox" id="sticker" name="sticker" hidden="">
-                                                            <div class="check"></div>
-                                                            <p>Стикеровщик</p>
-                                                        </label>
-                                                    </div>
-                                                    <div class="block-checkbox">
-                                                        <label for="cleaner">
-                                                            <input type="checkbox" id="cleaner" name="cleaner" hidden="">
-                                                            <div class="check"></div>
-                                                            <p>Уборщик</p>
-                                                        </label>
-                                                    </div>
-                                                    <div class="block-checkbox">
-                                                        <label for="cashier">
-                                                            <input type="checkbox" id="cashier" name="cashier" hidden="">
-                                                            <div class="check"></div>
-                                                            <p>Кассир</p>
-                                                        </label>
-                                                    </div>
-                                                    <div class="block-checkbox">
-                                                        <label for="merchandiser">
-                                                            <input type="checkbox" id="merchandiser" name="merchandiser" hidden="">
-                                                            <div class="check"></div>
-                                                            <p>Мерчендайзер</p>
-                                                        </label>
-                                                    </div>
-                                                    <div class="block-checkbox">
-                                                        <label for="seller">
-                                                            <input type="checkbox" id="seller" name="seller" hidden="">
-                                                            <div class="check"></div>
-                                                            <p>Продавец</p>
-                                                        </label>
+                                                    <div class="block-mb-orange">
+                                                        <div class="block-checkbox">
+                                                            <label for="сompositor">
+                                                                <input type="checkbox" id="сompositor" name="сompositor" hidden="">
+                                                                <div class="check"></div>
+                                                                <p>Наборщик</p>
+                                                            </label>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-4">
-                                                    <div class="block-checkbox">
-                                                        <label for="car-wash">
-                                                            <input type="checkbox" id="car-wash" name="car-wash" hidden="">
-                                                            <div class="check"></div>
-                                                            <p>Автомойщик</p>
-                                                        </label>
+                                                    <div class="block-mb-orange">
+                                                        <div class="block-checkbox">
+                                                            <label for="packer2">
+                                                                <input type="checkbox" id="packer2" name="packer2" hidden="">
+                                                                <div class="check"></div>
+                                                                <p>Упаковщик</p>
+                                                            </label>
+                                                        </div>
                                                     </div>
-                                                    <div class="block-checkbox">
-                                                        <label for="gas-tanker">
-                                                            <input type="checkbox" id="gas-tanker" name="gas-tanker" hidden="">
-                                                            <div class="check"></div>
-                                                            <p>Автозаправщик</p>
-                                                        </label>
+                                                    <div class="block-mb-orange">
+                                                        <div class="block-checkbox">
+                                                            <label for="sticker">
+                                                                <input type="checkbox" id="sticker" name="sticker" hidden="">
+                                                                <div class="check"></div>
+                                                                <p>Стикеровщик</p>
+                                                            </label>
+                                                        </div>
                                                     </div>
-                                                    <div class="block-checkbox">
-                                                        <label for="waiter">
-                                                            <input type="checkbox" id="waiter" name="waiter" hidden="">
-                                                            <div class="check"></div>
-                                                            <p>Официант</p>
-                                                        </label>
+                                                    <div class="block-mb-orange">
+                                                        <div class="block-checkbox">
+                                                            <label for="cleaner">
+                                                                <input type="checkbox" id="cleaner" name="cleaner" hidden="">
+                                                                <div class="check"></div>
+                                                                <p>Уборщик</p>
+                                                            </label>
+                                                        </div>
                                                     </div>
-                                                    <div class="block-checkbox">
-                                                        <label for="maid">
-                                                            <input type="checkbox" id="maid" name="maid" hidden="">
-                                                            <div class="check"></div>
-                                                            <p>Горничная</p>
-                                                        </label>
+                                                    <div class="block-mb-orange">
+                                                        <div class="block-checkbox">
+                                                            <label for="cashier">
+                                                                <input type="checkbox" id="cashier" name="cashier" hidden="">
+                                                                <div class="check"></div>
+                                                                <p>Кассир</p>
+                                                            </label>
+                                                        </div>
                                                     </div>
-                                                    <div class="block-checkbox">
-                                                        <label for="courier">
-                                                            <input type="checkbox" id="courier" name="courier" hidden="">
-                                                            <div class="check"></div>
-                                                            <p>Курьер</p>
-                                                        </label>
+                                                    <div class="block-mb-orange">
+                                                        <div class="block-checkbox">
+                                                            <label for="merchandiser">
+                                                                <input type="checkbox" id="merchandiser" name="merchandiser" hidden="">
+                                                                <div class="check"></div>
+                                                                <p>Мерчендайзер</p>
+                                                            </label>
+                                                        </div>
                                                     </div>
-                                                    <div class="block-checkbox">
-                                                        <label for="rush-job">
-                                                            <input type="checkbox" id="rush-job" name="rush-job" hidden="">
-                                                            <div class="check"></div>
-                                                            <p>Срочная работа</p>
-                                                        </label>
+                                                    <div class="block-mb-orange">
+                                                        <div class="block-checkbox">
+                                                            <label for="seller">
+                                                                <input type="checkbox" id="seller" name="seller" hidden="">
+                                                                <div class="check"></div>
+                                                                <p>Продавец</p>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="block-mb-orange">
+                                                        <div class="block-checkbox">
+                                                            <label for="car-wash">
+                                                                <input type="checkbox" id="car-wash" name="car-wash" hidden="">
+                                                                <div class="check"></div>
+                                                                <p>Автомойщик</p>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="block-mb-orange">
+                                                        <div class="block-checkbox">
+                                                            <label for="gas-tanker">
+                                                                <input type="checkbox" id="gas-tanker" name="gas-tanker" hidden="">
+                                                                <div class="check"></div>
+                                                                <p>Автозаправщик</p>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="block-mb-orange">
+                                                        <div class="block-checkbox">
+                                                            <label for="waiter">
+                                                                <input type="checkbox" id="waiter" name="waiter" hidden="">
+                                                                <div class="check"></div>
+                                                                <p>Официант</p>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="block-mb-orange">
+                                                        <div class="block-checkbox">
+                                                            <label for="maid">
+                                                                <input type="checkbox" id="maid" name="maid" hidden="">
+                                                                <div class="check"></div>
+                                                                <p>Горничная</p>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="block-mb-orange">
+                                                        <div class="block-checkbox">
+                                                            <label for="courier">
+                                                                <input type="checkbox" id="courier" name="courier" hidden="">
+                                                                <div class="check"></div>
+                                                                <p>Курьер</p>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="block-mb-orange">
+                                                        <div class="block-checkbox">
+                                                            <label for="rush-job">
+                                                                <input type="checkbox" id="rush-job" name="rush-job" hidden="">
+                                                                <div class="check"></div>
+                                                                <p>Срочная работа</p>
+                                                            </label>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -484,11 +516,11 @@
                                             <div class="block-mt-green mailing-method-option">
                                                 <div class="container-compressed mailing-method-option_selected" data-option="mailing-phone">
                                                     <label for="phone">Телефон</label>
-                                                    <input type="text" name="phone" id="phone" placeholder="+7">
+                                                    <input type="text" name="phone" id="phone" data-required="true" data-phone="true" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" placeholder="+7 (___)___-__-__">
                                                 </div>
                                                 <div class="container-compressed" data-option="mailing-email">
                                                     <label for="email">E-mail</label>
-                                                    <input type="text" name="email" id="email" placeholder="E-mail">
+                                                    <input type="text" name="email" id="email" data-required="true" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$" placeholder="E-mail">
                                                 </div>
                                             </div>
                                             <div class="block-mt-green">
@@ -639,6 +671,241 @@
                         <img class="img-svg" src="./img/icon_subscribe.svg" alt="">
                         Подписка
                     </a>
+                </div>
+            </div>
+        </div>
+        <div class="modal-form" id="detailed-search">
+            <div class="close-modal">
+                <a href="#">
+                    <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                </a>
+            </div>
+            <div class="modal-form-content block-mt-orange">
+                <form action="" name="form-detailed-search">
+                    <input type="text" name="position" placeholder="ДОЛЖНОСТЬ">
+                    <input type="text" name="city" placeholder="ГОРОД">
+                    <input type="text" name="salary" placeholder="ЗАРПЛАТА">
+                    <div class="block-mt-green">
+                        <div class="wrapper-button-center">
+                            <input type="submit" class="main-button" name="submit-detailed-search" value="Найти" style="width: 100%;">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal-search-city">
+            <div class="container">
+                <div class="close-modal">
+                    <a href="#">
+                        Закрыть
+                        <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                    </a>
+                </div>
+                <div class="block-mt-yellow">
+                    <div class="city-search">
+                        <form action="" name="city-search" id="city-search" data-ajax-search="true">
+                            <input type="text" name="city" placeholder="ПОИСК ПО ГОРОДАМ">
+                            <input type="submit" class="main-button" name="submit-city-search" value="Найти">
+                        </form>
+                    </div>
+                </div>
+                <div class="block-mt-green">
+                    <div class="spell-city-search">
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="а" hidden>
+                            <input type="submit" name="submit-letter-search" value="А">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="б" hidden>
+                            <input type="submit" name="submit-letter-search" value="Б">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="в" hidden>
+                            <input type="submit" name="submit-letter-search" value="В">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="г" hidden>
+                            <input type="submit" name="submit-letter-search" value="Г">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="д" hidden>
+                            <input type="submit" name="submit-letter-search" value="Д">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="е" hidden>
+                            <input type="submit" name="submit-letter-search" value="Е">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ё" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ё">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ж" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ж">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="з" hidden>
+                            <input type="submit" name="submit-letter-search" value="З">
+                        </form>
+                        <form action="" class="chosen-city" data-ajax-search="true">
+                            <input type="text" name="letter" value="и" hidden>
+                            <input type="submit" name="submit-letter-search" value="И">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="к" hidden>
+                            <input type="submit" name="submit-letter-search" value="К">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="л" hidden>
+                            <input type="submit" name="submit-letter-search" value="Л">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="м" hidden>
+                            <input type="submit" name="submit-letter-search" value="М">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="н" hidden>
+                            <input type="submit" name="submit-letter-search" value="Н">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="о" hidden>
+                            <input type="submit" name="submit-letter-search" value="О">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="п" hidden>
+                            <input type="submit" name="submit-letter-search" value="П">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="р" hidden>
+                            <input type="submit" name="submit-letter-search" value="Р">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="с" hidden>
+                            <input type="submit" name="submit-letter-search" value="С">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="т" hidden>
+                            <input type="submit" name="submit-letter-search" value="Т">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="у" hidden>
+                            <input type="submit" name="submit-letter-search" value="У">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ф" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ф">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="х" hidden>
+                            <input type="submit" name="submit-letter-search" value="Х">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ц" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ц">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ч" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ч">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ш" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ш">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="щ" hidden>
+                            <input type="submit" name="submit-letter-search" value="Щ">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="э" hidden>
+                            <input type="submit" name="submit-letter-search" value="Э">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ю" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ю">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="я" hidden>
+                            <input type="submit" name="submit-letter-search" value="Я">
+                        </form>
+                    </div>
+                </div>
+                <div class="block-mt-dark-blue block-mb-blue">
+                    <div class="found-cities">
+                        <div class="row row-cities">
+                            <div class="col-3">
+                                <a href="#">Ибреси</a>
+                                <a href="#">Ивангород</a>
+                                <a href="#">Иваново</a>
+                                <a href="#">Ивановская</a>
+                                <a href="#">Ивдель</a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#">Ибреси</a>
+                                <a href="#">Ивангород</a>
+                                <a href="#">Иваново</a>
+                                <a href="#">Ивановская</a>
+                                <a href="#">Ивдель</a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#">Ибреси</a>
+                                <a href="#">Ивангород</a>
+                                <a href="#">Иваново</a>
+                                <a href="#">Ивановская</a>
+                                <a href="#">Ивдель</a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#">Ибреси</a>
+                                <a href="#">Ивангород</a>
+                                <a href="#">Иваново</a>
+                                <a href="#">Ивановская</a>
+                                <a href="#">Ивдель</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-find">
+            <div class="container">
+                <div class="close-modal">
+                    <a href="#">
+                        Закрыть
+                        <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                    </a>
+                </div>
+                <div class="block-mt-yellow">
+                    <div class="quick-job-search">     
+                        <div class="quick-job-search-block">
+                            <div class="quick-job-search-block-content"> 
+                                <form action="" name="quick-search-form">
+                                    <input type="text" name="position" placeholder="ДОЛЖНОСТЬ">
+                                    <input type="text" name="city" placeholder="ГОРОД">
+                                    <input type="text" name="salary" placeholder="ЗАРПЛАТА">
+                                    <div class="input-search-mobile">
+                                        <input type="text" name="resume" placeholder="ПОИСК ВАКАНСИИ">
+                                        <button stype="button" class="button-detailed-search">
+                                            <img src="./img/icon_option.svg" alt="">
+                                        </button>
+                                        </div>
+                                    <input type="submit" name="submit-quick-search-form" class="main-button" value="Найти">
+                                </form>
+                                <div class="wrapper-button-center block-mt-green">
+                                    <a href="#" class="button-text detailed-search">
+                                        <img class="img-svg" src="./img/icon_search.svg" alt="">
+                                        Расширенный поиск
+                                    </a>
+                                </div>
+                                <div class="hash-tags block-mt-dark-blue">
+                                    <a href="#" class="hash-tags__link"># работа рядом <span>(5)</span></a>
+                                    <a href="#" class="hash-tags__link"># работа прямо сейчас <span>(3)</span></a>
+                                    <a href="#" class="hash-tags__link"># работа завтра <span>(18)</span></a>
+                                    <a href="#" class="hash-tags__link"># работа через месяц <span>(11)</span></a>
+                                    <a href="#" class="hash-tags__link"># сезонная работа <span>(8)</span></a>
+                                    <a href="#" class="hash-tags__link"># постоянная работа <span>(8)</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
