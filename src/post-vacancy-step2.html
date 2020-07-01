@@ -12,21 +12,17 @@
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto header-top-left">
-                            <div href="#" class="choice-lang prompt">
+                            <div class="choice-lang prompt">
                                 RU 
                                 <img class="img-svg" src="./img/arrow_down.svg" alt="">
                                 <div class="prompt__block">
                                     <a href="#">EN</a>
                                 </div>
                             </div>
-                            <div href="#" class="choice-city prompt">
+                            <a href="#" class="choice-city">
                                 Нижний Новгород 
                                 <img class="img-svg" src="./img/arrow_down.svg" alt="">
-                                <div class="prompt__block">
-                                    <a href="#">Казань</a>
-                                    <a href="#">Москва</a>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-auto header-top-middle">
                             <a href="#" class="choice-mode">Ищу работу</a>
@@ -92,7 +88,7 @@
                             <p>Быстрый поиск узкоквалифицированной работы</p>
                         </div>
                         <div class="col header-bottom-right">
-                            <a href="#" class="button-text">
+                            <a href="#" class="button-text find-ref">
                                 <img class="img-svg" src="./img/icon_search.svg" alt="">
                                 <p>Найти<br> работника</p>
                             </a>
@@ -145,7 +141,7 @@
                             <a href="#" class="button-text feedback" data-count="+16">
                                 <img class="img-svg" src="./img/icon_feedback_scroll.svg" alt="">
                             </a>
-                            <a href="#" class="button-text">
+                            <a href="#" class="button-text find-ref">
                                 <img class="img-svg" src="./img/icon_search_scroll.svg" alt="">
                             </a>
                             <a href="#" class="button-text">
@@ -174,7 +170,7 @@
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto header-scroll-mobile-left">
-                            <a href="#" class="button-text">
+                            <a href="#" class="button-text find-ref">
                                 <img class="img-svg" src="./img/icon_search_scroll.svg" alt="">
                             </a>
                             <a href="#" class="button-text">
@@ -346,10 +342,10 @@
                                             <a href="#" class="steps-post__step steps-post__step_disabled">Шаг 3. Требования к кандидату</a>
                                         </div>
                                         <div class="block-mt-blue">
-                                            <form action="" name="post-vacancy-step2" id="post-vacancy-step2">
+                                            <form action="" name="post-vacancy-step2" id="post-vacancy-step2" data-ajax="true">
                                                 <div class="container-compressed">
                                                     <div class="block-mb-green">
-                                                        <div class="block-post">
+                                                        <div class="block-pt-green block-post">
                                                             <div class="row">
                                                                 <div class="col-4">
                                                                     <div class="block-post__name">
@@ -359,7 +355,7 @@
                                                                 <div class="col-8">
                                                                     <div class="row">
                                                                         <div class="col-6">
-                                                                            <div class="block-checkbox">
+                                                                            <div class="block-mt-orange block-checkbox">
                                                                                 <label for="shifts30">
                                                                                     <input type="checkbox" id="shifts30" name="shifts30" hidden="">
                                                                                     <div class="check"></div>
@@ -368,7 +364,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-6">
-                                                                            <div class="block-checkbox">
+                                                                            <div class="block-mt-orange block-checkbox">
                                                                                 <label for="full-employment">
                                                                                     <input type="checkbox" id="full-employment" name="full-employment" hidden="">
                                                                                     <div class="check"></div>
@@ -377,7 +373,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-6">
-                                                                            <div class="block-checkbox">
+                                                                            <div class="block-mt-orange block-checkbox">
                                                                                 <label for="shifts45">
                                                                                     <input type="checkbox" id="shifts45" name="shifts45" hidden="">
                                                                                     <div class="check"></div>
@@ -386,7 +382,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-6">
-                                                                            <div class="block-checkbox">
+                                                                            <div class="block-mt-orange block-checkbox">
                                                                                 <label for="part-time">
                                                                                     <input type="checkbox" id="part-time" name="part-time" hidden="">
                                                                                     <div class="check"></div>
@@ -395,7 +391,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-6">
-                                                                            <div class="block-checkbox">
+                                                                            <div class="block-mt-orange block-checkbox">
                                                                                 <label for="shifts60">
                                                                                     <input type="checkbox" id="shifts60" name="shifts60" hidden="">
                                                                                     <div class="check"></div>
@@ -404,7 +400,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-6">
-                                                                            <div class="block-checkbox">
+                                                                            <div class="block-mt-orange block-checkbox">
                                                                                 <label for="temporary-job">
                                                                                     <input type="checkbox" id="temporary-job" name="temporary-job" hidden="">
                                                                                     <div class="check"></div>
@@ -413,7 +409,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-6">
-                                                                            <div class="block-checkbox">
+                                                                            <div class="block-mt-orange block-checkbox">
                                                                                 <label for="more-shifts60">
                                                                                     <input type="checkbox" id="more-shifts60" name="more-shifts60" hidden="">
                                                                                     <div class="check"></div>
@@ -427,7 +423,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="block-mb-green">
-                                                        <div class="block-post">
+                                                        <div class="block-pt-green block-post">
                                                             <div class="row">
                                                                 <div class="col-4">
                                                                     <div class="block-post__name">
@@ -437,7 +433,7 @@
                                                                 <div class="col-8">
                                                                     <div class="row">
                                                                         <div class="col-6">
-                                                                            <div class="block-checkbox">
+                                                                            <div class="block-mt-orange block-checkbox">
                                                                                 <label for="full-day">
                                                                                     <input type="checkbox" id="full-day" name="full-day" hidden="">
                                                                                     <div class="check"></div>
@@ -446,7 +442,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-6">
-                                                                            <div class="block-checkbox">
+                                                                            <div class="block-mt-orange block-checkbox">
                                                                                 <label for="change">
                                                                                     <input type="checkbox" id="change" name="change" hidden="">
                                                                                     <div class="check"></div>
@@ -455,7 +451,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-6">
-                                                                            <div class="block-checkbox">
+                                                                            <div class="block-mt-orange block-checkbox">
                                                                                 <label for="flexible-schedule">
                                                                                     <input type="checkbox" id="flexible-schedule" name="flexible-schedule" hidden="">
                                                                                     <div class="check"></div>
@@ -464,7 +460,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-6">
-                                                                            <div class="block-checkbox">
+                                                                            <div class="block-mt-orange block-checkbox">
                                                                                 <label for="remote-work">
                                                                                     <input type="checkbox" id="remote-work" name="remote-work" hidden="">
                                                                                     <div class="check"></div>
@@ -478,7 +474,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="block-mb-green">
-                                                        <div class="block-post">
+                                                        <div class="block-pt-green block-post">
                                                             <div class="row">
                                                                 <div class="col-4">
                                                                     <div class="block-post__name">
@@ -488,16 +484,16 @@
                                                                 <div class="col-8">
                                                                     <div class="row">
                                                                         <div class="col-12">
-                                                                            <div class="block-radio">
+                                                                            <div class="block-mt-orange block-radio">
                                                                                 <label for="advance-payment-yes">
-                                                                                    <input type="radio" id="advance-payment-yes" name="advance-payment" hidden="">
+                                                                                    <input type="radio" id="advance-payment-yes" name="advance-payment" hidden="" checked>
                                                                                     <div class="radio"></div>
                                                                                     <p>Да</p>
                                                                                 </label>
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-12">
-                                                                            <div class="block-radio">
+                                                                            <div class="block-mt-orange block-radio">
                                                                                 <label for="advance-payment-no">
                                                                                     <input type="radio" id="advance-payment-no" name="advance-payment" hidden="">
                                                                                     <div class="radio"></div>
@@ -511,7 +507,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="block-mb-green">
-                                                        <div class="block-post">
+                                                        <div class="block-pt-green block-post">
                                                             <div class="row">
                                                                 <div class="col-4">
                                                                     <div class="block-post__name">
@@ -521,7 +517,7 @@
                                                                 <div class="col-8">
                                                                     <div class="row">
                                                                         <div class="col-12">
-                                                                            <div class="block-checkbox">
+                                                                            <div class="block-mt-orange block-checkbox">
                                                                                 <label for="accommodation-flat">
                                                                                     <input type="checkbox" id="accommodation-flat" name="accommodation" hidden="">
                                                                                     <div class="check"></div>
@@ -530,7 +526,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-12">
-                                                                            <div class="block-checkbox">
+                                                                            <div class="block-mt-orange block-checkbox">
                                                                                 <label for="accommodation-hostel">
                                                                                     <input type="checkbox" id="accommodation-hostel" name="accommodation" hidden="">
                                                                                     <div class="check"></div>
@@ -539,7 +535,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-12">
-                                                                            <div class="block-checkbox">
+                                                                            <div class="block-mt-orange block-checkbox">
                                                                                 <label for="accommodation-no">
                                                                                     <input type="checkbox" id="accommodation-no" name="accommodation" hidden="">
                                                                                     <div class="check"></div>
@@ -553,7 +549,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="block-mb-green">
-                                                        <div class="block-post">
+                                                        <div class="block-pt-green block-post">
                                                             <div class="row">
                                                                 <div class="col-4">
                                                                     <div class="block-post__name">
@@ -563,16 +559,16 @@
                                                                 <div class="col-8">
                                                                     <div class="row">
                                                                         <div class="col-12">
-                                                                            <div class="block-radio">
+                                                                            <div class="block-mt-orange block-radio">
                                                                                 <label for="nutrition-yes">
-                                                                                    <input type="radio" id="nutrition-yes" name="nutrition" hidden="">
+                                                                                    <input type="radio" id="nutrition-yes" name="nutrition" hidden="" checked>
                                                                                     <div class="radio"></div>
                                                                                     <p>Да</p>
                                                                                 </label>
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-12">
-                                                                            <div class="block-radio">
+                                                                            <div class="block-mt-orange block-radio">
                                                                                 <label for="nutrition-no">
                                                                                     <input type="radio" id="nutrition-no" name="nutrition" hidden="">
                                                                                     <div class="radio"></div>
@@ -586,7 +582,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="block-mb-green">
-                                                        <div class="block-post">
+                                                        <div class="block-pt-green block-post">
                                                             <div class="row">
                                                                 <div class="col-4">
                                                                     <div class="block-post__name">
@@ -596,16 +592,16 @@
                                                                 <div class="col-8">
                                                                     <div class="row">
                                                                         <div class="col-12">
-                                                                            <div class="block-radio">
+                                                                            <div class="block-mt-orange block-radio">
                                                                                 <label for="official-transport-yes">
-                                                                                    <input type="radio" id="official-transport-yes" name="official-transport" hidden="">
+                                                                                    <input type="radio" id="official-transport-yes" name="official-transport" hidden="" checked>
                                                                                     <div class="radio"></div>
                                                                                     <p>Да</p>
                                                                                 </label>
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-12">
-                                                                            <div class="block-radio">
+                                                                            <div class="block-mt-orange block-radio">
                                                                                 <label for="official-transport-no">
                                                                                     <input type="radio" id="official-transport-no" name="official-transport" hidden="">
                                                                                     <div class="radio"></div>
@@ -619,7 +615,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="block-mb-green">
-                                                        <div class="block-post">
+                                                        <div class="block-pt-green block-post">
                                                             <div class="row">
                                                                 <div class="col-4">
                                                                     <div class="block-post__name">
@@ -629,7 +625,7 @@
                                                                 <div class="col-8">
                                                                     <div class="row">
                                                                         <div class="col-12">
-                                                                            <div class="block-checkbox">
+                                                                            <div class="block-mt-orange block-checkbox">
                                                                                 <label for="work-clothes-yes">
                                                                                     <input type="checkbox" id="work-clothes-yes" name="work-clothes" hidden="">
                                                                                     <div class="check"></div>
@@ -638,7 +634,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-12">
-                                                                            <div class="block-checkbox">
+                                                                            <div class="block-mt-orange block-checkbox">
                                                                                 <label for="work-clothes-paid">
                                                                                     <input type="checkbox" id="work-clothes-paid" name="work-clothes" hidden="">
                                                                                     <div class="check"></div>
@@ -647,7 +643,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-12">
-                                                                            <div class="block-checkbox">
+                                                                            <div class="block-mt-orange block-checkbox">
                                                                                 <label for="work-clothes-no">
                                                                                     <input type="checkbox" id="work-clothes-no" name="work-clothes" hidden="">
                                                                                     <div class="check"></div>
@@ -662,7 +658,8 @@
                                                     </div>
                                                     <div class="transfer-steps">
                                                         <a href="#" class="other-button" id="prev-step">Назад</a>
-                                                        <a href="#" class="main-button" id="next-step">Далее</a>
+                                                        <!-- <a href="#" class="main-button" id="next-step">Далее</a> -->
+                                                        <input type="submit" class="main-button" name="submit" value="Далее">
                                                     </div>
                                                 </div>
                                             </form>
@@ -827,6 +824,237 @@
                         <img class="img-svg" src="./img/icon_statistics.svg" alt="">
                         Статистика
                     </a>
+                </div>
+            </div>
+        </div>
+        <div class="modal-form" id="detailed-search">
+            <div class="close-modal">
+                <a href="#">
+                    <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                </a>
+            </div>
+            <div class="modal-form-content block-mt-orange">
+                <form action="" name="form-detailed-search" id="form-detailed-search">
+                    <input type="text" name="position" placeholder="ДОЛЖНОСТЬ">
+                    <input type="text" name="city" placeholder="ГОРОД">
+                    <div class="block-mt-green">
+                        <input type="submit" class="main-button" name="submit-detailed-search" value="Найти">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal-search-city">
+            <div class="container">
+                <div class="close-modal">
+                    <a href="#">
+                        Закрыть
+                        <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                    </a>
+                </div>
+                <div class="block-mt-yellow">
+                    <div class="city-search">
+                        <form action="" name="city-search" id="city-search" data-ajax-search="true">
+                            <input type="text" name="city" placeholder="ПОИСК ПО ГОРОДАМ">
+                            <input type="submit" class="main-button" name="submit-city-search" value="Найти">
+                        </form>
+                    </div>
+                </div>
+                <div class="block-mt-green">
+                    <div class="spell-city-search">
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="а" hidden>
+                            <input type="submit" name="submit-letter-search" value="А">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="б" hidden>
+                            <input type="submit" name="submit-letter-search" value="Б">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="в" hidden>
+                            <input type="submit" name="submit-letter-search" value="В">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="г" hidden>
+                            <input type="submit" name="submit-letter-search" value="Г">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="д" hidden>
+                            <input type="submit" name="submit-letter-search" value="Д">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="е" hidden>
+                            <input type="submit" name="submit-letter-search" value="Е">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ё" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ё">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ж" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ж">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="з" hidden>
+                            <input type="submit" name="submit-letter-search" value="З">
+                        </form>
+                        <form action="" class="chosen-city" data-ajax-search="true">
+                            <input type="text" name="letter" value="и" hidden>
+                            <input type="submit" name="submit-letter-search" value="И">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="к" hidden>
+                            <input type="submit" name="submit-letter-search" value="К">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="л" hidden>
+                            <input type="submit" name="submit-letter-search" value="Л">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="м" hidden>
+                            <input type="submit" name="submit-letter-search" value="М">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="н" hidden>
+                            <input type="submit" name="submit-letter-search" value="Н">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="о" hidden>
+                            <input type="submit" name="submit-letter-search" value="О">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="п" hidden>
+                            <input type="submit" name="submit-letter-search" value="П">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="р" hidden>
+                            <input type="submit" name="submit-letter-search" value="Р">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="с" hidden>
+                            <input type="submit" name="submit-letter-search" value="С">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="т" hidden>
+                            <input type="submit" name="submit-letter-search" value="Т">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="у" hidden>
+                            <input type="submit" name="submit-letter-search" value="У">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ф" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ф">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="х" hidden>
+                            <input type="submit" name="submit-letter-search" value="Х">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ц" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ц">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ч" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ч">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ш" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ш">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="щ" hidden>
+                            <input type="submit" name="submit-letter-search" value="Щ">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="э" hidden>
+                            <input type="submit" name="submit-letter-search" value="Э">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ю" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ю">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="я" hidden>
+                            <input type="submit" name="submit-letter-search" value="Я">
+                        </form>
+                    </div>
+                </div>
+                <div class="block-mt-dark-blue block-mb-blue">
+                    <div class="found-cities">
+                        <div class="row row-cities">
+                            <div class="col-3">
+                                <a href="#">Ибреси</a>
+                                <a href="#">Ивангород</a>
+                                <a href="#">Иваново</a>
+                                <a href="#">Ивановская</a>
+                                <a href="#">Ивдель</a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#">Ибреси</a>
+                                <a href="#">Ивангород</a>
+                                <a href="#">Иваново</a>
+                                <a href="#">Ивановская</a>
+                                <a href="#">Ивдель</a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#">Ибреси</a>
+                                <a href="#">Ивангород</a>
+                                <a href="#">Иваново</a>
+                                <a href="#">Ивановская</a>
+                                <a href="#">Ивдель</a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#">Ибреси</a>
+                                <a href="#">Ивангород</a>
+                                <a href="#">Иваново</a>
+                                <a href="#">Ивановская</a>
+                                <a href="#">Ивдель</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-find">
+            <div class="container">
+                <div class="close-modal">
+                    <a href="#">
+                        Закрыть
+                        <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                    </a>
+                </div>
+                <div class="block-mt-yellow">
+                    <div class="quick-job-search">     
+                        <div class="quick-job-search-block">
+                            <div class="quick-job-search-block-content"> 
+                                <form action="" name="quick-search-form" data-for="employer">
+                                    <input type="text" name="position" placeholder="ДОЛЖНОСТЬ">
+                                    <input type="text" name="city" placeholder="ГОРОД">
+                                    <div class="input-search-mobile">
+                                        <input type="text" name="resume" placeholder="ПОИСК ВАКАНСИИ">
+                                        <button stype="button" class="button-detailed-search">
+                                            <img src="./img/icon_option.svg" alt="">
+                                        </button>
+                                        </div>
+                                    <input type="submit" name="submit-quick-search-form" class="main-button" value="Найти">
+                                </form>
+                                <div class="wrapper-button-center block-mt-green">
+                                    <a href="#" class="button-text detailed-search">
+                                        <img class="img-svg" src="./img/icon_search.svg" alt="">
+                                        Расширенный поиск
+                                    </a>
+                                </div>
+                                <div class="hash-tags block-mt-dark-blue">
+                                    <a href="#" class="hash-tags__link"># работа рядом <span>(5)</span></a>
+                                    <a href="#" class="hash-tags__link"># работа прямо сейчас <span>(3)</span></a>
+                                    <a href="#" class="hash-tags__link"># работа завтра <span>(18)</span></a>
+                                    <a href="#" class="hash-tags__link"># работа через месяц <span>(11)</span></a>
+                                    <a href="#" class="hash-tags__link"># сезонная работа <span>(8)</span></a>
+                                    <a href="#" class="hash-tags__link"># постоянная работа <span>(8)</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

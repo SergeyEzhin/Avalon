@@ -194,7 +194,6 @@ $('.similar-vacancies-slider-wrapper').owlCarousel({
 
 $('.partners-slider-wrapper').owlCarousel({
   loop:true, //Зацикливаем слайдер
-  items:6,
   margin:68, //Отступ от элемента справа в 50px
   nav:true, //Отключение навигации
   dots: false,
@@ -204,7 +203,22 @@ $('.partners-slider-wrapper').owlCarousel({
   mouseDrag: false,
   touchDrag: false,
   navContainer: '.navigation-partners',
-  navText: ["<div class='arrow-slider'><img src='./img/arrow_slider_left.svg'></div>", "<div class='arrow-slider'><img src='./img/arrow_slider_right.svg'></div>"]
+  navText: ["<div class='arrow-slider'><img src='./img/arrow_slider_left.svg'></div>", "<div class='arrow-slider'><img src='./img/arrow_slider_right.svg'></div>"],
+  responsive:{ 
+    0:{
+      items: 1,
+      margin: 0
+    },
+    550:{
+      items:3
+    },
+    800:{
+      items:4
+    },
+    1281:{
+      items:6
+    }
+  }
 });
 
 // Аккордеон
@@ -720,7 +734,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if(resumesMap)
   {
-    fetch('./php/favorites-vacancies.php')
+    fetch('./php/resumes.php')
     .then(response => response.json())
     .then(data => {
         
@@ -742,8 +756,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
               
               let MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass(
-                '<div class="balloon-header-vacancy"><div class="balloon-header-vacancy__left"><p>$[properties.nameWork]</p><p>$[properties.salary]</p></div><div class="balloon-header-vacancy__right"><a class="button-text" href="current-vacancy.html"><img class="img-svg" src="./img/arrow_balloon.svg"></a></div></div>' +
-                '<div class="balloon-content-vacancy"><div class="balloon-content-vacancy-block"><div class="balloon-content-vacancy-block__image"><img src="$[properties.logoCompany]"></div><p class="balloon-content-vacancy-block__name">$[properties.nameCompany]</p></div></div>'
+                '<div class="balloon-resume"><div class="balloon-resume-left"><p class="balloon-resume-left__work">$[properties.nameWork]</p><p class="balloon-resume-left__salary">$[properties.salary]</p><p class="balloon-resume-left__name">$[properties.nameResume]</p></div><div class="balloon-resume-right"><a href="#"><img src="./img/arrow_balloon.svg"></a></div></div>'
               );
 
               data.forEach((item, index) => {
@@ -758,8 +771,9 @@ document.addEventListener('DOMContentLoaded', () => {
                       "properties": {
                           "nameWork": item.nameWork,
                           "salary": item.salary,
-                          "nameCompany": item.nameCompany,
-                          "logoCompany":item.logoCompany
+                          "nameResume": item.nameResume
+                          // "nameCompany": item.nameCompany,
+                          // "logoCompany":item.logoCompany
                       },
                       "options": {
                           "iconLayout": "default#image",
@@ -1387,42 +1401,42 @@ let modalAppBanner = document.querySelector('#modal-app-banner');
 function checkFormPostPicture(button)
 {
   let currentForm = button.parentElement;
-  let valid = true;
+  // let valid = true;
 
   const fieldRadio = currentForm.querySelector('input[type="radio"]:checked');
-  const fieldsRadio = currentForm.querySelectorAll('input[type="radio"]');
+  // const fieldsRadio = currentForm.querySelectorAll('input[type="radio"]');
 
-  if(!fieldRadio)
-  {
-    fieldsRadio.forEach((input) => input.classList.add('check-error'));
-    valid = false;
-  }
+  // if(!fieldRadio)
+  // {
+  //   fieldsRadio.forEach((input) => input.classList.add('check-error'));
+  //   valid = false;
+  // }
 
-  if(valid)
-  {
-    fieldsRadio.forEach((input) => input.classList.remove('check-error'));
+  // if(valid)
+  // {
+    // fieldsRadio.forEach((input) => input.classList.remove('check-error'));
 
     let bannerInfo = document.querySelector('.banner-info');
     let sizesBanner = currentForm.elements[0].value;
-    let countDays;
-    let allRadio = Array.from(currentForm.querySelectorAll('input[type="radio"]'));
+    let countDays = fieldRadio.value;
+    // let allRadio = Array.from(currentForm.querySelectorAll('input[type="radio"]'));
   
-    allRadio.forEach(elem => 
-    {
-      if(elem.checked)
-      {
-        countDays = elem.value;
-      }
-    });
+    // allRadio.forEach(elem => 
+    // {
+    //   if(elem.checked)
+    //   {
+    //     countDays = elem.value;
+    //   }
+    // });
 
     bannerInfo.innerHTML = `Баннер ${sizesBanner} сроком на ${countDays}`;
     return true;
 
-  }
-  else 
-  {
-    return false;
-  }
+  // }
+  // else 
+  // {
+  //   return false;
+  // }
 }
 
 const animationModalForm = fn =>
@@ -1783,26 +1797,48 @@ if(buttonHelp && menuMain)
 
 let tables = document.querySelectorAll('.table');
 let responses = document.querySelectorAll('.response');
+let invoicePayment = document.querySelectorAll('.invoice-payment');
+let rates = document.querySelectorAll('.rates');
+let employees = document.querySelectorAll('.employees');
 
-if(tables.length)
+// if(tables.length)
+// {
+//   tables.forEach(function(table)
+//   {
+//     table.insertAdjacentHTML('beforebegin', '<div class="wrapper-table"></div>');
+//     let wrapperTable = table.previousElementSibling;
+//     wrapperTable.appendChild(table);
+//   });
+// }
+
+// if(responses.length)
+// {
+//   responses.forEach(function(response)
+//   {
+//     response.insertAdjacentHTML('beforebegin', '<div class="wrapper-table"></div>');
+//     let wrapperTable = response.previousElementSibling;
+//     wrapperTable.appendChild(response);
+//   });
+// }
+
+function wrapTable(tables)
 {
-  tables.forEach(function(table)
+  if(tables.length)
   {
-    table.insertAdjacentHTML('beforebegin', '<div class="wrapper-table"></div>');
-    let wrapperTable = table.previousElementSibling;
-    wrapperTable.appendChild(table);
-  });
+    tables.forEach(function(table)
+    {
+      table.insertAdjacentHTML('beforebegin', '<div class="wrapper-table"></div>');
+      let wrapperTable = table.previousElementSibling;
+      wrapperTable.appendChild(table);
+    });
+  }
 }
 
-if(responses.length)
-{
-  responses.forEach(function(response)
-  {
-    response.insertAdjacentHTML('beforebegin', '<div class="wrapper-table"></div>');
-    let wrapperTable = response.previousElementSibling;
-    wrapperTable.appendChild(response);
-  });
-}
+wrapTable(tables);
+wrapTable(responses);
+wrapTable(invoicePayment);
+wrapTable(rates);
+wrapTable(employees);
 
 // Адаптив для формы быстрого поиска
 

@@ -12,21 +12,17 @@
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto header-top-left">
-                            <div href="#" class="choice-lang prompt">
+                            <div class="choice-lang prompt">
                                 RU 
                                 <img class="img-svg" src="./img/arrow_down.svg" alt="">
                                 <div class="prompt__block">
                                     <a href="#">EN</a>
                                 </div>
                             </div>
-                            <div href="#" class="choice-city prompt">
+                            <a href="#" class="choice-city">
                                 Нижний Новгород 
                                 <img class="img-svg" src="./img/arrow_down.svg" alt="">
-                                <div class="prompt__block">
-                                    <a href="#">Казань</a>
-                                    <a href="#">Москва</a>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-auto header-top-middle">
                             <a href="#" class="choice-mode">Ищу работу</a>
@@ -92,7 +88,7 @@
                             <p>Быстрый поиск узкоквалифицированной работы</p>
                         </div>
                         <div class="col header-bottom-right">
-                            <a href="#" class="button-text">
+                            <a href="#" class="button-text find-ref">
                                 <img class="img-svg" src="./img/icon_search.svg" alt="">
                                 <p>Найти<br> работника</p>
                             </a>
@@ -145,7 +141,7 @@
                             <a href="#" class="button-text feedback" data-count="+16">
                                 <img class="img-svg" src="./img/icon_feedback_scroll.svg" alt="">
                             </a>
-                            <a href="#" class="button-text">
+                            <a href="#" class="button-text find-ref">
                                 <img class="img-svg" src="./img/icon_search_scroll.svg" alt="">
                             </a>
                             <a href="#" class="button-text">
@@ -174,7 +170,7 @@
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto header-scroll-mobile-left">
-                            <a href="#" class="button-text">
+                            <a href="#" class="button-text find-ref">
                                 <img class="img-svg" src="./img/icon_search_scroll.svg" alt="">
                             </a>
                             <a href="#" class="button-text">
@@ -346,7 +342,7 @@
                                             <a href="#" class="steps-post__step steps-post__step_disabled">Шаг 3. Требования к кандидату</a>
                                         </div>
                                         <div class="block-mt-blue">
-                                            <form action="" name="post-vacancy-step1" id="post-vacancy-step1">
+                                            <form action="" name="post-vacancy-step1" id="post-vacancy-step1" data-ajax="true">
                                                 <!-- <div class="load-avatar">
                                                     <div class="load-avatar__block">
                                                         <canvas id="canvas-avatar" width="210" height="210"></canvas>
@@ -359,12 +355,12 @@
                                                 <div class="container-compressed">
                                                     <div class="block-mb-yellow">
                                                         <label for="name-vacancy">Название вакансии <span>*</span></label>
-                                                        <input type="text" placeholder="ИМЯ" name="name-vacancy" id="name-vacancy">
+                                                        <input type="text" placeholder="ИМЯ" name="name-vacancy" id="name-vacancy" data-required="true" pattern="[^-`~!@#№$%^&*()_=+\\|\[\]{};:',<>\/?]+$">
                                                     </div>
                                                     <div class="block-mb-yellow">
-                                                        <label for="desired-salary">Предполагаемый доход, руб *</label>
+                                                        <label for="desired-salary">Предполагаемый доход, руб <span>*</span></label>
                                                         <div class="desired-salary">
-                                                            <input type="text" name="desired-salary" id="desired-salary" placeholder="0">
+                                                            <input type="text" name="desired-salary" id="desired-salary" placeholder="0" data-required="true" pattern="^[ 0-9]+$">
                                                             <select name="time-salary" id="time-salary">
                                                                 <option value="month">В месяц</option>
                                                                 <option value="week">В неделю</option>
@@ -374,12 +370,12 @@
                                                     </div>
                                                     <div class="block-mb-orange">
                                                         <label for="address">Адрес <span>*</span></label>
-                                                        <input type="text" name="address" id="address" placeholder="РЕГИОН / РАЙОН, ГОРОД / Н.П., УЛИЦА">
+                                                        <input type="text" name="address" id="address" placeholder="РЕГИОН / РАЙОН, ГОРОД / Н.П., УЛИЦА" data-required="true" pattern="[^-`~!@#№$%^&*()_=+\\|\[\]{};:',<>\/?]+$">
                                                     </div>
                                                     <p class="block-mb-yellow" style="font-size: 14px;">Начните вводить адрес и выберите подходящий из появившегося списка</p>
                                                     <div class="block-mb-green">
                                                         <label for="desc-vacancy">Описание вакансии <span>*</span></label>
-                                                        <textarea name="desc-vacancy" id="desc-vacancy"></textarea>
+                                                        <textarea name="desc-vacancy" id="desc-vacancy" data-required="true"></textarea>
                                                     </div>
                                                     <hr>
                                                     <div class="block-mt-green">
@@ -387,21 +383,22 @@
                                                     </div>
                                                     <div class="block-mt-green">
                                                         <label for="name-contact-person">Фамилия, Имя, Отчество контактного лица <span>*</span></label>
-                                                        <input type="text" name="name-contact-person" id="name-contact-person" placeholder="ФИО">
+                                                        <input type="text" name="name-contact-person" id="name-contact-person" placeholder="ФИО" data-required="true" pattern="[^-`~!@#№$%^&*()_=+\\|\[\]{};:',<>\/?]+$">
                                                     </div>
                                                     <div class="block-mt-yellow">
                                                         <label for="phone-contact-person">Телефон <span>*</span></label>
-                                                        <input type="text" name="phone-contacts-person" id="phone-contact-person" placeholder="+7">
+                                                        <input type="text" name="phone-contacts-person" id="phone-contact-person" placeholder="+7" data-required="true" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" data-required="true">
                                                     </div>
                                                     <div class="block-mt-yellow">
                                                         <label for="email-contact-person">E-mail</label>
-                                                        <input type="text" name="email-contact-person" id="email-contact-person" placeholder="E-MAIL">
+                                                        <input type="text" name="email-contact-person" id="email-contact-person" placeholder="E-MAIL" pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$">
                                                     </div>
                                                     <p class="block-mt-green" style="font-size: 14px;"><span>*</span> - поля, обязательные для заполнения</p>
                                                     <p class="block-mt-green" style="font-size: 14px;">Нажимая кнопку «Далее», Вы даёте своё согласие на обработку персональных данных</p>
                                                     <div class="transfer-steps block-mt-blue">
                                                         <!-- <button type="button" class="other-button disabled" id="prev-step-resume">Назад</button> -->
-                                                        <a href="#" class="main-button" id="next-step">Далее</a>
+                                                        <!-- <a href="#" class="main-button" id="next-step">Далее</a> -->
+                                                        <input type="submit" name="submit" class="main-button" value="Далее">
                                                     </div>
                                                 </div>
                                             </form>
@@ -566,6 +563,237 @@
                         <img class="img-svg" src="./img/icon_statistics.svg" alt="">
                         Статистика
                     </a>
+                </div>
+            </div>
+        </div>
+        <div class="modal-form" id="detailed-search">
+            <div class="close-modal">
+                <a href="#">
+                    <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                </a>
+            </div>
+            <div class="modal-form-content block-mt-orange">
+                <form action="" name="form-detailed-search" id="form-detailed-search">
+                    <input type="text" name="position" placeholder="ДОЛЖНОСТЬ">
+                    <input type="text" name="city" placeholder="ГОРОД">
+                    <div class="block-mt-green">
+                        <input type="submit" class="main-button" name="submit-detailed-search" value="Найти">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="modal-search-city">
+            <div class="container">
+                <div class="close-modal">
+                    <a href="#">
+                        Закрыть
+                        <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                    </a>
+                </div>
+                <div class="block-mt-yellow">
+                    <div class="city-search">
+                        <form action="" name="city-search" id="city-search" data-ajax-search="true">
+                            <input type="text" name="city" placeholder="ПОИСК ПО ГОРОДАМ">
+                            <input type="submit" class="main-button" name="submit-city-search" value="Найти">
+                        </form>
+                    </div>
+                </div>
+                <div class="block-mt-green">
+                    <div class="spell-city-search">
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="а" hidden>
+                            <input type="submit" name="submit-letter-search" value="А">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="б" hidden>
+                            <input type="submit" name="submit-letter-search" value="Б">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="в" hidden>
+                            <input type="submit" name="submit-letter-search" value="В">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="г" hidden>
+                            <input type="submit" name="submit-letter-search" value="Г">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="д" hidden>
+                            <input type="submit" name="submit-letter-search" value="Д">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="е" hidden>
+                            <input type="submit" name="submit-letter-search" value="Е">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ё" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ё">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ж" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ж">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="з" hidden>
+                            <input type="submit" name="submit-letter-search" value="З">
+                        </form>
+                        <form action="" class="chosen-city" data-ajax-search="true">
+                            <input type="text" name="letter" value="и" hidden>
+                            <input type="submit" name="submit-letter-search" value="И">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="к" hidden>
+                            <input type="submit" name="submit-letter-search" value="К">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="л" hidden>
+                            <input type="submit" name="submit-letter-search" value="Л">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="м" hidden>
+                            <input type="submit" name="submit-letter-search" value="М">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="н" hidden>
+                            <input type="submit" name="submit-letter-search" value="Н">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="о" hidden>
+                            <input type="submit" name="submit-letter-search" value="О">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="п" hidden>
+                            <input type="submit" name="submit-letter-search" value="П">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="р" hidden>
+                            <input type="submit" name="submit-letter-search" value="Р">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="с" hidden>
+                            <input type="submit" name="submit-letter-search" value="С">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="т" hidden>
+                            <input type="submit" name="submit-letter-search" value="Т">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="у" hidden>
+                            <input type="submit" name="submit-letter-search" value="У">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ф" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ф">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="х" hidden>
+                            <input type="submit" name="submit-letter-search" value="Х">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ц" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ц">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ч" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ч">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ш" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ш">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="щ" hidden>
+                            <input type="submit" name="submit-letter-search" value="Щ">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="э" hidden>
+                            <input type="submit" name="submit-letter-search" value="Э">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="ю" hidden>
+                            <input type="submit" name="submit-letter-search" value="Ю">
+                        </form>
+                        <form action="" data-ajax-search="true">
+                            <input type="text" name="letter" value="я" hidden>
+                            <input type="submit" name="submit-letter-search" value="Я">
+                        </form>
+                    </div>
+                </div>
+                <div class="block-mt-dark-blue block-mb-blue">
+                    <div class="found-cities">
+                        <div class="row row-cities">
+                            <div class="col-3">
+                                <a href="#">Ибреси</a>
+                                <a href="#">Ивангород</a>
+                                <a href="#">Иваново</a>
+                                <a href="#">Ивановская</a>
+                                <a href="#">Ивдель</a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#">Ибреси</a>
+                                <a href="#">Ивангород</a>
+                                <a href="#">Иваново</a>
+                                <a href="#">Ивановская</a>
+                                <a href="#">Ивдель</a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#">Ибреси</a>
+                                <a href="#">Ивангород</a>
+                                <a href="#">Иваново</a>
+                                <a href="#">Ивановская</a>
+                                <a href="#">Ивдель</a>
+                            </div>
+                            <div class="col-3">
+                                <a href="#">Ибреси</a>
+                                <a href="#">Ивангород</a>
+                                <a href="#">Иваново</a>
+                                <a href="#">Ивановская</a>
+                                <a href="#">Ивдель</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-find">
+            <div class="container">
+                <div class="close-modal">
+                    <a href="#">
+                        Закрыть
+                        <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                    </a>
+                </div>
+                <div class="block-mt-yellow">
+                    <div class="quick-job-search">     
+                        <div class="quick-job-search-block">
+                            <div class="quick-job-search-block-content"> 
+                                <form action="" name="quick-search-form" data-for="employer">
+                                    <input type="text" name="position" placeholder="ДОЛЖНОСТЬ">
+                                    <input type="text" name="city" placeholder="ГОРОД">
+                                    <div class="input-search-mobile">
+                                        <input type="text" name="resume" placeholder="ПОИСК ВАКАНСИИ">
+                                        <button stype="button" class="button-detailed-search">
+                                            <img src="./img/icon_option.svg" alt="">
+                                        </button>
+                                        </div>
+                                    <input type="submit" name="submit-quick-search-form" class="main-button" value="Найти">
+                                </form>
+                                <div class="wrapper-button-center block-mt-green">
+                                    <a href="#" class="button-text detailed-search">
+                                        <img class="img-svg" src="./img/icon_search.svg" alt="">
+                                        Расширенный поиск
+                                    </a>
+                                </div>
+                                <div class="hash-tags block-mt-dark-blue">
+                                    <a href="#" class="hash-tags__link"># работа рядом <span>(5)</span></a>
+                                    <a href="#" class="hash-tags__link"># работа прямо сейчас <span>(3)</span></a>
+                                    <a href="#" class="hash-tags__link"># работа завтра <span>(18)</span></a>
+                                    <a href="#" class="hash-tags__link"># работа через месяц <span>(11)</span></a>
+                                    <a href="#" class="hash-tags__link"># сезонная работа <span>(8)</span></a>
+                                    <a href="#" class="hash-tags__link"># постоянная работа <span>(8)</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
