@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Заказ № 0028 от 30.01.2019</title>
+    <title>Статистика</title>
 </head>
 <body>
     <div class="wrapper">
@@ -275,7 +275,7 @@
         </div>
         <div class="wrapper-content block-mt-dark-blue block-mb-purple">
             <div class="container">
-                <h1>Заказ № 0028 от 30.01.2019</h1>
+                <h1>Статистика</h1>
                 <div class="content-page block-mt-dark-blue">
                     <div class="profile-container">
                         <div class="row profile-container-row">
@@ -317,7 +317,7 @@
                                         <img class="img-svg" src="./img/icon_watch.svg" alt="">
                                         История заказов
                                     </a>
-                                    <a href="#" class="button-text">
+                                    <a href="#" class="button-text current-ref">
                                         <img class="img-svg" src="./img/icon_statistics.svg" alt="">
                                         Статистика
                                     </a>
@@ -327,66 +327,62 @@
                                 <button type="button" class="other-button button-account">
                                     <img class="img-svg" src="./img/icon_burger.svg" alt="">
                                 </button>
-                                <h3>Исполнитель:</h3>
-                                <div class="block-mt-blue"></div>
-                                <div class="invoice-payment">
-                                    <div class="invoice-payment-block">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <p class="invoice-payment-block__name">ИНН</p>
-                                            </div> 
-                                            <div class="col-8">
-                                                <p class="invoice-payment-block__value">5261234567</p>
-                                            </div>
+                                <form action="" name="statistics">
+                                    <div class="container-compressed">
+                                        <label for="">Вакансия</label>
+                                        <select name="" id="">
+                                            <option value="all">Все</option>
+                                            <option value="vacancy1">Помощник мастера</option>
+                                            <option value="vacancy2">Столяр</option>
+                                        </select>
+                                        <div class="block-mt-orange">
+                                            <input type="submit" class="main-button" name="submit" value="Посмотреть">
                                         </div>
                                     </div>
-                                    <div class="invoice-payment-block">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <p class="invoice-payment-block__name">КПП</p>
-                                            </div> 
-                                            <div class="col-8">
-                                                <p class="invoice-payment-block__value">52609876543</p>
-                                            </div>
-                                        </div>
+                                </form>
+                                <div class="block-mt-green">
+                                    <h3>Просмотры</h3>
+                                    <div class="block-mt-orange">
+                                        <canvas id="schedule-views" style="width: 923px; height: 200px;" data-schedule="true"></canvas>
                                     </div>
-                                    <div class="invoice-payment-block">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <p class="invoice-payment-block__name">Получатель</p>
-                                            </div> 
-                                            <div class="col-8">
-                                                <p class="invoice-payment-block__value">ООО «Вахта Online»</p>
-                                            </div>
-                                        </div>
+                                </div>
+                                <div class="block-mt-yellow">
+                                    <h3>Отклики</h3>
+                                    <div class="block-mt-orange">
+                                        <canvas id="schedule-response" style="width: 923px; height: 200px;" data-schedule="true"></canvas>
                                     </div>
-                                    <div class="invoice-payment-block">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <p class="invoice-payment-block__name">Счёт №</p>
-                                            </div> 
-                                            <div class="col-8">
-                                                <p class="invoice-payment-block__value">1234567890123456789</p>
+                                </div>
+                                <div class="block-mt-blue">
+                                    <div class="container-compressed">
+                                        <div class="general-info">
+                                            <div class="block-mb-yellow general-info__title">
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <h3>Тариф</h3>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <h3>Всего</h3>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="invoice-payment-block">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <p class="invoice-payment-block__name">Банк получателя</p>
-                                            </div> 
-                                            <div class="col-8">
-                                                <p class="invoice-payment-block__value">Нижегородский филиал банка АО КБ «АЛЬФАБАНК»</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="invoice-payment-block">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <p class="invoice-payment-block__name">Счёт №</p>
-                                            </div> 
-                                            <div class="col-8">
-                                                <p class="invoice-payment-block__value">1234567890123456789</p>
+                                            <div class="general-info__content">
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <p>Базовый</p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="general-info__content__block">
+                                                            <div class="general-info__views">
+                                                                <span></span>
+                                                                <p>183 просмотра</p>
+                                                            </div>
+                                                            <div class="general-info__response">
+                                                                <span></span>
+                                                                <p>3 отлика</p>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -545,7 +541,7 @@
                         <img class="img-svg" src="./img/icon_watch.svg" alt="">
                         История заказов
                     </a>
-                    <a href="#" class="button-text">
+                    <a href="#" class="button-text current-ref">
                         <img class="img-svg" src="./img/icon_statistics.svg" alt="">
                         Статистика
                     </a>

@@ -145,7 +145,7 @@
         padding-left: 10px;
         padding-right: 10px;
     }
-    .new-vacancies-content .col-3, .new-resumes-content .col-3
+    .row-card .col-3
     {
         flex: 0 0 33%;
         max-width: 33%;
@@ -420,7 +420,7 @@
         max-width: 50%;
         flex: 0 0 50%;
     }
-    .new-vacancies-content .col-3,  .new-resumes-content .col-3
+    .row-card .col-3
     {
         flex: 0 0 50%;
         max-width: 50%;
@@ -485,6 +485,16 @@
         flex: 0 0 50%;
         max-width: 50%;
     }
+    .transfer-steps__left
+    {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .transfer-steps__left a:nth-child(2)
+    {
+        margin-left: 0;
+        margin-top: 15px;
+    }
 }
 @media(max-width: 700px)
 {
@@ -539,70 +549,6 @@
     {
         width: 100%;
     }
-    // .resumes-header
-    // {
-    //     display: none;
-    // }
-    // .resumes-content-row
-    // {
-    //     display: block;
-    //     padding-left: 16px;
-    //     padding-right: 16px;
-    // }
-    // .resumes-content-row-block
-    // {
-    //     width: 100% !important;
-    //     display: block !important;
-    //     text-align: right;
-    //     margin-bottom: 20px;
-    // }
-    // .resumes-content-row-block:last-child 
-    // {
-    //     margin-bottom: 0;
-    // }
-    // .resumes__actions
-    // {
-    //     flex-direction: column;
-    //     align-items: flex-end;
-    //     margin-bottom: 20px;
-    // }
-    // .resumes__actions .button-text:nth-child(2)
-    // {
-    //     margin-top: 17px;
-    //     margin-left: 0;
-    // }
-    // .resumes-content-row-block::before 
-    // {
-	//     content: attr(data-label);
-	//     float: left;
-    //     font-family: Raleway Bold;
-    //     font-size: 14px;
-    //     font-stretch: normal;
-    //     font-style: normal;
-    //     line-height: normal;
-    //     letter-spacing: normal;
-    //     color: $color-primary;
-    //     margin-top: 7px;
-    //     text-align: left;
-    //     width: 30%;
-    //     margin-right: 10px;
-    // }
-    // .resumes__actions .button-text p
-    // {
-    //     width: 100%;
-    // }
-    // .resumes__name
-    // {
-    //     margin-bottom: 17px;
-    //     display: flex;
-    //     justify-content: flex-end;
-    //     align-items: center;
-    //     text-align: right;
-    // }
-    // .resumes-content-row-block p
-    // {
-    //     margin-bottom: 0;
-    // }
 }
 @media(max-width: 650px)
 {
@@ -619,6 +565,11 @@
     //         }
     //     }
     // }
+    .row-article .col-3, .row-article .col-4, .row-card .col-3, .row-card .col-4 
+    {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
     .block-post .row 
     {
         margin-top: -17px;
@@ -798,6 +749,7 @@
     .wrapper-transition-arrow 
     {
         flex-direction: column;
+        align-items: flex-start;
     }
     .transition-button:nth-child(2)
     {
@@ -1098,6 +1050,14 @@
     .type-employer .block-radio
     {
         margin-top: 22px !important;
+        margin-bottom: 0 !important;
+    }
+    .transfer-steps__left a:nth-child(2)
+    {
+        margin-top: 0;
+    }
+    .transfer-steps__right a 
+    {
         margin-bottom: 0 !important;
     }
 }

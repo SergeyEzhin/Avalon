@@ -5,6 +5,7 @@ import Choices from  '../../node_modules/choices.js/src/scripts/choices';
 import 'owl.carousel';
 import datepicker from 'js-datepicker';
 import noUiSlider from "nouislider";
+import Chart from 'chart.js';
 
 (function() 
 {
@@ -912,6 +913,11 @@ document.addEventListener('DOMContentLoaded', () => {
               objectManager.add(objectManagerData);
               map.setBounds(map.geoObjects.getBounds());
 
+              if(objectManagerData["features"].length === 1) 
+              {
+                map.setZoom(17);
+              }
+
               objectManager.objects.events.add('click', function (e) {
 
                   var objectId = e.get('objectId');
@@ -953,7 +959,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
               let map = new ymaps.Map('current-company-map', {
                   center: [55.751574, 37.573856],
-                  zoom: 12,
+                  zoom: 0,
                   controls: []
               })
 
@@ -1014,6 +1020,11 @@ document.addEventListener('DOMContentLoaded', () => {
               map.geoObjects.add(objectManager);
               objectManager.add(objectManagerData);
               map.setBounds(map.geoObjects.getBounds());
+
+              if(objectManagerData["features"].length === 1) 
+              {
+                map.setZoom(17);
+              }
 
               objectManager.objects.events.add('click', function (e) {
 
@@ -1401,42 +1412,13 @@ let modalAppBanner = document.querySelector('#modal-app-banner');
 function checkFormPostPicture(button)
 {
   let currentForm = button.parentElement;
-  // let valid = true;
-
   const fieldRadio = currentForm.querySelector('input[type="radio"]:checked');
-  // const fieldsRadio = currentForm.querySelectorAll('input[type="radio"]');
-
-  // if(!fieldRadio)
-  // {
-  //   fieldsRadio.forEach((input) => input.classList.add('check-error'));
-  //   valid = false;
-  // }
-
-  // if(valid)
-  // {
-    // fieldsRadio.forEach((input) => input.classList.remove('check-error'));
-
-    let bannerInfo = document.querySelector('.banner-info');
-    let sizesBanner = currentForm.elements[0].value;
-    let countDays = fieldRadio.value;
-    // let allRadio = Array.from(currentForm.querySelectorAll('input[type="radio"]'));
-  
-    // allRadio.forEach(elem => 
-    // {
-    //   if(elem.checked)
-    //   {
-    //     countDays = elem.value;
-    //   }
-    // });
-
-    bannerInfo.innerHTML = `Баннер ${sizesBanner} сроком на ${countDays}`;
-    return true;
-
-  // }
-  // else 
-  // {
-  //   return false;
-  // }
+  let bannerInfo = document.querySelector('.banner-info');
+  let sizesBanner = currentForm.elements[0].value;
+  let countDays = fieldRadio.value;
+   
+  bannerInfo.innerHTML = `Баннер ${sizesBanner} сроком на ${countDays}`;
+  return true;
 }
 
 const animationModalForm = fn =>
@@ -1707,19 +1689,46 @@ function sendForm(form)
         successSending.classList.add('successful-sending_active');
         shadow.appendChild(successSending);
 
-        arrayFields.forEach(field => 
-        {
-          field.addEventListener('click', (e) => 
-          {
-              e.preventDefault();
+
+        // arrayFields.forEach(field => 
+        // {
+        //   field.addEventListener('click', (e) => 
+        //   {
+        //       e.preventDefault();
               
-              successSending.classList.remove('successful-sending_active'); 
-              shadow.classList.remove('wrapper-shadow_active');
-              document.body.classList.remove('disabled');
-              document.body.appendChild(successSending);
-              shadow.innerHTML = '';
+        //       successSending.classList.remove('successful-sending_active'); 
+        //       shadow.classList.remove('wrapper-shadow_active');
+        //       document.body.classList.remove('disabled');
+        //       document.body.appendChild(successSending);
+        //       shadow.innerHTML = '';
                       
-          });
+        //   });
+        // });
+
+        shadow.addEventListener('click', (e) => 
+        {
+          if(e.target.classList.contains('wrapper-shadow'))
+          {
+            e.preventDefault();
+          
+            successSending.classList.remove('successful-sending_active'); 
+            shadow.classList.remove('wrapper-shadow_active');
+            document.body.classList.remove('disabled');
+            document.body.appendChild(successSending);
+            shadow.innerHTML = '';
+          }
+         
+        });
+  
+        successSending.querySelector('.close-modal a').addEventListener('click', function(e)
+        {
+          e.preventDefault();
+
+          successSending.classList.remove('successful-sending_active'); 
+          shadow.classList.remove('wrapper-shadow_active');
+          document.body.classList.remove('disabled');
+          document.body.appendChild(successSending);
+          shadow.innerHTML = '';
         });
       }
       else 
@@ -1729,19 +1738,30 @@ function sendForm(form)
         shadow.classList.add('wrapper-shadow_active');
         successSending.classList.add('successful-sending_active');
 
-        arrayFields.forEach(field => 
+        shadow.addEventListener('click', (e) => 
         {
-            field.addEventListener('click', (e) => 
-            {
-              e.preventDefault();
-              
-              successSending.classList.remove('successful-sending_active'); 
-              shadow.classList.remove('wrapper-shadow_active');
-              document.body.classList.remove('disabled');
-              document.body.appendChild(successSending);
-              shadow.innerHTML = '';
-                        
-            });
+          if(e.target.classList.contains('wrapper-shadow'))
+          {
+            e.preventDefault();
+          
+            successSending.classList.remove('successful-sending_active'); 
+            shadow.classList.remove('wrapper-shadow_active');
+            document.body.classList.remove('disabled');
+            document.body.appendChild(successSending);
+            shadow.innerHTML = '';
+          }
+         
+        });
+  
+        successSending.querySelector('.close-modal a').addEventListener('click', function(e)
+        {
+          e.preventDefault();
+
+          successSending.classList.remove('successful-sending_active'); 
+          shadow.classList.remove('wrapper-shadow_active');
+          document.body.classList.remove('disabled');
+          document.body.appendChild(successSending);
+          shadow.innerHTML = '';
         });
 
       }
@@ -1839,6 +1859,147 @@ wrapTable(responses);
 wrapTable(invoicePayment);
 wrapTable(rates);
 wrapTable(employees);
+
+
+// Обертка для графиков 
+
+let schedules = document.querySelectorAll('[data-schedule="true"]');
+
+function wrapSchedule(schedules)
+{
+  if(schedules.length)
+  {
+    schedules.forEach(function(schedule)
+    {
+      schedule.insertAdjacentHTML('beforebegin', '<div class="wrapper-schedule"></div>');
+      let wrapperSchedule = schedule.previousElementSibling;
+      wrapperSchedule.appendChild(schedule);
+    });
+  }
+}
+
+wrapSchedule(schedules);
+
+
+// Сортировка таблиц
+
+let sortingRef = document.querySelectorAll('.sorting-ref');
+
+if(sortingRef.length)
+{
+  sortingRef.forEach(ref => 
+  {
+    ref.addEventListener('click', (e) => 
+    {
+      e.preventDefault();
+
+      ref.classList.toggle('sorting-ref_sort');
+
+      if(ref.classList.contains('sorting-ref_sort'))
+      {
+        let refParent = ref.parentElement;
+
+        if(refParent.classList.contains('table-header-row-block'))
+        {
+          let table = ref.parentElement.parentElement.parentElement.parentElement;
+
+          let rows = table.querySelectorAll('.table-content-row-block.table-date-column p');
+          let arrayDates = [];
+
+          if(rows.length)
+          { 
+            rows.forEach(row => {
+              let dateStr = row.innerHTML;
+              let date = new Date(dateStr.split('.').reverse().join('-')).getTime();
+              arrayDates.push(date);
+            });
+          }
+
+          arrayDates.sort();
+
+          rows.forEach((row) => {
+            arrayDates.forEach((dateSort, index) => {
+              let dateStr = row.innerHTML;
+              let date = new Date(dateStr.split('.').reverse().join('-')).getTime();
+              if(date === dateSort)
+              {
+                row.parentElement.parentElement.style.order = index;
+              }
+            });
+          });
+
+        }
+        else if(refParent.classList.contains('response-header-row-block'))
+        {
+          let table = ref.parentElement.parentElement.parentElement.parentElement.parentElement;
+
+          let mainRows = table.querySelectorAll('.response-content-row');
+          let arrayDates = [];
+
+          if(mainRows.length)
+          {
+            mainRows.forEach(row => 
+            {
+              arrayDates = [];
+              let rowsDate = row.querySelectorAll('.response-date-column p');
+
+              if(rowsDate.length)
+              { 
+                rowsDate.forEach(rowDate => {
+                  let dateStr = rowDate.innerHTML;
+                  let date = new Date(dateStr.split('.').reverse().join('-')).getTime();
+                  arrayDates.push(date);
+                });
+
+                arrayDates.sort();
+
+                rowsDate.forEach(async rowDate => 
+                {
+                  arrayDates.forEach((dateSort, index) => 
+                  {
+                    let dateStr = rowDate.innerHTML;
+                    let date = new Date(dateStr.split('.').reverse().join('-')).getTime();
+                    if(date === dateSort)
+                    {
+                      rowDate.parentElement.parentElement.parentElement.style.order = index;
+                    }
+                  });
+                });
+
+
+              }
+            });
+          }
+
+        }
+      }
+      else 
+      {
+        let refParent = ref.parentElement;
+
+        if(refParent.classList.contains('table-header-row-block'))
+        {
+          let table = ref.parentElement.parentElement.parentElement.parentElement;
+          let rows = table.querySelectorAll('.table-content-row-block.table-date-column p');
+
+          rows.forEach(row => {
+            row.parentElement.parentElement.style.order = '0';
+          });
+        }
+        else if(refParent.classList.contains('response-header-row-block'))
+        {
+          let table = ref.parentElement.parentElement.parentElement.parentElement.parentElement;
+          let mainRows = table.querySelectorAll('.response-content-row-right-wrapper');
+
+          mainRows.forEach(row => {
+            row.style.order = '0';
+          });
+          
+        }
+      }
+    });
+  });
+}
 
 // Адаптив для формы быстрого поиска
 
@@ -2162,6 +2323,121 @@ if(modalFind && findRef.length)
     });
   });
 }
+
+// Графики со статистикой
+
+document.addEventListener('DOMContentLoaded', () => 
+{ 
+  let scheduleViews = document.querySelector('#schedule-views');
+  let scheduleResponse = document.querySelector('#schedule-response');
+
+  if(scheduleViews)
+  {
+    let ctx = scheduleViews.getContext('2d');
+
+    let myChart = new Chart(ctx, {
+      type: 'line',
+      data: 
+      {
+        labels: ['15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '1', '2', '3', '4',
+      '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'],
+        datasets: [{
+          borderCapStyle: 'square',
+          tension: 0,
+          radius: 0,
+          // label: false,
+          data: [1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          backgroundColor: '#f7f6fb',
+          borderWidth: 3,
+          borderColor: '#92c83e',
+        }]
+      },
+      options: {
+        responsive: false,
+        scales: {
+          yAxes: [{
+            ticks: {
+                suggestedMin: 0,
+                suggestedMax: 2,
+                stepSize: 2
+            }
+          }],
+          scaleLabel: {
+            display: false
+          },
+          // xAxes: [{
+          //   ticks: {
+          //       suggestedMin: 0,
+          //       suggestedMax: 100
+          //   }
+          // }]
+        },
+        // scale: {
+        //   gridLines: {
+        //      // drawOnChartArea: false
+        //     // display: false
+        //   }
+        // },
+        tooltips: {
+          enabled: false
+        }
+      }
+    });
+  }
+  if(scheduleResponse)
+  {
+    let ctx = scheduleResponse.getContext('2d');
+
+    let myChart = new Chart(ctx, {
+        type: 'line',
+        data: 
+        {
+          labels: ['15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '1', '2', '3', '4',
+        '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'],
+          datasets: [{
+            borderCapStyle: 'square',
+            tension: 0,
+            radius: 0,
+            // label: false,
+            data: [1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            backgroundColor: '#f7f6fb',
+            borderWidth: 3,
+            borderColor: '#92c83e',
+          }]
+        },
+        options: {
+          responsive: false,
+          scales: {
+            yAxes: [{
+              ticks: {
+                  suggestedMin: 0,
+                  suggestedMax: 2,
+                  stepSize: 2
+              }
+            }],
+            scaleLabel: {
+              display: false
+            },
+            // xAxes: [{
+            //   ticks: {
+            //       suggestedMin: 0,
+            //       suggestedMax: 100
+            //   }
+            // }]
+          },
+          // scale: {
+          //   gridLines: {
+          //      // drawOnChartArea: false
+          //     // display: false
+          //   }
+          // },
+          tooltips: {
+            enabled: false
+          }
+        }
+    });
+  }
+});
 
 
 

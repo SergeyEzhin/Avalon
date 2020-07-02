@@ -469,20 +469,30 @@ input[type="text"], input[type="password"]
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: #dddce8;
-    border: solid 2px currentColor;
+    color: $color-primary;
+    border: solid 2px #dddce8;
     width: 100%;
 }
 
 input[type="text"]::placeholder, input[type="password"]::placeholder
 {
+    // color: $color-disabled;
+    // color: #B7B6C4;
+    // color: #dddce8;
     color: $color-disabled;
 }
 
-input[type="text"]:focus, input[type="text"]:focus::placeholder, input[type="password"]:focus, input[type="password"]:focus::placeholder 
+input[type="text"]:focus, input[type="password"]:focus
 {
-    color: $color-ref;
+    // color: $color-primary;
+    border-color: currentColor;
 }
+
+input[type="text"]:blur, input[type="password"]:blur
+{
+    color: $color-primary;
+}
+
 input[type="text"]:focus, input[type="password"]:focus
 {
     border-left: 2px solid currentColor !important;
@@ -819,6 +829,7 @@ ul
 {
     width: 100%;
     overflow-x: auto;
+    box-shadow: 0 10px 20px 0 rgba(15,20,91,.1);
 }
 
 .wrapper-table::-webkit-scrollbar
@@ -835,7 +846,48 @@ ul
 .wrapper-table::-webkit-scrollbar-corner { background-color: #b7b6c3;}
 .wrapper-table::-webkit-resizer {background-color: #b7b6c3;}
 
+// Обертка для графиков
 
+.wrapper-schedule 
+{
+    width: 100%;
+    overflow-x: auto;
+}
+
+.wrapper-schedule::-webkit-scrollbar
+{
+    width: 5px;
+    height: 5px;
+    border-radius: 3px;
+    background-color: #b7b6c3;
+}
+
+.wrapper-schedule::-webkit-scrollbar-track { background-color: #b7b6c3;}
+.wrapper-schedule::-webkit-scrollbar-track-piece { background-color: #ffffff;}
+.wrapper-schedule::-webkit-scrollbar-thumb { height: 5px; background-color: #b7b6c3; border-radius: 3px;}
+.wrapper-schedule::-webkit-scrollbar-corner { background-color: #b7b6c3;}
+.wrapper-schedule::-webkit-resizer {background-color: #b7b6c3;}
+
+// Сортировка таблиц
+
+.sorting-ref 
+{
+    display: flex;
+    align-items: center;
+    border: 0;
+    img 
+    {
+        transition: .3s;
+    }
+}
+
+.sorting-ref_sort 
+{
+    img 
+    {
+        transform: rotateX(180deg);
+    }
+}
 
 // Стили для radio
 
@@ -1063,7 +1115,6 @@ textarea:disabled
             color: $color-ref;
             font-family: Montserrat Bold;
             font-size: 14px;
-            
             font-stretch: normal;
             font-style: normal;
             line-height: normal;
@@ -1076,6 +1127,7 @@ textarea:disabled
             transition: .3s;
             margin-right: 10px;
             border: 0;
+            box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
         }
         &__block:hover 
         {
@@ -1232,6 +1284,13 @@ textarea:disabled
 .qs-datepicker .qs-arrow.qs-right:hover 
 {
     background: transparent url(../img/arrow_right_datapicker_hover.svg);
+}
+
+// SVG
+
+.img-svg path
+{
+    transition: all .3s;
 }
 
 // Отключение скролла body
@@ -2629,6 +2688,8 @@ button
     display: flex;
     padding: 32px;
     background-color: #fff;
+    box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
+    transition: .3s;
     border-radius: 3px;
     // width: 400px;
     position: relative;
@@ -2697,6 +2758,11 @@ button
         height: 77px;
         overflow: hidden;
     }
+}
+
+.company-card:hover 
+{
+    box-shadow: 0 20px 20px 0 rgba(15, 20, 91, 0.15);
 }
 
 .top-companies 
@@ -3093,6 +3159,7 @@ button
     height: 549px;
     max-height: 549px;
     overflow: hidden;
+    transition: .3s;
     &__image 
     {
         height: 197px;
@@ -3152,6 +3219,11 @@ button
             bottom: 32px;
         }
     }
+}
+
+.article-block:hover 
+{
+    box-shadow: 0 20px 20px 0 rgba(15, 20, 91, 0.15);
 }
 
 .useful-articles 
@@ -3313,7 +3385,7 @@ button
     .company-card 
     {
         height: 300px;
-        box-shadow: 0 10px 20px 0 rgba(15,20,91,.1);
+        // box-shadow: 0 10px 20px 0 rgba(15,20,91,.1);
         border-radius: 3px;
         .title-rating 
         {
@@ -3749,6 +3821,7 @@ label
     transition: .3s;
     opacity: 0;
     z-index: -1;
+    box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
 }
 
 .block-tooltip:hover 
@@ -4554,19 +4627,19 @@ input[type="submit"]
 {
     h2 
     {
-        margin-bottom: 43px;
+        // margin-bottom: 43px;
     }
-    .row 
-    {
-        margin-left: -10px;
-        margin-right: -10px;
-        .col-3 
-        {
-            padding-left: 10px;
-            padding-right: 10px;
-            margin-bottom: 22px;
-        }
-    }
+    // .row 
+    // {
+    //     margin-left: -10px;
+    //     margin-right: -10px;
+    //     .col-3 
+    //     {
+    //         padding-left: 10px;
+    //         padding-right: 10px;
+    //         margin-bottom: 22px;
+    //     }
+    // }
 }
 
 // 404-страница
@@ -4748,6 +4821,8 @@ input[type="submit"]
     }
     &-content 
     {
+        display: flex;
+        flex-direction: column;
         &-row 
         {
             display: flex;
@@ -4968,6 +5043,8 @@ input[type="submit"]
             &-right 
             {
                 width: 78%;
+                display: flex;
+                flex-direction: column;
                 &-wrapper 
                 {
                     padding-left: 140px;
@@ -5146,6 +5223,7 @@ form
         .button-text 
         {
             margin-left: 12px;
+            margin-top: 45px;
         }
     }
     .other-position ~ p
@@ -6262,6 +6340,53 @@ hr
        padding-left: 10px;
        padding-right: 10px;
        margin-bottom: 22px;
+    }
+}
+
+// Страница Статистика
+
+.general-info 
+{
+    &__title 
+    {
+
+    }
+    &__content 
+    {
+        &__block 
+        {
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__views 
+    {
+        display: flex;
+        align-items: center;
+        span 
+        {
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: $color-ref;
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+    }
+    &__response 
+    {
+        display: flex;
+        align-items: center;
+        margin-left: 30px;
+        span 
+        {
+            display: block;
+            width: 10px;
+            height: 10px;
+            background-color: $color-hover;
+            border-radius: 50%;
+            margin-right: 12px;
+        }
     }
 }
 
