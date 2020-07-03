@@ -565,6 +565,15 @@
     //         }
     //     }
     // }
+    .general-info .col-4, .general-info .col-6 
+    {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .general-info .col-6
+    {
+        margin-top: 24px;
+    }
     .row-article .col-3, .row-article .col-4, .row-card .col-3, .row-card .col-4 
     {
         padding-left: 16px;
@@ -1168,6 +1177,15 @@
         align-items: flex-start;
         margin-bottom: 25px;
         width: 100%;
+    }
+    .general-info-content 
+    {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .general-info-content-block__response 
+    {
+        margin-left: 0;
     }
 }
 @media(max-width: 450px)

@@ -1605,6 +1605,18 @@ function validationForms(forms)
         if(!checkFieldPassword(input)) valid = false;
       });
 
+      // Проверка даты 
+
+      const fieldsDates = form.querySelectorAll('input[data-picker="datepicker"]');
+
+      fieldsDates.forEach(function(input)
+      {
+        if(input.value.trim() !== '')
+        {
+          if(!checkFieldDate(input)) valid = false;
+        }
+      });
+
       
       // Если были ошибки, не отправляем форму
 
@@ -1675,6 +1687,25 @@ function checkFieldPassword(password)
   return result;
 }
 
+function checkFieldDate(input)
+{
+  let date = input.value;
+  let errorClass = 'field-error';
+  let result;
+  if(!date.match(/([0-2]\d|3[01])\.(0\d|1[012])\.(\d{4})/))
+  {
+    result = false;
+    result ? input.classList.remove(errorClass) : input.classList.add(errorClass);
+    return result;
+  }
+  else 
+  {
+    result = true;
+    result ? input.classList.remove(errorClass) : input.classList.add(errorClass);
+    return result;
+  }
+}
+
 function sendForm(form)
 {
   fetch(form.action, { method: 'POST', body: new FormData(form)})
@@ -1688,22 +1719,6 @@ function sendForm(form)
         var successSending = document.querySelector('.successful-sending');
         successSending.classList.add('successful-sending_active');
         shadow.appendChild(successSending);
-
-
-        // arrayFields.forEach(field => 
-        // {
-        //   field.addEventListener('click', (e) => 
-        //   {
-        //       e.preventDefault();
-              
-        //       successSending.classList.remove('successful-sending_active'); 
-        //       shadow.classList.remove('wrapper-shadow_active');
-        //       document.body.classList.remove('disabled');
-        //       document.body.appendChild(successSending);
-        //       shadow.innerHTML = '';
-                      
-        //   });
-        // });
 
         shadow.addEventListener('click', (e) => 
         {
@@ -1821,26 +1836,6 @@ let invoicePayment = document.querySelectorAll('.invoice-payment');
 let rates = document.querySelectorAll('.rates');
 let employees = document.querySelectorAll('.employees');
 
-// if(tables.length)
-// {
-//   tables.forEach(function(table)
-//   {
-//     table.insertAdjacentHTML('beforebegin', '<div class="wrapper-table"></div>');
-//     let wrapperTable = table.previousElementSibling;
-//     wrapperTable.appendChild(table);
-//   });
-// }
-
-// if(responses.length)
-// {
-//   responses.forEach(function(response)
-//   {
-//     response.insertAdjacentHTML('beforebegin', '<div class="wrapper-table"></div>');
-//     let wrapperTable = response.previousElementSibling;
-//     wrapperTable.appendChild(response);
-//   });
-// }
-
 function wrapTable(tables)
 {
   if(tables.length)
@@ -1940,8 +1935,8 @@ if(sortingRef.length)
           {
             mainRows.forEach(row => 
             {
-              arrayDates = [];
               let rowsDate = row.querySelectorAll('.response-date-column p');
+              arrayDates = [];
 
               if(rowsDate.length)
               { 
@@ -1953,10 +1948,13 @@ if(sortingRef.length)
 
                 arrayDates.sort();
 
-                rowsDate.forEach(async rowDate => 
+                console.log(arrayDates);
+
+                rowsDate.forEach((rowDate) => 
                 {
                   arrayDates.forEach((dateSort, index) => 
                   {
+                    console.log(index);
                     let dateStr = rowDate.innerHTML;
                     let date = new Date(dateStr.split('.').reverse().join('-')).getTime();
                     if(date === dateSort)
@@ -1965,7 +1963,6 @@ if(sortingRef.length)
                     }
                   });
                 });
-
 
               }
             });
@@ -2032,7 +2029,7 @@ if(rows.length)
       {
         let maxHeight = tariffContents[0].getBoundingClientRect().height;
 
-        console.log(maxHeight);
+        // console.log(maxHeight);
 
         tariffContents.forEach(content => 
         {
@@ -2096,6 +2093,15 @@ if(tabs.length)
             {
               let oldTabsContent = tabsContent.querySelectorAll('.tabs-content-block_active');
               oldTabsContent.forEach(tab => {
+
+                let inputs = tab.querySelectorAll('input[type="text"]');
+                if(inputs.length)
+                {
+                  inputs.forEach(input => {
+                    input.setAttribute('disabled', 'disabled');
+                  });
+                }
+
                 tab.classList.remove('tabs-content-block_active');
                 tab.style.display = 'none';
               });
@@ -2105,6 +2111,15 @@ if(tabs.length)
             {
               let newTabsContent = tabsContent.querySelectorAll('div[data-tab="' + dataTab + '"]');
               newTabsContent.forEach(tab => {
+
+                let inputs = tab.querySelectorAll('input[type="text"]');
+                if(inputs.length)
+                {
+                  inputs.forEach(input => {
+                    input.removeAttribute('disabled');
+                  });
+                }
+
                 tab.classList.add('tabs-content-block_active');
               });
               // tabsContent.querySelector('div[data-tab="' + dataTab + '"]').classList.add('tabs-content-block_active');
@@ -2331,6 +2346,10 @@ document.addEventListener('DOMContentLoaded', () =>
   let scheduleViews = document.querySelector('#schedule-views');
   let scheduleResponse = document.querySelector('#schedule-response');
 
+  Chart.defaults.global.defaultFontColor = '#3c3b55';
+  Chart.defaults.global.defaultFontFamily = 'Montserrat Bold';
+  Chart.defaults.global.defaultFontSize = 13;
+
   if(scheduleViews)
   {
     let ctx = scheduleViews.getContext('2d');
@@ -2345,39 +2364,49 @@ document.addEventListener('DOMContentLoaded', () =>
           borderCapStyle: 'square',
           tension: 0,
           radius: 0,
-          // label: false,
-          data: [1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          data: [11, 12, 13, 14, 13, 12, 11, 15, 17, 20, 23, 26, 20, 15, 18, 20],
           backgroundColor: '#f7f6fb',
           borderWidth: 3,
-          borderColor: '#92c83e',
+          borderColor: '#262262',
         }]
       },
       options: {
         responsive: false,
+        legend: {
+          display: false
+        },
         scales: {
           yAxes: [{
+            gridLines: {
+              color: "#DDDCE8",
+              drawOnChartArea: false,
+              zeroLineColor: '#DDDCE8'
+            },
             ticks: {
                 suggestedMin: 0,
-                suggestedMax: 2,
-                stepSize: 2
+                suggestedMax: 26,
+                stepSize: 26
             }
           }],
-          scaleLabel: {
-            display: false
-          },
-          // xAxes: [{
-          //   ticks: {
-          //       suggestedMin: 0,
-          //       suggestedMax: 100
-          //   }
-          // }]
+          xAxes: [{
+            gridLines: {
+              drawOnChartArea: false,
+              color: "#DDDCE8",
+              tickMarkLength: 0,
+              zeroLineColor: '#DDDCE8'
+            },
+            ticks: {
+              fontFamily: 'Montserrat Regular',
+              padding: 35
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'июнь 2020 - июль 2020',
+              fontFamily: 'Montserrat Regular', 
+              padding: 22
+            }
+          }],
         },
-        // scale: {
-        //   gridLines: {
-        //      // drawOnChartArea: false
-        //     // display: false
-        //   }
-        // },
         tooltips: {
           enabled: false
         }
@@ -2398,7 +2427,6 @@ document.addEventListener('DOMContentLoaded', () =>
             borderCapStyle: 'square',
             tension: 0,
             radius: 0,
-            // label: false,
             data: [1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             backgroundColor: '#f7f6fb',
             borderWidth: 3,
@@ -2407,30 +2435,44 @@ document.addEventListener('DOMContentLoaded', () =>
         },
         options: {
           responsive: false,
+          legend: {
+            display: false
+          },
           scales: {
             yAxes: [{
+              gridLines: {
+                color: "#DDDCE8",
+                drawOnChartArea: false,
+                zeroLineColor: '#DDDCE8'
+              },
               ticks: {
                   suggestedMin: 0,
                   suggestedMax: 2,
                   stepSize: 2
               }
             }],
-            scaleLabel: {
-              display: false
-            },
-            // xAxes: [{
-            //   ticks: {
-            //       suggestedMin: 0,
-            //       suggestedMax: 100
-            //   }
-            // }]
+            xAxes: [{
+              gridLines: {
+                drawOnChartArea: false,
+                color: "#DDDCE8",
+                tickMarkLength: 0,
+                zeroLineColor: '#DDDCE8'
+              },
+              ticks: {
+                fontFamily: 'Montserrat Regular',
+                padding: 35
+              },
+              scaleLabel: {
+                display: true,
+                labelString: 'июнь 2020 - июль 2020',
+                fontFamily: 'Montserrat Regular', 
+                padding: 22
+              }
+            }],
+            gridLines: {
+              color: "#DDDCE8"
+            }
           },
-          // scale: {
-          //   gridLines: {
-          //      // drawOnChartArea: false
-          //     // display: false
-          //   }
-          // },
           tooltips: {
             enabled: false
           }

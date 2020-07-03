@@ -1764,7 +1764,7 @@ textarea:disabled
                 p 
                 {
                     font-family: Montserrat Bold;
-                    font-size: 16px;
+                    // font-size: 16px;
                     font-stretch: normal;
                     font-style: normal;
                     line-height: normal;
@@ -3747,7 +3747,7 @@ label
     p 
     {
         font-family:Montserrat Regular;
-        font-size: 16px;
+        // font-size: 16px;
         font-weight: normal;
         font-stretch: normal;
         font-style: normal;
@@ -4404,7 +4404,7 @@ ymaps[class$='pie-chart-content']
             {
                 margin-right: 20px;
                 font-family: Montserrat Bold;
-                font-size: 16px;
+                // font-size: 16px;
                 
                 font-stretch: normal;
                 font-style: normal;
@@ -4478,8 +4478,7 @@ ymaps[class$='pie-chart-content']
             p
             {
                 font-family: Montserrat Bold;
-                font-size: 16px;
-                
+                // font-size: 16px;
                 font-stretch: normal;
                 font-style: normal;
                 line-height: 30px;
@@ -4493,7 +4492,7 @@ ymaps[class$='pie-chart-content']
             p 
             {
                 font-family: Montserrat Regular;
-                font-size: 16px;
+                // font-size: 16px;
                 font-weight: normal;
                 font-stretch: normal;
                 font-style: normal;
@@ -4660,7 +4659,7 @@ input[type="submit"]
     p 
     {
         font-family: Montserrat Regular;
-        font-size: 16px;
+        // font-size: 16px;
         font-weight: normal;
         font-stretch: normal;
         font-style: normal;
@@ -4694,12 +4693,16 @@ input[type="submit"]
             max-width: 20px;
         }
     }
-    a.current-ref 
+    .button-text.current-ref 
     {
         color: $color-hover;
         .img-svg path
         {
             fill: $color-hover;
+        }
+        p 
+        {
+            color: $color-hover;
         }
     }
     a:last-child 
@@ -4804,7 +4807,6 @@ input[type="submit"]
                 {
                     font-family: Raleway Bold;
                     font-size: 14px;
-                    
                     font-stretch: normal;
                     font-style: normal;
                     line-height: normal;
@@ -5543,7 +5545,7 @@ form
         p 
         {
             font-family: Montserrat Bold;
-            font-size: 16px;
+            // font-size: 16px;
             font-stretch: normal;
             font-style: normal;
             line-height: normal;
@@ -5817,7 +5819,7 @@ form
                 p 
                 {
                     font-family: Montserrat Bold;
-                    font-size: 16px;
+                    // font-size: 16px;
                     font-stretch: normal;
                     font-style: normal;
                     line-height: 1.88;
@@ -5827,7 +5829,7 @@ form
                     {
                         margin-left: 40px;
                         font-family: Montserrat Regular;
-                        font-size: 16px;
+                        // font-size: 16px;
                         font-weight: normal;
                         font-stretch: normal;
                         font-style: normal;
@@ -6151,7 +6153,7 @@ hr
             p 
             {
                 font-family: Montserrat Bold;
-                font-size: 16px;
+                // font-size: 16px;
                 font-stretch: normal;
                 font-style: normal;
                 line-height: normal;
@@ -6164,7 +6166,7 @@ hr
             p 
             {
                 font-family: Montserrat Regular;
-                font-size: 16px;
+                // font-size: 16px;
                 font-weight: normal;
                 font-stretch: normal;
                 font-style: normal;
@@ -6347,45 +6349,37 @@ hr
 
 .general-info 
 {
-    &__title 
+    &-content 
     {
-
-    }
-    &__content 
-    {
-        &__block 
+        display: flex;
+        align-items: center;
+        &-block 
         {
             display: flex;
             align-items: center;
+            span 
+            {
+                display: block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                margin-right: 12px;
+            }
         }
-    }
-    &__views 
-    {
-        display: flex;
-        align-items: center;
-        span 
+        &-block__views 
         {
-            display: block;
-            width: 10px;
-            height: 10px;
-            background-color: $color-ref;
-            border-radius: 50%;
-            margin-right: 12px;
+            span 
+            {
+                background-color: $color-ref;
+            }
         }
-    }
-    &__response 
-    {
-        display: flex;
-        align-items: center;
-        margin-left: 30px;
-        span 
+        &-block__response 
         {
-            display: block;
-            width: 10px;
-            height: 10px;
-            background-color: $color-hover;
-            border-radius: 50%;
-            margin-right: 12px;
+            margin-left: 30px;
+            span 
+            {
+                background-color: $color-hover;
+            }
         }
     }
 }
