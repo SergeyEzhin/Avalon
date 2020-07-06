@@ -458,6 +458,17 @@ button
 
 // Поля формы
 
+input, button, a, textarea
+{
+    border-radius: 0 !important;
+}
+
+input, textarea 
+{
+    outline: none;
+    appearance: none;
+}
+
 input[type="text"], input[type="password"]
 {
     background-color: #fff;
@@ -501,9 +512,14 @@ input[type="text"]:focus, input[type="password"]:focus
 
 input[type="text"]:disabled, input[type="password"]:disabled
 {
-    color: #b7b6c3;
+    color: $color-disabled;
     border-color: #dddce8;
     background: transparent;
+}
+
+input[type="text"]:disabled::placeholder, input[type="password"]:disabled::placeholder 
+{
+    color: $color-disabled;
 }
 
 input[type="text"].field-error, input[type="password"].field-error
@@ -3460,7 +3476,7 @@ button
             border: 0;
             background: transparent;
             background-position: center;
-            background-size: cover;
+            // background-size: cover;
             background-repeat: no-repeat;
             right: 10px;
             top: 10px;
@@ -3874,6 +3890,7 @@ label
         .tabs-item_active 
         {
             color: $color-ref !important;
+            border-color: $color-ref;
         }
         .tabs-item:hover 
         {
