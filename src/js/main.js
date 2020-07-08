@@ -350,7 +350,9 @@ if(inputFile.length)
       input.addEventListener('change', function(e)
       {
           if(input.id === 'load-photo') return;
-          var value = input.value;
+          console.log(input.files);
+          let value = input.value;
+          // console.log(value);
           value = value.replace( 'C:\\fakepath\\', '');
           input.parentElement.querySelector('.file-value').innerHTML = value;
       });
@@ -1332,7 +1334,7 @@ if(addPlaceWork.length)
                   <option value="other">Другая</option>
               </select>
               <div class="block-mb-yellow">
-                <input type="text" name="other-position${indexPlacework}" id="other-position${indexPlacework}" placeholder="ЖЕЛАЕМАЯ ДОЛЖНОСТЬ">
+                <input type="text" name="other-position${indexPlacework}" id="other-position${indexPlacework}" placeholder="ЖЕЛАЕМАЯ ДОЛЖНОСТЬ" disabled>
               </div>
           </div>
           <div class="block-mb-yellow">

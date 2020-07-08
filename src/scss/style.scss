@@ -247,6 +247,7 @@ a:hover
     transition: .3s;
     text-transform: uppercase;
     width: auto !important;
+    border-radius: 0;
 }
 
 .main-button:hover 
@@ -287,6 +288,7 @@ button
     letter-spacing: normal;
     color: $color-ref;
     justify-content: center;
+    border-radius: 0;
     border: 0;
     .img-svg
     {
@@ -349,6 +351,7 @@ button
     box-shadow: 0 10px 20px 0 rgba(15, 20, 91, 0.1);
     transition: .3s;
     width: max-content;
+    border-radius: 0;
     border: 0;
 }
 
@@ -458,7 +461,7 @@ button
 
 // Поля формы
 
-input, button, a, textarea
+input, button, textarea
 {
     border-radius: 0 !important;
 }
@@ -967,6 +970,11 @@ ul
             border-color:#dddce8;
             background: transparent;
         }
+        input[type="radio"]:disabled
+        {
+            cursor: none !important;
+            pointer-events: none;
+        }
         input[type="radio"]:disabled ~ p
         {
             color: #b7b6c3;
@@ -1047,6 +1055,11 @@ ul
         input[type="checkbox"]:checked ~ .check:before 
         {
             opacity: 1;
+        }
+        input[type="checkbox"]:disabled 
+        {
+            cursor: none !important;
+            pointer-events: none;
         }
         input[type="checkbox"].check-error ~ .check
         {
@@ -1961,7 +1974,7 @@ textarea:disabled
         &-middle 
         {
             display: flex;
-            align-items: center;  
+            align-items: center; 
         }
         &-right 
         {
@@ -4862,6 +4875,14 @@ input[type="submit"]
                     }
                 }
             }
+            .table-views-column, .table-feedback-column, .table-date-column
+            {
+                font-family: Montserrat Semibold !important;
+                p 
+                {
+                    font-family: Montserrat Semibold;
+                }
+            }
         }
     }
     &__name 
@@ -4911,12 +4932,12 @@ input[type="submit"]
         .table-feedback-column
         {
             justify-content: center;
-            width: 10%
+            width: 10%;
         }
         .table-date-column
         {
             justify-content: center;
-            width: 10%
+            width: 10%;
         }
     }
     &-drafts 

@@ -271,7 +271,7 @@
                         <form action="" name="form-enter-account" id="form-enter-account">
                             <div class="block-mb-orange">
                                 <label for="phone">Телефон</label>
-                                <input type="text" placeholder="+7" name="phone" id="phone">
+                                <input type="text" name="phone" id="phone" data-phone="true" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" placeholder="+7 (___)___-__-__">
                             </div>
                             <div class="block-mb-orange">
                                 <label for="password">Пароль</label>
