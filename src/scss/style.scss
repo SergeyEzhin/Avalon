@@ -915,7 +915,6 @@ ul
     // margin-top: 22px;
     label 
     {
-        cursor: pointer;
         display: flex;
         align-items: center;
         font-family: Montserrat Regular;
@@ -970,11 +969,6 @@ ul
             border-color:#dddce8;
             background: transparent;
         }
-        input[type="radio"]:disabled
-        {
-            cursor: none !important;
-            pointer-events: none;
-        }
         input[type="radio"]:disabled ~ p
         {
             color: #b7b6c3;
@@ -982,6 +976,11 @@ ul
         input[type="radio"]:disabled ~ .radio:before 
         {
             background-color: #b7b6c3;
+        }
+        input[type="radio"]:disabled ~ .radio
+        {
+            cursor: default;
+            pointer-events: none;
         }
         p 
         {
@@ -1012,7 +1011,6 @@ ul
     // margin-top: 22px;
     label 
     {
-        cursor: pointer;
         display: flex;
         align-items: center;
         font-family: Montserrat Regular;
@@ -1056,9 +1054,9 @@ ul
         {
             opacity: 1;
         }
-        input[type="checkbox"]:disabled 
+        input[type="checkbox"]:disabled ~ .check
         {
-            cursor: none !important;
+            cursor: default;
             pointer-events: none;
         }
         input[type="checkbox"].check-error ~ .check
@@ -1433,6 +1431,33 @@ textarea:disabled
 }
 
 .successful-sending_active 
+{
+    display: block;
+}
+
+.modal-confirm 
+{
+    display: none;
+    z-index: 5;
+    position: absolute;
+    opacity: 1;
+    min-height: 519px;
+    top: calc(-12.5% - 286px);
+    p 
+    {
+        text-align: center;
+        a 
+        {
+            padding-bottom: 4px;
+        }
+    }
+    .confirmation-mail
+    {
+        font-family: Montserrat Semibold;
+    }
+}
+
+.modal-confirm_active 
 {
     display: block;
 }
@@ -4883,6 +4908,13 @@ input[type="submit"]
                     font-family: Montserrat Semibold;
                 }
             }
+            .table-feedback-column
+            {
+                p 
+                {
+                    border-bottom: 1px dotted currentColor;
+                }
+            }
         }
     }
     &__name 
@@ -4892,6 +4924,7 @@ input[type="submit"]
         {
             display: inline-block;
             margin-bottom: 7px;
+            font-family: Montserrat Medium;
         }
     }
     &__actions 
@@ -4907,6 +4940,7 @@ input[type="submit"]
                 font-size: 12px;
                 width: 85%;
                 margin: 0;
+                color: $color-ref;
             }
         }
         .button-text:nth-child(2)
@@ -5071,6 +5105,7 @@ input[type="submit"]
         {
             display: flex;
             justify-content: space-between;
+            align-items: flex-start;
             &-left 
             {
                 width: 22%;
@@ -5078,7 +5113,11 @@ input[type="submit"]
                 padding-top: 20px;
                 padding-bottom: 20px;
                 border-top: 1px solid #dddce8;
-                padding-right: 20px;
+                padding-right: 20px; 
+                a 
+                {
+                    font-family: Montserrat Medium;
+                }
             }
             &-right 
             {
@@ -5105,6 +5144,22 @@ input[type="submit"]
             &-block 
             {
                 display: flex;
+            }
+            .response-company-column 
+            {
+                a 
+                {
+                    font-family: Montserrat Medium;
+                    padding-bottom: 4px;
+                    line-height: normal;
+                }
+            }
+            .response-date-column 
+            {
+                p 
+                {
+                    font-family: Montserrat Semibold;
+                }
             }
         }
     }
@@ -5178,9 +5233,8 @@ input[type="submit"]
     {
         content: attr(data-label);
         position: absolute;
-        font-family: Montserrat Bold;
+        font-family: Montserrat Semibold;
         font-size: 14px;
-        
         font-stretch: normal;
         font-style: normal;
         line-height: normal;
@@ -5739,6 +5793,7 @@ form
 {
     margin-left: -10px;
     margin-right: -10px;
+    margin-top: -43px;
     .col-4 
     {
         padding-left: 10px;
@@ -5824,7 +5879,7 @@ form
     &-block 
     {
         border-bottom: 2px solid #DDDCE8;
-        padding-bottom: 43px;
+        // padding-bottom: 43px;
         &__image 
         {
             img 
@@ -5885,6 +5940,7 @@ form
 {
     border: 0;
     margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .banner-info 
@@ -6282,6 +6338,20 @@ hr
                     line-height: normal;
                 }
             }
+            .employees-name-column, .employees-status-column 
+            {
+                p 
+                {
+                    font-family: Montserrat Medium;
+                }
+            }
+            .employees-email-column
+            {
+                p 
+                {
+                    font-family: Montserrat Semibold;
+                }
+            }
         }
         &-row_new 
         {
@@ -6312,7 +6382,7 @@ hr
         {
             opacity: 0;
             pointer-events: none;
-            font-family: Montserrat Bold;
+            font-family: Montserrat Semibold;
             font-size: 14px;
             font-stretch: normal;
             font-style: normal;

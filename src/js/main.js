@@ -345,18 +345,25 @@ let inputFile = document.querySelectorAll('input[type="file"]');
 
 if(inputFile.length)
 {
-    inputFile.forEach(function(input) 
+  inputFile.forEach(function(input) 
+  {
+    input.addEventListener('change', function(e)
     {
-      input.addEventListener('change', function(e)
+      if(input.id === 'load-photo') return;
+      // console.log(input.files);
+      let value = input.value;
+      // console.log(value);
+      value = value.replace( 'C:\\fakepath\\', '');
+      if(input.files.length > 1)
       {
-          if(input.id === 'load-photo') return;
-          console.log(input.files);
-          let value = input.value;
-          // console.log(value);
-          value = value.replace( 'C:\\fakepath\\', '');
-          input.parentElement.querySelector('.file-value').innerHTML = value;
-      });
+        input.parentElement.querySelector('.file-value').innerHTML = 'выбрано ' + input.files.length + ' файла';
+      }
+      else 
+      {
+        input.parentElement.querySelector('.file-value').innerHTML = 'выбран ' + input.files.length + ' файл';
+      }
     });
+  });
 }
 
 
@@ -1188,8 +1195,10 @@ if(buttonMailingPhone && buttonMailingEmail)
       let option = button.id;
       if(mailingMethodOption.querySelector('.mailing-method-option_selected').dataset.option !== option)
       {
+        mailingMethodOption.querySelector('.mailing-method-option_selected input[type="text"]').setAttribute('disabled', 'disabled');
         mailingMethodOption.querySelector('.mailing-method-option_selected').classList.remove('mailing-method-option_selected');
         mailingMethodOption.querySelector('div[data-option="' + option + '"]').classList.add('mailing-method-option_selected');
+        mailingMethodOption.querySelector('.mailing-method-option_selected input[type="text"]').removeAttribute('disabled');
       }
     });
   });
@@ -1541,36 +1550,60 @@ function validationForms(forms)
     
       let valid = true;
 
+      if(form.id === 'form-password-recovery')
+      {
+        let inputs = form.querySelectorAll('input[type="text"]');
+        inputs = Array.prototype.slice.call(inputs)
+    
+        if(inputs.length)
+        {
+          if(!inputs.some(checkFieldText))
+          {
+            valid = false;
+          }
+          else 
+          {
+            inputs.map(input => input.classList.remove('field-error'));
+          }
+        }
+      }
+
       // Проверим все текстовые инпуты
 
       const fieldsText = form.querySelectorAll('input[type="text"][data-required="true"]');
 
-      fieldsText.forEach(function(input)
+      if(fieldsText.length)
       {
-        // if(input.style.display === 'none') console.log('yes');
-        if(getComputedStyle(input, null).display === 'none' || input.disabled)
+        fieldsText.forEach(function(input)
         {
-          input.classList.remove('field-error');
-          return;
-        }
+          // if(input.style.display === 'none') console.log('yes');
+          if(getComputedStyle(input, null).display === 'none' || input.disabled)
+          {
+            input.classList.remove('field-error');
+            return;
+          }
 
-        if(!checkFieldText(input)) valid = false;
-      });
+          if(!checkFieldText(input)) valid = false;
+        });
+      }
 
       // Проверим все textarea
 
       const fieldsTextarea = form.querySelectorAll('textarea[data-required="true"]');
 
-      fieldsTextarea.forEach(function(textarea)
+      if(fieldsTextarea.length)
       {
-        if(getComputedStyle(textarea, null).display === 'none' || textarea.disabled)
+        fieldsTextarea.forEach(function(textarea)
         {
-          textarea.classList.remove('field-error');
-          return;
-        }
-
-        if(!checkFieldTextarea(textarea)) valid = false;
-      });
+          if(getComputedStyle(textarea, null).display === 'none' || textarea.disabled)
+          {
+            textarea.classList.remove('field-error');
+            return;
+          }
+  
+          if(!checkFieldTextarea(textarea)) valid = false;
+        });
+      }
 
       // Проверим все чекбоксы
 
@@ -1596,35 +1629,48 @@ function validationForms(forms)
 
       const fieldsPassword = form.querySelectorAll('input[type="password"]');
 
-      fieldsPassword.forEach(function(input)
+      if(fieldsPassword.length)
       {
-        if(getComputedStyle(input, null).display === 'none' || input.disabled)
+        fieldsPassword.forEach(function(input)
         {
-          input.classList.remove('field-error');
-          return;
-        }
-
-        if(!checkFieldPassword(input)) valid = false;
-      });
+          if(getComputedStyle(input, null).display === 'none' || input.disabled)
+          {
+            input.classList.remove('field-error');
+            return;
+          }
+  
+          if(!checkFieldPassword(input)) valid = false;
+        });
+      }
 
       // Проверка даты 
 
       const fieldsDates = form.querySelectorAll('input[data-picker="datepicker"]');
 
-      fieldsDates.forEach(function(input)
+      if(fieldsDates.length)
       {
-        if(input.value.trim() !== '')
+        fieldsDates.forEach(function(input)
         {
-          if(!checkFieldDate(input)) valid = false;
-        }
-      });
+          if(input.value.trim() !== '')
+          {
+            if(!checkFieldDate(input)) valid = false;
+          }
+        });
+      }
 
-      
       // Если были ошибки, не отправляем форму
 
       if(valid)
       {
-        sendForm(form);
+        if(form.id === 'form-registration')
+        {
+          console.log(true);
+          registrationForm(form);
+        }
+        else 
+        {
+          sendForm(form);
+        }
       }
 
     });
@@ -1718,7 +1764,7 @@ function sendForm(form)
         document.querySelector('.modal-form_active').classList.remove('modal-form_active');             
         document.body.appendChild(shadow.querySelector('.modal-form'));
         shadow.innerHTML = '';
-        var successSending = document.querySelector('.successful-sending');
+        let successSending = document.querySelector('.successful-sending');
         successSending.classList.add('successful-sending_active');
         shadow.appendChild(successSending);
 
@@ -1750,7 +1796,7 @@ function sendForm(form)
       }
       else 
       {
-        var successSending = document.querySelector('.successful-sending');
+        let successSending = document.querySelector('.successful-sending');
         shadow.appendChild(successSending);
         shadow.classList.add('wrapper-shadow_active');
         successSending.classList.add('successful-sending_active');
@@ -1782,6 +1828,46 @@ function sendForm(form)
         });
 
       }
+    })
+    .catch(error => console.error(error));
+}
+
+function registrationForm(form)
+{
+  fetch(form.action, { method: 'POST', body: new FormData(form)})
+    .then(response => 
+    {
+      let modalConfirm = document.querySelector('.modal-confirm');
+      document.body.classList.add('disabled');
+      shadow.appendChild(modalConfirm);
+      shadow.classList.add('wrapper-shadow_active');
+      modalConfirm.classList.add('modal-confirm_active');
+
+      shadow.addEventListener('click', (e) => 
+      {
+        if(e.target.classList.contains('wrapper-shadow'))
+        {
+          e.preventDefault();
+        
+          modalConfirm.classList.remove('modal-confirm_active'); 
+          shadow.classList.remove('wrapper-shadow_active');
+          document.body.classList.remove('disabled');
+          document.body.appendChild(modalConfirm);
+          shadow.innerHTML = '';
+        }
+       
+      });
+
+      modalConfirm.querySelector('.close-modal a').addEventListener('click', function(e)
+      {
+        e.preventDefault();
+
+        modalConfirm.classList.remove('modal-confirm_active'); 
+        shadow.classList.remove('wrapper-shadow_active');
+        document.body.classList.remove('disabled');
+        document.body.appendChild(modalConfirm);
+        shadow.innerHTML = '';
+      });
     })
     .catch(error => console.error(error));
 }
@@ -2338,6 +2424,22 @@ if(modalFind && findRef.length)
         document.body.classList.remove('disabled');
       });
     });
+  });
+}
+
+// Проверка значений в table 
+
+let tableFeedbackValues = document.querySelectorAll('.table-content-row .table-feedback-column p');
+
+if(tableFeedbackValues.length)
+{
+  tableFeedbackValues.forEach(value => {
+    if(value.innerHTML === '0')
+    {
+      value.style.color = '#b7b6c3';
+      value.style.borderColor = 'transparent';
+      value.style.fontFamily = 'Montserrat Medium';
+    }
   });
 }
 

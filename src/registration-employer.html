@@ -334,7 +334,7 @@
                                 </div>
                                 <div class="block-mb-yellow">
                                     <label for="phone">Телефон <span>*</span></label>
-                                    <input type="text" name="phone" id="phone" placeholder="+7" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" data-required="true">
+                                    <input type="text" name="phone" id="phone" data-phone="true" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" placeholder="+7 (___)___-__-__" data-required="true">
                                 </div>
                                 <div class="block-mb-yellow">
                                     <label for="email">E-mail <span>*</span></label>
@@ -717,6 +717,26 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-form modal-confirm">
+            <div class="close-modal">
+                <a href="#">
+                    Закрыть
+                    <img class="img-svg" src="./img/icon_close_modal.svg" alt="">
+                </a>
+            </div>
+            <div class="modal-form-content block-mt-yellow">
+                <h2>Подтвердите регистрацию</h2>
+                <div class="block-mt-blue">
+                    <div class="block-mb-green">
+                        <p>По адресу <a href="mailto:kompania@kompania" class="confirmation-mail">kompania@kompania</a> выслано письмо со ссылкой: перейдите по ней, чтобы подтвердить свою почту и завершить регистрацию.</p>
+                    </div>
+                    <div class="block-mb-green">
+                        <p>Если вы не видите письма во входящих, проверьте папку со спамом, а также другие папки, в которые письмо может попасть.</p>
+                    </div>
+                    <p>Или <a href="№" class="repeated-request">запросите письмо повторно</a>.</p>
                 </div>
             </div>
         </div>
