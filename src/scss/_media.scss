@@ -565,6 +565,12 @@
     //         }
     //     }
     // }
+    .modal-confirm, .successful-sending, .modal-re-confirm
+    {
+        height: auto;
+        min-height: 100vh;
+        transform: translate(0);
+    }
     .block-tooltip 
     {
         display: none;

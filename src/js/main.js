@@ -356,11 +356,19 @@ if(inputFile.length)
       value = value.replace( 'C:\\fakepath\\', '');
       if(input.files.length > 1)
       {
-        input.parentElement.querySelector('.file-value').innerHTML = 'выбрано ' + input.files.length + ' файла';
+        input.parentElement.querySelector('.file-value').innerHTML = 'Выбрано ' + input.files.length + ' файла';
       }
-      else 
+      if(input.files.length > 1 && input.files.length > 4)
       {
-        input.parentElement.querySelector('.file-value').innerHTML = 'выбран ' + input.files.length + ' файл';
+        input.parentElement.querySelector('.file-value').innerHTML = 'Выбрано ' + input.files.length + ' файлов';
+      }
+      if(input.files.length === 1)
+      {
+        input.parentElement.querySelector('.file-value').innerHTML = 'Выбран ' + input.files.length + ' файл';
+      }
+      if(input.files.length < 1)
+      {
+        input.parentElement.querySelector('.file-value').innerHTML = 'Файл не выбран';
       }
     });
   });
@@ -373,7 +381,6 @@ let datepickerElems = document.querySelectorAll('input[data-picker="datepicker"]
 
 function initDatepicker(data)
 {
- 
   if(data.length)
   {
     data.forEach(elem => 
@@ -433,7 +440,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if(vacanciesMap)
   {
-    fetch('./php/vacancies.php')
+    window.fetch('./php/vacancies.php')
     .then(response => response.json())
     .then(data => {
         
@@ -1401,8 +1408,6 @@ if(addPlaceWork.length)
 // Формы в модальных окнах
 
 let shadow = document.querySelector('.wrapper-shadow');
-let closeModal = document.querySelectorAll('.close-modal a');
-let arrayFields = [shadow, ...closeModal];
 
 let buttonFeedback = document.querySelectorAll('.button-feedback');
 let modalFeedback = document.querySelector('#modal-feedback');
@@ -1418,6 +1423,9 @@ let modalDetailedSearch = document.querySelector('#detailed-search');
 
 let buttonAppBanner = document.querySelectorAll('.button-app-banner');
 let modalAppBanner = document.querySelector('#modal-app-banner');
+
+let buttonRepeatedRequest = document.querySelectorAll('.button-repeated-request');
+let modalReConfirm = document.querySelector('#modal-re-confirm');
 
 
 function checkFormPostPicture(button)
@@ -1443,7 +1451,7 @@ const animationModalForm = fn =>
   });
 }
 
-function viewForm(buttons, form)
+function viewModal(buttons, form)
 {
   buttons.forEach(button => 
   {
@@ -1456,6 +1464,8 @@ function viewForm(buttons, form)
         if(!checkFormPostPicture(button)) return;
       }
 
+      shadow.innerHTML = '';
+
       let closeModal = form.querySelector('.close-modal a');
 
       shadow.appendChild(form);
@@ -1466,67 +1476,48 @@ function viewForm(buttons, form)
       {
         form.classList.add('modal-form_active');
       });
-      
-     
-      shadow.addEventListener('click', (e) => 
-      {
-        if(e.target.classList.contains('wrapper-shadow'))
+
+      [shadow, closeModal].forEach((field, i) => {
+        field.addEventListener('click', (e) => 
         {
+          if(i === 0 && !e.target.classList.contains('wrapper-shadow'))
+          {
+            return;
+          }
           e.preventDefault();
-        
           form.classList.remove('modal-form_active'); 
           shadow.classList.remove('wrapper-shadow_active');
           document.body.appendChild(form);
           document.body.classList.remove('disabled');
-        
-          setTimeout(() => 
-          {
-            shadow.innerHTML = '';
-          }, 500);
-        }
-       
+        });
       });
-
-      closeModal.addEventListener('click', function(e)
-      {
-        e.preventDefault();
-        
-        form.classList.remove('modal-form_active'); 
-        shadow.classList.remove('wrapper-shadow_active');
-        document.body.appendChild(form);
-        document.body.classList.remove('disabled');
-      
-        setTimeout(() => 
-        {
-          shadow.innerHTML = '';
-        }, 500);
-
-      });
-      
-      // form.addEventListener('click', e => e.preventDefault());
     });
   });
 }
 
 if(buttonFeedback.length)
 {
-  viewForm(buttonFeedback, modalFeedback);
+  viewModal(buttonFeedback, modalFeedback);
 }
 if(buttonFilter.length)
 {
-  viewForm(buttonFilter, modalFilter);
+  viewModal(buttonFilter, modalFilter);
 }
 if(buttonAccount.length)
 {
-  viewForm(buttonAccount, modalAccount);
+  viewModal(buttonAccount, modalAccount);
 }
 if(buttonDetailedSearch.length)
 {
-  viewForm(buttonDetailedSearch, modalDetailedSearch);
+  viewModal(buttonDetailedSearch, modalDetailedSearch);
 }
 if(buttonAppBanner.length)
 {
-  viewForm(buttonAppBanner, modalAppBanner);
+  viewModal(buttonAppBanner, modalAppBanner);
+}
+if(buttonRepeatedRequest.length)
+{
+  viewModal(buttonRepeatedRequest, modalReConfirm);
 }
 
 
@@ -1604,26 +1595,6 @@ function validationForms(forms)
           if(!checkFieldTextarea(textarea)) valid = false;
         });
       }
-
-      // Проверим все чекбоксы
-
-      // const fieldsCheckbox = form.querySelectorAll('input[type="checkbox"]');
-
-      // fieldsCheckbox.forEach(function(input)
-      // {
-      //   if(input.style.display === 'none') return;
-      //   if(!checkFieldCheckbox(input)) valid = false;
-      // });
-
-      // Проверим все радиокнопки
-
-      // const fieldsRadio = form.querySelectorAll('input[type="radio"]');
-
-      // fieldsRadio.forEach(function(input)
-      // {
-      //   if(input.style.display === 'none') return;
-      //   if(!checkFieldCheckbox(input)) valid = false;
-      // });
 
       // Проверка пароля
 
@@ -1754,80 +1725,49 @@ function checkFieldDate(input)
   }
 }
 
+function outputResult(classModal, classModalActive)
+{
+  let modal = document.querySelector(classModal);
+ 
+  if(document.querySelector('.modal-form_active'))
+  {
+    document.querySelector('.modal-form_active').classList.remove('modal-form_active');             
+    document.body.appendChild(shadow.querySelector('.modal-form'));
+    shadow.innerHTML = '';
+    modal.classList.add(classModalActive);
+    shadow.appendChild(modal);
+  }
+  else 
+  {
+    shadow.appendChild(modal);
+    shadow.classList.add('wrapper-shadow_active');
+    modal.classList.add(classModalActive);
+  }
+
+  let closeModal = modal.querySelector('.close-modal a');
+
+  [shadow, closeModal].forEach((field, i) => {
+    field.addEventListener('click', (e) => 
+    {
+      if(i === 0 && !e.target.classList.contains('wrapper-shadow'))
+      {
+        return;
+      }
+      e.preventDefault();
+      modal.classList.remove(classModalActive); 
+      shadow.classList.remove('wrapper-shadow_active');
+      document.body.appendChild(modal);
+      document.body.classList.remove('disabled');
+    });
+  });
+}
+
 function sendForm(form)
 {
   fetch(form.action, { method: 'POST', body: new FormData(form)})
     .then(response => 
     {
-      if(document.querySelector('.modal-form_active'))
-      {
-        document.querySelector('.modal-form_active').classList.remove('modal-form_active');             
-        document.body.appendChild(shadow.querySelector('.modal-form'));
-        shadow.innerHTML = '';
-        let successSending = document.querySelector('.successful-sending');
-        successSending.classList.add('successful-sending_active');
-        shadow.appendChild(successSending);
-
-        shadow.addEventListener('click', (e) => 
-        {
-          if(e.target.classList.contains('wrapper-shadow'))
-          {
-            e.preventDefault();
-          
-            successSending.classList.remove('successful-sending_active'); 
-            shadow.classList.remove('wrapper-shadow_active');
-            document.body.classList.remove('disabled');
-            document.body.appendChild(successSending);
-            shadow.innerHTML = '';
-          }
-         
-        });
-  
-        successSending.querySelector('.close-modal a').addEventListener('click', function(e)
-        {
-          e.preventDefault();
-
-          successSending.classList.remove('successful-sending_active'); 
-          shadow.classList.remove('wrapper-shadow_active');
-          document.body.classList.remove('disabled');
-          document.body.appendChild(successSending);
-          shadow.innerHTML = '';
-        });
-      }
-      else 
-      {
-        let successSending = document.querySelector('.successful-sending');
-        shadow.appendChild(successSending);
-        shadow.classList.add('wrapper-shadow_active');
-        successSending.classList.add('successful-sending_active');
-
-        shadow.addEventListener('click', (e) => 
-        {
-          if(e.target.classList.contains('wrapper-shadow'))
-          {
-            e.preventDefault();
-          
-            successSending.classList.remove('successful-sending_active'); 
-            shadow.classList.remove('wrapper-shadow_active');
-            document.body.classList.remove('disabled');
-            document.body.appendChild(successSending);
-            shadow.innerHTML = '';
-          }
-         
-        });
-  
-        successSending.querySelector('.close-modal a').addEventListener('click', function(e)
-        {
-          e.preventDefault();
-
-          successSending.classList.remove('successful-sending_active'); 
-          shadow.classList.remove('wrapper-shadow_active');
-          document.body.classList.remove('disabled');
-          document.body.appendChild(successSending);
-          shadow.innerHTML = '';
-        });
-
-      }
+      outputResult('.successful-sending', 'successful-sending_active');
     })
     .catch(error => console.error(error));
 }
@@ -1837,37 +1777,7 @@ function registrationForm(form)
   fetch(form.action, { method: 'POST', body: new FormData(form)})
     .then(response => 
     {
-      let modalConfirm = document.querySelector('.modal-confirm');
-      document.body.classList.add('disabled');
-      shadow.appendChild(modalConfirm);
-      shadow.classList.add('wrapper-shadow_active');
-      modalConfirm.classList.add('modal-confirm_active');
-
-      shadow.addEventListener('click', (e) => 
-      {
-        if(e.target.classList.contains('wrapper-shadow'))
-        {
-          e.preventDefault();
-        
-          modalConfirm.classList.remove('modal-confirm_active'); 
-          shadow.classList.remove('wrapper-shadow_active');
-          document.body.classList.remove('disabled');
-          document.body.appendChild(modalConfirm);
-          shadow.innerHTML = '';
-        }
-       
-      });
-
-      modalConfirm.querySelector('.close-modal a').addEventListener('click', function(e)
-      {
-        e.preventDefault();
-
-        modalConfirm.classList.remove('modal-confirm_active'); 
-        shadow.classList.remove('wrapper-shadow_active');
-        document.body.classList.remove('disabled');
-        document.body.appendChild(modalConfirm);
-        shadow.innerHTML = '';
-      });
+      outputResult('.modal-confirm', 'modal-confirm_active');
     })
     .catch(error => console.error(error));
 }

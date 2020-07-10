@@ -18,7 +18,7 @@ const pages = ['index', 'articles', 'faq', 'vacancies-list', 'current-article', 
 const webpackConfig = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
-    entry: ['@babel/polyfill','./js/main.js'],
+    entry: ['@babel/polyfill','whatwg-fetch','./js/main.js'],
     output: {
         filename: "./js/bundle.js",
         path: path.resolve(__dirname, 'dist')

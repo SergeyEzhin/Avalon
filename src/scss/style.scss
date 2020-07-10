@@ -234,7 +234,7 @@ a:hover
 .main-button 
 {
     padding: 15px 30px;
-    font-family: Montserrat Bold;
+    font-family: Montserrat Semibold;
     font-size: 14px;
     font-stretch: normal;
     font-style: normal;
@@ -527,7 +527,8 @@ input[type="text"]:disabled::placeholder, input[type="password"]:disabled::place
 
 input[type="text"].field-error, input[type="password"].field-error
 {
-    border-color: red !important;
+    border-color:#eb5757 !important;
+    color: #eb5757 !important;
 }
 
 input[data-picker="datepicker"]
@@ -1116,7 +1117,8 @@ textarea:focus
 
 textarea.field-error 
 {
-    border-color: red !important;
+    border-color:#eb5757 !important;
+    color: #eb5757 !important;
 }
 
 textarea:disabled 
@@ -1435,7 +1437,7 @@ textarea:disabled
     display: block;
 }
 
-.modal-confirm 
+.modal-confirm
 {
     display: none;
     z-index: 5;
@@ -1451,15 +1453,29 @@ textarea:disabled
             padding-bottom: 4px;
         }
     }
-    .confirmation-mail
+}
+
+.modal-re-confirm  
+{
+    transform: translate(0);
+    p 
     {
-        font-family: Montserrat Semibold;
+        text-align: center;
+        a 
+        {
+            padding-bottom: 4px;
+        }
     }
 }
 
 .modal-confirm_active 
 {
     display: block;
+}
+
+.confirmation-mail
+{
+    font-family: Montserrat Semibold;
 }
 
 .close-modal 
