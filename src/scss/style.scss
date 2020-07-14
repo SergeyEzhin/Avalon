@@ -579,8 +579,9 @@ select
 {
     border: solid 2px #dddce8 !important;
     background-color: #ffffff;
-    min-height: 53px;
-    max-height: 53px;
+    // min-height: 53px;
+    // max-height: 53px;
+    height: 53px;
     display: flex;
     align-items: center;
     padding-left: 20px;
