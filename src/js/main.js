@@ -131,7 +131,7 @@ $('.usage-steps-slider-wrapper').owlCarousel({
     $('.arrow-steps__right span').text(nextSlider);
     let lengthSlider  = this.items().length;
 
-    console.log(nextSlider);
+    // console.log(nextSlider);
 
     $('.navigation-steps-slider .owl-next').click(function()
     {

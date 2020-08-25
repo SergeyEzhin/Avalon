@@ -31,6 +31,10 @@ const webpackConfig = {
         port: 4200,
         hot: true
     },
+    optimization: 
+    {
+        minimize: false
+    },
     devtool: isDev ? 'source-map': '',
     plugins: [
         new CopyWebpackPlugin(
